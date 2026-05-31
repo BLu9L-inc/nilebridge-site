@@ -669,6 +669,68 @@ nav.scrolled{
   background:var(--b1);
   box-shadow:0 8px 30px rgba(0,68,238,.38);
 }
+.form-submit:disabled{opacity:.6;cursor:not-allowed;}
+
+/* ── TEAM CONTACT CARDS ─────────────────────────── */
+.contact-hdr{text-align:center;margin-bottom:52px;}
+.contact-hdr h2{font-size:clamp(28px,3.5vw,44px);font-weight:800;letter-spacing:-1.2px;color:var(--w);margin-bottom:10px;}
+.contact-hdr p{font-family:'Cormorant',serif;font-size:18px;font-style:italic;color:var(--w60);}
+.team-cards{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:12px;margin-bottom:52px;
+}
+.team-card{
+  background:var(--glass);border:1px solid var(--bline);
+  border-radius:12px;padding:22px 18px;
+  transition:border-color .2s,transform .2s;
+  text-align:center;
+}
+.team-card:hover{border-color:var(--b1);transform:translateY(-3px);}
+.tc-avatar{
+  width:48px;height:48px;border-radius:50%;
+  background:linear-gradient(135deg,var(--b0),#0029AA);
+  display:grid;place-items:center;
+  font-size:16px;font-weight:800;color:#fff;
+  margin:0 auto 12px;
+  font-family:'Syne',sans-serif;letter-spacing:0;
+}
+.tc-name{font-size:13px;font-weight:700;color:var(--w);margin-bottom:3px;}
+.tc-title{
+  font-family:'JetBrains Mono',monospace;
+  font-size:8px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--b2);margin-bottom:12px;
+}
+.tc-email{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:'JetBrains Mono',monospace;font-size:10px;
+  color:var(--w30);padding:6px 10px;
+  background:var(--b3);border:1px solid var(--bline);border-radius:100px;
+  transition:color .2s,background .2s;
+  word-break:break-all;text-align:left;
+}
+.tc-email:hover{color:var(--w);background:rgba(0,68,238,.25);}
+.contact-divider{
+  display:flex;align-items:center;gap:16px;margin-bottom:40px;
+}
+.contact-divider::before,.contact-divider::after{
+  content:'';flex:1;height:1px;background:var(--line);
+}
+.contact-divider span{
+  font-family:'JetBrains Mono',monospace;font-size:8px;
+  letter-spacing:3px;text-transform:uppercase;color:var(--w30);white-space:nowrap;
+}
+.form-note{
+  font-family:'JetBrains Mono',monospace;font-size:9px;
+  letter-spacing:1px;color:var(--w30);margin-top:8px;text-align:center;line-height:1.6;
+}
+/* setup note visible only for dev */
+.setup-note{
+  background:rgba(184,120,0,.08);border:1px solid rgba(184,120,0,.25);
+  border-radius:6px;padding:10px 14px;margin-bottom:14px;
+  font-family:'JetBrains Mono',monospace;font-size:9px;
+  letter-spacing:.5px;color:rgba(221,160,32,.7);line-height:1.7;
+  display:none; /* hide after adding web3forms key */
+}
 
 /* ── FOOTER ─────────────────────────────────────── */
 footer{
@@ -1119,19 +1181,75 @@ footer{
 <!-- ── CONTACT ── -->
 <section class="contact-section section" id="contact">
   <div class="container">
+
+    <!-- Section Header -->
+    <div class="contact-hdr reveal">
+      <div class="kicker" style="justify-content:center;margin-bottom:12px;">Get in Touch</div>
+      <h2>Contact the <span style="background:linear-gradient(135deg,var(--b2),var(--b0));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Right Person</span></h2>
+      <p>Four direct channels. No gatekeeping. Reach us where it matters.</p>
+    </div>
+
+    <!-- Team Contact Cards -->
+    <div class="team-cards reveal">
+
+      <div class="team-card">
+        <div class="tc-avatar">YH</div>
+        <div class="tc-name">Yaseen Hassan</div>
+        <div class="tc-title">Founder &amp; President</div>
+        <a class="tc-email" href="mailto:yaseen.hassan@blu9l.com">
+          <span>✉</span> yaseen.hassan@blu9l.com
+        </a>
+      </div>
+
+      <div class="team-card">
+        <div class="tc-avatar">AM</div>
+        <div class="tc-name">Amany Moustafa</div>
+        <div class="tc-title">Chief Executive Officer</div>
+        <a class="tc-email" href="mailto:Amany.Moustafa@blu9l.com">
+          <span>✉</span> Amany.Moustafa@blu9l.com
+        </a>
+      </div>
+
+      <div class="team-card">
+        <div class="tc-avatar" style="background:linear-gradient(135deg,var(--g0),#704800);">GI</div>
+        <div class="tc-name">General Inquiries</div>
+        <div class="tc-title">All General Enquiries</div>
+        <a class="tc-email" href="mailto:info@blu9l.com">
+          <span>✉</span> info@blu9l.com
+        </a>
+      </div>
+
+      <div class="team-card">
+        <div class="tc-avatar" style="background:linear-gradient(135deg,#0A5C2A,#063D1C);">SF</div>
+        <div class="tc-name">Sales</div>
+        <div class="tc-title">Sales &amp; Partnerships</div>
+        <a class="tc-email" href="mailto:sales.force@blu9l.com">
+          <span>✉</span> sales.force@blu9l.com
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="contact-divider reveal">
+      <span>Send Us a Message</span>
+    </div>
+
+    <!-- Form + Offices -->
     <div class="contact-inner">
+
+      <!-- Left: Offices -->
       <div class="contact-left reveal">
-        <div class="kicker">Get in Touch</div>
-        <h2 class="contact-h">Ready to<br>Connect?</h2>
-        <p class="contact-sub">Whether you represent a school, an enterprise, an investment partner, or a government institution — we want to hear from you.</p>
+        <h2 class="contact-h">Three Markets.<br>One Team.</h2>
+        <p class="contact-sub">Whether you represent a school, an enterprise, an investment partner, or a government institution — reach us directly or send a message and we'll route it to the right person.</p>
         <div class="contact-items">
           <div class="ci">
             <div class="ci-icon">✉️</div>
-            hello@blu9l.com
+            info@blu9l.com
           </div>
           <div class="ci">
             <div class="ci-icon">🇦🇪</div>
-            Ajman Free Zone, UAE
+            Ajman Free Zone, UAE · License 50366
           </div>
           <div class="ci">
             <div class="ci-icon">🇺🇸</div>
@@ -1141,38 +1259,71 @@ footer{
             <div class="ci-icon">🇪🇬</div>
             Cairo, Egypt
           </div>
+          <div class="ci" style="margin-top:8px;">
+            <div class="ci-icon">🗓️</div>
+            Launch Event — June 28, 2026 · Cairo · Invitation Only
+          </div>
         </div>
       </div>
+
+      <!-- Right: Form -->
       <div class="contact-right reveal r2">
         <div class="contact-form">
-          <div class="cf-title">Send us a message</div>
-          <div class="form-row">
-            <label>Your Name</label>
-            <input type="text" placeholder="Full name">
-          </div>
-          <div class="form-row">
-            <label>Email Address</label>
-            <input type="email" placeholder="your@email.com">
-          </div>
-          <div class="form-row">
-            <label>I'm interested in</label>
-            <select>
-              <option value="">Select a division...</option>
-              <option>IRAS® Education Intelligence</option>
-              <option>Multilingual Talent Platform</option>
-              <option>Automotive — Rocky / AutoNet</option>
-              <option>Real Estate — Rocky Estates</option>
-              <option>Investment Partnership</option>
-              <option>General Enquiry</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <label>Message</label>
-            <textarea placeholder="Tell us about your interest or enquiry..."></textarea>
-          </div>
-          <button class="form-submit" onclick="handleSubmit(this)">Send Message</button>
+          <div class="cf-title">Send a Message</div>
+
+          <!--
+          ╔══════════════════════════════════════════════════╗
+          ║  SETUP — ONE STEP REQUIRED                       ║
+          ║  1. Go to web3forms.com                          ║
+          ║  2. Enter: info@blu9l.com                        ║
+          ║  3. Copy your free Access Key                    ║
+          ║  4. Replace YOUR_WEB3FORMS_ACCESS_KEY below      ║
+          ║  Form submissions forward to info@blu9l.com      ║
+          ║  Works with Cloudflare Pages & Zoho Mail         ║
+          ╚══════════════════════════════════════════════════╝
+          -->
+
+          <form id="contact-form" onsubmit="handleContactSubmit(event)">
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+            <input type="hidden" name="subject" value="New Blu9L Website Enquiry">
+            <input type="hidden" name="from_name" value="Blu9L Website">
+            <input type="checkbox" name="botcheck" style="display:none;">
+
+            <div class="form-row">
+              <label>Your Name</label>
+              <input type="text" name="name" placeholder="Full name" required>
+            </div>
+            <div class="form-row">
+              <label>Email Address</label>
+              <input type="email" name="email" placeholder="your@email.com" required>
+            </div>
+            <div class="form-row">
+              <label>Organisation</label>
+              <input type="text" name="organisation" placeholder="School, company, or institution">
+            </div>
+            <div class="form-row">
+              <label>I'm interested in</label>
+              <select name="interest">
+                <option value="">Select a topic...</option>
+                <option>IRAS® Education Intelligence — Egypt</option>
+                <option>Investment Partnership</option>
+                <option>Multilingual Talent Platform</option>
+                <option>Automotive — Rocky / AutoNet</option>
+                <option>Real Estate — Rocky Estates</option>
+                <option>June 28 Launch Event — Request Invitation</option>
+                <option>General Enquiry</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label>Message</label>
+              <textarea name="message" placeholder="Tell us about your interest or enquiry..." required></textarea>
+            </div>
+            <button type="submit" class="form-submit" id="form-btn">Send Message</button>
+            <p class="form-note">Your message routes to info@blu9l.com · Replies within 24 hours</p>
+          </form>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -1185,6 +1336,7 @@ footer{
         <div class="lsq">B9</div>BLU9L
       </div>
       <p class="fl-desc">A cross-border intelligence and investment holding group. UAE · USA · Egypt.</p>
+      <a href="mailto:info@blu9l.com" style="display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1px;color:var(--w30);margin-bottom:12px;transition:color .2s;" onmouseover="this.style.color='var(--w)'" onmouseout="this.style.color='var(--w30)'">✉ info@blu9l.com</a>
       <div class="fl-entities">
         <div class="fl-ent">BLu9L International F.Z.E · Ajman Free Zone · Lic. No. 50366</div>
         <div class="fl-ent">Blu9L Holdings · United States</div>
@@ -1266,12 +1418,43 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   });
 });
 
-// ── FORM ──
-function handleSubmit(btn){
-  const orig=btn.textContent;
-  btn.textContent='Sending...';btn.disabled=true;
-  setTimeout(()=>{btn.textContent='✓ Message Sent';},1500);
-  setTimeout(()=>{btn.textContent=orig;btn.disabled=false;},4000);
+// ── FORM — Web3Forms (routes to info@blu9l.com via Cloudflare-compatible API) ──
+async function handleContactSubmit(e) {
+  e.preventDefault();
+  const btn = document.getElementById('form-btn');
+  const form = document.getElementById('contact-form');
+  const origText = btn.textContent;
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  try {
+    const data = new FormData(form);
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: data
+    });
+    const json = await res.json();
+    if (json.success) {
+      btn.textContent = '✓ Message Sent';
+      btn.style.background = '#0A5C2A';
+      form.reset();
+      setTimeout(() => {
+        btn.textContent = origText;
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 4000);
+    } else {
+      throw new Error(json.message || 'Submission failed');
+    }
+  } catch (err) {
+    btn.textContent = 'Error — Please Email Us Directly';
+    btn.style.background = '#7B1C1C';
+    setTimeout(() => {
+      btn.textContent = origText;
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 4000);
+  }
 }
 </script>
 </body>
