@@ -299,6 +299,7 @@ html[lang="ar"] .hero-right{border-left:none;border-right:1px solid var(--line);
 
 /* ── IRAS® ── */
 /* Prevent tight letter-spacing from distorting IRAS® brand name */
+.iras-brand{letter-spacing:0!important;display:inline;}
 .h2 .iras-brand,.hero-h1 .iras-brand{letter-spacing:0 !important;}
 .iras-section{background:linear-gradient(180deg,var(--ink),var(--pool),var(--ink));position:relative;overflow:hidden;}
 .iras-bg-orb{position:absolute;right:-120px;top:50%;transform:translateY(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(0,68,238,.1),transparent 65%);border-radius:50%;filter:blur(40px);}
@@ -380,7 +381,7 @@ html[lang="ar"] .hero-right{border-left:none;border-right:1px solid var(--line);
 .founder-link.cal{background:var(--b4);border:1px solid var(--bline);color:var(--b2);}
 .founder-link.cal:hover{background:rgba(0,68,238,.2);}
 /* ── LEADERSHIP TEAM ── */
-.leadership-section{background:var(--bg);border-top:1px solid var(--line);}
+.leadership-section{background:var(--ink);border-top:1px solid var(--line);}
 .leadership-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:48px;}
 .leader-card{background:var(--glass);border:1px solid var(--bline);border-radius:20px;padding:40px 36px;position:relative;overflow:hidden;transition:border-color .3s,transform .3s;}
 .leader-card:hover{border-color:rgba(0,68,238,.4);transform:translateY(-4px);}
@@ -947,7 +948,7 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
           <div class="ic-dot"></div>
           <span class="ic-text" data-en="Live · 22 UAE Schools · Egypt Launching June 28" data-ar="نشط · 22 مدرسة إماراتية · مصر تنطلق 28 يونيو">Live · 22 UAE Schools · Egypt Launching June 28</span>
         </div>
-        <h2 class="h2" data-en="<span style='letter-spacing:0;'>IRAS®</span><br><em>4 Years Built. Live Now.</em>" data-ar="<span style='letter-spacing:0;'>IRAS®</span><br><em>4 سنوات تطوير. نشط الآن.</em>"><span style="letter-spacing:0;">IRAS®</span><br><em>4 Years Built. Live Now.</em></h2>
+        <h2 class="h2" data-en="&lt;span class=&quot;iras-brand&quot;&gt;IRAS®&lt;/span&gt;&lt;br&gt;&lt;em&gt;4 Years Built. Live Now.&lt;/em&gt;" data-ar="&lt;span class=&quot;iras-brand&quot;&gt;IRAS®&lt;/span&gt;&lt;br&gt;&lt;em&gt;4 سنوات تطوير. نشط الآن.&lt;/em&gt;"><span class="iras-brand">IRAS®</span><br><em>4 Years Built. Live Now.</em></h2>
         <div class="h2-rule"></div>
         <p class="serif-lead" data-en="Four years of development. Live in 22 UAE schools. Deployed in Qatar. Entering Saudi Arabia. Now — exclusively — Egypt through Blu9L." data-ar="أربع سنوات من التطوير. نشط في 22 مدرسة إماراتية. مُطبَّق في قطر. يدخل المملكة العربية السعودية. والآن — بشكل حصري — مصر عبر بلو9إل.">Four years of development. Live in 22 UAE schools. Deployed in Qatar. Entering Saudi Arabia. Now — exclusively — Egypt through Blu9L.</p>
         <div class="iras-stats">
@@ -1327,7 +1328,7 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
         </div>
         <div class="faq-item">
           <div class="faq-q" data-en="Who is Neuronso Technology and what is their relationship with Blu9L?" data-ar="من هي نيورونسو تكنولوجي وما علاقتها ببلو9إل؟">Who is Neuronso Technology and what is their relationship with Blu9L?</div>
-          <div class="faq-a" data-en="Neuronso Technology for Artificial Intelligence Applications & Services L.L.C is the developer and owner of the IRAS® platform. Registered in Dubai Silicon Oasis (License 1115725), Neuronso is led by CEO Naim Messai. Blu9L holds the exclusive IRAS® franchise rights for the Arab Republic of Egypt under a formal franchise agreement — the only company authorised to deploy IRAS® across Egypt." data-ar="نيورونسو تكنولوجي هي المطوّر والمالك لمنصة إيراس®، مسجّلة في دبي سيليكون أوسيس بموجب الرخصة 1115725. تمتلك بلو9إل حقوق امتياز إيراس® الحصرية لجمهورية مصر العربية.">Neuronso Technology for AI Applications & Services L.L.C is the developer and owner of the IRAS® platform, registered in Dubai Silicon Oasis (License 1115725), led by CEO Naim Messai. Blu9L holds the exclusive IRAS® franchise rights for Egypt — the only company authorised to deploy IRAS® across the country.</div>
+          <div class="faq-a" data-en="Neuronso Technology for Artificial Intelligence Applications &amp; Services L.L.C is the developer and owner of the IRAS® platform. Registered in Dubai Silicon Oasis (License 1115725), Neuronso is led by CEO Naim Messai. Blu9L holds the exclusive IRAS® franchise rights for the Arab Republic of Egypt under a formal franchise agreement — the only company authorised to deploy IRAS® across Egypt." data-ar="نيورونسو تكنولوجي هي المطوّر والمالك لمنصة إيراس®، مسجّلة في دبي سيليكون أوسيس بموجب الرخصة 1115725. تمتلك بلو9إل حقوق امتياز إيراس® الحصرية لجمهورية مصر العربية.">Neuronso Technology for AI Applications &amp; Services L.L.C is the developer and owner of the IRAS® platform, registered in Dubai Silicon Oasis (License 1115725), led by CEO Naim Messai. Blu9L holds the exclusive IRAS® franchise rights for Egypt — the only company authorised to deploy IRAS® across the country.</div>
         </div>
       </div>
       <div>
