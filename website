@@ -5,19 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- ── SEO TITLE + META (FIX #1) ── -->
-<title>Blu9L Holdings | IRAS® Egypt — School Intelligence Platform | Launching June 30, 2026</title>
-<meta name="description" content="Blu9L Holdings is Egypt's exclusive IRAS® franchise partner — the AI-powered school intelligence platform from Neuronso Technology, deployed across 22 UAE schools and Qatar. Egypt launch June 30, 2026. schools representing 12,000+ students in pre-launch engagement.">
+<title>Blu9L Holdings | IRAS® Egypt — School Intelligence Platform | Launching July 6, 2026</title>
+<meta name="description" content="Blu9L Holdings is Egypt's exclusive IRAS® franchise partner — the AI-powered school intelligence platform from Neuronso Technology, deployed across 22 UAE schools and Qatar. Egypt launch July 6, 2026. schools representing 12,000+ students in pre-launch engagement.">
 <link rel="canonical" href="https://blu9l.com/">
 
 <!-- ── OPEN GRAPH / SOCIAL (FIX #2) ── -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Blu9L Holdings | IRAS® Egypt — School Intelligence Platform · June 30 Launch · 12,000 Students in Pre-Launch Engagement">
-<meta property="og:description" content="Egypt's exclusive IRAS® franchise. AI attendance, campus safety &amp; parent intelligence. Live in 22 UAE schools. 12,000 students in pre-launch engagement. June 30 launch.">
+<meta property="og:title" content="Blu9L Holdings | IRAS® Egypt — School Intelligence Platform · July 6 Launch · 12,000 Students in Pre-Launch Engagement">
+<meta property="og:description" content="Egypt's exclusive IRAS® franchise. AI attendance, campus safety &amp; parent intelligence. Live in 22 UAE schools. 12,000 students in pre-launch engagement. July 6 launch.">
 <meta property="og:image" content="https://blu9l.com/og-image.jpg">
 <meta property="og:url" content="https://blu9l.com">
 <meta property="og:site_name" content="Blu9L Holdings">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Blu9L | IRAS® Egypt Launch — June 30, 2026">
+<meta name="twitter:title" content="Blu9L | IRAS® Egypt Launch — July 6, 2026">
 <meta name="twitter:description" content="Egypt's exclusive AI school safety platform. schools representing 12,000+ students in pre-launch engagement. Live in 22 UAE schools.">
 <meta name="twitter:image" content="https://blu9l.com/og-image.jpg">
 
@@ -34,7 +34,7 @@
       "name":"Blu9L Holdings",
       "url":"https://blu9l.com",
       "logo":"https://blu9l.com/og-image.jpg",
-      "description":"Blu9L Holdings is the exclusive IRAS® franchise partner for the Arab Republic of Egypt — AI-powered school intelligence platform from Neuronso Technology, UAE. Launching Egypt June 30, 2026.",
+      "description":"Blu9L Holdings is the exclusive IRAS® franchise partner for the Arab Republic of Egypt — AI-powered school intelligence platform from Neuronso Technology, UAE. Launching Egypt July 6, 2026.",
       "founder":{"@type":"Person","name":"Yaseen Hassan","jobTitle":"Founder & CEO"},
       "address":[
         {"@type":"PostalAddress","addressCountry":"AE","addressRegion":"Ajman"},
@@ -45,7 +45,7 @@
     {
       "@type":"Event",
       "name":"IRAS® Egypt Launch Event",
-      "startDate":"2026-06-30T09:00:00",
+      "startDate":"2026-07-06T09:00:00",
       "location":{"@type":"Place","name":"Cairo","address":{"@type":"PostalAddress","addressCountry":"EG","addressLocality":"Cairo"}},
       "description":"Exclusive launch event for 100 top Egyptian school owners and decision-makers. AI school intelligence platform IRAS® Egypt debut.",
       "organizer":{"@type":"Organization","name":"Blu9L Holdings","url":"https://blu9l.com"}
@@ -599,7 +599,7 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
     <li><a href="#story" onclick="closeMobile()" data-en="About" data-ar="عن الشركة">About</a></li>
     <li><a href="#services" onclick="closeMobile()" data-en="Divisions" data-ar="الأقسام">Divisions</a></li>
     <li><a href="#iras" onclick="closeMobile()" data-en="IRAS®" data-ar="إيراس®">IRAS®</a></li>
-    <li><a href="#event" onclick="closeMobile()" data-en="June 30 Launch" data-ar="إطلاق 30 يونيو">June 30 Launch</a></li>
+    <li><a href="#event" onclick="closeMobile()" data-en="July 6 Launch" data-ar="إطلاق 6 يوليو">July 6 Launch</a></li>
     <li><a href="#invest" onclick="closeMobile()" data-en="Strategic Opportunity" data-ar="الفرصة الاستراتيجية">Strategic Opportunity</a></li>
     <li><a href="#leadership" onclick="closeMobile()" data-en="Leadership" data-ar="القيادة">Leadership</a></li>
     <li><a href="#contact" onclick="closeMobile()" data-en="Contact" data-ar="تواصل">Contact</a></li>
@@ -653,12 +653,12 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
         <span class="kicker-text" data-en="AI-Powered School Intelligence · Egypt Exclusive · Neuronso Technology · Live in UAE &amp; Qatar" data-ar="امتياز حصري في مصر · نيورونسو تكنولوجي · مُثبَت في الإمارات منذ 2025">AI-Powered School Intelligence · Egypt Exclusive · Neuronso Technology · Live in UAE &amp; Qatar</span>
       </div>
       <h1 class="hero-h1" data-en="Egypt's <em>Exclusive</em><br>School Intelligence Platform." data-ar="منصة <em>ذكاء المدارس</em><br>الحصرية في مصر.">Egypt's <em>Exclusive</em><br>School Intelligence Platform.</h1>
-      <p class="hero-sub" data-en="IRAS® is live in <strong>22 UAE schools</strong> and deployed across Qatar. Now launching exclusively across Egypt through Blu9L — beginning June 30, 2026. <strong>12,000 students already in pre-launch engagement</strong> before a single launch event." data-ar="إيراس® نشط في <strong>22 مدرسة إماراتية</strong> ومُطبَّق في قطر. ينطلق الآن بشكل حصري في جميع أنحاء مصر عبر بلو9إل — بدءاً من 30 يونيو 2026. <strong>12,000 طالب موقَّع عليهم</strong> قبل أي حفل إطلاق.">IRAS® is live in <strong>22 UAE schools</strong> and deployed across Qatar. Now launching exclusively across Egypt through Blu9L — beginning June 30, 2026. <strong>12,000 students already in pre-launch engagement</strong> before a single launch event.</p>
+      <p class="hero-sub" data-en="IRAS® is live in <strong>22 UAE schools</strong> and deployed across Qatar. Now launching exclusively across Egypt through Blu9L — beginning July 6, 2026. <strong>12,000 students already in pre-launch engagement</strong> before a single launch event." data-ar="إيراس® نشط في <strong>22 مدرسة إماراتية</strong> ومُطبَّق في قطر. ينطلق الآن بشكل حصري في جميع أنحاء مصر عبر بلو9إل — بدءاً من 6 يوليو 2026. <strong>12,000 طالب موقَّع عليهم</strong> قبل أي حفل إطلاق.">IRAS® is live in <strong>22 UAE schools</strong> and deployed across Qatar. Now launching exclusively across Egypt through Blu9L — beginning July 6, 2026. <strong>12,000 students already in pre-launch engagement</strong> before a single launch event.</p>
       <!-- Mobile stat chips -->
       <div class="hero-chips">
         <span class="hchip">12,000+ Schools Engaged</span>
         <span class="hchip">22 UAE Schools Live</span>
-        <span class="hchip">June 30 Launch</span>
+        <span class="hchip">July 6 Launch</span>
         <span class="hchip">Egypt Exclusive</span>
       </div>
       <div class="hero-ctas">
@@ -682,7 +682,7 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
           <div class="cd-post-title" data-en="&#10003; Launch Event Complete" data-ar="&#10003; اكتمل حفل الإطلاق">&#10003; Launch Event Complete</div>
           <div class="cd-post-sub" data-en="22,000+ Students · Iraq &amp; Africa Next · Schedule a Meeting" data-ar="22,000+ طالب · العراق وأفريقيا التالية · احجز اجتماعاً">22,000+ Students · Iraq &amp; Africa Next · Schedule a Meeting</div>
         </div>
-        <div class="cd-date" data-en="June 30, 2026 · Cairo · Invitation Only" data-ar="30 يونيو 2026 · القاهرة · بدعوة خاصة">June 30, 2026 · Cairo · Invitation Only</div>
+        <div class="cd-date" data-en="July 6, 2026 · Cairo · Invitation Only" data-ar="6 يوليو 2026 · القاهرة · بدعوة خاصة">July 6, 2026 · Cairo · Invitation Only</div>
       </div>
     </div>
     <div class="hero-right">
@@ -752,8 +752,8 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
     <div class="marquee-item">إيراس® · 22 مدرسة إماراتية نشطة</div>
     <div class="marquee-item">AI Attendance · Campus Safety</div>
     <div class="marquee-item">حضور ذكي · أمن الحرم المدرسي</div>
-    <div class="marquee-item">June 30 Launch · Cairo</div>
-    <div class="marquee-item">إطلاق 30 يونيو · القاهرة</div>
+    <div class="marquee-item">July 6 Launch · Cairo</div>
+    <div class="marquee-item">إطلاق 6 يوليو · القاهرة</div>
     <div class="marquee-item">Leading With Vision. Building the Future.</div>
     <div class="marquee-item">ذكاء بلا حدود</div>
     <div class="marquee-item">Egypt Exclusive Franchise</div>
@@ -864,7 +864,7 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
             <div class="mkt-flag">🇪🇬</div>
             <div>
               <div class="mkt-name" data-en="Egypt — Execution &amp; Launch" data-ar="مصر — التنفيذ والإطلاق">Egypt — Execution &amp; Launch</div>
-              <div class="mkt-desc" data-en="Exclusive IRAS® deployment. 3 schools in active pre-launch preparation representing more than 12,000 students. June 30 event with 100 of Egypt's top school decision-makers. Pipeline: Iraq, Africa, USA." data-ar="نشر حصري لإيراس®. 3 عقود موقّعة، أكثر من 12,000 طالب قبل الإطلاق. حفل 30 يونيو مع 100 من أبرز صانعي قرار المدارس في مصر.">Exclusive IRAS® deployment. 3 schools in active pre-launch preparation representing more than 12,000 students. June 30 event with 100 of Egypt's top school decision-makers. Pipeline: Iraq, Africa, USA.</div>
+              <div class="mkt-desc" data-en="Exclusive IRAS® deployment. 3 schools in active pre-launch preparation representing more than 12,000 students. July 6 event with 100 of Egypt's top school decision-makers. Pipeline: Iraq, Africa, USA." data-ar="نشر حصري لإيراس®. 3 عقود موقّعة، أكثر من 12,000 طالب قبل الإطلاق. حفل 6 يوليو مع 100 من أبرز صانعي قرار المدارس في مصر.">Exclusive IRAS® deployment. 3 schools in active pre-launch preparation representing more than 12,000 students. July 6 event with 100 of Egypt's top school decision-makers. Pipeline: Iraq, Africa, USA.</div>
             </div>
           </div>
         </div>
@@ -890,12 +890,12 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
             <div class="svc-name">IRAS® Egypt</div>
             <div class="svc-tagline" data-en="AI Attendance, Campus Safety &amp; Parent Intelligence — Neuronso Technology" data-ar="الحضور الذكي وأمن الحرم ومعلومات أولياء الأمور — نيورونسو تكنولوجي">AI Attendance, Campus Safety &amp; Parent Intelligence — Neuronso Technology</div>
           </div>
-          <span class="badge badge-launch" data-en="Launching June 30" data-ar="الإطلاق 30 يونيو">Launching June 30</span>
+          <span class="badge badge-launch" data-en="Launching July 6" data-ar="الإطلاق 6 يوليو">Launching July 6</span>
         </div>
         <div class="svc-body">
           <p class="svc-desc" data-en="IRAS® took 4 years to build. It is live in 22 UAE schools and deployed in Qatar. Neuronso Technology CEO Naim Messai is in active Saudi negotiations. Blu9L holds the exclusive Egypt franchise — the only party authorised to deploy IRAS® across the Arab Republic of Egypt." data-ar="استغرق بناء إيراس® 4 سنوات. إنه نشط في 22 مدرسة إماراتية ومُطبَّق في قطر. بلو9إل يمتلك الامتياز الحصري في مصر.">IRAS® took 4 years to build. It is live in 22 UAE schools and deployed in Qatar. Neuronso Technology CEO Naim Messai is in active Saudi negotiations. Blu9L holds the exclusive Egypt franchise — the only party authorised to deploy IRAS® across the Arab Republic of Egypt.</p>
           <div class="svc-points">
-            <div class="sp"><span class="sp-dot">→</span><span data-en="Schools representing more than 12,000 students in active pre-launch deployment discussions, ahead of the June 30 launch event" data-ar="أكثر من 12,000 طالب موقَّع عليهم في 3 مدارس مصرية قبل حفل الإطلاق">Schools representing more than 12,000 students in active pre-launch deployment discussions, ahead of the June 30 launch event</span></div>
+            <div class="sp"><span class="sp-dot">→</span><span data-en="Schools representing more than 12,000 students in active pre-launch deployment discussions, ahead of the July 6 launch event" data-ar="أكثر من 12,000 طالب موقَّع عليهم في 3 مدارس مصرية قبل حفل الإطلاق">Schools representing more than 12,000 students in active pre-launch deployment discussions, ahead of the July 6 launch event</span></div>
             <div class="sp"><span class="sp-dot">→</span><span data-en="Real-time AI attendance · IoT wearables · campus safety · behavioural analytics" data-ar="حضور ذكي فوري · أجهزة إنترنت الأشياء · أمن الحرم · التحليلات السلوكية">Real-time AI attendance · IoT wearables · campus safety · behavioural analytics</span></div>
             <div class="sp"><span class="sp-dot">→</span><span data-en="Target: 100,000 students by 2029 · Self-funding from Year 1 subscription revenue" data-ar="الهدف: 100,000 طالب بحلول 2029 · ذاتي التمويل من عائدات الاشتراك في السنة الأولى">Target: 100,000 students by 2029 · Self-funding from Year 1 subscription revenue</span></div>
             <div class="sp"><span class="sp-dot">→</span><span data-en="Iraq, Africa, and USA expansion pipeline via existing Blu9L connections" data-ar="خطوط توسع في العراق وأفريقيا والولايات المتحدة عبر اتصالات بلو9إل القائمة">Iraq, Africa, and USA expansion pipeline via existing Blu9L connections</span></div>
@@ -946,7 +946,7 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
       <div class="iras-left reveal">
         <div class="iras-chip">
           <div class="ic-dot"></div>
-          <span class="ic-text" data-en="Live · 22 UAE Schools · Egypt Launching June 30" data-ar="نشط · 22 مدرسة إماراتية · مصر تنطلق 30 يونيو">Live · 22 UAE Schools · Egypt Launching June 30</span>
+          <span class="ic-text" data-en="Live · 22 UAE Schools · Egypt Launching July 6" data-ar="نشط · 22 مدرسة إماراتية · مصر تنطلق 6 يوليو">Live · 22 UAE Schools · Egypt Launching July 6</span>
         </div>
         <h2 class="h2" data-en="IRAS®<br><em>4 Years Built. Live Now.</em>" data-ar="IRAS®<br><em>4 سنوات تطوير. نشط الآن.</em>"><span class="iras-brand">IRAS®</span><br><em>4 Years Built. Live Now.</em></h2>
         <div class="h2-rule"></div>
@@ -1056,11 +1056,11 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
   <div class="container">
     <div class="event-inner">
       <div class="event-left reveal">
-        <div class="event-badge"><div class="eb-dot"></div><span class="eb-text" data-en="28 Days Remaining · Seats Limited" data-ar="28 يوماً متبقياً · المقاعد محدودة">28 Days Remaining · Seats Limited</span></div>
-        <h2 class="event-h" data-en="100 Seats.<br>Egypt's Top School Owners.<br>June 30, Cairo." data-ar="100 مقعد.<br>أبرز أصحاب المدارس في مصر.<br>30 يونيو، القاهرة.">100 Seats.<br>Egypt's Top School Owners.<br>June 30, Cairo.</h2>
+        <div class="event-badge"><div class="eb-dot"></div><span class="eb-text" data-en="3 Days Remaining · Seats Limited" data-ar="3 أيام متبقية · المقاعد محدودة">3 Days Remaining · Seats Limited</span></div>
+        <h2 class="event-h" data-en="100 Seats.<br>Egypt's Top School Owners.<br>July 6, Cairo." data-ar="100 مقعد.<br>أبرز أصحاب المدارس في مصر.<br>6 يوليو، القاهرة.">100 Seats.<br>Egypt's Top School Owners.<br>July 6, Cairo.</h2>
         <p class="event-sub" data-en="The only launch event of this scale in Egypt's education technology history. Blu9L and Neuronso Technology present IRAS® live — with real-time demonstrations, school-owner presentations, and on-the-day contract opportunities." data-ar="الحدث التمهيدي الوحيد بهذا الحجم في تاريخ تقنية التعليم في مصر. يقدّم بلو9إل ونيورونسو تكنولوجي إيراس® مباشرة — مع عروض توضيحية فورية وفرص توقيع عقود في يوم الحفل.">The only launch event of this scale in Egypt's education technology history. Blu9L and Neuronso Technology present IRAS® live — with real-time demonstrations, school-owner presentations, and on-the-day contract opportunities.</p>
         <div class="event-facts">
-          <div class="ef"><div class="ef-icon">📅</div><span data-en="June 30, 2026 · 9:00 AM — 5:00 PM" data-ar="30 يونيو 2026 · 9 صباحاً — 5 مساءً">June 30, 2026 · 9:00 AM — 5:00 PM</span></div>
+          <div class="ef"><div class="ef-icon">📅</div><span data-en="July 6, 2026 · 9:00 AM — 5:00 PM" data-ar="6 يوليو 2026 · 9 صباحاً — 5 مساءً">July 6, 2026 · 9:00 AM — 5:00 PM</span></div>
           <div class="ef"><div class="ef-icon">📍</div><span data-en="Cairo, Egypt · Venue TBC · A+ &amp; B+ Schools Only" data-ar="القاهرة، مصر · المكان قيد التحديد · للمدارس A+ وB+ فقط">Cairo, Egypt · Venue TBC · A+ &amp; B+ Schools Only</span></div>
           <div class="ef"><div class="ef-icon">👥</div><span data-en="100 senior education leaders and decision-makers" data-ar="100 قائد تعليمي رفيع وصانع قرار">100 senior education leaders and decision-makers</span></div>
           <div class="ef"><div class="ef-icon">🤝</div><span data-en="Live IRAS® demonstration · Deployment discussions · Partnership opportunities" data-ar="عرض إيراس® الحي · مناقشات النشر · فرص الشراكة">Live IRAS® demonstration · Deployment discussions · Partnership opportunities</span></div>
@@ -1072,7 +1072,7 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
           <div class="ef-seats" data-en="&#9679; Invitation-only event · Limited availability" data-ar="&#9679; حدث بدعوة خاصة · أماكن محدودة">&#9679; Invitation-only event · Limited availability</div>
           <form id="event-form" onsubmit="handleEventSubmit(event)">
             <input type="hidden" name="access_key" value="c7b81e7a-67fa-4602-95cc-2f85b02b0b2a">
-            <input type="hidden" name="subject" value="IRAS® Egypt - June 30 Event Invitation Request">
+            <input type="hidden" name="subject" value="IRAS® Egypt - July 6 Event Invitation Request">
             <input type="hidden" name="from_name" value="Blu9L Event Form">
             <input type="checkbox" name="botcheck" style="display:none;">
             <div class="ef-row">
@@ -1139,7 +1139,7 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
       <div class="invest-points reveal" style="max-width:680px;margin:0 auto;">
         <div class="inv-point"><span class="inv-check">✓</span><span data-en="Full hardware infrastructure — IoT wearables, gateway servers, and connectivity equipment — manufactured and deployed by Neuronso Technology (Dubai Silicon Oasis, License 1115725)." data-ar="بنية تحتية كاملة للأجهزة — أجهزة ذكية وخوادم بوابة ومعدات اتصال — تُصنَّع وتُنشر بواسطة نيورونسو تكنولوجي.">Full hardware infrastructure — IoT wearables, gateway servers, and connectivity equipment — manufactured and deployed by Neuronso Technology (Dubai Silicon Oasis, License 1115725).</span></div>
         <div class="inv-point"><span class="inv-check">✓</span><span data-en="Subscription revenue from deployed schools flows through a structured, franchise-compliant distribution model — governed by the exclusive franchise agreement with Neuronso Technology." data-ar="تتدفق إيرادات الاشتراك من المدارس المُنشَرة عبر نموذج توزيع منظّم ومتوافق مع الامتياز.">Subscription revenue from deployed schools flows through a structured, franchise-compliant distribution model — governed by the exclusive franchise agreement with Neuronso Technology.</span></div>
-        <div class="inv-point"><span class="inv-check">✓</span><span data-en="Three-year exclusive franchise term with renewal provisions. Pre-launch school engagement has substantially exceeded Year 1 minimum deployment targets — validating market demand ahead of the June 30 event." data-ar="مدة امتياز حصرية لثلاث سنوات مع أحكام تجديد. تجاوزت المشاركة ما قبل الإطلاق أهداف النشر الدنيا للسنة الأولى بشكل كبير.">Three-year exclusive franchise term with renewal provisions. Pre-launch school engagement has substantially exceeded Year 1 minimum deployment targets — validating market demand ahead of the June 30 event.</span></div>
+        <div class="inv-point"><span class="inv-check">✓</span><span data-en="Three-year exclusive franchise term with renewal provisions. Pre-launch school engagement has substantially exceeded Year 1 minimum deployment targets — validating market demand ahead of the July 6 event." data-ar="مدة امتياز حصرية لثلاث سنوات مع أحكام تجديد. تجاوزت المشاركة ما قبل الإطلاق أهداف النشر الدنيا للسنة الأولى بشكل كبير.">Three-year exclusive franchise term with renewal provisions. Pre-launch school engagement has substantially exceeded Year 1 minimum deployment targets — validating market demand ahead of the July 6 event.</span></div>
         <div class="inv-point"><span class="inv-check">✓</span><span data-en="A structurally self-funding deployment model: initial subscription revenue from deployed schools finances subsequent territorial expansion — reducing ongoing capital requirement." data-ar="نموذج نشر ذاتي التمويل هيكلياً: تموّل إيرادات الاشتراك الأولية التوسع الإقليمي اللاحق.">A structurally self-funding deployment model: initial subscription revenue from deployed schools finances subsequent territorial expansion — reducing ongoing capital requirement.</span></div>
       </div>
       <div class="invest-ctas reveal" style="justify-content:center;">
@@ -1345,8 +1345,8 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
           <div class="faq-a" data-en="The IRAS® platform supports Arabic and English across all school administrator, staff, and parent interfaces. Parent notifications are delivered in the family's preferred language. Blu9L's Egypt operations team is fully bilingual — Arabic and English — ensuring seamless onboarding and ongoing support for Egyptian schools." data-ar="تدعم منصة إيراس® العربية والإنجليزية عبر جميع واجهات مدراء المدارس والكوادر وأولياء الأمور. فريق عمليات بلو9إل في مصر ثنائي اللغة بالكامل.">IRAS® supports Arabic and English across all administrator, staff, and parent interfaces. Parent notifications are delivered in the family's preferred language. Blu9L's Egypt operations team is fully bilingual — ensuring seamless support for Egyptian schools.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q" data-en="How can our school be included in the June 30 launch event?" data-ar="كيف يمكن لمدرستنا المشاركة في حفل إطلاق 30 يونيو؟">How can our school be included in the June 30 launch event?</div>
-          <div class="faq-a" data-en="The June 30 event is an invitation-only gathering of senior school leaders from Egypt's A+ and B+ tier private schools. To request an invitation, complete the form on this page or contact our team directly via WhatsApp at +1 (202) 644-6646. Invitations are confirmed within 24 hours based on school eligibility and seat availability." data-ar="حفل 30 يونيو تجمّع بدعوة خاصة لقادة المدارس الكبار من مدارس A+ وB+ الخاصة في مصر. لطلب دعوة، أكمل النموذج في هذه الصفحة أو تواصل مع فريقنا مباشرة.">The June 30 event is an invitation-only gathering of senior school leaders from Egypt's A+ and B+ tier private schools. To request an invitation, complete the form on this page or contact our team via WhatsApp at +1 (202) 644-6646. Invitations are confirmed within 24 hours.</div>
+          <div class="faq-q" data-en="How can our school be included in the July 6 launch event?" data-ar="كيف يمكن لمدرستنا المشاركة في حفل إطلاق 6 يوليو؟">How can our school be included in the July 6 launch event?</div>
+          <div class="faq-a" data-en="The July 6 event is an invitation-only gathering of senior school leaders from Egypt's A+ and B+ tier private schools. To request an invitation, complete the form on this page or contact our team directly via WhatsApp at +1 (202) 644-6646. Invitations are confirmed within 24 hours based on school eligibility and seat availability." data-ar="حفل 6 يوليو تجمّع بدعوة خاصة لقادة المدارس الكبار من مدارس A+ وB+ الخاصة في مصر. لطلب دعوة، أكمل النموذج في هذه الصفحة أو تواصل مع فريقنا مباشرة.">The July 6 event is an invitation-only gathering of senior school leaders from Egypt's A+ and B+ tier private schools. To request an invitation, complete the form on this page or contact our team via WhatsApp at +1 (202) 644-6646. Invitations are confirmed within 24 hours.</div>
         </div>
       </div>
     </div>
@@ -1478,7 +1478,7 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
       <div class="fc-title" data-en="Company" data-ar="الشركة">Company</div>
       <ul class="fc-links">
         <li><a href="#story" data-en="About Blu9L" data-ar="عن بلو9إل">About Blu9L</a></li>
-        <li><a href="#event" data-en="June 30 Launch" data-ar="إطلاق 30 يونيو">June 30 Launch</a></li>
+        <li><a href="#event" data-en="July 6 Launch" data-ar="إطلاق 6 يوليو">July 6 Launch</a></li>
         <li><a href="#invest" data-en="Strategic Opportunity" data-ar="الفرصة الاستراتيجية">Strategic Opportunity</a></li>
         <li><a href="#leadership" data-en="Leadership Team" data-ar="فريق القيادة">Leadership Team</a></li>
         <li><a href="#contact" data-en="Contact" data-ar="تواصل">Contact</a></li>
@@ -1521,7 +1521,7 @@ function closeMobile(){
 
 // ── COUNTDOWN (with post-event fallback) ──
 function tick(){
-  const launch=new Date('2026-06-30T09:00:00');
+  const launch=new Date('2026-07-06T09:00:00');
   const now=new Date();
   const d=launch-now;
   const row=document.getElementById('cd-row');
