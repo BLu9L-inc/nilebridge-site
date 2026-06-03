@@ -948,7 +948,7 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
           <div class="ic-dot"></div>
           <span class="ic-text" data-en="Live · 22 UAE Schools · Egypt Launching June 28" data-ar="نشط · 22 مدرسة إماراتية · مصر تنطلق 28 يونيو">Live · 22 UAE Schools · Egypt Launching June 28</span>
         </div>
-        <h2 class="h2" data-en="<span class='iras-brand'>IRAS®</span><br><em>4 Years Built. Live Now.</em>" data-ar="<span class='iras-brand'>IRAS®</span><br><em>4 سنوات تطوير. نشط الآن.</em>"><span class="iras-brand">IRAS®</span><br><em>4 Years Built. Live Now.</em></h2>
+        <h2 class="h2" data-en="IRAS®<br><em>4 Years Built. Live Now.</em>" data-ar="IRAS®<br><em>4 سنوات تطوير. نشط الآن.</em>"><span class="iras-brand">IRAS®</span><br><em>4 Years Built. Live Now.</em></h2>
         <div class="h2-rule"></div>
         <p class="serif-lead" data-en="Four years of development. Live in 22 UAE schools. Deployed in Qatar. Entering Saudi Arabia. Now — exclusively — Egypt through Blu9L." data-ar="أربع سنوات من التطوير. نشط في 22 مدرسة إماراتية. مُطبَّق في قطر. يدخل المملكة العربية السعودية. والآن — بشكل حصري — مصر عبر بلو9إل.">Four years of development. Live in 22 UAE schools. Deployed in Qatar. Entering Saudi Arabia. Now — exclusively — Egypt through Blu9L.</p>
         <div class="iras-stats">
