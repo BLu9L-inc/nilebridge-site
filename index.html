@@ -8,6 +8,38 @@
 <title>Blu9L Holdings | IRAS® Egypt — School Intelligence Platform | Launching July 6, 2026</title>
 <meta name="description" content="Blu9L Holdings is Egypt's exclusive IRAS® franchise partner — the AI-powered school intelligence platform from Neuronso Technology, deployed across 22 UAE schools and Qatar. Egypt launch July 6, 2026. schools representing 12,000+ students in pre-launch engagement.">
 <link rel="canonical" href="https://blu9l.com/">
+<!-- ── SEO: HREFLANG (bilingual Arabic/English) ── -->
+<link rel="alternate" hreflang="en" href="https://blu9l.com/">
+<link rel="alternate" hreflang="ar" href="https://blu9l.com/?lang=ar">
+<link rel="alternate" hreflang="x-default" href="https://blu9l.com/">
+
+<!-- ── SEO: GEO TARGETING ── -->
+<meta name="geo.region" content="EG">
+<meta name="geo.placename" content="Cairo, Egypt">
+<meta name="geo.position" content="30.0444;31.2357">
+<meta name="ICBM" content="30.0444, 31.2357">
+
+<!-- ── SEO: THEME COLOR + MOBILE ── -->
+<meta name="theme-color" content="#0044EE">
+<meta name="msapplication-TileColor" content="#0044EE">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- ── SEO: ROBOTS ── -->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+<!-- ── SEO: ADDITIONAL META ── -->
+<meta name="author" content="Blu9L Holdings">
+<meta name="copyright" content="Blu9L International F.Z.E">
+<meta name="language" content="en, ar">
+<meta name="revisit-after" content="7 days">
+<meta name="category" content="Education Technology, AI, School Safety">
+<meta name="coverage" content="Egypt, UAE, MENA">
+<meta name="target" content="School Administrators, Investors, Education Authorities">
+
+<!-- ── SEO: FONT PRELOAD (Core Web Vitals) ── -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;700&display=swap">
 
 <!-- ── OPEN GRAPH / SOCIAL (FIX #2) ── -->
 <meta property="og:type" content="website">
@@ -814,6 +846,22 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
   .wa-sticky svg{width:22px;height:22px;}
 }
 
+/* ── NEW SECTIONS RESPONSIVE ── */
+@media(max-width:960px){
+  #problem .reveal[style*="grid-template-columns:repeat(4"],
+  #problem .reveal[style*="grid-template-columns:repeat(2"],
+  #why-iras .reveal[style*="grid-template-columns:repeat(2"],
+  #why-blu9l .reveal[style*="grid-template-columns:repeat(3"],
+  #why-blu9l .reveal[style*="grid-template-columns:repeat(4"]{
+    grid-template-columns:1fr!important;
+  }
+}
+@media(max-width:640px){
+  #why-blu9l .reveal[style*="grid-template-columns:repeat(4"]{
+    grid-template-columns:1fr 1fr!important;
+  }
+}
+
 /* ── SMALL MOBILE (≤400px) ── */
 @media(max-width:400px){
   nav{padding:0 12px;}
@@ -832,18 +880,143 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
   .contact-form{padding:16px 12px;}
 }
 </style>
+
+<!-- ── SEO: FAQPage Schema (Google Rich Results) ── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What exactly is IRAS® and how is it different from existing school management software?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IRAS® (Intelligent Recognition and Analytics System) is an AI-powered school intelligence platform built on IoT hardware — wearable devices, gateway servers, and real-time monitoring infrastructure. Unlike traditional software, IRAS® operates at the physical level: it knows when a student enters the campus, identifies anomalies, and notifies parents and administrators automatically, without manual data entry from staff."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is IRAS® proven or is this pre-launch technology?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IRAS® is operationally deployed across 22 schools in the UAE and active in Qatar. Neuronso Technology spent four years building and testing the platform before its 2025 launch. Egypt is not a pilot — it is the next franchise territory for a platform with a live operational track record."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is student data protected?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All student data is encrypted in transit and at rest. Access is role-based — parents see only their child's data, administrators see school-level data. IRAS® deployments in Egypt are structured to comply with Egyptian Personal Data Protection Law No. 151 of 2020. No student data is sold or shared with third parties."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who is Neuronso Technology and what is their relationship with Blu9L?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Neuronso Technology for Artificial Intelligence Applications &amp; Services L.L.C is the developer and owner of the IRAS® platform. Registered in Dubai Silicon Oasis (License 1115725), Neuronso is led by CEO Naim Messai. Blu9L holds the exclusive IRAS® franchise rights for the Arab Republic of Egypt under a formal franchise agreement — the only company authorised to deploy IRAS® across Egypt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a typical school deployment take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A full school deployment — from initial assessment through to live operations — typically takes four to eight weeks depending on campus size and complexity. The process includes hardware installation, network configuration, platform setup, and comprehensive staff and parent training. Schools experience no disruption to daily operations during installation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is IRAS® suitable for our school size and type?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IRAS® is designed for private schools across multiple scale categories — from schools with a few hundred students to campuses with several thousand. Neuronso Technology offers tiered service packages matched to each school's operational profile and annual fee structure. Blu9L's team will assess your specific requirements during an initial consultation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What languages does the IRAS® platform support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The IRAS® platform supports Arabic and English across all school administrator, staff, and parent interfaces. Parent notifications are delivered in the family's preferred language. Blu9L's Egypt operations team is fully bilingual — Arabic and English — ensuring seamless onboarding and ongoing support for Egyptian schools."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can our school be included in the July 6 launch event?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The July 6 event is an invitation-only gathering of senior school leaders from Egypt's A+ and B+ tier private schools. To request an invitation, complete the form on this page or contact our team directly via WhatsApp at +1 (202) 644-6646. Invitations are confirmed within 24 hours based on school eligibility and seat availability."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- ── SEO: WebSite Schema ── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Blu9L Holdings",
+  "url": "https://blu9l.com",
+  "description": "Egypt's exclusive IRAS® franchise partner — AI-powered school intelligence platform from Neuronso Technology. Launching July 6, 2026."
+}
+</script>
+
+<!-- ── SEO: BreadcrumbList Schema ── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://blu9l.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "IRAS® Egypt",
+      "item": "https://blu9l.com/#iras"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "July 6 Launch Event",
+      "item": "https://blu9l.com/#event"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Leadership",
+      "item": "https://blu9l.com/#leadership"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Contact",
+      "item": "https://blu9l.com/#contact"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
 <!-- ── MOBILE DRAWER (FIX: MOBILE NAV) ── -->
 <div class="mobile-drawer" id="mobile-drawer">
   <ul>
-    <li><a href="#story" onclick="closeMobile()" data-en="About" data-ar="عن الشركة">About</a></li>
-    <li><a href="#services" onclick="closeMobile()" data-en="Divisions" data-ar="الأقسام">Divisions</a></li>
-    <li><a href="#iras" onclick="closeMobile()" data-en="IRAS®" data-ar="إيراس®">IRAS®</a></li>
-    <li><a href="#event" onclick="closeMobile()" data-en="July 6 Launch" data-ar="إطلاق 6 يوليو">July 6 Launch</a></li>
-    <li><a href="#invest" onclick="closeMobile()" data-en="Strategic Opportunity" data-ar="الفرصة الاستراتيجية">Strategic Opportunity</a></li>
+    <li><a href="#who-we-serve" onclick="closeMobile()" data-en="Who We Serve" data-ar="من نخدم">Who We Serve</a></li>
+    <li><a href="#problem" onclick="closeMobile()" data-en="IRAS®" data-ar="إيراس®">IRAS®</a></li>
+    <li><a href="#why-blu9l" onclick="closeMobile()" data-en="Why Blu9L" data-ar="لماذا بلو9إل">Why Blu9L</a></li>
     <li><a href="#leadership" onclick="closeMobile()" data-en="Leadership" data-ar="القيادة">Leadership</a></li>
+    <li><a href="#event" onclick="closeMobile()" data-en="July 6 Event" data-ar="حدث 6 يوليو">July 6 Event</a></li>
+    <li><a href="#invest" onclick="closeMobile()" data-en="Investors" data-ar="المستثمرون">Investors</a></li>
     <li><a href="#contact" onclick="closeMobile()" data-en="Contact" data-ar="تواصل">Contact</a></li>
   </ul>
   <div class="md-lang">
@@ -854,7 +1027,7 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
   </div>
   <div class="md-cta">
     <a href="https://wa.me/12026446646?text=I%27m%20interested%20in%20IRAS®%C2%AE%20Egypt" class="btn-prime green" style="border-radius:8px;font-size:14px;">&#128241; WhatsApp Us</a>
-    <a href="#event" onclick="closeMobile()" class="btn-prime" style="background:var(--g0);border-radius:8px;font-size:14px;" data-en="Request Event Invitation" data-ar="طلب دعوة الحفل">Request Event Invitation</a>
+    <a href="#event" onclick="closeMobile()" class="btn-prime" style="background:var(--g0);border-radius:8px;font-size:14px;" data-en="Schedule a Demo" data-ar="جدولة عرض تجريبي">Schedule a Demo</a>
   </div>
 </div>
 
@@ -864,9 +1037,9 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
   <div class="nav-right">
     <ul class="nav-links">
       <li><a href="#who-we-serve" data-en="Who We Serve" data-ar="من نخدم">Who We Serve</a></li>
-      <li><a href="#iras" data-en="IRAS®" data-ar="إيراس®">IRAS®</a></li>
-      <li><a href="#how-it-works" data-en="How It Works" data-ar="كيف يعمل">How It Works</a></li>
-      <li><a href="#invest" data-en="Investors" data-ar="المستثمرون">Investors</a></li>
+      <li><a href="#problem" data-en="IRAS®" data-ar="إيراس®">IRAS®</a></li>
+      <li><a href="#why-blu9l" data-en="Why Blu9L" data-ar="لماذا بلو9إل">Why Blu9L</a></li>
+      <li><a href="#event" data-en="July 6" data-ar="6 يوليو">July 6</a></li>
       <li><a href="#contact" data-en="Contact" data-ar="تواصل">Contact</a></li>
     </ul>
     <div class="lang-toggle">
@@ -885,26 +1058,25 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
 </nav>
 
 <!-- ── HERO ── -->
-<section class="hero">
+<section class="hero" aria-label="Hero — IRAS® Egypt School Intelligence Platform">
   <div class="hero-geo"></div>
   <div class="orb orb-1"></div><div class="orb orb-2"></div>
   <div class="hero-content">
     <div class="hero-left">
       <div class="hero-kicker">
         <span class="kicker-line"></span>
-        <span class="kicker-text" data-en="AI-Powered School Intelligence · Egypt Exclusive · Neuronso Technology · Live in UAE &amp; Qatar" data-ar="امتياز حصري في مصر · نيورونسو تكنولوجي · مُثبَت في الإمارات منذ 2025">AI-Powered School Intelligence · Egypt Exclusive · Neuronso Technology · Live in UAE &amp; Qatar</span>
+        <span class="kicker-text" data-en="Egypt's Exclusive IRAS® Partner · Live in 22 UAE Schools · Launching July 6" data-ar="الشريك الحصري لإيراس® في مصر · نشط في 22 مدرسة إماراتية · الإطلاق 6 يوليو">Egypt's Exclusive IRAS® Partner · Live in 22 UAE Schools · Launching July 6</span>
       </div>
-      <h1 class="hero-h1" data-en="Egypt's <em>Exclusive</em><br>School Intelligence Platform." data-ar="منصة <em>ذكاء المدارس</em><br>الحصرية في مصر.">Egypt's <em>Exclusive</em><br>School Intelligence Platform.</h1>
-      <p class="hero-sub" data-en="IRAS® is live in <strong>22 UAE schools</strong> and deployed across Qatar. Now launching exclusively across Egypt through Blu9L — beginning July 6, 2026. <strong>12,000 students already in pre-launch engagement</strong> before a single launch event." data-ar="إيراس® نشط في <strong>22 مدرسة إماراتية</strong> ومُطبَّق في قطر. ينطلق الآن بشكل حصري في جميع أنحاء مصر عبر بلو9إل — بدءاً من 6 يوليو 2026. <strong>12,000 طالب موقَّع عليهم</strong> قبل أي حفل إطلاق.">IRAS® is live in <strong>22 UAE schools</strong> and deployed across Qatar. Now launching exclusively across Egypt through Blu9L — beginning July 6, 2026. <strong>12,000 students already in pre-launch engagement</strong> before a single launch event.</p>
+      <h1 class="hero-h1" data-en="AI-Powered School Intelligence for <em>Safer, Smarter,</em> Better Connected Schools." data-ar="ذكاء مدرسي بالذكاء الاصطناعي لمدارس <em>أكثر أماناً وذكاءً</em> وترابطاً.">AI-Powered School Intelligence for <em>Safer, Smarter,</em> Better Connected Schools.</h1>
+      <p class="hero-sub" data-en="The AI platform already running in <strong>22 UAE schools</strong> — now launching exclusively across Egypt. Better attendance. Safer campuses. Connected parents." data-ar="المنصة الذكية التي تعمل بالفعل في <strong>22 مدرسة إماراتية</strong> — تنطلق الآن حصرياً في جميع أنحاء مصر. حضور أفضل. حرم أكثر أماناً. أولياء أمور متواصلون.">The AI platform already running in <strong>22 UAE schools</strong> — now launching exclusively across Egypt. Better attendance. Safer campuses. Connected parents.</p>
       <!-- Mobile stat chips -->
       <div class="hero-chips">
-        <span class="hchip">12,000+ Schools Engaged</span>
         <span class="hchip">22 UAE Schools Live</span>
         <span class="hchip">July 6 Launch</span>
         <span class="hchip">Egypt Exclusive</span>
       </div>
       <div class="hero-ctas">
-        <a href="#event" class="btn-prime" data-en="Request Event Invitation" data-ar="طلب دعوة الحفل">Request Event Invitation</a>
+        <a href="#event" class="btn-prime" data-en="Schedule a Demo" data-ar="جدولة عرض تجريبي">Schedule a Demo</a>
         <a href="https://wa.me/12026446646?text=I%27m%20interested%20in%20IRAS®%C2%AE%20Egypt" class="btn-prime green" target="_blank" rel="noopener" data-en="Chat on WhatsApp" data-ar="تحدّث معنا على واتساب">Chat on WhatsApp</a>
         <a href="#story" class="btn-ghost" data-en="Our Story" data-ar="قصتنا">Our Story</a>
       </div>
@@ -1013,175 +1185,168 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
   <div class="container">
     <div class="reveal" style="text-align:center;">
       <div class="kicker" style="justify-content:center;" data-en="Who We Work With" data-ar="من نعمل معهم">Who We Work With</div>
-      <h2 class="h2" data-en="Built for Three<br><em>Distinct Audiences.</em>" data-ar="مبني لثلاثة<br><em>جماهير متميزة.</em>">Built for Three<br><em>Distinct Audiences.</em></h2>
+      <h2 class="h2" data-en="Built for Schools,<br><em>Groups &amp; Institutions.</em>" data-ar="مبني للمدارس<br><em>والمجموعات والمؤسسات.</em>">Built for Schools,<br><em>Groups &amp; Institutions.</em></h2>
       <div class="h2-rule" style="background:linear-gradient(90deg,transparent,var(--b0),transparent);"></div>
-      <p style="font-size:15px;color:var(--w70);max-width:600px;margin:0 auto;" data-en="Whether you lead a school, manage institutional capital, or represent a government body — Blu9L has a specific value proposition for your context." data-ar="سواء كنت تقود مدرسة أو تدير رأس مال مؤسسي أو تمثّل جهة حكومية — لدى بلو9إل عرض قيمة محدد لسياقك.">Whether you lead a school, manage institutional capital, or represent a government body — Blu9L has a specific value proposition for your context.</p>
     </div>
-    <div class="serve-grid reveal">
+    <div class="serve-grid reveal" style="grid-template-columns:repeat(3,1fr);">
 
-      <!-- SCHOOLS -->
       <div class="serve-card featured">
         <div class="sc-icon blue">
           <svg viewBox="0 0 24 24" fill="none" stroke="#5C9BFF" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         </div>
         <div class="sc-role" data-en="For School Leaders" data-ar="لقادة المدارس">For School Leaders</div>
-        <div class="sc-title" data-en="School Administrators &amp; Principals" data-ar="مديرو المدارس والمديرون التنفيذيون">School Administrators &amp; Principals</div>
-        <div class="sc-desc" data-en="IRAS® automates attendance, monitors campus safety in real time, and gives every parent direct visibility into their child's school day — without adding administrative burden to your team." data-ar="يُؤتمت إيراس® الحضور ويراقب أمن الحرم في الوقت الفعلي ويمنح كل ولي أمر رؤية مباشرة ليوم دراسة طفله — دون إضافة عبء إداري على فريقك.">IRAS® automates attendance, monitors campus safety in real time, and gives every parent direct visibility into their child's school day — without adding administrative burden to your team.</div>
-        <ul class="sc-list">
-          <li data-en="Automated AI attendance — no manual registers" data-ar="حضور ذكي آلي — بدون سجلات يدوية">Automated AI attendance — no manual registers</li>
-          <li data-en="Real-time campus safety alerts and geofencing" data-ar="تنبيهات أمان فورية وتحديد الموقع الجغرافي">Real-time campus safety alerts and geofencing</li>
-          <li data-en="Instant parent notifications — arrivals, departures, incidents" data-ar="إشعارات فورية لأولياء الأمور — الوصول والمغادرة والحوادث">Instant parent notifications — arrivals, departures, incidents</li>
-          <li data-en="Behaviour analytics and attendance trend reporting" data-ar="تحليلات سلوكية وتقارير اتجاهات الحضور">Behaviour analytics and attendance trend reporting</li>
-          <li data-en="Full Neuronso support and staff training included" data-ar="دعم نيورونسو الكامل وتدريب الكوادر مشمول">Full Neuronso support and staff training included</li>
-        </ul>
-        <a href="#event" class="sc-cta" data-en="Request a Live Demonstration →" data-ar="اطلب عرضاً تجريبياً حياً →">Request a Live Demonstration →</a>
+        <div class="sc-title" data-en="Schools" data-ar="المدارس">Schools</div>
+        <div class="sc-desc" data-en="Improve attendance tracking, parent communication, and daily school operations through one unified AI platform." data-ar="تحسين تتبع الحضور وتواصل أولياء الأمور والعمليات اليومية للمدرسة من خلال منصة ذكاء اصطناعي موحدة.">Improve attendance tracking, parent communication, and daily school operations through one unified AI platform.</div>
+        <a href="#event" class="sc-cta" data-en="Schedule a Demo →" data-ar="جدولة عرض →">Schedule a Demo →</a>
       </div>
 
-      <!-- INVESTORS -->
       <div class="serve-card">
-        <div class="sc-icon gold">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#DDA020" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <div class="sc-icon blue" style="background:rgba(0,68,238,.1);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#5C9BFF" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
         </div>
-        <div class="sc-role" data-en="For Investment Partners" data-ar="لشركاء الاستثمار">For Investment Partners</div>
-        <div class="sc-title" data-en="Institutional Investors &amp; Family Offices" data-ar="المستثمرون المؤسسيون ومكاتب العائلات">Institutional Investors &amp; Family Offices</div>
-        <div class="sc-desc" data-en="Blu9L holds the exclusive IRAS® franchise for Egypt — a territory of 3 million private school students — with a proven technology platform already operating across UAE and Qatar. Deployment is underway. The investment window is specific and time-bound." data-ar="تمتلك بلو9إل الامتياز الحصري لإيراس® في مصر — بلد يضم 3 ملايين طالب في المدارس الخاصة — مع منصة تقنية مُثبَتة تعمل بالفعل في الإمارات وقطر.">Blu9L holds the exclusive IRAS® franchise for Egypt — a territory of 3 million private school students — with a proven technology platform already operating across UAE and Qatar. Deployment is underway. The investment window is specific and time-bound.</div>
-        <ul class="sc-list">
-          <li data-en="Exclusive national franchise — contractually protected territory" data-ar="امتياز وطني حصري — نطاق محمي تعاقدياً">Exclusive national franchise — contractually protected territory</li>
-          <li data-en="Technology deployed and operational — not pre-product" data-ar="التقنية مُنشَرة وتعمل — ليست مرحلة ما قبل المنتج">Technology deployed and operational — not pre-product</li>
-          <li data-en="Pre-launch school engagement substantially exceeds Year 1 targets" data-ar="المشاركة قبل الإطلاق تتجاوز أهداف السنة الأولى بشكل كبير">Pre-launch school engagement substantially exceeds Year 1 targets</li>
-          <li data-en="Tri-jurisdictional legal structure — UAE, USA, Egypt" data-ar="هيكل قانوني ثلاثي الولاية — الإمارات وأمريكا ومصر">Tri-jurisdictional legal structure — UAE, USA, Egypt</li>
-        </ul>
-        <a href="mailto:yaseen.hassan@blu9l.com?subject=Investment%20Enquiry%20-%20Blu9L%20IRAS%20Egypt" class="sc-cta" data-en="Request Investor Briefing →" data-ar="طلب إحاطة للمستثمرين →">Request Investor Briefing →</a>
+        <div class="sc-role" data-en="For Multi-Campus Operators" data-ar="لمشغّلي المجمعات المتعددة">For Multi-Campus Operators</div>
+        <div class="sc-title" data-en="School Groups" data-ar="مجموعات المدارس">School Groups</div>
+        <div class="sc-desc" data-en="Manage multiple campuses through one intelligent platform — unified reporting, cross-campus visibility, and centralised operations." data-ar="إدارة حرم متعددة من خلال منصة ذكية واحدة — تقارير موحدة ورؤية عبر الحرم وعمليات مركزية.">Manage multiple campuses through one intelligent platform — unified reporting, cross-campus visibility, and centralised operations.</div>
+        <a href="mailto:info@blu9l.com?subject=School%20Group%20Enquiry" class="sc-cta" data-en="Contact Our Team →" data-ar="تواصل مع فريقنا →">Contact Our Team →</a>
       </div>
 
-      <!-- GOVERNMENT -->
       <div class="serve-card">
         <div class="sc-icon green">
           <svg viewBox="0 0 24 24" fill="none" stroke="#6FD5A8" stroke-width="1.5"><path d="M3 22h18M6 18V9m4 9V9m4 9V9m4 9V9M2 9l10-7 10 7"/></svg>
         </div>
-        <div class="sc-role" data-en="For Government &amp; Regulators" data-ar="للحكومة والجهات التنظيمية">For Government &amp; Regulators</div>
-        <div class="sc-title" data-en="Ministries &amp; Education Authorities" data-ar="الوزارات وهيئات التعليم">Ministries &amp; Education Authorities</div>
-        <div class="sc-desc" data-en="IRAS® provides education authorities with systemic visibility across school networks — attendance compliance, safety incident monitoring, and institutional analytics that support national education administration objectives." data-ar="يوفر إيراس® لسلطات التعليم رؤية منهجية عبر شبكات المدارس — امتثال الحضور ومراقبة حوادث السلامة والتحليلات المؤسسية.">IRAS® provides education authorities with systemic visibility across school networks — attendance compliance, safety incident monitoring, and institutional analytics that support national education administration objectives.</div>
-        <ul class="sc-list">
-          <li data-en="Compliance-grade attendance reporting for regulatory bodies" data-ar="تقارير الحضور على مستوى الامتثال للجهات التنظيمية">Compliance-grade attendance reporting for regulatory bodies</li>
-          <li data-en="Student data protection aligned with Egyptian Law 151/2020" data-ar="حماية بيانات الطلاب متوافقة مع القانون المصري 151/2020">Student data protection aligned with Egyptian Law 151/2020</li>
-          <li data-en="Scalable national deployment infrastructure" data-ar="بنية تحتية قابلة للتوسع للنشر الوطني">Scalable national deployment infrastructure</li>
-          <li data-en="Neuronso Technology: UAE Government-registered (DSO License 1115725)" data-ar="نيورونسو تكنولوجي: مسجّلة لدى الحكومة الإماراتية">Neuronso Technology: UAE Government-registered (DSO License 1115725)</li>
-        </ul>
-        <a href="mailto:info@blu9l.com?subject=Government%20Enquiry%20-%20IRAS%20Egypt" class="sc-cta" data-en="Contact Our Government Affairs Team →" data-ar="تواصل مع فريق الشؤون الحكومية →">Contact Our Government Affairs Team →</a>
+        <div class="sc-role" data-en="For Regulators &amp; Ministries" data-ar="للجهات التنظيمية والوزارات">For Regulators &amp; Ministries</div>
+        <div class="sc-title" data-en="Educational Institutions" data-ar="المؤسسات التعليمية">Educational Institutions</div>
+        <div class="sc-desc" data-en="Gain visibility, compliance reporting, and operational intelligence across school networks at scale — aligned with Egyptian Law 151/2020." data-ar="احصل على رؤية وتقارير امتثال وذكاء تشغيلي عبر شبكات المدارس على نطاق واسع — متوافق مع القانون المصري 151/2020.">Gain visibility, compliance reporting, and operational intelligence across school networks at scale — aligned with Egyptian Law 151/2020.</div>
+        <a href="mailto:info@blu9l.com?subject=Government%20Enquiry" class="sc-cta" data-en="Request a Briefing →" data-ar="طلب إحاطة →">Request a Briefing →</a>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ── STORY ── -->
-<section class="section" id="story">
+<!-- ── THE PLATFORM ── -->
+<section class="section" id="problem" style="background:var(--deep);border-top:1px solid var(--line);">
   <div class="container">
-    <div class="story-grid">
-      <div class="story-left reveal">
-        <div class="kicker" data-en="A Structural Position Built Over Four Years" data-ar="موقع هيكلي بُني على مدى أربع سنوات">A Structural Position Built Over Four Years</div>
-        <h2 class="h2" data-en="Institutional Infrastructure.<br>Exclusive Territory.<br><em>Proven Technology.</em>" data-ar="بنية تحتية مؤسسية.<br>نطاق حصري.<br><em>تقنية مُثبَتة.</em>">Institutional Infrastructure.<br>Exclusive Territory.<br><em>Proven Technology.</em></h2>
-        <div class="h2-rule"></div>
-        <blockquote class="story-quote" data-en='"Most people want to operate in MENA. Few can. We hold the legal, operational, and relational infrastructure in three jurisdictions simultaneously — UAE, USA, and Egypt. That combination took four years to build. No new entrant can replicate it."' data-ar='"نمتلك بنية تحتية قانونية في ثلاث دول في آنٍ واحد. هذا ليس شيئاً يمكن لأي شخص بناؤه بين عشية وضحاها — استغرق أربع سنوات. إنها الأساس الذي لا يستطيع أي منافس تكراره."'>"Most people want to operate in MENA. Few can. We hold the legal, operational, and relational infrastructure in three jurisdictions simultaneously — UAE, USA, and Egypt. That combination took four years to build. No new entrant can replicate it."</blockquote>
-        <p class="story-body" data-en="Blu9L Holdings is an American-founded, UAE-anchored intelligence and investment group. We hold Egypt's exclusive IRAS® franchise — the AI school safety platform from Neuronso Technology, live in 22 UAE schools since 2025. Our tri-jurisdictional structure (UAE FZE + US LLC + Egypt market access) is the structural advantage that took four years to build." data-ar="بلو9إل هولدينجز مجموعة ذكاء واستثمار أمريكية التأسيس وإماراتية الارتكاز. نمتلك الامتياز الحصري لإيراس® في مصر — منصة أمن المدارس بالذكاء الاصطناعي من نيورونسو تكنولوجي، النشطة في 22 مدرسة إماراتية منذ 2025.">Blu9L Holdings is an American-founded, UAE-anchored intelligence and investment group. We hold Egypt's exclusive IRAS® franchise — the AI school safety platform from Neuronso Technology, live in 22 UAE schools since 2025. Our tri-jurisdictional structure (UAE FZE + US LLC + Egypt market access) is the structural advantage that took four years to build.</p>
+    <div class="reveal" style="text-align:center;margin-bottom:44px;">
+      <div class="kicker" style="justify-content:center;" data-en="The Challenge &amp; The Solution" data-ar="التحدي والحل">The Challenge &amp; The Solution</div>
+      <h2 class="h2" data-en="Four Problems.<br><em>One Platform.</em>" data-ar="أربعة تحديات.<br><em>منصة واحدة.</em>">Four Problems.<br><em>One Platform.</em></h2>
+      <div class="h2-rule" style="background:linear-gradient(90deg,transparent,var(--b0),transparent);margin:0 auto;"></div>
+    </div>
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(4,1fr);gap:3px;margin-bottom:4px;">
+      <div style="background:rgba(255,80,80,.05);border:1px solid rgba(255,80,80,.15);border-radius:12px;padding:24px 20px;text-align:center;">
+        <div style="font-size:28px;margin-bottom:12px;">📋</div>
+        <div style="font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--w);margin-bottom:8px;" data-en="Manual Attendance" data-ar="حضور يدوي">Manual Attendance</div>
+        <div style="font-size:12px;color:rgba(255,107,107,.8);" data-en="Late. Inaccurate. Unscalable." data-ar="متأخر. غير دقيق. غير قابل للتوسع.">Late. Inaccurate. Unscalable.</div>
       </div>
-      <div class="story-right reveal r2">
-        <div class="markets">
-          <div class="mkt">
-            <div class="mkt-flag">🇦🇪</div>
-            <div>
-              <div class="mkt-name" data-en="UAE — IP &amp; Governance" data-ar="الإمارات — الملكية الفكرية والحوكمة">UAE — IP &amp; Governance</div>
-              <div class="mkt-desc" data-en="Ajman Free Zone (License 50366). IRAS® franchise rights, IP ownership, and the legal apex of every cross-border transaction. Neuronso Technology is also UAE-registered (DSO License 1115725)." data-ar="المنطقة الحرة بعجمان (الرخصة 50366). حقوق امتياز إيراس® وملكية الملكية الفكرية.">Ajman Free Zone (License 50366). IRAS® franchise rights, IP ownership, and the legal apex of every cross-border transaction.</div>
-            </div>
-          </div>
-          <div class="mkt">
-            <div class="mkt-flag">🇺🇸</div>
-            <div>
-              <div class="mkt-name" data-en="USA — Capital &amp; Growth" data-ar="أمريكا — رأس المال والنمو">USA — Capital &amp; Growth</div>
-              <div class="mkt-desc" data-en="Blu9L Holdings + Blu9L International LLC (Virginia SCC). AutoNet LLC (Entity 11367235). US investor relationships, capital access, and automotive intelligence." data-ar="بلو9إل هولدينجز وبلو9إل إنترناشيونال (فيرجينيا). علاقات مستثمرين أمريكيين وإمكانية الوصول إلى رأس المال.">Blu9L Holdings + Blu9L International LLC (Virginia SCC). US investor relationships, capital access, and automotive intelligence operations.</div>
-            </div>
-          </div>
-          <div class="mkt">
-            <div class="mkt-flag">🇪🇬</div>
-            <div>
-              <div class="mkt-name" data-en="Egypt — Execution &amp; Launch" data-ar="مصر — التنفيذ والإطلاق">Egypt — Execution &amp; Launch</div>
-              <div class="mkt-desc" data-en="Exclusive IRAS® deployment. 3 schools in active pre-launch preparation representing more than 12,000 students. July 6 event with 100 of Egypt's top school decision-makers. Pipeline: Iraq, Africa, USA." data-ar="نشر حصري لإيراس®. 3 عقود موقّعة، أكثر من 12,000 طالب قبل الإطلاق. حفل 6 يوليو مع 100 من أبرز صانعي قرار المدارس في مصر.">Exclusive IRAS® deployment. 3 schools in active pre-launch preparation representing more than 12,000 students. July 6 event with 100 of Egypt's top school decision-makers. Pipeline: Iraq, Africa, USA.</div>
-            </div>
-          </div>
+      <div style="background:rgba(255,80,80,.05);border:1px solid rgba(255,80,80,.15);border-radius:12px;padding:24px 20px;text-align:center;">
+        <div style="font-size:28px;margin-bottom:12px;">📵</div>
+        <div style="font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--w);margin-bottom:8px;" data-en="No Parent Visibility" data-ar="لا رؤية لأولياء الأمور">No Parent Visibility</div>
+        <div style="font-size:12px;color:rgba(255,107,107,.8);" data-en="Parents left in the dark." data-ar="أولياء الأمور في الظلام.">Parents left in the dark.</div>
+      </div>
+      <div style="background:rgba(255,80,80,.05);border:1px solid rgba(255,80,80,.15);border-radius:12px;padding:24px 20px;text-align:center;">
+        <div style="font-size:28px;margin-bottom:12px;">🔒</div>
+        <div style="font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--w);margin-bottom:8px;" data-en="Campus Safety Gaps" data-ar="فجوات أمن الحرم">Campus Safety Gaps</div>
+        <div style="font-size:12px;color:rgba(255,107,107,.8);" data-en="No real-time monitoring." data-ar="لا مراقبة في الوقت الفعلي.">No real-time monitoring.</div>
+      </div>
+      <div style="background:rgba(255,80,80,.05);border:1px solid rgba(255,80,80,.15);border-radius:12px;padding:24px 20px;text-align:center;">
+        <div style="font-size:28px;margin-bottom:12px;">🗂️</div>
+        <div style="font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--w);margin-bottom:8px;" data-en="Fragmented Systems" data-ar="أنظمة متشتتة">Fragmented Systems</div>
+        <div style="font-size:12px;color:rgba(255,107,107,.8);" data-en="No unified operational view." data-ar="لا رؤية تشغيلية موحدة.">No unified operational view.</div>
+      </div>
+    </div>
+
+    <!-- Arrow connector -->
+    <div class="reveal" style="text-align:center;padding:16px 0;font-size:28px;color:var(--b0);">↓</div>
+
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(4,1fr);gap:3px;">
+      <div style="background:linear-gradient(135deg,rgba(0,68,238,.1),rgba(0,68,238,.04));border:1px solid var(--bline);border-radius:12px;padding:24px 20px;text-align:center;">
+        <div style="width:40px;height:40px;border-radius:8px;background:rgba(0,68,238,.15);display:grid;place-items:center;margin:0 auto 12px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5C9BFF" stroke-width="1.5"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
         </div>
+        <div style="font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--w);margin-bottom:6px;" data-en="AI Attendance" data-ar="حضور ذكي">AI Attendance</div>
+        <div style="font-size:11px;color:var(--b2);" data-en="Automated. Instant. Accurate." data-ar="آلي. فوري. دقيق.">Automated. Instant. Accurate.</div>
       </div>
+      <div style="background:linear-gradient(135deg,rgba(0,68,238,.1),rgba(0,68,238,.04));border:1px solid var(--bline);border-radius:12px;padding:24px 20px;text-align:center;">
+        <div style="width:40px;height:40px;border-radius:8px;background:rgba(0,68,238,.15);display:grid;place-items:center;margin:0 auto 12px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5C9BFF" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div style="font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--w);margin-bottom:6px;" data-en="Parent Portal" data-ar="بوابة الأهل">Parent Portal</div>
+        <div style="font-size:11px;color:var(--b2);" data-en="Real-time. Every update." data-ar="فوري. كل تحديث.">Real-time. Every update.</div>
+      </div>
+      <div style="background:linear-gradient(135deg,rgba(0,68,238,.1),rgba(0,68,238,.04));border:1px solid var(--bline);border-radius:12px;padding:24px 20px;text-align:center;">
+        <div style="width:40px;height:40px;border-radius:8px;background:rgba(0,68,238,.15);display:grid;place-items:center;margin:0 auto 12px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5C9BFF" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div style="font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--w);margin-bottom:6px;" data-en="Campus Safety" data-ar="أمن الحرم">Campus Safety</div>
+        <div style="font-size:11px;color:var(--b2);" data-en="Monitored. Alerted. Secure." data-ar="مُراقَب. مُنبَّه. آمن.">Monitored. Alerted. Secure.</div>
+      </div>
+      <div style="background:linear-gradient(135deg,rgba(0,68,238,.1),rgba(0,68,238,.04));border:1px solid var(--bline);border-radius:12px;padding:24px 20px;text-align:center;">
+        <div style="width:40px;height:40px;border-radius:8px;background:rgba(0,68,238,.15);display:grid;place-items:center;margin:0 auto 12px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5C9BFF" stroke-width="1.5"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        </div>
+        <div style="font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--w);margin-bottom:6px;" data-en="Unified Dashboard" data-ar="لوحة تحكم موحدة">Unified Dashboard</div>
+        <div style="font-size:11px;color:var(--b2);" data-en="One view. Full control." data-ar="رؤية واحدة. تحكم كامل.">One view. Full control.</div>
+      </div>
+    </div>
+    <div class="reveal" style="text-align:center;margin-top:32px;">
+      <a href="#event" class="btn-prime" data-en="See It in Action" data-ar="شاهده في العمل">See It in Action</a>
     </div>
   </div>
 </section>
 
-<!-- ── DIVISIONS ── -->
-<section class="services-section section" id="services">
+<!-- ── WHY BLU9L ── -->
+<section class="section" id="why-blu9l" style="background:var(--deep);border-top:1px solid var(--line);">
   <div class="container">
-    <div class="reveal">
-      <div class="kicker" data-en="Our Divisions" data-ar="أقسامنا">Our Divisions</div>
-      <h2 class="h2" data-en="Education Technology<br><em>Is Our Primary Mission.</em>" data-ar="أقسام متعددة.<br><em>مجموعة استراتيجية واحدة.</em>">Education Technology<br><em>Is Our Primary Mission.</em></h2>
-      <div class="h2-rule"></div>
-      <p class="serif-lead" data-en="Each division is independently operational, cross-market by design, and positioned for a decade of compound growth." data-ar="كل قسم يعمل باستقلالية، مصمّم ليعبر الأسواق، ومُهيّأ لعقد من النمو المتراكم.">Each division is independently operational, cross-market by design, and positioned for a decade of compound growth.</p>
+    <div class="reveal" style="text-align:center;margin-bottom:48px;">
+      <div class="kicker" style="justify-content:center;" data-en="Why Blu9L" data-ar="لماذا بلو9إل">Why Blu9L</div>
+      <h2 class="h2" data-en="International Experience.<br><em>Local Execution.</em>" data-ar="خبرة دولية.<br><em>تنفيذ محلي.</em>">International Experience.<br><em>Local Execution.</em></h2>
+      <div class="h2-rule" style="background:linear-gradient(90deg,transparent,var(--b0),transparent);margin:0 auto;"></div>
+      <p style="font-size:15px;color:var(--w70);max-width:540px;margin:0 auto;" data-en="Three markets. One team. One exclusive franchise." data-ar="ثلاثة أسواق. فريق واحد. امتياز حصري واحد.">Three markets. One team. One exclusive franchise.</p>
     </div>
-    <div class="services-grid">
-      <div class="svc featured reveal">
-        <div class="svc-head">
-          <div>
-            <div class="svc-eyebrow" data-en="Division 01 · Education Intelligence · Egypt Exclusive" data-ar="القسم الأول · ذكاء التعليم · حصري في مصر">Division 01 · Education Intelligence · Egypt Exclusive</div>
-            <div class="svc-name">IRAS® Egypt</div>
-            <div class="svc-tagline" data-en="AI Attendance, Campus Safety &amp; Parent Intelligence — Neuronso Technology" data-ar="الحضور الذكي وأمن الحرم ومعلومات أولياء الأمور — نيورونسو تكنولوجي">AI Attendance, Campus Safety &amp; Parent Intelligence — Neuronso Technology</div>
-          </div>
-          <span class="badge badge-launch" data-en="Launching July 6" data-ar="الإطلاق 6 يوليو">Launching July 6</span>
-        </div>
-        <div class="svc-body">
-          <p class="svc-desc" data-en="IRAS® took 4 years to build. It is live in 22 UAE schools and deployed in Qatar. Neuronso Technology CEO Naim Messai is in active Saudi negotiations. Blu9L holds the exclusive Egypt franchise — the only party authorised to deploy IRAS® across the Arab Republic of Egypt." data-ar="استغرق بناء إيراس® 4 سنوات. إنه نشط في 22 مدرسة إماراتية ومُطبَّق في قطر. بلو9إل يمتلك الامتياز الحصري في مصر.">IRAS® took 4 years to build. It is live in 22 UAE schools and deployed in Qatar. Neuronso Technology CEO Naim Messai is in active Saudi negotiations. Blu9L holds the exclusive Egypt franchise — the only party authorised to deploy IRAS® across the Arab Republic of Egypt.</p>
-          <div class="svc-points">
-            <div class="sp"><span class="sp-dot">→</span><span data-en="Schools representing more than 12,000 students in active pre-launch deployment discussions, ahead of the July 6 launch event" data-ar="أكثر من 12,000 طالب موقَّع عليهم في 3 مدارس مصرية قبل حفل الإطلاق">Schools representing more than 12,000 students in active pre-launch deployment discussions, ahead of the July 6 launch event</span></div>
-            <div class="sp"><span class="sp-dot">→</span><span data-en="Real-time AI attendance · IoT wearables · campus safety · behavioural analytics" data-ar="حضور ذكي فوري · أجهزة إنترنت الأشياء · أمن الحرم · التحليلات السلوكية">Real-time AI attendance · IoT wearables · campus safety · behavioural analytics</span></div>
-            <div class="sp"><span class="sp-dot">→</span><span data-en="Target: 100,000 students by 2029 · Self-funding from Year 1 subscription revenue" data-ar="الهدف: 100,000 طالب بحلول 2029 · ذاتي التمويل من عائدات الاشتراك في السنة الأولى">Target: 100,000 students by 2029 · Self-funding from Year 1 subscription revenue</span></div>
-            <div class="sp"><span class="sp-dot">→</span><span data-en="Iraq, Africa, and USA expansion pipeline via existing Blu9L connections" data-ar="خطوط توسع في العراق وأفريقيا والولايات المتحدة عبر اتصالات بلو9إل القائمة">Iraq, Africa, and USA expansion pipeline via existing Blu9L connections</span></div>
-          </div>
-        </div>
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:40px;">
+      <div style="background:var(--pool);border:1px solid var(--line);border-radius:14px;padding:28px;text-align:center;">
+        <div style="font-size:40px;margin-bottom:16px;">🇺🇸</div>
+        <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--w);margin-bottom:8px;" data-en="United States" data-ar="الولايات المتحدة">United States</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--b2);margin-bottom:10px;" data-en="Strategic Base" data-ar="القاعدة الاستراتيجية">Strategic Base</div>
+        <div style="font-size:12.5px;color:var(--w70);line-height:1.7;" data-en="Strategic partnerships, investor relations, and international business development from Washington DC." data-ar="شراكات استراتيجية وعلاقات مستثمرين وتطوير أعمال دولي من واشنطن العاصمة.">Strategic partnerships, investor relations, and international business development from Washington DC.</div>
       </div>
-      <div class="svc reveal r1">
-        <div class="svc-head">
-          <div>
-            <div class="svc-eyebrow" data-en="Division 02 · Human Capital" data-ar="القسم الثاني · رأس المال البشري">Division 02 · Human Capital</div>
-            <div class="svc-name" data-en="Multilingual Talent" data-ar="المواهب متعددة اللغات">Multilingual Talent</div>
-            <div class="svc-tagline" data-en="Egypt's quadrilingual workforce · Global deployment" data-ar="القوى العاملة الرباعية اللغات · نشر عالمي">Egypt's quadrilingual workforce · Global deployment</div>
-          </div>
-          <span class="badge badge-dev" data-en="In Development" data-ar="قيد التطوير">In Development</span>
-        </div>
-        <div class="svc-body">
-          <p class="svc-desc" data-en="Egypt produces the only concentration of Arabic-English-French-German quadrilingual professionals in the world. Blu9L connects them to global enterprise demand." data-ar="تُنتج مصر التركيز الوحيد في العالم من المحترفين رباعيي اللغات. يوصلهم بلو9إل بالطلب العالمي.">Egypt produces the only concentration of Arabic-English-French-German quadrilingual professionals in the world. Blu9L connects them to global enterprise demand.</p>
-          <div class="svc-points">
-            <div class="sp"><span class="sp-dot">→</span><span data-en="GUC, AUC, and FUE graduate pipeline · USD-indexed salaries" data-ar="خريجو الجامعات الألمانية والأمريكية والفرنسية · رواتب بالدولار">GUC, AUC, and FUE graduate pipeline · USD-indexed salaries</span></div>
-          </div>
-        </div>
+      <div style="background:var(--pool);border:1px solid var(--bline);border-radius:14px;padding:28px;text-align:center;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--b0),var(--b2));"></div>
+        <div style="font-size:40px;margin-bottom:16px;">🇪🇬</div>
+        <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--w);margin-bottom:8px;" data-en="Egypt" data-ar="مصر">Egypt</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--b2);margin-bottom:10px;" data-en="Exclusive Deployment" data-ar="النشر الحصري">Exclusive Deployment</div>
+        <div style="font-size:12.5px;color:var(--w70);line-height:1.7;" data-en="Exclusive IRAS® franchise. Local operations led by Dr. Amany Moustafa, DBA. Direct school engagement across Egypt." data-ar="امتياز إيراس® الحصري. عمليات محلية بقيادة الدكتورة أماني مصطفى. تواصل مباشر مع المدارس في جميع أنحاء مصر.">Exclusive IRAS® franchise. Local operations led by Dr. Amany Moustafa, DBA. Direct school engagement across Egypt.</div>
       </div>
-      <div class="svc reveal r2">
-        <div class="svc-head">
-          <div>
-            <div class="svc-eyebrow" data-en="Division 03 · Automotive" data-ar="القسم الثالث · السيارات">Division 03 · Automotive</div>
-            <div class="svc-name" data-en="Rocky Automotive &amp; AutoNet" data-ar="روكي للسيارات وأوتونت">Rocky Automotive &amp; AutoNet</div>
-            <div class="svc-tagline" data-en="Import · Export · Intelligence" data-ar="استيراد · تصدير · ذكاء">Import · Export · Intelligence</div>
-          </div>
-          <span class="badge badge-live" data-en="Live" data-ar="نشط">Live</span>
-        </div>
-        <div class="svc-body">
-          <p class="svc-desc" data-en="Cross-border vehicle sourcing, dealership services, and automotive intelligence across US and MENA markets via AutoNet LLC (Virginia SCC, Entity 11367235)." data-ar="توريد السيارات عبر الحدود وخدمات الوكلاء والذكاء التجاري في أسواق أمريكا والشرق الأوسط وشمال أفريقيا.">Cross-border vehicle sourcing, dealership services, and automotive intelligence across US and MENA markets via AutoNet LLC.</p>
-          <div class="svc-points">
-            <div class="sp"><span class="sp-dot">→</span><span data-en="AutoNet LLC · Virginia SCC · Entity 11367235 · US · MENA" data-ar="أوتونت · فيرجينيا · رقم الكيان 11367235 · أمريكا · الشرق الأوسط وشمال أفريقيا">AutoNet LLC · Virginia SCC · Entity 11367235 · US · MENA</span></div>
-          </div>
-        </div>
+      <div style="background:var(--pool);border:1px solid var(--line);border-radius:14px;padding:28px;text-align:center;">
+        <div style="font-size:40px;margin-bottom:16px;">🇦🇪</div>
+        <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--w);margin-bottom:8px;" data-en="Gulf Region" data-ar="منطقة الخليج">Gulf Region</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--b2);margin-bottom:10px;" data-en="Regional Expansion" data-ar="التوسع الإقليمي">Regional Expansion</div>
+        <div style="font-size:12.5px;color:var(--w70);line-height:1.7;" data-en="UAE-anchored through Ajman Free Zone (License 50366). Regional expansion and institutional partnerships across MENA." data-ar="مرتكز في الإمارات من خلال المنطقة الحرة بعجمان (الرخصة 50366). توسع إقليمي وشراكات مؤسسية عبر منطقة الشرق الأوسط وشمال أفريقيا.">UAE-anchored through Ajman Free Zone (License 50366). Regional expansion and institutional partnerships across MENA.</div>
+      </div>
+    </div>
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(4,1fr);gap:3px;">
+      <div style="background:var(--glass);border:1px solid var(--bline);border-radius:10px;padding:20px;text-align:center;">
+        <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:var(--b2);">24+</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--w30);margin-top:4px;" data-en="Years Commercial Experience" data-ar="سنة خبرة تجارية">Years Commercial Experience</div>
+      </div>
+      <div style="background:var(--glass);border:1px solid var(--bline);border-radius:10px;padding:20px;text-align:center;">
+        <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:var(--b2);">3</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--w30);margin-top:4px;" data-en="Jurisdictions" data-ar="ولايات قضائية">Jurisdictions</div>
+      </div>
+      <div style="background:var(--glass);border:1px solid var(--bline);border-radius:10px;padding:20px;text-align:center;">
+        <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:var(--b2);">4</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--w30);margin-top:4px;" data-en="Years Building This Position" data-ar="سنوات بناء هذا الموقع">Years Building This Position</div>
+      </div>
+      <div style="background:var(--glass);border:1px solid var(--bline);border-radius:10px;padding:20px;text-align:center;">
+        <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:var(--b2);">1</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--w30);margin-top:4px;" data-en="Exclusive Egypt Franchise" data-ar="امتياز مصر الحصري">Exclusive Egypt Franchise</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ── IRAS® DETAIL ── -->
-<section class="iras-section section" id="iras">
+<section class="iras-section section" id="iras" aria-label="IRAS® Platform Detail">
   <div class="iras-bg-orb"></div>
   <div class="container">
     <div class="iras-grid">
@@ -1192,7 +1357,7 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
         </div>
         <h2 class="h2" data-en="IRAS®<br><em>4 Years Built. Live Now.</em>" data-ar="IRAS®<br><em>4 سنوات تطوير. نشط الآن.</em>"><span class="iras-brand">IRAS®</span><br><em>4 Years Built. Live Now.</em></h2>
         <div class="h2-rule"></div>
-        <p class="serif-lead" data-en="Four years of development. Live in 22 UAE schools. Deployed in Qatar. Entering Saudi Arabia. Now — exclusively — Egypt through Blu9L." data-ar="أربع سنوات من التطوير. نشط في 22 مدرسة إماراتية. مُطبَّق في قطر. يدخل المملكة العربية السعودية. والآن — بشكل حصري — مصر عبر بلو9إل.">Four years of development. Live in 22 UAE schools. Deployed in Qatar. Entering Saudi Arabia. Now — exclusively — Egypt through Blu9L.</p>
+        <p class="serif-lead" data-en="4 years built. 22 UAE schools live. Qatar deployed. Egypt next — exclusively through Blu9L." data-ar="4 سنوات من البناء. 22 مدرسة إماراتية نشطة. مُطبَّق في قطر. مصر التالية — حصرياً عبر بلو9إل.">4 years built. 22 UAE schools live. Qatar deployed. Egypt next — exclusively through Blu9L.</p>
         <div class="iras-stats">
           <div class="is"><div class="is-v">4</div><div class="is-l" data-en="Years Built" data-ar="سنوات تطوير">Years Built</div></div>
           <div class="is"><div class="is-v">22</div><div class="is-l" data-en="UAE Schools Live" data-ar="مدرسة إماراتية نشطة">UAE Schools Live</div></div>
@@ -1262,6 +1427,7 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
       </div>
       <div class="video-wrap reveal r1">
         <iframe
+          loading="lazy"
           src="https://www.youtube.com/embed/L17Vg3SmVuY?rel=0&modestbranding=1&color=white"
           title="IRAS® School Intelligence Platform — Live Deployment"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -1276,48 +1442,91 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
   </div>
 </section>
 
-<!-- ── TESTIMONIALS (REPLACES PHILOSOPHY) ── -->
-<section class="test-section section" id="proof">
+<!-- ── LEADERSHIP TEAM ── -->
+<section class="leadership-section section" id="leadership">
   <div class="container">
-    <div class="reveal" style="text-align:center;margin-bottom:44px;">
-      <div class="kicker" style="justify-content:center;" data-en="Operational Track Record" data-ar="سجل التشغيل">Operational Track Record</div>
-      <h2 class="h2" data-en="Platform Performance<br>in <em>Active Deployment.</em>" data-ar="أداء المنصة في<br><em>النشر الفعلي.</em>">Platform Performance<br>in <em>Active Deployment.</em></h2>
-      <div class="h2-rule" style="background:linear-gradient(90deg,transparent,var(--b0),transparent);"></div>
+    <div class="reveal" style="text-align:center;margin-bottom:8px;">
+      <div class="kicker" style="justify-content:center;" data-en="Leadership Team" data-ar="فريق القيادة">Leadership Team</div>
+      <h2 class="h2" data-en="The Team Behind<br><em>Blu9L Holdings.</em>" data-ar="الفريق الذي يقود<br><em>بلو9إل هولدينجز.</em>">The Team Behind<br><em>Blu9L Holdings.</em></h2>
+      <div class="h2-rule" style="margin:0 auto;"></div>
+      <p style="font-size:16px;color:var(--w70);max-width:620px;margin:20px auto 0;line-height:1.75;" data-en="Blu9L is led by executives with deep experience across business administration, strategic planning, organisational development, and multi-sector operations spanning the United States, UAE, and Egypt." data-ar="تُدار بلو9إل بواسطة تنفيذيين يمتلكون خبرة عميقة في إدارة الأعمال والتخطيط الاستراتيجي والتطوير المؤسسي والعمليات متعددة القطاعات في الولايات المتحدة والإمارات ومصر.">Blu9L is led by executives with deep experience across business administration, strategic planning, organisational development, and multi-sector operations spanning the United States, UAE, and Egypt.</p>
     </div>
-    <div class="test-grid reveal">
-      <div class="test-card">
-        <div class="test-quote" data-en='"The real-time attendance and safety visibility IRAS® provides has transformed how our leadership team operates. Parent communication is now automated and immediate — something our teams could not achieve manually at scale."' data-ar='"لقد غيّرت رؤية الحضور والسلامة الفورية التي يوفرها إيراس® طريقة عمل فريق القيادة لدينا بشكل جذري."'>"The real-time attendance and safety visibility IRAS® provides has transformed how our leadership team operates. Parent communication is now automated and immediate — something our teams could not achieve manually at scale."</div>
-        <div class="test-person">
-          <div class="test-avatar">UA</div>
-          <div>
-            <div class="test-name" data-en="School Administrator" data-ar="مدير مدرسة">School Administrator</div>
-            <div class="test-role" data-en="International School · United Arab Emirates · IRAS® Live Deployment" data-ar="مدرسة دولية · الإمارات العربية المتحدة · نشر إيراس® الحي">International School · United Arab Emirates · IRAS® Live Deployment</div>
+
+    <div class="leadership-grid">
+
+      <!-- Yaseen Hassan -->
+      <div class="leader-card reveal">
+        <div class="leader-avatar-wrap">
+          <div class="leader-avatar">YH</div>
+          <div class="leader-id">
+            <div class="leader-name">Yaseen Hassan</div>
+            <div class="leader-role" data-en="Founder &amp; Chairman" data-ar="المؤسس والرئيس">Founder &amp; Chairman</div>
           </div>
         </div>
-      </div>
-      <div class="test-card">
-        <div class="test-quote" data-en='"Blu9L is our exclusive Egypt franchise partner. We selected Yaseen Hassan and his team because they understand both the Egyptian education landscape and international AI deployment at a level we have not encountered elsewhere in MENA."' data-ar='"بلو9إل هو شريكنا الحصري في مصر. اخترنا ياسين حسن وفريقه لأنهم يفهمون المشهد التعليمي المصري ونشر الذكاء الاصطناعي الدولي بمستوى لم نصادفه في أي مكان آخر في منطقة الشرق الأوسط وشمال أفريقيا."'>"Blu9L is our exclusive Egypt franchise partner. We selected Yaseen Hassan and his team because they understand both the Egyptian education landscape and international AI deployment at a level we have not encountered elsewhere in MENA."</div>
-        <div class="test-person">
-          <div class="test-avatar" style="background:var(--b0);">NM</div>
-          <div>
-            <div class="test-name">Naim Messai</div>
-            <div class="test-role" data-en="Chief Executive Officer · Neuronso Technology · Dubai Silicon Oasis" data-ar="الرئيس التنفيذي · نيورونسو تكنولوجي · دبي سيليكون أوسيس">CEO · Neuronso Technology · Dubai Silicon Oasis</div>
-          </div>
+        <p class="leader-bio" data-en="Founder of Blu9L Holdings. 24+ years of commercial experience across automotive, real estate, and technology. Architect of the tri-jurisdictional structure spanning UAE, USA, and Egypt that makes this deployment possible." data-ar="مؤسس بلو9إل هولدينجز. أكثر من 24 عاماً من الخبرة التجارية في السيارات والعقارات والتكنولوجيا. مهندس الهيكل ثلاثي الولاية القضائية الذي يجعل هذا النشر ممكناً.">Founder of Blu9L Holdings. 24+ years of commercial experience across automotive, real estate, and technology. Architect of the tri-jurisdictional structure spanning UAE, USA, and Egypt that makes this deployment possible.</p>
+        <div class="leader-credentials">
+          <div class="leader-cred"><div class="leader-cred-dot"></div><span data-en="24+ years in commercial operations and international business development" data-ar="أكثر من 24 عاماً في العمليات التجارية والتطوير الدولي">24+ years in commercial operations and international business development</span></div>
+          <div class="leader-cred"><div class="leader-cred-dot"></div><span data-en="Multi-jurisdictional entity structuring: UAE, USA, Egypt" data-ar="هيكلة مؤسسية متعددة الولايات: الإمارات، الولايات المتحدة، مصر">Multi-jurisdictional entity structuring: UAE, USA, Egypt</span></div>
+          <div class="leader-cred"><div class="leader-cred-dot"></div><span data-en="Franchise operations, international trade, real estate development" data-ar="عمليات الامتياز، التجارة الدولية، التطوير العقاري">Franchise operations, international trade, real estate development</span></div>
+          <div class="leader-cred"><div class="leader-cred-dot"></div><span data-en="Blu9L International F.Z.E · Ajman Free Zone · License 50366" data-ar="بلو9إل الدولية · المنطقة الحرة بعجمان · الرخصة 50366">Blu9L International F.Z.E · Ajman Free Zone · License 50366</span></div>
+        </div>
+        <div class="leader-tags">
+          <span class="leader-tag" data-en="Strategic Planning" data-ar="التخطيط الاستراتيجي">Strategic Planning</span>
+          <span class="leader-tag" data-en="Business Development" data-ar="تطوير الأعمال">Business Development</span>
+          <span class="leader-tag" data-en="International Trade" data-ar="التجارة الدولية">International Trade</span>
+          <span class="leader-tag" data-en="Enterprise Formation" data-ar="تأسيس المؤسسات">Enterprise Formation</span>
+        </div>
+        <div class="leader-links">
+          <a href="https://www.linkedin.com/in/yaseen-hassan" target="_blank" rel="noopener" class="founder-link li">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <span data-en="LinkedIn" data-ar="لينكدإن">LinkedIn</span>
+          </a>
+          <a href="mailto:yaseen.hassan@blu9l.com?subject=Meeting%20Request" class="founder-link cal">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            <span data-en="Request a Meeting" data-ar="طلب اجتماع">Request a Meeting</span>
+          </a>
         </div>
       </div>
-      <div class="test-card" style="background:linear-gradient(135deg,rgba(0,68,238,.06),rgba(0,68,238,.02));border-color:var(--bline);">
-        <div class="test-quote" style="border-color:var(--g1);color:var(--w70);" data-en='"Egypt has 3 million private school students and a government actively investing in education technology. IRAS® arrives at precisely the right moment — with proven UAE deployment and an exclusive national franchise."' data-ar='"تمتلك مصر 3 ملايين طالب في المدارس الخاصة وحكومة تستثمر بنشاط في تقنية التعليم. يصل إيراس® في اللحظة المناسبة تماماً."'>"Egypt has 3 million private school students and a government actively investing in education technology. IRAS® arrives at precisely the right moment — with proven UAE deployment and an exclusive national franchise."</div>
-        <div class="test-person">
-          <div class="test-avatar" style="background:linear-gradient(135deg,var(--g0),#704800);">BL</div>
-          <div>
-            <div class="test-name" data-en="Blu9L Market Intelligence" data-ar="ذكاء السوق · بلو9إل">Blu9L Market Intelligence</div>
-            <div class="test-role" data-en="Egypt Education Technology Assessment · 2026" data-ar="تقييم تقنية التعليم في مصر · 2026">Egypt Education Technology Assessment · 2026</div>
+
+      <!-- Dr. Amany Moustafa -->
+      <div class="leader-card co-founder reveal r2">
+        <div class="leader-avatar-wrap">
+          <div class="leader-avatar co">AM</div>
+          <div class="leader-id">
+            <div class="leader-name">Dr. Amany Moustafa, DBA</div>
+            <div class="leader-role co" data-en="CEO &amp; Co-Founder · Egypt Operations" data-ar="الرئيس التنفيذي والمؤسس المشارك · عمليات مصر">CEO &amp; Co-Founder · Egypt Operations</div>
           </div>
         </div>
+        <p class="leader-bio" data-en="DBA-qualified executive with senior experience across healthcare administration, institutional operations, and stakeholder management. Leads all Egypt market engagement, school relationships, and on-ground IRAS® deployment coordination." data-ar="تنفيذية حاصلة على دكتوراه في إدارة الأعمال مع خبرة رفيعة في الإدارة الصحية والعمليات المؤسسية. تقود التواصل مع السوق المصري وعلاقات المدارس وتنسيق نشر إيراس® على أرض الواقع.">DBA-qualified executive with senior experience across healthcare administration, institutional operations, and stakeholder management. Leads all Egypt market engagement, school relationships, and on-ground IRAS® deployment coordination.</p>
+        <div class="leader-credentials">
+          <div class="leader-cred"><div class="leader-cred-dot co"></div><span data-en="Doctor of Business Administration (DBA)" data-ar="دكتوراه في إدارة الأعمال (DBA)">Doctor of Business Administration (DBA)</span></div>
+          <div class="leader-cred"><div class="leader-cred-dot co"></div><span data-en="Healthcare administration and institutional operations management" data-ar="الإدارة الصحية وإدارة العمليات المؤسسية">Healthcare administration and institutional operations management</span></div>
+          <div class="leader-cred"><div class="leader-cred-dot co"></div><span data-en="Accreditation processes, stakeholder management, operational governance" data-ar="عمليات الاعتماد، إدارة أصحاب المصلحة، الحوكمة التشغيلية">Accreditation processes, stakeholder management, operational governance</span></div>
+          <div class="leader-cred"><div class="leader-cred-dot co"></div><span data-en="Private and public sector executive experience across Egypt" data-ar="خبرة تنفيذية في القطاعين الخاص والعام عبر مصر">Private and public sector executive experience across Egypt</span></div>
+        </div>
+        <div class="leader-tags">
+          <span class="leader-tag" data-en="Healthcare Administration" data-ar="الإدارة الصحية">Healthcare Administration</span>
+          <span class="leader-tag" data-en="Stakeholder Management" data-ar="إدارة أصحاب المصلحة">Stakeholder Management</span>
+          <span class="leader-tag" data-en="Accreditation" data-ar="الاعتماد">Accreditation</span>
+          <span class="leader-tag" data-en="Org. Development" data-ar="التطوير المؤسسي">Org. Development</span>
+        </div>
+        <div class="leader-links">
+          <a href="mailto:amany.moustafa@blu9l.com?subject=Meeting%20Request" class="founder-link cal" style="background:rgba(232,160,16,.08);border-color:rgba(232,160,16,.25);color:rgba(232,160,16,.85);">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            <span data-en="Request a Meeting" data-ar="طلب اجتماع">Request a Meeting</span>
+          </a>
+          <a href="mailto:amany.moustafa@blu9l.com" class="founder-link li" style="background:rgba(232,160,16,.08);border-color:rgba(232,160,16,.2);color:rgba(232,160,16,.7);">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span data-en="Send Email" data-ar="إرسال بريد">Send Email</span>
+          </a>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
+
+
 
 <!-- ── JUNE 28 EVENT INVITATION ── -->
 <section class="event-section section" id="event">
@@ -1326,7 +1535,7 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
       <div class="event-left reveal">
         <div class="event-badge"><div class="eb-dot"></div><span class="eb-text" data-en="3 Days Remaining · Seats Limited" data-ar="3 أيام متبقية · المقاعد محدودة">3 Days Remaining · Seats Limited</span></div>
         <h2 class="event-h" data-en="100 Seats.<br>Egypt's Top School Owners.<br>July 6, Cairo." data-ar="100 مقعد.<br>أبرز أصحاب المدارس في مصر.<br>6 يوليو، القاهرة.">100 Seats.<br>Egypt's Top School Owners.<br>July 6, Cairo.</h2>
-        <p class="event-sub" data-en="The only launch event of this scale in Egypt's education technology history. Blu9L and Neuronso Technology present IRAS® live — with real-time demonstrations, school-owner presentations, and on-the-day contract opportunities." data-ar="الحدث التمهيدي الوحيد بهذا الحجم في تاريخ تقنية التعليم في مصر. يقدّم بلو9إل ونيورونسو تكنولوجي إيراس® مباشرة — مع عروض توضيحية فورية وفرص توقيع عقود في يوم الحفل.">The only launch event of this scale in Egypt's education technology history. Blu9L and Neuronso Technology present IRAS® live — with real-time demonstrations, school-owner presentations, and on-the-day contract opportunities.</p>
+        <p class="event-sub" data-en="Blu9L and Neuronso Technology present IRAS® live to Egypt's top school leaders — demonstrations, presentations, and on-the-day opportunities." data-ar="بلو9إل ونيورونسو تكنولوجي يقدّمان إيراس® مباشرة لأبرز قادة المدارس في مصر.">Blu9L and Neuronso Technology present IRAS® live to Egypt's top school leaders — demonstrations, presentations, and on-the-day opportunities.</p>
         <div class="event-facts">
           <div class="ef"><div class="ef-icon">📅</div><span data-en="July 6, 2026 · 9:00 AM — 5:00 PM" data-ar="6 يوليو 2026 · 9 صباحاً — 5 مساءً">July 6, 2026 · 9:00 AM — 5:00 PM</span></div>
           <div class="ef"><div class="ef-icon">📍</div><span data-en="Cairo, Egypt · Venue TBC · A+ &amp; B+ Schools Only" data-ar="القاهرة، مصر · المكان قيد التحديد · للمدارس A+ وB+ فقط">Cairo, Egypt · Venue TBC · A+ &amp; B+ Schools Only</span></div>
@@ -1385,7 +1594,7 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
         <div class="kicker" style="justify-content:center;" data-en="Strategic Opportunity" data-ar="الفرصة الاستراتيجية">Strategic Opportunity</div>
         <h2 class="h2" data-en="The Strategic<br><em>Opportunity.</em>" data-ar="الفرصة<br><em>الاستراتيجية.</em>">The Strategic<br><em>Opportunity.</em></h2>
         <div class="h2-rule" style="background:linear-gradient(90deg,transparent,var(--g1),transparent);"></div>
-        <p class="serif-lead" style="margin:0 auto 28px;text-align:center;" data-en="Egypt exclusive IRAS® franchise. Self-funding from Year 1. Conservative Contact us for deployment options. Real contracts, not projections." data-ar="امتياز إيراس® الحصري في مصر. ذاتي التمويل من السنة الأولى. تسعير محافظ. عقود حقيقية، ليست توقعات.">Egypt exclusive IRAS® franchise. Self-funding from Year 1. Conservative Contact us for deployment options. Real contracts, not projections.</p>
+        <p class="serif-lead" style="margin:0 auto 28px;text-align:center;" data-en="Exclusive franchise. Proven technology. Live market. Real contracts." data-ar="امتياز حصري. تقنية مُثبَتة. سوق نشط. عقود حقيقية.">Exclusive franchise. Proven technology. Live market. Real contracts.</p>
       </div>
       <div class="invest-grid reveal">
         <div class="inv-card">
@@ -1405,10 +1614,10 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
         </div>
       </div>
       <div class="invest-points reveal" style="max-width:680px;margin:0 auto;">
-        <div class="inv-point"><span class="inv-check">✓</span><span data-en="Full hardware infrastructure — IoT wearables, gateway servers, and connectivity equipment — manufactured and deployed by Neuronso Technology (Dubai Silicon Oasis, License 1115725)." data-ar="بنية تحتية كاملة للأجهزة — أجهزة ذكية وخوادم بوابة ومعدات اتصال — تُصنَّع وتُنشر بواسطة نيورونسو تكنولوجي.">Full hardware infrastructure — IoT wearables, gateway servers, and connectivity equipment — manufactured and deployed by Neuronso Technology (Dubai Silicon Oasis, License 1115725).</span></div>
-        <div class="inv-point"><span class="inv-check">✓</span><span data-en="Subscription revenue from deployed schools flows through a structured, franchise-compliant distribution model — governed by the exclusive franchise agreement with Neuronso Technology." data-ar="تتدفق إيرادات الاشتراك من المدارس المُنشَرة عبر نموذج توزيع منظّم ومتوافق مع الامتياز.">Subscription revenue from deployed schools flows through a structured, franchise-compliant distribution model — governed by the exclusive franchise agreement with Neuronso Technology.</span></div>
-        <div class="inv-point"><span class="inv-check">✓</span><span data-en="Three-year exclusive franchise term with renewal provisions. Pre-launch school engagement has substantially exceeded Year 1 minimum deployment targets — validating market demand ahead of the July 6 event." data-ar="مدة امتياز حصرية لثلاث سنوات مع أحكام تجديد. تجاوزت المشاركة ما قبل الإطلاق أهداف النشر الدنيا للسنة الأولى بشكل كبير.">Three-year exclusive franchise term with renewal provisions. Pre-launch school engagement has substantially exceeded Year 1 minimum deployment targets — validating market demand ahead of the July 6 event.</span></div>
-        <div class="inv-point"><span class="inv-check">✓</span><span data-en="A structurally self-funding deployment model: initial subscription revenue from deployed schools finances subsequent territorial expansion — reducing ongoing capital requirement." data-ar="نموذج نشر ذاتي التمويل هيكلياً: تموّل إيرادات الاشتراك الأولية التوسع الإقليمي اللاحق.">A structurally self-funding deployment model: initial subscription revenue from deployed schools finances subsequent territorial expansion — reducing ongoing capital requirement.</span></div>
+        <div class="inv-point"><span class="inv-check">✓</span><span data-en="Exclusive Egypt franchise — contractually protected territory with Neuronso Technology (Dubai Silicon Oasis, License 1115725)." data-ar="امتياز مصر الحصري — نطاق محمي تعاقدياً مع نيورونسو تكنولوجي.">Exclusive Egypt franchise — contractually protected territory with Neuronso Technology (Dubai Silicon Oasis, License 1115725).</span></div>
+        <div class="inv-point"><span class="inv-check">✓</span><span data-en="Technology already live — 22 UAE schools operational. Not pre-product. Not a pilot." data-ar="التقنية نشطة بالفعل — 22 مدرسة إماراتية تعمل. ليست ما قبل المنتج. ليست تجريبية.">Technology already live — 22 UAE schools operational. Not pre-product. Not a pilot.</span></div>
+        <div class="inv-point"><span class="inv-check">✓</span><span data-en="Self-funding from Year 1 — subscription revenue from deployed schools finances territorial expansion." data-ar="ذاتي التمويل من السنة الأولى — عائدات الاشتراك تموّل التوسع الإقليمي.">Self-funding from Year 1 — subscription revenue from deployed schools finances territorial expansion.</span></div>
+        <div class="inv-point"><span class="inv-check">✓</span><span data-en="Pre-launch engagement substantially exceeds Year 1 minimum targets — validating market demand ahead of July 6." data-ar="المشاركة قبل الإطلاق تتجاوز أهداف السنة الأولى — تؤكد الطلب قبل 6 يوليو.">Pre-launch engagement substantially exceeds Year 1 minimum targets — validating market demand ahead of July 6.</span></div>
       </div>
       <div class="invest-ctas reveal" style="justify-content:center;">
         <a href="#contact" class="btn-prime" data-en="Schedule Investor Call" data-ar="جدولة مكالمة استثمارية">Schedule Investor Call</a>
@@ -1418,162 +1627,8 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
   </div>
 </section>
 
-<!-- ── LEADERSHIP TEAM ── -->
-<section class="leadership-section section" id="leadership">
-  <div class="container">
-    <div class="reveal" style="text-align:center;margin-bottom:8px;">
-      <div class="kicker" style="justify-content:center;" data-en="Leadership Team" data-ar="فريق القيادة">Leadership Team</div>
-      <h2 class="h2" data-en="The Team Behind<br><em>Blu9L Holdings.</em>" data-ar="الفريق الذي يقود<br><em>بلو9إل هولدينجز.</em>">The Team Behind<br><em>Blu9L Holdings.</em></h2>
-      <div class="h2-rule" style="margin:0 auto;"></div>
-      <p style="font-size:16px;color:var(--w70);max-width:620px;margin:20px auto 0;line-height:1.75;" data-en="Blu9L is led by executives with deep experience across business administration, strategic planning, organisational development, and multi-sector operations spanning the United States, UAE, and Egypt." data-ar="تُدار بلو9إل بواسطة تنفيذيين يمتلكون خبرة عميقة في إدارة الأعمال والتخطيط الاستراتيجي والتطوير المؤسسي والعمليات متعددة القطاعات في الولايات المتحدة والإمارات ومصر.">Blu9L is led by executives with deep experience across business administration, strategic planning, organisational development, and multi-sector operations spanning the United States, UAE, and Egypt.</p>
-    </div>
-
-    <div class="leadership-grid">
-
-      <!-- Yaseen Hassan -->
-      <div class="leader-card reveal">
-        <div class="leader-avatar-wrap">
-          <div class="leader-avatar">YH</div>
-          <div class="leader-id">
-            <div class="leader-name">Yaseen Hassan</div>
-            <div class="leader-role" data-en="Founder &amp; Chairman" data-ar="المؤسس والرئيس">Founder &amp; Chairman</div>
-          </div>
-        </div>
-        <p class="leader-bio" data-en="Yaseen Hassan is the founder of Blu9L Holdings and the architect of its tri-jurisdictional corporate structure across the United States, UAE, and Egypt. With over 24 years of commercial experience — including more than a decade operating an independent automotive retail business — he brings direct operational expertise in business development, international trade, and enterprise formation across multiple markets. He has built and structured entities across the Ajman Free Zone (UAE), Virginia (US), and Egypt, and leads strategic planning, partnership development, and capital structure across the Blu9L group. His work spans automotive trade, real estate, and technology commercialisation." data-ar="ياسين حسن مؤسس بلو9إل هولدينجز ومهندس هيكلها المؤسسي ثلاثي الولاية القضائية عبر الولايات المتحدة والإمارات ومصر. يمتلك أكثر من 24 عاماً من الخبرة التجارية، بما يشمل أكثر من عقد في تشغيل أعمال تجزئة السيارات. يقود التخطيط الاستراتيجي وتطوير الشراكات والهيكل الرأسمالي عبر مجموعة بلو9إل.">Yaseen Hassan is the founder of Blu9L Holdings and the architect of its tri-jurisdictional corporate structure across the United States, UAE, and Egypt. With over 24 years of commercial experience — including more than a decade operating an independent automotive retail business — he brings direct operational expertise in business development, international trade, and enterprise formation across multiple markets. He has built and structured entities across the Ajman Free Zone (UAE), Virginia (US), and Egypt, and leads strategic planning, partnership development, and capital structure across the Blu9L group. His work spans automotive trade, real estate, and technology commercialisation.</p>
-        <div class="leader-credentials">
-          <div class="leader-cred"><div class="leader-cred-dot"></div><span data-en="24+ years in commercial operations and international business development" data-ar="أكثر من 24 عاماً في العمليات التجارية والتطوير الدولي">24+ years in commercial operations and international business development</span></div>
-          <div class="leader-cred"><div class="leader-cred-dot"></div><span data-en="Multi-jurisdictional entity structuring: UAE, USA, Egypt" data-ar="هيكلة مؤسسية متعددة الولايات: الإمارات، الولايات المتحدة، مصر">Multi-jurisdictional entity structuring: UAE, USA, Egypt</span></div>
-          <div class="leader-cred"><div class="leader-cred-dot"></div><span data-en="Franchise operations, international trade, real estate development" data-ar="عمليات الامتياز، التجارة الدولية، التطوير العقاري">Franchise operations, international trade, real estate development</span></div>
-          <div class="leader-cred"><div class="leader-cred-dot"></div><span data-en="Blu9L International F.Z.E · Ajman Free Zone · License 50366" data-ar="بلو9إل الدولية · المنطقة الحرة بعجمان · الرخصة 50366">Blu9L International F.Z.E · Ajman Free Zone · License 50366</span></div>
-        </div>
-        <div class="leader-tags">
-          <span class="leader-tag" data-en="Strategic Planning" data-ar="التخطيط الاستراتيجي">Strategic Planning</span>
-          <span class="leader-tag" data-en="Business Development" data-ar="تطوير الأعمال">Business Development</span>
-          <span class="leader-tag" data-en="International Trade" data-ar="التجارة الدولية">International Trade</span>
-          <span class="leader-tag" data-en="Enterprise Formation" data-ar="تأسيس المؤسسات">Enterprise Formation</span>
-        </div>
-        <div class="leader-links">
-          <a href="https://www.linkedin.com/in/yaseen-hassan" target="_blank" rel="noopener" class="founder-link li">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            <span data-en="LinkedIn" data-ar="لينكدإن">LinkedIn</span>
-          </a>
-          <a href="mailto:yaseen.hassan@blu9l.com?subject=Meeting%20Request" class="founder-link cal">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-            <span data-en="Request a Meeting" data-ar="طلب اجتماع">Request a Meeting</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Dr. Amany Moustafa -->
-      <div class="leader-card co-founder reveal r2">
-        <div class="leader-avatar-wrap">
-          <div class="leader-avatar co">AM</div>
-          <div class="leader-id">
-            <div class="leader-name">Dr. Amany Moustafa, DBA</div>
-            <div class="leader-role co" data-en="CEO &amp; Co-Founder · Egypt Operations" data-ar="الرئيس التنفيذي والمؤسس المشارك · عمليات مصر">CEO &amp; Co-Founder · Egypt Operations</div>
-          </div>
-        </div>
-        <p class="leader-bio" data-en="Dr. Amany Moustafa holds a Doctor of Business Administration (DBA) and brings executive-level experience across healthcare administration, business operations, and organisational management. Her professional background includes senior administrative and operational roles within complex institutional environments, spanning both private and public sector organisations. She brings particular expertise in stakeholder management, accreditation processes, and operational governance — experience directly applicable to IRAS® deployment across Egypt's regulated education sector. As Co-Founder and CEO Egypt Operations, she leads market engagement, institutional relationships, and on-ground deployment coordination for the Blu9L IRAS® franchise." data-ar="تحمل الدكتورة أماني مصطفى دكتوراه في إدارة الأعمال وتمتلك خبرة تنفيذية في الإدارة الصحية وعمليات الأعمال والإدارة المؤسسية. تشمل خلفيتها المهنية أدواراً إدارية وتشغيلية رفيعة في بيئات مؤسسية معقدة تضم منظمات القطاعين الخاص والعام. بصفتها المؤسس المشارك والرئيس التنفيذي لعمليات مصر، تقود التواصل مع السوق والعلاقات المؤسسية وتنسيق النشر الميداني لامتياز إيراس® في بلو9إل.">Dr. Amany Moustafa holds a Doctor of Business Administration (DBA) and brings executive-level experience across healthcare administration, business operations, and organisational management. Her professional background includes senior administrative and operational roles within complex institutional environments, spanning both private and public sector organisations. She brings particular expertise in stakeholder management, accreditation processes, and operational governance — experience directly applicable to IRAS® deployment across Egypt's regulated education sector. As Co-Founder and CEO Egypt Operations, she leads market engagement, institutional relationships, and on-ground deployment coordination for the Blu9L IRAS® franchise.</p>
-        <div class="leader-credentials">
-          <div class="leader-cred"><div class="leader-cred-dot co"></div><span data-en="Doctor of Business Administration (DBA)" data-ar="دكتوراه في إدارة الأعمال (DBA)">Doctor of Business Administration (DBA)</span></div>
-          <div class="leader-cred"><div class="leader-cred-dot co"></div><span data-en="Healthcare administration and institutional operations management" data-ar="الإدارة الصحية وإدارة العمليات المؤسسية">Healthcare administration and institutional operations management</span></div>
-          <div class="leader-cred"><div class="leader-cred-dot co"></div><span data-en="Accreditation processes, stakeholder management, operational governance" data-ar="عمليات الاعتماد، إدارة أصحاب المصلحة، الحوكمة التشغيلية">Accreditation processes, stakeholder management, operational governance</span></div>
-          <div class="leader-cred"><div class="leader-cred-dot co"></div><span data-en="Private and public sector executive experience across Egypt" data-ar="خبرة تنفيذية في القطاعين الخاص والعام عبر مصر">Private and public sector executive experience across Egypt</span></div>
-        </div>
-        <div class="leader-tags">
-          <span class="leader-tag" data-en="Healthcare Administration" data-ar="الإدارة الصحية">Healthcare Administration</span>
-          <span class="leader-tag" data-en="Stakeholder Management" data-ar="إدارة أصحاب المصلحة">Stakeholder Management</span>
-          <span class="leader-tag" data-en="Accreditation" data-ar="الاعتماد">Accreditation</span>
-          <span class="leader-tag" data-en="Org. Development" data-ar="التطوير المؤسسي">Org. Development</span>
-        </div>
-        <div class="leader-links">
-          <a href="mailto:amany.moustafa@blu9l.com?subject=Meeting%20Request" class="founder-link cal" style="background:rgba(232,160,16,.08);border-color:rgba(232,160,16,.25);color:rgba(232,160,16,.85);">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-            <span data-en="Request a Meeting" data-ar="طلب اجتماع">Request a Meeting</span>
-          </a>
-          <a href="mailto:amany.moustafa@blu9l.com" class="founder-link li" style="background:rgba(232,160,16,.08);border-color:rgba(232,160,16,.2);color:rgba(232,160,16,.7);">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <span data-en="Send Email" data-ar="إرسال بريد">Send Email</span>
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- ── DATA SECURITY ── -->
-<section class="security-section section" id="data-security">
-  <div class="container">
-    <div class="reveal">
-      <div class="kicker" data-en="Data Security &amp; Compliance" data-ar="أمن البيانات والامتثال">Data Security &amp; Compliance</div>
-      <h2 class="h2" data-en="Student Data Protection<br><em>Is Non-Negotiable.</em>" data-ar="حماية بيانات الطلاب<br><em>أمر غير قابل للتفاوض.</em>">Student Data Protection<br><em>Is Non-Negotiable.</em></h2>
-      <div class="h2-rule"></div>
-      <p style="font-size:15px;color:var(--w70);max-width:680px;margin-bottom:20px;" data-en="IRAS® is deployed in schools managing thousands of student records. Neuronso Technology and Blu9L operate with institutional-grade data security standards across every deployment." data-ar="يُنشَر إيراس® في مدارس تدير آلاف سجلات الطلاب. تعمل نيورونسو تكنولوجي وبلو9إل بمعايير أمن بيانات على المستوى المؤسسي عبر كل عملية نشر.">IRAS® is deployed in schools managing thousands of student records. Neuronso Technology and Blu9L operate with institutional-grade data security standards across every deployment.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;">
-        <span class="sec-badge">UAE PDPL Compliant</span>
-        <span class="sec-badge">Egypt Law 151/2020</span>
-        <span class="sec-badge">TLS Encryption</span>
-        <span class="sec-badge">Neuronso DSO Licensed</span>
-        <span class="sec-badge">No Data Sold</span>
-        <span class="sec-badge">Parent Consent Framework</span>
-      </div>
-    </div>
-    <div class="security-grid reveal">
-      <div>
-        <div class="sec-item">
-          <div class="sec-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <div>
-            <div class="sec-title" data-en="End-to-End Encryption" data-ar="تشفير شامل">End-to-End Encryption</div>
-            <div class="sec-desc" data-en="All data transmitted between school hardware, the IRAS® platform, and parent devices is encrypted using TLS protocols. No student data is transmitted in plain text at any point." data-ar="يتم تشفير جميع البيانات المرسلة بين أجهزة المدرسة ومنصة إيراس® وأجهزة أولياء الأمور باستخدام بروتوكولات TLS.">All data transmitted between school hardware, the IRAS® platform, and parent devices is encrypted using TLS protocols. No student data is transmitted in plain text at any point.</div>
-          </div>
-        </div>
-        <div class="sec-item">
-          <div class="sec-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-          <div>
-            <div class="sec-title" data-en="Role-Based Access Control" data-ar="التحكم في الوصول المستند إلى الأدوار">Role-Based Access Control</div>
-            <div class="sec-desc" data-en="Platform access is strictly tiered: principals, administrators, teachers, and parents each access only the data relevant to their authorised role. No cross-role data exposure." data-ar="الوصول إلى المنصة محدود بصرامة: كل دور يصل فقط إلى البيانات ذات الصلة بصلاحياته المخوّلة.">Platform access is strictly tiered: principals, administrators, teachers, and parents each access only the data relevant to their authorised role.</div>
-          </div>
-        </div>
-        <div class="sec-item">
-          <div class="sec-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
-          <div>
-            <div class="sec-title" data-en="Regulatory Compliance" data-ar="الامتثال التنظيمي">Regulatory Compliance</div>
-            <div class="sec-desc" data-en="IRAS® deployments in Egypt are structured to comply with Egyptian Personal Data Protection Law No. 151 of 2020, UAE Federal Decree-Law No. 45/2021, and applicable international standards." data-ar="تم هيكلة عمليات نشر إيراس® في مصر للامتثال لقانون حماية البيانات الشخصية المصري رقم 151 لسنة 2020.">IRAS® deployments in Egypt are structured to comply with Egyptian Personal Data Protection Law No. 151 of 2020, UAE Federal Decree-Law No. 45/2021, and applicable international standards.</div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="sec-item">
-          <div class="sec-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
-          <div>
-            <div class="sec-title" data-en="No Third-Party Data Monetisation" data-ar="لا تحقيق دخل من بيانات الجهات الخارجية">No Third-Party Data Monetisation</div>
-            <div class="sec-desc" data-en="Student data collected through IRAS® is used exclusively for the operational purposes disclosed to schools at deployment. No student data is sold, licensed, or shared with advertisers or data brokers." data-ar="تُستخدم بيانات الطلاب المجمّعة من خلال إيراس® حصرياً للأغراض التشغيلية المُفصَح عنها للمدارس عند النشر. لا تُباع أو تُرخَّص أو تُشارَك بيانات الطلاب.">Student data collected through IRAS® is used exclusively for the operational purposes disclosed to schools at deployment. No student data is sold, licensed, or shared with advertisers or data brokers.</div>
-          </div>
-        </div>
-        <div class="sec-item">
-          <div class="sec-icon"><svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
-          <div>
-            <div class="sec-title" data-en="Parental Consent Framework" data-ar="إطار موافقة أولياء الأمور">Parental Consent Framework</div>
-            <div class="sec-desc" data-en="Each school deployment includes a parent information and consent framework, managed through the IRAS® platform. Parents receive full transparency on what data is collected, how it is used, and how to request access or deletion." data-ar="يتضمن كل نشر للمدارس إطار معلومات وموافقة لأولياء الأمور، مُدار من خلال منصة إيراس®.">Each school deployment includes a parent information and consent framework. Parents receive full transparency on what data is collected, how it is used, and how to request access or deletion.</div>
-          </div>
-        </div>
-        <div class="sec-item">
-          <div class="sec-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-          <div>
-            <div class="sec-title" data-en="Dedicated Technical Support" data-ar="دعم تقني مخصص">Dedicated Technical Support</div>
-            <div class="sec-desc" data-en="Every IRAS® deployment includes ongoing technical support from Neuronso Technology (Dubai Silicon Oasis) and Blu9L's Egypt operations team. Hardware defects are covered under the Neuronso manufacturing warranty." data-ar="يتضمن كل نشر لإيراس® دعماً تقنياً مستمراً من نيورونسو تكنولوجي وفريق عمليات بلو9إل في مصر.">Every IRAS® deployment includes ongoing technical support from Neuronso Technology and Blu9L's Egypt operations team. Hardware defects are covered under the Neuronso manufacturing warranty.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
 <!-- ── FAQ ── -->
-<section class="faq-section section" id="faq">
+<section class="faq-section section" id="faq" aria-label="Frequently Asked Questions">
   <div class="container">
     <div class="reveal" style="text-align:center;">
       <div class="kicker" style="justify-content:center;" data-en="Common Questions" data-ar="الأسئلة الشائعة">Common Questions</div>
@@ -1583,38 +1638,30 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
     <div class="faq-cols reveal">
       <div>
         <div class="faq-item">
-          <div class="faq-q" data-en="What exactly is IRAS® and how is it different from existing school management software?" data-ar="ما هو إيراس® بالضبط وكيف يختلف عن برامج إدارة المدارس الموجودة؟">What exactly is IRAS® and how is it different from existing school management software?</div>
-          <div class="faq-a" data-en="IRAS® (Intelligent Recognition and Analytics System) is an AI-powered school intelligence platform built on IoT hardware — wearable devices, gateway servers, and real-time monitoring infrastructure. Unlike traditional software, IRAS® operates at the physical level: it knows when a student enters the campus, identifies anomalies, and notifies parents and administrators automatically, without manual data entry from staff." data-ar="إيراس® منصة ذكاء مدرسي مدعومة بالذكاء الاصطناعي مبنية على أجهزة إنترنت الأشياء. على عكس البرامج التقليدية، يعمل إيراس® على المستوى المادي: يعرف متى يدخل الطالب الحرم ويُعرِّف الحالات الشاذة ويُخطر أولياء الأمور والإداريين تلقائياً.">IRAS® is an AI-powered school intelligence platform built on IoT hardware — wearable devices, gateway servers, and real-time monitoring infrastructure. Unlike traditional software, IRAS® operates at the physical level: it knows when a student enters the campus, identifies anomalies, and notifies parents and administrators automatically, without manual data entry.</div>
+          <div class="faq-q" data-en="What is IRAS®?" data-ar="ما هو إيراس®؟">What is IRAS®?</div>
+          <div class="faq-a" data-en="IRAS® (Intelligent Recognition and Analytics System) is an AI-powered school intelligence platform built on IoT hardware. It automates attendance, monitors campus safety in real time, and connects parents to their child's school day — without manual data entry from staff. Live in 22 UAE schools since 2025." data-ar="إيراس® منصة ذكاء مدرسي مدعومة بالذكاء الاصطناعي. تُؤتمت الحضور وتراقب الأمن وتربط أولياء الأمور بالمدرسة — بدون إدخال يدوي. نشط في 22 مدرسة إماراتية منذ 2025.">IRAS® (Intelligent Recognition and Analytics System) is an AI-powered school intelligence platform built on IoT hardware. It automates attendance, monitors campus safety in real time, and connects parents to their child's school day — without manual data entry from staff. Live in 22 UAE schools since 2025.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q" data-en="Is IRAS® proven or is this pre-launch technology?" data-ar="هل إيراس® تقنية مُثبَتة أم أنها تقنية ما قبل الإطلاق؟">Is IRAS® proven or is this pre-launch technology?</div>
-          <div class="faq-a" data-en="IRAS® is operationally deployed across 22 schools in the UAE and active in Qatar. Neuronso Technology spent four years building and testing the platform before its 2025 launch. Egypt is not a pilot — it is the next franchise territory for a platform with a live operational track record." data-ar="إيراس® مُنشَر تشغيلياً في 22 مدرسة في الإمارات وفعّال في قطر. أمضت نيورونسو تكنولوجي أربع سنوات في بناء المنصة واختبارها قبل إطلاقها عام 2025.">IRAS® is operationally deployed across 22 schools in the UAE and active in Qatar. Neuronso Technology spent four years building and testing the platform before its 2025 launch. Egypt is not a pilot — it is the next franchise territory for a platform with a live operational track record.</div>
+          <div class="faq-q" data-en="Why Blu9L?" data-ar="لماذا بلو9إل؟">Why Blu9L?</div>
+          <div class="faq-a" data-en="Blu9L holds the exclusive IRAS® franchise for Egypt — the only company authorised to deploy IRAS® across the country. This is backed by a formal franchise agreement with Neuronso Technology (UAE), tri-jurisdictional legal structure, and an on-the-ground Egypt operations team led by Dr. Amany Moustafa, DBA." data-ar="تمتلك بلو9إل الامتياز الحصري لإيراس® في مصر — الشركة الوحيدة المخوّلة بنشره. مدعوم باتفاقية امتياز رسمية مع نيورونسو وهيكل قانوني ثلاثي وفريق عمليات ميداني.">Blu9L holds the exclusive IRAS® franchise for Egypt — the only company authorised to deploy IRAS® across the country. Backed by a formal agreement with Neuronso Technology (UAE), tri-jurisdictional legal structure, and an on-the-ground Egypt team led by Dr. Amany Moustafa, DBA.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q" data-en="How is student data protected?" data-ar="كيف تُحمى بيانات الطلاب؟">How is student data protected?</div>
-          <div class="faq-a" data-en="All student data is encrypted in transit and at rest. Access is role-based — parents see only their child's data, administrators see school-level data. IRAS® deployments in Egypt are structured to comply with Egyptian Personal Data Protection Law No. 151 of 2020. No student data is sold or shared with third parties." data-ar="جميع بيانات الطلاب مُشفَّرة أثناء النقل والتخزين. الوصول مستند إلى الأدوار — يرى أولياء الأمور فقط بيانات طفلهم.">All student data is encrypted in transit and at rest. Access is role-based. IRAS® deployments in Egypt are structured to comply with Egyptian Personal Data Protection Law No. 151 of 2020. No student data is sold or shared with third parties.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" data-en="Who is Neuronso Technology and what is their relationship with Blu9L?" data-ar="من هي نيورونسو تكنولوجي وما علاقتها ببلو9إل؟">Who is Neuronso Technology and what is their relationship with Blu9L?</div>
-          <div class="faq-a" data-en="Neuronso Technology for Artificial Intelligence Applications &amp; Services L.L.C is the developer and owner of the IRAS® platform. Registered in Dubai Silicon Oasis (License 1115725), Neuronso is led by CEO Naim Messai. Blu9L holds the exclusive IRAS® franchise rights for the Arab Republic of Egypt under a formal franchise agreement — the only company authorised to deploy IRAS® across Egypt." data-ar="نيورونسو تكنولوجي هي المطوّر والمالك لمنصة إيراس®، مسجّلة في دبي سيليكون أوسيس بموجب الرخصة 1115725. تمتلك بلو9إل حقوق امتياز إيراس® الحصرية لجمهورية مصر العربية.">Neuronso Technology for AI Applications &amp; Services L.L.C is the developer and owner of the IRAS® platform, registered in Dubai Silicon Oasis (License 1115725), led by CEO Naim Messai. Blu9L holds the exclusive IRAS® franchise rights for Egypt — the only company authorised to deploy IRAS® across the country.</div>
+          <div class="faq-q" data-en="Who is IRAS® for?" data-ar="لمن إيراس®؟">Who is IRAS® for?</div>
+          <div class="faq-a" data-en="IRAS® is designed for private schools across Egypt — A+ and B+ tier institutions. It is suitable for single campuses and multi-campus school groups. Education authorities and ministries can also access institutional-grade compliance reporting through the platform." data-ar="صُمِّم إيراس® للمدارس الخاصة في مصر — من فئات A+ وB+. مناسب للحرم الواحد ومجموعات المدارس متعددة الحرم. يمكن للجهات التنظيمية الوصول إلى تقارير الامتثال.">IRAS® is designed for private schools across Egypt — A+ and B+ tier institutions. Suitable for single campuses and multi-campus school groups. Education authorities can also access institutional-grade compliance reporting.</div>
         </div>
       </div>
       <div>
         <div class="faq-item">
-          <div class="faq-q" data-en="How long does a typical school deployment take?" data-ar="كم يستغرق نشر مدرسة نموذجية؟">How long does a typical school deployment take?</div>
-          <div class="faq-a" data-en="A full school deployment — from initial assessment through to live operations — typically takes four to eight weeks depending on campus size and complexity. The process includes hardware installation, network configuration, platform setup, and comprehensive staff and parent training. Schools experience no disruption to daily operations during installation." data-ar="يستغرق نشر المدرسة الكامل — من التقييم الأولي حتى العمليات الحية — عادةً من أربعة إلى ثمانية أسابيع.">A full deployment — from initial assessment to live operations — typically takes four to eight weeks depending on campus size. The process includes hardware installation, network configuration, platform setup, and comprehensive staff training. No disruption to daily operations during installation.</div>
+          <div class="faq-q" data-en="How does deployment work?" data-ar="كيف يعمل النشر؟">How does deployment work?</div>
+          <div class="faq-a" data-en="A full school deployment — from initial assessment to live operations — typically takes 4–8 weeks. This includes hardware installation (IoT wearables, gateway servers), platform setup, and staff training. All hardware is manufactured and supported by Neuronso Technology. Schools experience no disruption during installation." data-ar="يستغرق النشر الكامل 4–8 أسابيع ويشمل تركيب الأجهزة وإعداد المنصة وتدريب الكوادر. جميع الأجهزة مدعومة من نيورونسو. لا انقطاع أثناء التركيب.">A full deployment — from initial assessment to live operations — typically takes 4–8 weeks. This includes hardware installation (IoT wearables, gateway servers), platform setup, and staff training. All hardware is supported by Neuronso Technology. No disruption during installation.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q" data-en="Is IRAS® suitable for our school size and type?" data-ar="هل إيراس® مناسب لحجم ونوع مدرستنا؟">Is IRAS® suitable for our school size and type?</div>
-          <div class="faq-a" data-en="IRAS® is designed for private schools across multiple scale categories — from schools with a few hundred students to campuses with several thousand. Neuronso Technology offers tiered service packages matched to each school's operational profile and annual fee structure. Blu9L's team will assess your specific requirements during an initial consultation." data-ar="صُمِّم إيراس® للمدارس الخاصة عبر فئات حجم متعددة. تقدّم نيورونسو تكنولوجي حزم خدمات متدرجة تتناسب مع الملف التشغيلي لكل مدرسة.">IRAS® is designed for private schools across multiple scale categories. Neuronso Technology offers tiered service packages matched to each school's operational profile. Blu9L's team will assess your specific requirements during an initial consultation.</div>
+          <div class="faq-q" data-en="How is student data protected?" data-ar="كيف تُحمى بيانات الطلاب؟">How is student data protected?</div>
+          <div class="faq-a" data-en="All student data is encrypted in transit and at rest. Access is role-based — parents see only their child's data. Deployments comply with Egyptian Personal Data Protection Law No. 151/2020. No student data is sold or shared with third parties." data-ar="جميع البيانات مُشفَّرة. الوصول مستند للأدوار. متوافق مع القانون المصري 151/2020. لا تُباع البيانات أو تُشارَك.">All student data is encrypted in transit and at rest. Access is role-based — parents see only their child's data. Compliant with Egyptian Personal Data Protection Law No. 151/2020. No student data is sold or shared.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q" data-en="What languages does the IRAS® platform support?" data-ar="ما اللغات التي تدعمها منصة إيراس®؟">What languages does the IRAS® platform support?</div>
-          <div class="faq-a" data-en="The IRAS® platform supports Arabic and English across all school administrator, staff, and parent interfaces. Parent notifications are delivered in the family's preferred language. Blu9L's Egypt operations team is fully bilingual — Arabic and English — ensuring seamless onboarding and ongoing support for Egyptian schools." data-ar="تدعم منصة إيراس® العربية والإنجليزية عبر جميع واجهات مدراء المدارس والكوادر وأولياء الأمور. فريق عمليات بلو9إل في مصر ثنائي اللغة بالكامل.">IRAS® supports Arabic and English across all administrator, staff, and parent interfaces. Parent notifications are delivered in the family's preferred language. Blu9L's Egypt operations team is fully bilingual — ensuring seamless support for Egyptian schools.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" data-en="How can our school be included in the July 6 launch event?" data-ar="كيف يمكن لمدرستنا المشاركة في حفل إطلاق 6 يوليو؟">How can our school be included in the July 6 launch event?</div>
-          <div class="faq-a" data-en="The July 6 event is an invitation-only gathering of senior school leaders from Egypt's A+ and B+ tier private schools. To request an invitation, complete the form on this page or contact our team directly via WhatsApp at +1 (202) 644-6646. Invitations are confirmed within 24 hours based on school eligibility and seat availability." data-ar="حفل 6 يوليو تجمّع بدعوة خاصة لقادة المدارس الكبار من مدارس A+ وB+ الخاصة في مصر. لطلب دعوة، أكمل النموذج في هذه الصفحة أو تواصل مع فريقنا مباشرة.">The July 6 event is an invitation-only gathering of senior school leaders from Egypt's A+ and B+ tier private schools. To request an invitation, complete the form on this page or contact our team via WhatsApp at +1 (202) 644-6646. Invitations are confirmed within 24 hours.</div>
+          <div class="faq-q" data-en="How do I schedule a demo?" data-ar="كيف أجدول عرضاً تجريبياً؟">How do I schedule a demo?</div>
+          <div class="faq-a" data-en="Contact our team directly via WhatsApp at +1 (202) 644-6646, complete the invitation form on this page, or email info@blu9l.com. We respond within 24 hours. School owners attending the July 6 Cairo launch event will receive a full live demonstration." data-ar="تواصل معنا عبر واتساب +1 (202) 644-6646 أو أكمل نموذج الدعوة أو راسلنا على info@blu9l.com. نردّ خلال 24 ساعة.">Contact our team via WhatsApp at +1 (202) 644-6646, complete the invitation form on this page, or email info@blu9l.com. We respond within 24 hours. School owners attending the July 6 Cairo launch event will receive a full live demonstration.</div>
         </div>
       </div>
     </div>
@@ -1668,7 +1715,7 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
     <div class="contact-inner">
       <div class="contact-left reveal">
         <h2 class="contact-h" data-en="Three Markets.<br>One Team." data-ar="ثلاثة أسواق.<br>فريق واحد.">Three Markets.<br>One Team.</h2>
-        <p class="contact-sub" data-en="Whether you represent a school, an investment fund, a government body, or a strategic partner in Iraq, Africa, or the US — reach us directly." data-ar="سواء كنت تمثّل مدرسة أو صندوق استثماري أو جهة حكومية أو شريكاً استراتيجياً في العراق أو أفريقيا أو أمريكا — تواصل معنا مباشرة.">Whether you represent a school, an investment fund, a government body, or a strategic partner in Iraq, Africa, or the US — reach us directly.</p>
+        <p class="contact-sub" data-en="School, investor, or strategic partner — we respond within 24 hours." data-ar="مدرسة أو مستثمر أو شريك استراتيجي — نردّ خلال 24 ساعة.">School, investor, or strategic partner — we respond within 24 hours.</p>
         <div class="contact-items">
           <div class="ci"><div class="ci-icon">&#9993;</div>info@blu9l.com</div>
           <div class="ci"><div class="ci-icon">&#128241;</div>+1 (202) 644-6646 · WhatsApp</div>
@@ -1745,11 +1792,13 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
     <div>
       <div class="fc-title" data-en="Company" data-ar="الشركة">Company</div>
       <ul class="fc-links">
-        <li><a href="#story" data-en="About Blu9L" data-ar="عن بلو9إل">About Blu9L</a></li>
+        <li><a href="#why-blu9l" data-en="About Blu9L" data-ar="عن بلو9إل">About Blu9L</a></li>
+        <li><a href="#leadership" data-en="Leadership" data-ar="القيادة">Leadership</a></li>
         <li><a href="#event" data-en="July 6 Launch" data-ar="إطلاق 6 يوليو">July 6 Launch</a></li>
-        <li><a href="#invest" data-en="Strategic Opportunity" data-ar="الفرصة الاستراتيجية">Strategic Opportunity</a></li>
-        <li><a href="#leadership" data-en="Leadership Team" data-ar="فريق القيادة">Leadership Team</a></li>
+        <li><a href="#invest" data-en="Investors" data-ar="المستثمرون">Investors</a></li>
+        <li><a href="#faq" data-en="FAQ" data-ar="الأسئلة الشائعة">FAQ</a></li>
         <li><a href="#contact" data-en="Contact" data-ar="تواصل">Contact</a></li>
+        <li><a href="https://wa.me/12026446646" target="_blank" rel="noopener" data-en="Book a Demo" data-ar="احجز عرضاً">Book a Demo</a></li>
       </ul>
     </div>
   </div>
