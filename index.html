@@ -1005,6 +1005,72 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
   ]
 }
 </script>
+<style id="b9-engineering">
+/* whitespace upgrade */
+.section{padding:140px 48px;}
+@media(max-width:768px){.section{padding:88px 20px;}}
+
+/* ── FIXED INTELLIGENCE RAIL ── */
+#b9rail{position:fixed;left:26px;top:50%;transform:translateY(-50%);z-index:600;display:flex;flex-direction:column;gap:0;}
+@media(max-width:1180px){#b9rail{display:none;}}
+#b9rail .rail-node{display:flex;align-items:center;gap:10px;padding:13px 0;position:relative;text-decoration:none;}
+#b9rail .rail-node::before{content:"";position:absolute;left:4px;top:100%;width:1px;height:0;background:var(--bline);}
+#b9rail .rail-node:not(:last-child)::before{height:26px;top:calc(100% - 13px);}
+#b9rail .rail-dot{width:9px;height:9px;border-radius:50%;border:1px solid var(--w30);background:var(--ink);transition:all .35s;flex-shrink:0;position:relative;z-index:1;}
+#b9rail .rail-label{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:2px;text-transform:uppercase;color:var(--w30);transition:color .35s;white-space:nowrap;opacity:0;transform:translateX(-6px);transition:all .3s;}
+#b9rail .rail-node:hover .rail-label{opacity:1;transform:translateX(0);}
+#b9rail .rail-node.active .rail-dot{background:var(--b1);border-color:var(--b1);box-shadow:0 0 14px var(--b1),0 0 0 4px var(--b4);}
+#b9rail .rail-node.active .rail-label{color:var(--b2);opacity:1;transform:translateX(0);}
+#b9rail .rail-node.passed .rail-dot{background:var(--b0);border-color:var(--b0);}
+#b9rail .rail-node.passed::before{background:var(--b0);}
+
+/* ── FLOW DIAGRAM PRIMITIVES ── */
+.b9flow{display:flex;align-items:stretch;gap:0;flex-wrap:nowrap;}
+.b9flow-node{flex:1;background:var(--glass);border:1px solid var(--line);border-radius:12px;padding:22px 18px;text-align:center;min-width:0;transition:border-color .25s,transform .25s;}
+.b9flow-node:hover{border-color:var(--bline);transform:translateY(-3px);}
+.b9flow-node .fn-k{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--b2);display:block;margin-bottom:8px;}
+.b9flow-node .fn-t{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--w);display:block;margin-bottom:7px;}
+.b9flow-node .fn-d{font-size:11px;line-height:1.5;color:var(--w50);display:block;}
+.b9flow-link{width:44px;flex-shrink:0;display:flex;align-items:center;justify-content:center;position:relative;}
+.b9flow-link::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--bline);}
+.b9flow-link::after{content:"";position:absolute;width:5px;height:5px;border-radius:50%;background:var(--b1);box-shadow:0 0 10px var(--b1);animation:b9flowX 2.4s linear infinite;}
+@keyframes b9flowX{0%{left:0;opacity:0;}15%{opacity:1;}85%{opacity:1;}100%{left:calc(100% - 5px);opacity:0;}}
+@media(max-width:880px){.b9flow{flex-direction:column;}.b9flow-link{width:auto;height:36px;}.b9flow-link::before{left:50%;right:auto;top:0;bottom:0;width:1px;height:auto;}.b9flow-link::after{animation:b9flowY 2.4s linear infinite;left:calc(50% - 2px);}@keyframes b9flowY{0%{top:0;opacity:0;}15%{opacity:1;}85%{opacity:1;}100%{top:calc(100% - 5px);opacity:0;}}}
+
+/* ── AIG STACK ── */
+.aig-stack{max-width:680px;margin:0 auto;position:relative;}
+.aig-layer{display:flex;align-items:center;gap:18px;background:var(--glass);border:1px solid var(--line);border-radius:12px;padding:18px 22px;position:relative;transition:border-color .25s,transform .25s;}
+.aig-layer:hover{border-color:var(--bline);transform:translateX(4px);}
+.aig-layer + .aig-conn{width:1px;height:34px;margin:0 auto;background:var(--bline);position:relative;}
+.aig-conn::after{content:"";position:absolute;left:-2px;width:5px;height:5px;border-radius:50%;background:var(--b1);box-shadow:0 0 10px var(--b1);animation:b9down 1.8s linear infinite;}
+@keyframes b9down{0%{top:0;opacity:0;}20%{opacity:1;}80%{opacity:1;}100%{top:calc(100% - 5px);opacity:0;}}
+.aig-layer .al-n{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--g1);letter-spacing:1.5px;width:30px;flex-shrink:0;}
+.aig-layer .al-body{flex:1;min-width:0;}
+.aig-layer .al-t{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--w);display:block;margin-bottom:3px;}
+.aig-layer .al-d{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.5px;color:var(--w50);line-height:1.6;display:block;}
+.aig-loop{position:absolute;right:-46px;top:130px;bottom:60px;width:30px;border:1px dashed rgba(221,160,32,.4);border-left:none;border-radius:0 14px 14px 0;}
+.aig-loop::before{content:"↺";position:absolute;left:18px;top:50%;transform:translateY(-50%);color:var(--g1);font-size:14px;background:var(--ink);padding:4px 0;}
+@media(max-width:840px){.aig-loop{display:none;}}
+
+/* ── CORRIDOR MAP ── */
+.b9map{position:relative;max-width:760px;margin:0 auto;}
+.b9map svg{width:100%;height:auto;display:block;}
+.b9map .mp-beam{stroke:var(--b1);stroke-width:1;fill:none;stroke-dasharray:5 7;animation:b9dash 1.6s linear infinite;opacity:.7;}
+@keyframes b9dash{to{stroke-dashoffset:-24;}}
+.b9map .mp-node{fill:var(--b0);}
+.b9map .mp-halo{fill:none;stroke:var(--b1);opacity:.35;}
+.b9map .mp-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;fill:var(--w70);text-transform:uppercase;}
+.b9map .mp-sub{font-family:'JetBrains Mono',monospace;font-size:7.5px;letter-spacing:1.5px;fill:var(--w30);text-transform:uppercase;}
+
+/* ── ENTERPRISE GRID ── */
+.ent-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+@media(max-width:920px){.ent-grid{grid-template-columns:1fr;}}
+.ent-card{background:var(--glass);border:1px solid var(--line);border-radius:14px;padding:28px 26px;transition:border-color .25s,transform .25s;}
+.ent-card:hover{border-color:var(--bline);transform:translateY(-3px);}
+.ent-card .en-k{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:2px;color:var(--g1);text-transform:uppercase;display:block;margin-bottom:12px;}
+.ent-card h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--w);margin:0 0 8px;}
+.ent-card p{font-size:12.5px;line-height:1.65;color:var(--w50);margin:0;}
+</style>
 </head>
 <body>
 
@@ -1062,7 +1128,7 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
 </nav>
 
 <!-- ── HERO ── -->
-<section class="hero" aria-label="Hero — IRAS® Egypt School Intelligence Platform">
+<section id="home" class="hero" aria-label="Hero — IRAS® Egypt School Intelligence Platform">
   <div class="hero-geo"></div>
   <div class="orb orb-1"></div><div class="orb orb-2"></div>
   <div class="hero-content">
@@ -1218,7 +1284,7 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
           <span data-en="US → Gulf → Africa" data-ar="أمريكا ← الخليج ← أفريقيا">US → Gulf → Africa</span>
           <span data-en="Launching 2026" data-ar="إطلاق 2026">Launching 2026</span>
         </div>
-        <a class="eco-link" style="color:var(--g1);" href="https://wa.me/12026446646?text=I%27m%20interested%20in%20the%20Automotive%20Intelligence%20Grid" target="_blank" rel="noopener" data-en="Join the Waitlist →" data-ar="← انضم لقائمة الانتظار">Join the Waitlist →</a>
+        <a class="eco-link" style="color:var(--g1);" href="#aig" data-en="View Architecture ↓" data-ar="↓ عرض البنية">View Architecture ↓</a>
       </div>
 
     </div>
@@ -1491,6 +1557,43 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
   </div>
 </section>
 
+<!-- ── IRAS ARCHITECTURE ── -->
+<section class="section" id="iras-arch" style="background:var(--ink);border-top:1px solid var(--line);padding-top:100px;padding-bottom:100px;">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:56px;">
+      <div class="kicker" style="justify-content:center;" data-en="System Architecture" data-ar="بنية النظام">System Architecture</div>
+      <h2 class="h2" data-en="How IRAS® <em>Moves Intelligence.</em>" data-ar="كيف تنقل إيراس® <em>الذكاء.</em>">How IRAS® <em>Moves Intelligence.</em></h2>
+      <div class="h2-rule" style="background:linear-gradient(90deg,transparent,var(--g1),transparent);"></div>
+    </div>
+    <div class="b9flow reveal">
+      <div class="b9flow-node">
+        <span class="fn-k" data-en="Input" data-ar="المدخلات">Input</span>
+        <span class="fn-t" data-en="Campus Signals" data-ar="إشارات الحرم">Campus Signals</span>
+        <span class="fn-d" data-en="Attendance · gates · staff entries · forms" data-ar="الحضور · البوابات · إدخالات الموظفين">Attendance · gates · staff entries · forms</span>
+      </div>
+      <div class="b9flow-link"></div>
+      <div class="b9flow-node">
+        <span class="fn-k" data-en="Core" data-ar="النواة">Core</span>
+        <span class="fn-t" data-en="IRAS® Engine" data-ar="محرك إيراس®">IRAS® Engine</span>
+        <span class="fn-d" data-en="Real-time processing · rules · anomaly detection" data-ar="معالجة فورية · قواعد · كشف الشذوذ">Real-time processing · rules · anomaly detection</span>
+      </div>
+      <div class="b9flow-link"></div>
+      <div class="b9flow-node">
+        <span class="fn-k" data-en="Intelligence" data-ar="الذكاء">Intelligence</span>
+        <span class="fn-t" data-en="Insight Layer" data-ar="طبقة الرؤى">Insight Layer</span>
+        <span class="fn-d" data-en="Dashboards · alerts · attendance analytics" data-ar="لوحات · تنبيهات · تحليلات الحضور">Dashboards · alerts · attendance analytics</span>
+      </div>
+      <div class="b9flow-link"></div>
+      <div class="b9flow-node">
+        <span class="fn-k" data-en="Output" data-ar="المخرجات">Output</span>
+        <span class="fn-t" data-en="Stakeholders" data-ar="المعنيون">Stakeholders</span>
+        <span class="fn-d" data-en="Parents · administrators · group operators" data-ar="أولياء الأمور · الإدارة · المشغلون">Parents · administrators · group operators</span>
+      </div>
+    </div>
+    <p class="reveal" style="text-align:center;margin-top:36px;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--w30);" data-en="Signal in · Intelligence out · Seconds, not days" data-ar="إشارة تدخل · ذكاء يخرج · ثوانٍ لا أيام">Signal in · Intelligence out · Seconds, not days</p>
+  </div>
+</section>
+
 <!-- ── IRAS® VIDEO ── -->
 <section class="video-section section" id="video">
   <div class="container">
@@ -1665,7 +1768,31 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
 
     </div>
 
-    <div class="b9a-band reveal">
+    <div class="b9map reveal" style="margin-bottom:56px;">
+  <svg viewBox="0 0 760 340" xmlns="http://www.w3.org/2000/svg" aria-label="Blu9L operating corridor: US, UAE, Egypt, Africa">
+    <path class="mp-beam" d="M120,110 Q380,20 640,110"/>
+    <path class="mp-beam" d="M640,110 Q520,170 390,190"/>
+    <path class="mp-beam" d="M120,110 Q260,170 390,190"/>
+    <path class="mp-beam" d="M390,190 Q395,250 400,285"/>
+    <circle class="mp-halo" cx="120" cy="110" r="16"><animate attributeName="r" values="12;20;12" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values=".4;.1;.4" dur="3s" repeatCount="indefinite"/></circle>
+    <circle class="mp-node" cx="120" cy="110" r="6"/>
+    <circle class="mp-halo" cx="640" cy="110" r="16"><animate attributeName="r" values="12;20;12" dur="3s" begin=".7s" repeatCount="indefinite"/><animate attributeName="opacity" values=".4;.1;.4" dur="3s" begin=".7s" repeatCount="indefinite"/></circle>
+    <circle class="mp-node" cx="640" cy="110" r="6"/>
+    <circle class="mp-halo" cx="390" cy="190" r="16"><animate attributeName="r" values="12;20;12" dur="3s" begin="1.4s" repeatCount="indefinite"/><animate attributeName="opacity" values=".4;.1;.4" dur="3s" begin="1.4s" repeatCount="indefinite"/></circle>
+    <circle class="mp-node" cx="390" cy="190" r="6"/>
+    <circle class="mp-halo" cx="400" cy="285" r="14"><animate attributeName="r" values="10;17;10" dur="3s" begin="2.1s" repeatCount="indefinite"/><animate attributeName="opacity" values=".4;.1;.4" dur="3s" begin="2.1s" repeatCount="indefinite"/></circle>
+    <circle class="mp-node" cx="400" cy="285" r="5"/>
+    <text class="mp-label" x="120" y="80" text-anchor="middle">United States</text>
+    <text class="mp-sub" x="120" y="95" text-anchor="middle">Capital · Sourcing</text>
+    <text class="mp-label" x="640" y="80" text-anchor="middle">UAE</text>
+    <text class="mp-sub" x="640" y="95" text-anchor="middle">Licensed Base · FZE</text>
+    <text class="mp-label" x="320" y="165" text-anchor="end">Egypt</text>
+    <text class="mp-sub" x="320" y="180" text-anchor="end">Ground Operations</text>
+    <text class="mp-label" x="400" y="320" text-anchor="middle">Africa</text>
+    <text class="mp-sub" x="400" y="334" text-anchor="middle">Growth Corridor</text>
+  </svg>
+</div>
+<div class="b9a-band reveal">
       <div class="b9a-band-txt">
         <h3 data-en="One Structure. <em>Three Markets.</em> Real Execution." data-ar="هيكل واحد. <em>ثلاثة أسواق.</em> تنفيذ حقيقي.">One Structure. <em>Three Markets.</em> Real Execution.</h3>
         <p data-en="Whether you are an institution entering the Gulf, an operator seeking a UAE base, or a principal in a cross-border transaction — our licensed advisory practice provides the on-ground capacity to move." data-ar="سواء كنت مؤسسة تدخل الخليج، أو مشغّلاً يبحث عن قاعدة في الإمارات، أو طرفاً رئيسياً في معاملة عابرة للحدود — توفّر ممارستنا الاستشارية المرخّصة القدرة الميدانية على التحرك.">Whether you are an institution entering the Gulf, an operator seeking a UAE base, or a principal in a cross-border transaction — our licensed advisory practice provides the on-ground capacity to move.</p>
@@ -1676,6 +1803,56 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
   </div>
 </section>
 
+
+<!-- ── AIG ARCHITECTURE PREVIEW ── -->
+<section class="section" id="aig" style="background:var(--deep);border-top:1px solid var(--line);position:relative;overflow:hidden;">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:24px;">
+      <div class="kicker" style="justify-content:center;" data-en="DIV-03 · Architecture Preview" data-ar="القطاع 03 · معاينة البنية">DIV-03 · Architecture Preview</div>
+      <h2 class="h2" data-en="Automotive Intelligence Grid<br><em>— Under Development.</em>" data-ar="شبكة ذكاء السيارات<br><em>— قيد التطوير.</em>">Automotive Intelligence Grid<br><em>— Under Development.</em></h2>
+      <div class="h2-rule" style="background:linear-gradient(90deg,transparent,var(--g1),transparent);"></div>
+      <p class="serif-lead" style="margin:0 auto 16px;text-align:center;max-width:560px;" data-en="A learning system for cross-border vehicle trade — US sourcing to Gulf and African demand. This is the architecture, not a promise." data-ar="نظام تعلّم لتجارة المركبات عبر الحدود — من التوريد الأمريكي إلى الطلب الخليجي والأفريقي. هذه هي البنية، وليست وعداً.">A learning system for cross-border vehicle trade — US sourcing to Gulf and African demand. This is the architecture, not a promise.</p>
+      <span style="display:inline-flex;align-items:center;gap:7px;font-family:'JetBrains Mono',monospace;font-size:8.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border-radius:999px;border:1px solid rgba(221,160,32,.3);background:rgba(221,160,32,.06);color:var(--g1);margin-bottom:48px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--g1);"></span><span data-en="Currently Under Development · Target 2026" data-ar="قيد التطوير حالياً · المستهدف 2026">Currently Under Development · Target 2026</span></span>
+    </div>
+
+    <div class="aig-stack reveal">
+      <div class="aig-loop" aria-hidden="true"></div>
+      <div class="aig-layer"><span class="al-n">L1</span><span class="al-body"><span class="al-t" data-en="Data Sources" data-ar="مصادر البيانات">Data Sources</span><span class="al-d" data-en="Auction feeds · dealer inventories · logistics events · market pricing" data-ar="بيانات المزادات · مخزون الوكلاء · أحداث لوجستية · تسعير السوق">Auction feeds · dealer inventories · logistics events · market pricing</span></span></div>
+      <div class="aig-conn"></div>
+      <div class="aig-layer"><span class="al-n">L2</span><span class="al-body"><span class="al-t" data-en="Knowledge Layer" data-ar="طبقة المعرفة">Knowledge Layer</span><span class="al-d" data-en="Unified vehicle ontology · entity resolution · embedding store" data-ar="أنطولوجيا موحدة للمركبات · حل الكيانات · مخزن المتجهات">Unified vehicle ontology · entity resolution · embedding store</span></span></div>
+      <div class="aig-conn"></div>
+      <div class="aig-layer"><span class="al-n">L3</span><span class="al-body"><span class="al-t" data-en="Learning Engine" data-ar="محرك التعلّم">Learning Engine</span><span class="al-d" data-en="Price prediction · demand forecasting · scheduled retraining pipelines" data-ar="توقع الأسعار · التنبؤ بالطلب · إعادة تدريب مجدولة">Price prediction · demand forecasting · scheduled retraining pipelines</span></span></div>
+      <div class="aig-conn"></div>
+      <div class="aig-layer"><span class="al-n">L4</span><span class="al-body"><span class="al-t" data-en="Agent Layer" data-ar="طبقة الوكلاء">Agent Layer</span><span class="al-d" data-en="Sourcing, valuation &amp; logistics agents orchestrated over the knowledge layer" data-ar="وكلاء التوريد والتقييم واللوجستيات منسّقون فوق طبقة المعرفة">Sourcing, valuation &amp; logistics agents orchestrated over the knowledge layer</span></span></div>
+      <div class="aig-conn"></div>
+      <div class="aig-layer"><span class="al-n">L5</span><span class="al-body"><span class="al-t" data-en="Decision Support" data-ar="دعم القرار">Decision Support</span><span class="al-d" data-en="Human-in-the-loop recommendations with full reasoning traces" data-ar="توصيات بإشراف بشري مع مسارات استدلال كاملة">Human-in-the-loop recommendations with full reasoning traces</span></span></div>
+      <div class="aig-conn"></div>
+      <div class="aig-layer"><span class="al-n">L6</span><span class="al-body"><span class="al-t" data-en="Outcome Tracking" data-ar="تتبع النتائج">Outcome Tracking</span><span class="al-d" data-en="Every decision logged against realized margin and cycle time" data-ar="كل قرار يُسجَّل مقابل الهامش المحقق وزمن الدورة">Every decision logged against realized margin and cycle time</span></span></div>
+      <div class="aig-conn"></div>
+      <div class="aig-layer" style="border-color:rgba(221,160,32,.3);"><span class="al-n" style="color:var(--g1);">L7</span><span class="al-body"><span class="al-t" data-en="Continuous Improvement" data-ar="التحسين المستمر">Continuous Improvement</span><span class="al-d" data-en="Outcomes feed back into training — the grid compounds with every transaction" data-ar="النتائج تعود إلى التدريب — الشبكة تتعاظم مع كل معاملة">Outcomes feed back into training — the grid compounds with every transaction</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ENTERPRISE SCALE ── -->
+<section class="section" id="enterprise" style="background:var(--ink);border-top:1px solid var(--line);">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:56px;">
+      <div class="kicker" style="justify-content:center;" data-en="Engineering Standards" data-ar="معايير الهندسة">Engineering Standards</div>
+      <h2 class="h2" data-en="Built for<br><em>Enterprise Scale.</em>" data-ar="مبني<br><em>لنطاق المؤسسات.</em>">Built for<br><em>Enterprise Scale.</em></h2>
+      <div class="h2-rule" style="background:linear-gradient(90deg,transparent,var(--g1),transparent);"></div>
+      <p class="serif-lead" style="margin:0 auto;text-align:center;max-width:540px;" data-en="The standards the Automotive Intelligence Grid is engineered against — and the bar we hold every platform partner to." data-ar="المعايير التي تُهندَس عليها شبكة ذكاء السيارات — والمستوى الذي نُلزم به كل شريك منصة.">The standards the Automotive Intelligence Grid is engineered against — and the bar we hold every platform partner to.</p>
+    </div>
+    <div class="ent-grid reveal">
+      <div class="ent-card"><span class="en-k">01 · Compute</span><h3 data-en="Cloud-Native by Design" data-ar="سحابي المنشأ بالتصميم">Cloud-Native by Design</h3><p data-en="Stateless services, containerized workloads, horizontal scaling. No legacy monoliths to migrate." data-ar="خدمات عديمة الحالة، أحمال حاويات، توسّع أفقي. لا أنظمة قديمة للترحيل.">Stateless services, containerized workloads, horizontal scaling. No legacy monoliths to migrate.</p></div>
+      <div class="ent-card"><span class="en-k">02 · Data</span><h3 data-en="Secure Data Architecture" data-ar="بنية بيانات آمنة">Secure Data Architecture</h3><p data-en="Tenant-isolated stores, encryption in transit and at rest, least-privilege access from day one." data-ar="مخازن معزولة لكل عميل، تشفير أثناء النقل والتخزين، صلاحيات الحد الأدنى من اليوم الأول.">Tenant-isolated stores, encryption in transit and at rest, least-privilege access from day one.</p></div>
+      <div class="ent-card"><span class="en-k">03 · Pipelines</span><h3 data-en="Event-Driven Processing" data-ar="معالجة موجهة بالأحداث">Event-Driven Processing</h3><p data-en="Asynchronous ingestion; queues decouple producers from consumers so spikes never cascade." data-ar="استيعاب غير متزامن؛ الطوابير تفصل المنتجين عن المستهلكين فلا تتسلسل الذروات.">Asynchronous ingestion; queues decouple producers from consumers so spikes never cascade.</p></div>
+      <div class="ent-card"><span class="en-k">04 · ML</span><h3 data-en="AI-Ready Infrastructure" data-ar="بنية جاهزة للذكاء الاصطناعي">AI-Ready Infrastructure</h3><p data-en="Versioned models, feature stores, and evaluation gates before anything reaches production." data-ar="نماذج مُدارة بالإصدارات، مخازن سمات، وبوابات تقييم قبل وصول أي شيء للإنتاج.">Versioned models, feature stores, and evaluation gates before anything reaches production.</p></div>
+      <div class="ent-card"><span class="en-k">05 · Ops</span><h3 data-en="Infrastructure as Code" data-ar="البنية التحتية ككود">Infrastructure as Code</h3><p data-en="Reproducible environments. Every deployment reviewable, every change auditable." data-ar="بيئات قابلة للاستنساخ. كل نشر قابل للمراجعة، وكل تغيير قابل للتدقيق.">Reproducible environments. Every deployment reviewable, every change auditable.</p></div>
+      <div class="ent-card"><span class="en-k">06 · Cloud</span><h3 data-en="AWS Integration Path" data-ar="مسار التكامل مع AWS">AWS Integration Path</h3><p data-en="Designed to map onto managed services — compute, storage, identity, and ML tooling — as deployment scales." data-ar="مصمم للتوافق مع الخدمات المُدارة — الحوسبة والتخزين والهوية وأدوات التعلم الآلي — مع توسّع النشر.">Designed to map onto managed services — compute, storage, identity, and ML tooling — as deployment scales.</p></div>
+    </div>
+  </div>
+</section>
 
 <div class="b9spine" aria-hidden="false">
   <div class="b9spine-line"><span></span></div>
@@ -2214,10 +2391,34 @@ async function handleEventSubmit(e){
   }
 }
 </script>
+<nav id="b9rail" aria-label="Intelligence map">
+  <a class="rail-node" href="#home"><span class="rail-dot"></span><span class="rail-label">blu9L</span></a>
+  <a class="rail-node" href="#ecosystem"><span class="rail-dot"></span><span class="rail-label">Products</span></a>
+  <a class="rail-node" href="#iras"><span class="rail-dot"></span><span class="rail-label">IRAS®</span></a>
+  <a class="rail-node" href="#advisory"><span class="rail-dot"></span><span class="rail-label">Advisory</span></a>
+  <a class="rail-node" href="#aig"><span class="rail-dot"></span><span class="rail-label">AIG</span></a>
+  <a class="rail-node" href="#enterprise"><span class="rail-dot"></span><span class="rail-label">Infrastructure</span></a>
+</nav>
 <div id="b9progress" style="position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--b0),var(--g1));z-index:9999;"></div>
 <script>
 (function(){var p=document.getElementById('b9progress');addEventListener('scroll',function(){var h=document.documentElement;p.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
 if(new Date()>new Date('2026-07-07T00:00:00')){var e=document.querySelector('.eb-text');if(e){e.setAttribute('data-en','July 6 Cohort Completed · Next Session Announcing Soon');e.setAttribute('data-ar','اكتملت دفعة 6 يوليو · الإعلان عن الجلسة القادمة قريباً');e.textContent=e.getAttribute('data-en');}}})();
+</script>
+<script>
+(function(){
+  var nodes = document.querySelectorAll('#b9rail .rail-node');
+  var ids = ['home','ecosystem','iras','advisory','aig','enterprise'];
+  var secs = ids.map(function(i){return document.getElementById(i);});
+  function update(){
+    var y = scrollY + innerHeight*0.45, idx = 0;
+    secs.forEach(function(s,i){ if(s && s.offsetTop <= y) idx = i; });
+    nodes.forEach(function(n,i){
+      n.classList.toggle('active', i===idx);
+      n.classList.toggle('passed', i<idx);
+    });
+  }
+  addEventListener('scroll', update, {passive:true}); update();
+})();
 </script>
 </body>
 </html>
