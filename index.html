@@ -1085,6 +1085,31 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
 /* stream canvas */
 @media(prefers-reduced-motion:reduce){.aig-conn::after,.b9flow-link::after,.eco-grid::after{animation:none;}}
 </style>
+<style id="aig-eco-css">
+#aig-stage{position:relative;height:560px;max-width:1040px;margin:0 auto;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:radial-gradient(ellipse 60% 55% at 50% 45%,rgba(0,68,238,.10),transparent 70%),var(--ink);}
+#aig-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;}
+#aig-labels span{position:absolute;transform:translate(-50%,-50%);font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1.8px;text-transform:uppercase;color:var(--w70);background:rgba(9,21,37,.78);border:1px solid var(--line);border-radius:999px;padding:5px 12px;white-space:nowrap;pointer-events:none;transition:color .3s,border-color .3s,box-shadow .3s;}
+#aig-labels span.hot{color:#fff;border-color:var(--g1);box-shadow:0 0 18px rgba(221,160,32,.35);}
+#aig-corelabel{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none;}
+#aig-corelabel b{display:block;font-family:'Playfair Display',serif;font-size:26px;font-weight:800;color:#fff;letter-spacing:1px;text-shadow:0 0 26px rgba(26,107,255,.9);}
+#aig-corelabel span{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--b2);}
+#aig-hint{text-align:center;font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:2px;text-transform:uppercase;color:var(--w30);margin:16px 0 64px;}
+@media(max-width:880px){#aig-stage{height:420px;}#aig-corelabel b{font-size:19px;}}
+/* journey loop */
+.aigj{max-width:1040px;margin:0 auto;position:relative;}
+.aigj-track{height:2px;background:var(--line);border-radius:2px;margin:0 8px 18px;position:relative;overflow:hidden;}
+.aigj-fill{height:100%;width:0;background:linear-gradient(90deg,var(--b0),var(--g1));transition:width .25s linear;}
+.aigj-steps{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;}
+@media(max-width:1080px){.aigj-steps{grid-template-columns:repeat(4,1fr);}}
+@media(max-width:680px){.aigj-steps{grid-template-columns:repeat(2,1fr);}}
+.aigj-step{appearance:none;background:var(--glass);border:1px solid var(--line);border-radius:12px;padding:16px 13px;text-align:left;cursor:pointer;transition:border-color .25s,transform .25s,box-shadow .25s;display:flex;flex-direction:column;gap:6px;}
+.aigj-step:hover{border-color:var(--bline);transform:translateY(-2px);}
+.aigj-step.on{border-color:var(--g1);box-shadow:0 0 26px rgba(221,160,32,.22);transform:translateY(-3px);}
+.aigj-step .js-n{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:2px;color:var(--g1);}
+.aigj-step .js-t{font-family:'Playfair Display',serif;font-size:13.5px;font-weight:700;color:var(--w);line-height:1.2;}
+.aigj-step .js-d{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.4px;color:var(--w50);line-height:1.7;}
+.aigj-step.on .js-d{color:var(--b2);}
+</style>
 </head>
 <body>
 
@@ -1813,27 +1838,32 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
   <div class="container">
     <div class="reveal" style="text-align:center;margin-bottom:24px;">
       <div class="kicker" style="justify-content:center;" data-en="DIV-03 · Architecture Preview" data-ar="القطاع 03 · معاينة البنية">DIV-03 · Architecture Preview</div>
-      <h2 class="h2" data-en="Automotive Intelligence Grid<br><em>— Under Development.</em>" data-ar="شبكة ذكاء السيارات<br><em>— قيد التطوير.</em>">Automotive Intelligence Grid<br><em>— Under Development.</em></h2>
+      <h2 class="h2" data-en="Not Software.<br><em>An Intelligence Ecosystem.</em>" data-ar="ليست برمجيات.<br><em>منظومة ذكاء.</em>">Not Software.<br><em>An Intelligence Ecosystem.</em></h2>
       <div class="h2-rule" style="background:linear-gradient(90deg,transparent,var(--g1),transparent);"></div>
-      <p class="serif-lead" style="margin:0 auto 16px;text-align:center;max-width:560px;" data-en="A learning system for cross-border vehicle trade — US sourcing to Gulf and African demand. This is the architecture, not a promise." data-ar="نظام تعلّم لتجارة المركبات عبر الحدود — من التوريد الأمريكي إلى الطلب الخليجي والأفريقي. هذه هي البنية، وليست وعداً.">A learning system for cross-border vehicle trade — US sourcing to Gulf and African demand. This is the architecture, not a promise.</p>
+      <p class="serif-lead" style="margin:0 auto 16px;text-align:center;max-width:560px;" data-en="Every event becomes knowledge. Knowledge creates learning. Learning generates intelligence. Intelligence changes outcomes — and outcomes create new events. The grid compounds." data-ar="كل حدث يصبح معرفة. المعرفة تولّد تعلّماً. التعلّم يولّد ذكاءً. الذكاء يغيّر النتائج — والنتائج تخلق أحداثاً جديدة. الشبكة تتعاظم.">Every event becomes knowledge. Knowledge creates learning. Learning generates intelligence. Intelligence changes outcomes — and outcomes create new events. The grid compounds.</p>
       <span style="display:inline-flex;align-items:center;gap:7px;font-family:'JetBrains Mono',monospace;font-size:8.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border-radius:999px;border:1px solid rgba(221,160,32,.3);background:rgba(221,160,32,.06);color:var(--g1);margin-bottom:48px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--g1);"></span><span data-en="Currently Under Development · Target 2026" data-ar="قيد التطوير حالياً · المستهدف 2026">Currently Under Development · Target 2026</span></span>
     </div>
 
-    <div class="aig-stack reveal">
-      <div class="aig-loop" aria-hidden="true"></div>
-      <div class="aig-layer"><span class="al-n">L1</span><span class="al-body"><span class="al-t" data-en="Data Sources" data-ar="مصادر البيانات">Data Sources</span><span class="al-d" data-en="Auction feeds · dealer inventories · logistics events · market pricing" data-ar="بيانات المزادات · مخزون الوكلاء · أحداث لوجستية · تسعير السوق">Auction feeds · dealer inventories · logistics events · market pricing</span><span class="al-x">Stream ingestion · schema registry · source adapter framework</span></span></div>
-      <div class="aig-conn"></div>
-      <div class="aig-layer"><span class="al-n">L2</span><span class="al-body"><span class="al-t" data-en="Knowledge Layer" data-ar="طبقة المعرفة">Knowledge Layer</span><span class="al-d" data-en="Unified vehicle ontology · entity resolution · embedding store" data-ar="أنطولوجيا موحدة للمركبات · حل الكيانات · مخزن المتجهات">Unified vehicle ontology · entity resolution · embedding store</span><span class="al-x">Graph + vector store · dedup &amp; entity linking · lineage tracking</span></span></div>
-      <div class="aig-conn"></div>
-      <div class="aig-layer"><span class="al-n">L3</span><span class="al-body"><span class="al-t" data-en="Learning Engine" data-ar="محرك التعلّم">Learning Engine</span><span class="al-d" data-en="Price prediction · demand forecasting · scheduled retraining pipelines" data-ar="توقع الأسعار · التنبؤ بالطلب · إعادة تدريب مجدولة">Price prediction · demand forecasting · scheduled retraining pipelines</span><span class="al-x">Gradient-boosted pricing · time-series demand models · eval gates</span></span></div>
-      <div class="aig-conn"></div>
-      <div class="aig-layer"><span class="al-n">L4</span><span class="al-body"><span class="al-t" data-en="Agent Layer" data-ar="طبقة الوكلاء">Agent Layer</span><span class="al-d" data-en="Sourcing, valuation &amp; logistics agents orchestrated over the knowledge layer" data-ar="وكلاء التوريد والتقييم واللوجستيات منسّقون فوق طبقة المعرفة">Sourcing, valuation &amp; logistics agents orchestrated over the knowledge layer</span><span class="al-x">Tool-calling agents · orchestration · policy guardrails</span></span></div>
-      <div class="aig-conn"></div>
-      <div class="aig-layer"><span class="al-n">L5</span><span class="al-body"><span class="al-t" data-en="Decision Support" data-ar="دعم القرار">Decision Support</span><span class="al-d" data-en="Human-in-the-loop recommendations with full reasoning traces" data-ar="توصيات بإشراف بشري مع مسارات استدلال كاملة">Human-in-the-loop recommendations with full reasoning traces</span><span class="al-x">Confidence scoring · reasoning traces · approval workflow</span></span></div>
-      <div class="aig-conn"></div>
-      <div class="aig-layer"><span class="al-n">L6</span><span class="al-body"><span class="al-t" data-en="Outcome Tracking" data-ar="تتبع النتائج">Outcome Tracking</span><span class="al-d" data-en="Every decision logged against realized margin and cycle time" data-ar="كل قرار يُسجَّل مقابل الهامش المحقق وزمن الدورة">Every decision logged against realized margin and cycle time</span><span class="al-x">Decision ledger · margin attribution · cycle-time metrics</span></span></div>
-      <div class="aig-conn"></div>
-      <div class="aig-layer" style="border-color:rgba(221,160,32,.3);"><span class="al-n" style="color:var(--g1);">L7</span><span class="al-body"><span class="al-t" data-en="Continuous Improvement" data-ar="التحسين المستمر">Continuous Improvement</span><span class="al-d" data-en="Outcomes feed back into training — the grid compounds with every transaction" data-ar="النتائج تعود إلى التدريب — الشبكة تتعاظم مع كل معاملة">Outcomes feed back into training — the grid compounds with every transaction</span><span class="al-x">Feedback datasets · scheduled retraining · drift monitoring</span></span></div>
+    <!-- 3D INTELLIGENCE ECOSYSTEM -->
+    <div id="aig-stage" class="reveal">
+      <canvas id="aig-canvas"></canvas>
+      <div id="aig-labels"></div>
+      <div id="aig-corelabel"><b>AIG</b><span data-en="Intelligence Core" data-ar="نواة الذكاء">Intelligence Core</span></div>
+    </div>
+    <p id="aig-hint" data-en="Live ecosystem · move your cursor to orbit · blue = events in · gold = intelligence out" data-ar="منظومة حية · حرّك المؤشر للدوران · أزرق = أحداث داخلة · ذهبي = ذكاء خارج">Live ecosystem · move your cursor to orbit · blue = events in · gold = intelligence out</p>
+
+    <!-- INTELLIGENCE JOURNEY LOOP -->
+    <div class="aigj reveal" id="aigj">
+      <div class="aigj-track"><div class="aigj-fill" id="aigj-fill"></div></div>
+      <div class="aigj-steps">
+        <button class="aigj-step" data-i="0"><span class="js-n">01</span><span class="js-t" data-en="Event Captured" data-ar="التقاط الحدث">Event Captured</span><span class="js-d">2023 Ford F-150 listed · auction feed · transport quote</span></button>
+        <button class="aigj-step" data-i="1"><span class="js-n">02</span><span class="js-t" data-en="Event Processing" data-ar="معالجة الحدث">Event Processing</span><span class="js-d">Normalize · enrich · resolve entities</span></button>
+        <button class="aigj-step" data-i="2"><span class="js-n">03</span><span class="js-t" data-en="Knowledge Graph" data-ar="رسم المعرفة">Knowledge Graph</span><span class="js-d">Vehicle ↔ dealer ↔ buyer ↔ region ↔ market</span></button>
+        <button class="aigj-step" data-i="3"><span class="js-n">04</span><span class="js-t" data-en="Outcome Engine" data-ar="محرك النتائج">Outcome Engine</span><span class="js-d">Sold in 9 days · gross $2,400 · CSAT 92%</span></button>
+        <button class="aigj-step" data-i="4"><span class="js-n">05</span><span class="js-t" data-en="Learning Engine" data-ar="محرك التعلّم">Learning Engine</span><span class="js-d">Price · mileage · trim · region · seasonality</span></button>
+        <button class="aigj-step" data-i="5"><span class="js-n">06</span><span class="js-t" data-en="Intelligence Object" data-ar="كائن الذكاء">Intelligence Object</span><span class="js-d">Turn 8.4 days · price $34,950 · confidence 94%</span></button>
+        <button class="aigj-step" data-i="6"><span class="js-n">07</span><span class="js-t" data-en="Distribution" data-ar="التوزيع">Distribution</span><span class="js-d">Insight propagates · dealers A–E · loop restarts ↺</span></button>
+      </div>
     </div>
   </div>
 </section>
@@ -2433,6 +2463,125 @@ if(stack&&matchMedia('(pointer:fine)').matches){
   });
   stack.addEventListener('pointerleave',function(){stack.style.transform='rotateY(0)';});
 }
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+var stage=document.getElementById('aig-stage'); if(!stage||!window.THREE)return;
+if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+var cv=document.getElementById('aig-canvas'),labels=document.getElementById('aig-labels');
+var W=stage.clientWidth,H=stage.clientHeight;
+var renderer=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));renderer.setSize(W,H);
+var scene=new THREE.Scene();scene.fog=new THREE.Fog(0x04080F,30,70);
+var cam=new THREE.PerspectiveCamera(46,W/H,0.1,120);cam.position.set(0,3.5,26);
+
+function glowTex(inner,outer){var s=128,c2=document.createElement('canvas');c2.width=c2.height=s;var g=c2.getContext('2d'),gr=g.createRadialGradient(s/2,s/2,0,s/2,s/2,s/2);gr.addColorStop(0,inner);gr.addColorStop(.35,outer);gr.addColorStop(1,'rgba(0,0,0,0)');g.fillStyle=gr;g.fillRect(0,0,s,s);return new THREE.CanvasTexture(c2);}
+var blueTex=glowTex('rgba(180,210,255,1)','rgba(26,107,255,.55)');
+var goldTex=glowTex('rgba(255,235,190,1)','rgba(221,160,32,.55)');
+
+// core
+var core=new THREE.Sprite(new THREE.SpriteMaterial({map:blueTex,blending:THREE.AdditiveBlending,depthWrite:false}));
+core.scale.set(9,9,1);scene.add(core);
+var coreSolid=new THREE.Mesh(new THREE.SphereGeometry(1.1,24,24),new THREE.MeshBasicMaterial({color:0x5C9BFF}));scene.add(coreSolid);
+
+// stars
+var starGeo=new THREE.BufferGeometry(),sp=[];
+for(var i=0;i<260;i++)sp.push((Math.random()-0.5)*90,(Math.random()-0.5)*55,(Math.random()-0.5)*60-10);
+starGeo.setAttribute('position',new THREE.Float32BufferAttribute(sp,3));
+scene.add(new THREE.Points(starGeo,new THREE.PointsMaterial({color:0x2a3d66,size:0.12,transparent:true,opacity:0.8})));
+
+// domains
+var names=['Auctions','Dealers','Consumers','Market Signals','Logistics','Finance','Service','OEMs'];
+var nodes=[],curves=[],pulses=[],labelEls=[];
+names.forEach(function(n,i){
+  var a=i/names.length*Math.PI*2,R=11+(i%2)*2.4,tilt=0.32;
+  var grp={a:a,R:R,speed:0.05+0.012*(i%3),tilt:tilt,phase:Math.random()*6.28};
+  var s=new THREE.Sprite(new THREE.SpriteMaterial({map:blueTex,blending:THREE.AdditiveBlending,depthWrite:false}));
+  s.scale.set(2.6,2.6,1);scene.add(s);
+  var dot=new THREE.Mesh(new THREE.SphereGeometry(0.34,16,16),new THREE.MeshBasicMaterial({color:0x9CC0FF}));scene.add(dot);
+  grp.sprite=s;grp.dot=dot;nodes.push(grp);
+  var mat=new THREE.LineBasicMaterial({color:0x1A6BFF,transparent:true,opacity:0.34});
+  var geo=new THREE.BufferGeometry().setFromPoints(new Array(24).fill(0).map(function(){return new THREE.Vector3();}));
+  var line=new THREE.Line(geo,mat);scene.add(line);curves.push({line:line,grp:grp});
+  for(var k=0;k<2;k++){
+    var gold=(k===1);
+    var p=new THREE.Sprite(new THREE.SpriteMaterial({map:gold?goldTex:blueTex,blending:THREE.AdditiveBlending,depthWrite:false}));
+    p.scale.set(gold?1.5:1.1,gold?1.5:1.1,1);scene.add(p);
+    pulses.push({s:p,grp:grp,t:Math.random(),speed:0.004+Math.random()*0.004,out:gold});
+  }
+  var el=document.createElement('span');el.textContent=n;labels.appendChild(el);labelEls.push(el);
+});
+
+var mx=0,my=0;
+stage.addEventListener('pointermove',function(e){var r=stage.getBoundingClientRect();mx=(e.clientX-r.left)/r.width-0.5;my=(e.clientY-r.top)/r.height-0.5;},{passive:true});
+var burst=0;addEventListener('aigburst',function(){burst=1;});
+
+var visible=true;
+new IntersectionObserver(function(en){visible=en[0].isIntersecting;},{threshold:0.05}).observe(stage);
+addEventListener('resize',function(){W=stage.clientWidth;H=stage.clientHeight;renderer.setSize(W,H);cam.aspect=W/H;cam.updateProjectionMatrix();});
+
+var v=new THREE.Vector3(),clock=new THREE.Clock();
+function nodePos(g,t){var a=g.a+t*g.speed;return new THREE.Vector3(Math.cos(a)*g.R,Math.sin(a*1.3+g.phase)*2.2+Math.sin(g.tilt)*Math.sin(a)*3.2,Math.sin(a)*g.R*0.55);}
+function frame(){
+  requestAnimationFrame(frame);
+  if(!visible)return;
+  var t=clock.getElapsedTime();
+  burst*=0.96;
+  cam.position.x+=((mx*7)-cam.position.x)*0.05;
+  cam.position.y+=((3.5-my*5)-cam.position.y)*0.05;
+  cam.lookAt(0,0,0);
+  core.material.opacity=0.85+Math.sin(t*2)*0.12;
+  core.scale.setScalar(9+Math.sin(t*2)*0.7+burst*3);
+  nodes.forEach(function(g,i){
+    var p=nodePos(g,t);g.sprite.position.copy(p);g.dot.position.copy(p);
+    g.sprite.material.opacity=0.7+Math.sin(t*1.5+i)*0.2;
+    labelEls[i].classList.toggle('hot',burst>0.3);
+    v.copy(p);v.project(cam);
+    labelEls[i].style.left=((v.x*0.5+0.5)*W)+'px';
+    labelEls[i].style.top=((-v.y*0.5+0.5)*H-26)+'px';
+    labelEls[i].style.opacity=v.z<1?1:0;
+  });
+  curves.forEach(function(cv2){
+    var p=nodePos(cv2.grp,t),pts=cv2.line.geometry.attributes.position.array;
+    var mid=new THREE.Vector3(p.x*0.5,p.y*0.5+2.5,p.z*0.5);
+    for(var j=0;j<24;j++){var u=j/23,a2=new THREE.Vector3().copy(p).multiplyScalar(0),q=new THREE.Vector3();
+      q.x=(1-u)*(1-u)*0+2*(1-u)*u*mid.x+u*u*p.x;
+      q.y=(1-u)*(1-u)*0+2*(1-u)*u*mid.y+u*u*p.y;
+      q.z=(1-u)*(1-u)*0+2*(1-u)*u*mid.z+u*u*p.z;
+      pts[j*3]=q.x;pts[j*3+1]=q.y;pts[j*3+2]=q.z;}
+    cv2.line.geometry.attributes.position.needsUpdate=true;
+    cv2.line.material.opacity=0.28+burst*0.5;
+  });
+  pulses.forEach(function(pu){
+    pu.t+=pu.speed*(1+burst*(pu.out?3:0.5)); if(pu.t>1)pu.t-=1;
+    var p=nodePos(pu.grp,t),u=pu.out?pu.t:1-pu.t;
+    var mid={x:p.x*0.5,y:p.y*0.5+2.5,z:p.z*0.5};
+    pu.s.position.set(
+      (1-u)*(1-u)*0+2*(1-u)*u*mid.x+u*u*p.x,
+      (1-u)*(1-u)*0+2*(1-u)*u*mid.y+u*u*p.y,
+      (1-u)*(1-u)*0+2*(1-u)*u*mid.z+u*u*p.z);
+    pu.s.material.opacity=Math.sin(pu.t*Math.PI)*(pu.out?0.95:0.6)+(pu.out?burst*0.4:0);
+  });
+  renderer.render(scene,cam);
+}
+frame();
+})();
+// journey loop controller
+(function(){
+var steps=document.querySelectorAll('.aigj-step'),fill=document.getElementById('aigj-fill');
+if(!steps.length)return;
+var i=0,timer;
+function go(n){
+  i=n%steps.length;
+  steps.forEach(function(s,k){s.classList.toggle('on',k===i);});
+  fill.style.width=((i+1)/steps.length*100)+'%';
+  if(i===steps.length-1)dispatchEvent(new Event('aigburst'));
+}
+function auto(){timer=setInterval(function(){go(i+1);},3200);}
+steps.forEach(function(s){s.addEventListener('click',function(){clearInterval(timer);go(+s.dataset.i);auto();});});
+go(0);auto();
 })();
 </script>
 </body>
