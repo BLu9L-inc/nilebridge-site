@@ -1083,9 +1083,7 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
 /* hero orb parallax handled by JS transform */
 .orb{transition:transform .35s cubic-bezier(.2,0,.2,1);}
 /* stream canvas */
-#b9stream{position:fixed;inset:0;z-index:450;pointer-events:none;mix-blend-mode:screen;opacity:.6;}
-@media(max-width:880px){#b9stream{display:none;}}
-@media(prefers-reduced-motion:reduce){#b9stream{display:none;}.aig-conn::after,.b9flow-link::after,.eco-grid::after{animation:none;}}
+@media(prefers-reduced-motion:reduce){.aig-conn::after,.b9flow-link::after,.eco-grid::after{animation:none;}}
 </style>
 </head>
 <body>
@@ -2392,39 +2390,7 @@ async function handleEventSubmit(e){
 (function(){var p=document.getElementById('b9progress');addEventListener('scroll',function(){var h=document.documentElement;p.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
 if(new Date()>new Date('2026-07-07T00:00:00')){var e=document.querySelector('.eb-text');if(e){e.setAttribute('data-en','July 6 Cohort Completed · Next Session Announcing Soon');e.setAttribute('data-ar','اكتملت دفعة 6 يوليو · الإعلان عن الجلسة القادمة قريباً');e.textContent=e.getAttribute('data-en');}}})();
 </script>
-<canvas id="b9stream" aria-hidden="true"></canvas>
 <script>
-(function(){
-if(matchMedia('(prefers-reduced-motion: reduce)').matches || innerWidth < 880) return;
-var cv=document.getElementById('b9stream'),x=cv.getContext('2d'),W,H,DPR=Math.min(devicePixelRatio||1,2);
-function size(){W=innerWidth;H=innerHeight;cv.width=W*DPR;cv.height=H*DPR;x.setTransform(DPR,0,0,DPR,0,0);}
-size();addEventListener('resize',size);
-var mx=W*0.5,my=H*0.45,tx=mx,ty=my,sv=0,ls=scrollY;
-addEventListener('pointermove',function(e){tx=e.clientX;ty=e.clientY;},{passive:true});
-addEventListener('scroll',function(){var s=scrollY;sv=Math.min(Math.abs(s-ls)*0.04,3);ls=s;},{passive:true});
-var P=[],N=85;
-for(var i=0;i<N;i++)P.push({t:Math.random(),s:0.0012+Math.random()*0.0022,o:(Math.random()-0.5)*46,r:0.7+Math.random()*1.7,g:Math.random()<0.12});
-function bz(t,a,b,cc,d){var u=1-t;return u*u*u*a+3*u*u*t*b+3*u*t*t*cc+t*t*t*d;}
-function frame(){
-  x.clearRect(0,0,W,H);
-  mx+=(tx-mx)*0.06;my+=(ty-my)*0.06;sv*=0.94;
-  var ax=W*0.18,bx=mx*0.9+W*0.05,cx2=mx,dx=W*0.22;
-  var spd=1+sv;
-  for(var i=0;i<N;i++){var p=P[i];
-    p.t+=p.s*spd; if(p.t>1)p.t-=1;
-    var px=bz(p.t,ax,bx,cx2,dx)+Math.sin(p.t*22+i)*p.o*0.4+p.o;
-    var py=p.t*H;
-    var hue=p.g?'221,160,32':'26,107,255';
-    var a=Math.sin(p.t*Math.PI)*(p.g?0.9:0.65);
-    x.beginPath();x.arc(px,py,p.r*(1+sv*0.18),0,6.283);
-    x.fillStyle='rgba('+hue+','+a+')';
-    x.shadowColor='rgba('+hue+',0.9)';x.shadowBlur=p.g?14:9;
-    x.fill();x.shadowBlur=0;
-  }
-  requestAnimationFrame(frame);
-}
-frame();
-})();
 // ── 3D tilt + glare on panels ──
 (function(){
 if(!matchMedia('(pointer:fine)').matches) return;
