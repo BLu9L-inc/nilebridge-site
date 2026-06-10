@@ -1588,216 +1588,96 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
   </div>
 </section>
 
-<!-- ============================================================= -->
-<!-- BLU9L · UAE ADVISORY & FACILITATION SERVICES SECTION          -->
-<!-- Drop this block into blu9l.com (e.g. after the "Why Blu9L"    -->
-<!-- section or wherever consulting is referenced).               -->
-<!-- Self-contained: scoped styles + markup. No external deps.    -->
-<!-- ============================================================= -->
-
-<section id="advisory" class="b9-advisory">
+<!-- ── UAE ADVISORY & FACILITATION ── -->
+<section class="section" id="advisory" style="background:var(--deep);position:relative;overflow:hidden;">
   <style>
-    /* ---- scoped to .b9-advisory to avoid clashing with site CSS ---- */
-    .b9-advisory{
-      --b9-blue:#0044EE;
-      --b9-ink:#0A1633;
-      --b9-slate:#5B6680;
-      --b9-mist:#F4F7FC;
-      --b9-line:#E4EAF5;
-      --b9-gold:#C0A44B;
-      --b9-white:#FFFFFF;
-      background:var(--b9-white);
-      color:var(--b9-ink);
-      padding:96px 24px;
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-      -webkit-font-smoothing:antialiased;
-    }
-    .b9-advisory *{box-sizing:border-box;}
-    .b9-adv-wrap{max-width:1120px;margin:0 auto;}
-
-    /* eyebrow */
-    .b9-adv-eyebrow{
-      display:inline-flex;align-items:center;gap:10px;
-      font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
-      color:var(--b9-blue);margin-bottom:18px;
-    }
-    .b9-adv-eyebrow::before{
-      content:"";width:28px;height:1px;background:var(--b9-gold);display:inline-block;
-    }
-
-    .b9-adv-head{
-      font-size:clamp(30px,4.4vw,46px);line-height:1.08;font-weight:700;
-      letter-spacing:-.01em;margin:0 0 18px;max-width:760px;
-    }
-    .b9-adv-head em{color:var(--b9-blue);font-style:italic;}
-    .b9-adv-sub{
-      font-size:clamp(16px,1.7vw,19px);line-height:1.6;color:var(--b9-slate);
-      max-width:620px;margin:0 0 56px;
-    }
-
-    /* license credential strip */
-    .b9-adv-cred{
-      display:flex;flex-wrap:wrap;gap:14px;margin:0 0 64px;
-    }
-    .b9-adv-cred span{
-      display:inline-flex;align-items:center;gap:8px;
-      background:var(--b9-mist);border:1px solid var(--b9-line);
-      border-radius:999px;padding:9px 16px;font-size:13px;font-weight:500;color:var(--b9-ink);
-    }
-    .b9-adv-cred span b{color:var(--b9-blue);font-weight:700;}
-
-    /* service grid */
-    .b9-adv-grid{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:64px;
-    }
-    @media(max-width:880px){.b9-adv-grid{grid-template-columns:1fr;}}
-    .b9-adv-card{
-      background:var(--b9-white);border:1px solid var(--b9-line);
-      border-radius:16px;padding:34px 30px;position:relative;overflow:hidden;
-      transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
-    }
-    .b9-adv-card::before{
-      content:"";position:absolute;top:0;left:0;width:100%;height:3px;
-      background:linear-gradient(90deg,var(--b9-blue),var(--b9-gold));
-      transform:scaleX(0);transform-origin:left;transition:transform .3s ease;
-    }
-    .b9-adv-card:hover{
-      transform:translateY(-4px);
-      box-shadow:0 18px 40px -18px rgba(0,68,238,.28);
-      border-color:transparent;
-    }
-    .b9-adv-card:hover::before{transform:scaleX(1);}
-    .b9-adv-num{
-      font-size:13px;font-weight:700;color:var(--b9-gold);letter-spacing:.1em;margin-bottom:18px;
-    }
-    .b9-adv-card h3{font-size:20px;font-weight:700;margin:0 0 12px;letter-spacing:-.01em;}
-    .b9-adv-card p{font-size:14.5px;line-height:1.62;color:var(--b9-slate);margin:0 0 18px;}
-    .b9-adv-tags{display:flex;flex-wrap:wrap;gap:7px;}
-    .b9-adv-tags span{
-      font-size:11.5px;font-weight:500;color:var(--b9-blue);
-      background:rgba(0,68,238,.07);border-radius:6px;padding:4px 9px;
-    }
-
-    /* closing band */
-    .b9-adv-band{
-      background:var(--b9-ink);border-radius:20px;padding:48px 44px;
-      display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;
-      position:relative;overflow:hidden;
-    }
-    .b9-adv-band::after{
-      content:"";position:absolute;right:-60px;top:-60px;width:240px;height:240px;
-      background:radial-gradient(circle,rgba(0,68,238,.45),transparent 70%);
-    }
-    .b9-adv-band-txt{position:relative;z-index:1;max-width:560px;}
-    .b9-adv-band h3{color:#fff;font-size:24px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
-    .b9-adv-band h3 em{color:#7FA0FF;font-style:italic;}
-    .b9-adv-band p{color:#B9C3DC;font-size:15px;line-height:1.6;margin:0;}
-    .b9-adv-cta{
-      position:relative;z-index:1;display:inline-flex;align-items:center;gap:9px;
-      background:var(--b9-blue);color:#fff;text-decoration:none;
-      font-size:15px;font-weight:600;padding:15px 26px;border-radius:11px;white-space:nowrap;
-      transition:background .2s ease,transform .2s ease;
-    }
-    .b9-adv-cta:hover{background:#0036BE;transform:translateY(-2px);}
-
-    /* arabic accent line */
-    .b9-adv-ar{
-      direction:rtl;text-align:right;font-size:14px;color:var(--b9-slate);
-      margin-top:14px;opacity:.9;
-    }
+    #advisory .b9a-cred{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:0 0 56px;}
+    #advisory .b9a-cred span{display:inline-flex;align-items:center;gap:8px;background:var(--glass);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:12.5px;font-weight:500;color:var(--w70);}
+    #advisory .b9a-cred span b{color:var(--g1);font-weight:700;}
+    #advisory .b9a-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:56px;}
+    @media(max-width:880px){#advisory .b9a-grid{grid-template-columns:1fr;}}
+    #advisory .b9a-card{background:var(--glass);border:1px solid var(--line);border-radius:16px;padding:34px 30px;position:relative;overflow:hidden;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;}
+    #advisory .b9a-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--b0),var(--g1));transform:scaleX(0);transform-origin:left;transition:transform .3s ease;}
+    #advisory .b9a-card:hover{transform:translateY(-4px);border-color:var(--bline);box-shadow:0 18px 40px -18px rgba(0,68,238,.35);}
+    #advisory .b9a-card:hover::before{transform:scaleX(1);}
+    #advisory .b9a-num{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:var(--g1);letter-spacing:2px;margin-bottom:16px;}
+    #advisory .b9a-card h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--w);margin:0 0 12px;letter-spacing:-.2px;}
+    #advisory .b9a-card p{font-size:14px;line-height:1.65;color:var(--w50);margin:0 0 18px;}
+    #advisory .b9a-tags{display:flex;flex-wrap:wrap;gap:7px;}
+    #advisory .b9a-tags span{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:1px;text-transform:uppercase;font-weight:500;color:var(--b2);background:var(--b4);border:1px solid var(--bline);border-radius:6px;padding:4px 9px;}
+    #advisory .b9a-band{background:var(--glass);border:1px solid var(--bline);border-radius:20px;padding:44px 40px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;position:relative;overflow:hidden;}
+    #advisory .b9a-band::after{content:"";position:absolute;right:-80px;top:-80px;width:280px;height:280px;background:radial-gradient(circle,rgba(0,68,238,.25),transparent 70%);pointer-events:none;}
+    #advisory .b9a-band-txt{position:relative;z-index:1;max-width:560px;}
+    #advisory .b9a-band h3{font-family:'Playfair Display',serif;color:var(--w);font-size:24px;font-weight:700;margin:0 0 10px;letter-spacing:-.2px;}
+    #advisory .b9a-band h3 em{color:var(--b2);font-style:italic;}
+    #advisory .b9a-band p{color:var(--w50);font-size:14.5px;line-height:1.6;margin:0;}
+    #advisory .b9a-cta{position:relative;z-index:1;display:inline-flex;align-items:center;gap:9px;background:var(--b0);color:#fff;text-decoration:none;font-family:'Playfair Display',serif;font-size:14px;font-weight:700;padding:14px 26px;border-radius:8px;white-space:nowrap;transition:all .2s ease;}
+    #advisory .b9a-cta:hover{background:var(--b1);transform:translateY(-2px);box-shadow:0 0 24px rgba(0,68,238,.4);}
+    html[lang="ar"] #advisory .b9a-card h3,html[lang="ar"] #advisory .b9a-band h3{font-family:'Amiri','Playfair Display',serif;}
   </style>
+  <div class="container">
 
-  <div class="b9-adv-wrap">
-
-    <span class="b9-adv-eyebrow">UAE Advisory &amp; Facilitation</span>
-
-    <h2 class="b9-adv-head">
-      Beyond Education — <em>Cross-Border Deal</em> &amp; Investment Advisory.
-    </h2>
-    <p class="b9-adv-sub">
-      The same tri-jurisdictional structure that powers our education work also drives a
-      licensed UAE advisory practice — connecting international capital, institutions, and
-      operators across the Gulf, Egypt, and Africa.
-    </p>
-
-    <!-- License credentials -->
-    <div class="b9-adv-cred">
-      <span>🇦🇪 Ajman Free Zone · License <b>50366</b></span>
-      <span>Commercial Enterprises Investment &amp; Management</span>
-      <span>Commercial Brokerage</span>
-      <span>Financial Investment Consultancy</span>
+    <div class="reveal" style="text-align:center;margin-bottom:8px;">
+      <div class="kicker" style="justify-content:center;" data-en="UAE Advisory &amp; Facilitation" data-ar="الاستشارات والوساطة — الإمارات">UAE Advisory &amp; Facilitation</div>
+      <h2 class="h2" data-en="Beyond Education —<br><em>Cross-Border</em> Advisory." data-ar="ما وراء التعليم —<br>استشارات <em>عابرة للحدود.</em>">Beyond Education —<br><em>Cross-Border</em> Advisory.</h2>
+      <div class="h2-rule" style="background:linear-gradient(90deg,transparent,var(--g1),transparent);"></div>
+      <p class="serif-lead" style="margin:0 auto 36px;text-align:center;max-width:640px;" data-en="The same tri-jurisdictional structure that powers our education work also drives a licensed UAE advisory practice — connecting capital, institutions, and operators across the Gulf, Egypt, and Africa." data-ar="نفس الهيكل ثلاثي الاختصاص الذي يدعم عملنا التعليمي يقود أيضاً ممارسة استشارية مرخّصة في الإمارات — تربط رأس المال والمؤسسات والمشغّلين عبر الخليج ومصر وأفريقيا.">The same tri-jurisdictional structure that powers our education work also drives a licensed UAE advisory practice — connecting capital, institutions, and operators across the Gulf, Egypt, and Africa.</p>
     </div>
 
-    <!-- Service cards -->
-    <div class="b9-adv-grid">
+    <div class="b9a-cred reveal">
+      <span>🇦🇪 <span data-en="Ajman Free Zone · License" data-ar="المنطقة الحرة بعجمان · رخصة">Ajman Free Zone · License</span> <b>50366</b></span>
+      <span data-en="Commercial Enterprises Investment &amp; Management" data-ar="الاستثمار في المشروعات التجارية وإدارتها">Commercial Enterprises Investment &amp; Management</span>
+      <span data-en="Commercial Brokerage" data-ar="وسيط تجاري">Commercial Brokerage</span>
+      <span data-en="Financial Investment Consultancy" data-ar="الاستشارات المالية والتحليل المالي">Financial Investment Consultancy</span>
+    </div>
 
-      <div class="b9-adv-card">
-        <div class="b9-adv-num">01</div>
-        <h3>Investment &amp; Enterprise Advisory</h3>
-        <p>
-          Structuring, establishing, and managing commercial ventures across UAE free zones
-          and the wider MENA region — from entity formation to operational governance and
-          institutional partnerships.
-        </p>
-        <div class="b9-adv-tags">
-          <span>Entity Structuring</span>
-          <span>Free Zone Setup</span>
-          <span>Governance</span>
+    <div class="b9a-grid reveal">
+
+      <div class="b9a-card">
+        <div class="b9a-num">01</div>
+        <h3 data-en="Investment &amp; Enterprise Advisory" data-ar="استشارات الاستثمار والمشاريع">Investment &amp; Enterprise Advisory</h3>
+        <p data-en="Structuring, establishing, and managing commercial ventures across UAE free zones and the wider MENA region — from entity formation to operational governance and institutional partnerships." data-ar="هيكلة وتأسيس وإدارة المشاريع التجارية عبر المناطق الحرة الإماراتية ومنطقة الشرق الأوسط وشمال أفريقيا — من تأسيس الكيانات إلى الحوكمة التشغيلية والشراكات المؤسسية.">Structuring, establishing, and managing commercial ventures across UAE free zones and the wider MENA region — from entity formation to operational governance and institutional partnerships.</p>
+        <div class="b9a-tags">
+          <span data-en="Entity Structuring" data-ar="هيكلة الكيانات">Entity Structuring</span>
+          <span data-en="Free Zone Setup" data-ar="تأسيس المناطق الحرة">Free Zone Setup</span>
+          <span data-en="Governance" data-ar="الحوكمة">Governance</span>
         </div>
       </div>
 
-      <div class="b9-adv-card">
-        <div class="b9-adv-num">02</div>
-        <h3>Commercial Brokerage &amp; Facilitation</h3>
-        <p>
-          Acting as a licensed intermediary connecting international counterparties — sourcing,
-          introducing, and facilitating cross-border transactions across aviation, automotive,
-          real estate, and commodity sectors.
-        </p>
-        <div class="b9-adv-tags">
-          <span>Deal Origination</span>
-          <span>Introductions</span>
-          <span>Transaction Support</span>
+      <div class="b9a-card">
+        <div class="b9a-num">02</div>
+        <h3 data-en="Commercial Brokerage &amp; Facilitation" data-ar="الوساطة التجارية والتسهيل">Commercial Brokerage &amp; Facilitation</h3>
+        <p data-en="Acting as a licensed intermediary connecting international counterparties — sourcing, introducing, and facilitating cross-border transactions across aviation, automotive, real estate, and commodity sectors." data-ar="العمل كوسيط مرخّص يربط الأطراف الدولية — توريد وتقديم وتسهيل المعاملات العابرة للحدود في قطاعات الطيران والسيارات والعقارات والسلع.">Acting as a licensed intermediary connecting international counterparties — sourcing, introducing, and facilitating cross-border transactions across aviation, automotive, real estate, and commodity sectors.</p>
+        <div class="b9a-tags">
+          <span data-en="Deal Origination" data-ar="إنشاء الصفقات">Deal Origination</span>
+          <span data-en="Introductions" data-ar="التقديمات">Introductions</span>
+          <span data-en="Transaction Support" data-ar="دعم المعاملات">Transaction Support</span>
         </div>
       </div>
 
-      <div class="b9-adv-card">
-        <div class="b9-adv-num">03</div>
-        <h3>Financial Investment Consultancy</h3>
-        <p>
-          Strategic financial analysis, market-entry advisory, and investment intelligence for
-          institutions and operators expanding into the UAE–Egypt–Africa corridor.
-        </p>
-        <div class="b9-adv-tags">
-          <span>Market Entry</span>
-          <span>Due Diligence</span>
-          <span>Capital Advisory</span>
+      <div class="b9a-card">
+        <div class="b9a-num">03</div>
+        <h3 data-en="Financial Investment Consultancy" data-ar="الاستشارات المالية الاستثمارية">Financial Investment Consultancy</h3>
+        <p data-en="Strategic financial analysis, market-entry advisory, and investment intelligence for institutions and operators expanding into the UAE–Egypt–Africa corridor." data-ar="التحليل المالي الاستراتيجي واستشارات دخول الأسواق والذكاء الاستثماري للمؤسسات والمشغّلين المتوسعين في ممر الإمارات–مصر–أفريقيا.">Strategic financial analysis, market-entry advisory, and investment intelligence for institutions and operators expanding into the UAE–Egypt–Africa corridor.</p>
+        <div class="b9a-tags">
+          <span data-en="Market Entry" data-ar="دخول الأسواق">Market Entry</span>
+          <span data-en="Due Diligence" data-ar="العناية الواجبة">Due Diligence</span>
+          <span data-en="Capital Advisory" data-ar="استشارات رأس المال">Capital Advisory</span>
         </div>
       </div>
 
     </div>
 
-    <!-- Closing band -->
-    <div class="b9-adv-band">
-      <div class="b9-adv-band-txt">
-        <h3>One Structure. <em>Three Markets.</em> Real Execution.</h3>
-        <p>
-          Whether you are an institution entering the Gulf, an operator seeking a UAE base, or a
-          principal in a cross-border transaction — our licensed advisory practice provides the
-          on-ground capacity to move.
-        </p>
-        <div class="b9-adv-ar">استشارات استثمارية ووساطة تجارية مرخّصة — الإمارات · مصر · أفريقيا</div>
+    <div class="b9a-band reveal">
+      <div class="b9a-band-txt">
+        <h3 data-en="One Structure. <em>Three Markets.</em> Real Execution." data-ar="هيكل واحد. <em>ثلاثة أسواق.</em> تنفيذ حقيقي.">One Structure. <em>Three Markets.</em> Real Execution.</h3>
+        <p data-en="Whether you are an institution entering the Gulf, an operator seeking a UAE base, or a principal in a cross-border transaction — our licensed advisory practice provides the on-ground capacity to move." data-ar="سواء كنت مؤسسة تدخل الخليج، أو مشغّلاً يبحث عن قاعدة في الإمارات، أو طرفاً رئيسياً في معاملة عابرة للحدود — توفّر ممارستنا الاستشارية المرخّصة القدرة الميدانية على التحرك.">Whether you are an institution entering the Gulf, an operator seeking a UAE base, or a principal in a cross-border transaction — our licensed advisory practice provides the on-ground capacity to move.</p>
       </div>
-      <a class="b9-adv-cta" href="https://wa.me/12026446646?text=I%27m%20interested%20in%20Blu9L%20UAE%20Advisory%20Services">
-        Speak With Our Team →
-      </a>
+      <a class="b9a-cta" href="https://wa.me/12026446646?text=I%27m%20interested%20in%20Blu9L%20UAE%20Advisory%20Services" target="_blank" rel="noopener" data-en="Speak With Our Team →" data-ar="← تحدث مع فريقنا">Speak With Our Team →</a>
     </div>
 
   </div>
 </section>
-<!-- ============================================================= -->
-<!-- END BLU9L · UAE ADVISORY SECTION                              -->
-<!-- ============================================================= -->
 
 
 <!-- ── INVESTMENT THESIS ── -->
