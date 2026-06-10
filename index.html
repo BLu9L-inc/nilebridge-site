@@ -1011,6 +1011,7 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
 <!-- ── MOBILE DRAWER (FIX: MOBILE NAV) ── -->
 <div class="mobile-drawer" id="mobile-drawer">
   <ul>
+    <li><a href="#ecosystem" onclick="closeMobile()" data-en="Ecosystem" data-ar="المنظومة">Ecosystem</a></li>
     <li><a href="#who-we-serve" onclick="closeMobile()" data-en="Who We Serve" data-ar="من نخدم">Who We Serve</a></li>
     <li><a href="#problem" onclick="closeMobile()" data-en="IRAS®" data-ar="إيراس®">IRAS®</a></li>
     <li><a href="#why-blu9l" onclick="closeMobile()" data-en="Why Blu9L" data-ar="لماذا بلو9إل">Why Blu9L</a></li>
@@ -1037,6 +1038,7 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
   <a class="logo" href="#"><div class="logo-sq">B9</div>BLU9L</a>
   <div class="nav-right">
     <ul class="nav-links">
+      <li><a href="#ecosystem" data-en="Ecosystem" data-ar="المنظومة">Ecosystem</a></li>
       <li><a href="#who-we-serve" data-en="Who We Serve" data-ar="من نخدم">Who We Serve</a></li>
       <li><a href="#problem" data-en="IRAS®" data-ar="إيراس®">IRAS®</a></li>
       <li><a href="#why-blu9l" data-en="Why Blu9L" data-ar="لماذا بلو9إل">Why Blu9L</a></li>
@@ -1181,6 +1183,103 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
   </div>
 </div>
 
+
+<!-- ── BLU9L ECOSYSTEM GRID ── -->
+<section class="section" id="ecosystem" style="background:var(--ink);position:relative;overflow:hidden;border-top:1px solid var(--line);">
+  <style>
+    #ecosystem::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;opacity:.35;pointer-events:none;mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,#000 30%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,#000 30%,transparent 75%);}
+    #ecosystem .eco-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;position:relative;z-index:1;}
+    @media(max-width:920px){#ecosystem .eco-grid{grid-template-columns:1fr;}}
+    #ecosystem .eco-card{background:var(--glass);border:1px solid var(--line);border-radius:18px;padding:36px 30px;position:relative;overflow:hidden;transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease;display:flex;flex-direction:column;}
+    #ecosystem .eco-card:hover{transform:translateY(-5px);border-color:var(--bline);box-shadow:0 22px 48px -20px rgba(0,68,238,.4);}
+    #ecosystem .eco-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;}
+    #ecosystem .eco-id{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2.5px;color:var(--w30);}
+    #ecosystem .eco-status{display:inline-flex;align-items:center;gap:7px;font-family:'JetBrains Mono',monospace;font-size:8.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 11px;border-radius:999px;border:1px solid;}
+    #ecosystem .eco-dot{width:6px;height:6px;border-radius:50%;}
+    #ecosystem .st-live{color:#3DDC84;border-color:rgba(61,220,132,.3);background:rgba(61,220,132,.06);}
+    #ecosystem .st-live .eco-dot{background:#3DDC84;animation:ecoPulse 2s infinite;}
+    #ecosystem .st-active{color:var(--b2);border-color:var(--bline);background:var(--b4);}
+    #ecosystem .st-active .eco-dot{background:var(--b2);animation:ecoPulse 2s infinite .5s;}
+    #ecosystem .st-soon{color:var(--g1);border-color:rgba(221,160,32,.3);background:rgba(221,160,32,.06);}
+    #ecosystem .st-soon .eco-dot{background:var(--g1);animation:ecoPulse 2s infinite 1s;}
+    @keyframes ecoPulse{0%,100%{opacity:1;box-shadow:0 0 0 0 currentColor;}50%{opacity:.55;}}
+    #ecosystem .eco-icon{font-size:26px;margin-bottom:16px;}
+    #ecosystem .eco-card h3{font-family:'Playfair Display',serif;font-size:21px;font-weight:800;color:var(--w);margin:0 0 6px;letter-spacing:-.3px;}
+    #ecosystem .eco-sub{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--b2);margin-bottom:14px;}
+    #ecosystem .eco-card p{font-size:13.5px;line-height:1.65;color:var(--w50);margin:0 0 22px;flex:1;}
+    #ecosystem .eco-meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;}
+    #ecosystem .eco-meta span{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--w50);background:var(--w06);border:1px solid var(--line);border-radius:6px;padding:4px 9px;}
+    #ecosystem .eco-soon-card{border-style:dashed;border-color:rgba(221,160,32,.25);}
+    #ecosystem .eco-soon-card::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 18px,rgba(221,160,32,.025) 18px,rgba(221,160,32,.025) 36px);pointer-events:none;}
+    #ecosystem .eco-soon-card:hover{border-color:rgba(221,160,32,.5);box-shadow:0 22px 48px -20px rgba(221,160,32,.3);}
+    #ecosystem .eco-link{display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--b2);text-decoration:none;margin-top:18px;transition:color .2s,gap .2s;}
+    #ecosystem .eco-link:hover{color:var(--w);gap:10px;}
+  </style>
+  <div class="container">
+
+    <div class="reveal" style="text-align:center;margin-bottom:48px;">
+      <div class="kicker" style="justify-content:center;" data-en="The Blu9L Ecosystem" data-ar="منظومة بلو9إل">The Blu9L Ecosystem</div>
+      <h2 class="h2" data-en="One Holding.<br><em>Three Intelligence Verticals.</em>" data-ar="شركة قابضة واحدة.<br><em>ثلاثة قطاعات ذكية.</em>">One Holding.<br><em>Three Intelligence Verticals.</em></h2>
+      <div class="h2-rule" style="background:linear-gradient(90deg,transparent,var(--g1),transparent);"></div>
+      <p class="serif-lead" style="margin:0 auto;text-align:center;max-width:600px;" data-en="Education intelligence live in Egypt. Licensed advisory active in the UAE. Automotive intelligence entering the grid." data-ar="ذكاء تعليمي نشط في مصر. استشارات مرخّصة فعّالة في الإمارات. ذكاء السيارات يدخل الشبكة.">Education intelligence live in Egypt. Licensed advisory active in the UAE. Automotive intelligence entering the grid.</p>
+    </div>
+
+    <div class="eco-grid reveal">
+
+      <!-- DIV 01 · IRAS -->
+      <div class="eco-card">
+        <div class="eco-top">
+          <span class="eco-id">DIV-01 · EDUCATION</span>
+          <span class="eco-status st-live"><span class="eco-dot"></span><span data-en="Live" data-ar="نشط">Live</span></span>
+        </div>
+        <div class="eco-icon">🎓</div>
+        <h3>IRAS®</h3>
+        <div class="eco-sub" data-en="School Intelligence Platform" data-ar="منصة ذكاء المدارس">School Intelligence Platform</div>
+        <p data-en="AI-powered school intelligence and reporting deployed across Egypt's top private schools — with UAE and Qatar deployments active and Saudi Arabia in pipeline." data-ar="منصة ذكاء مدرسي مدعومة بالذكاء الاصطناعي منتشرة في أفضل المدارس الخاصة في مصر — مع انتشار نشط في الإمارات وقطر والسعودية قيد الإعداد.">AI-powered school intelligence and reporting deployed across Egypt's top private schools — with UAE and Qatar deployments active and Saudi Arabia in pipeline.</p>
+        <div class="eco-meta">
+          <span data-en="Egypt · UAE · Qatar" data-ar="مصر · الإمارات · قطر">Egypt · UAE · Qatar</span>
+          <span data-en="B2B SaaS" data-ar="برمجيات كخدمة">B2B SaaS</span>
+        </div>
+        <a class="eco-link" href="#iras" data-en="Explore IRAS® ↓" data-ar="↓ استكشف إيراس">Explore IRAS® ↓</a>
+      </div>
+
+      <!-- DIV 02 · ADVISORY -->
+      <div class="eco-card">
+        <div class="eco-top">
+          <span class="eco-id">DIV-02 · ADVISORY</span>
+          <span class="eco-status st-active"><span class="eco-dot"></span><span data-en="Active" data-ar="فعّال">Active</span></span>
+        </div>
+        <div class="eco-icon">🌐</div>
+        <h3 data-en="UAE Advisory" data-ar="استشارات الإمارات">UAE Advisory</h3>
+        <div class="eco-sub" data-en="Cross-Border Facilitation" data-ar="وساطة عابرة للحدود">Cross-Border Facilitation</div>
+        <p data-en="Licensed Ajman Free Zone practice — investment advisory, commercial brokerage, and transaction facilitation across the Gulf–Egypt–Africa corridor." data-ar="ممارسة مرخّصة في المنطقة الحرة بعجمان — استشارات استثمارية ووساطة تجارية وتسهيل المعاملات عبر ممر الخليج–مصر–أفريقيا.">Licensed Ajman Free Zone practice — investment advisory, commercial brokerage, and transaction facilitation across the Gulf–Egypt–Africa corridor.</p>
+        <div class="eco-meta">
+          <span data-en="License 50366" data-ar="رخصة 50366">License 50366</span>
+          <span data-en="Aviation · Auto · Real Estate" data-ar="طيران · سيارات · عقارات">Aviation · Auto · Real Estate</span>
+        </div>
+        <a class="eco-link" href="#advisory" data-en="Explore Advisory ↓" data-ar="↓ استكشف الاستشارات">Explore Advisory ↓</a>
+      </div>
+
+      <!-- DIV 03 · AUTOMOTIVE INTELLIGENCE GRID -->
+      <div class="eco-card eco-soon-card">
+        <div class="eco-top">
+          <span class="eco-id">DIV-03 · AUTOMOTIVE</span>
+          <span class="eco-status st-soon"><span class="eco-dot"></span><span data-en="Coming Soon" data-ar="قريباً">Coming Soon</span></span>
+        </div>
+        <div class="eco-icon">🚘</div>
+        <h3 data-en="Automotive Intelligence Grid" data-ar="شبكة ذكاء السيارات">Automotive Intelligence Grid</h3>
+        <div class="eco-sub" data-en="Cross-Border Vehicle Intelligence" data-ar="ذكاء المركبات عبر الحدود">Cross-Border Vehicle Intelligence</div>
+        <p data-en="A data-driven grid connecting US vehicle sourcing with Gulf and African demand — pricing intelligence, logistics visibility, and dealer-network analytics in one platform." data-ar="شبكة قائمة على البيانات تربط توريد المركبات الأمريكية بالطلب الخليجي والأفريقي — ذكاء التسعير ورؤية الخدمات اللوجستية وتحليلات شبكات الوكلاء في منصة واحدة.">A data-driven grid connecting US vehicle sourcing with Gulf and African demand — pricing intelligence, logistics visibility, and dealer-network analytics in one platform.</p>
+        <div class="eco-meta">
+          <span data-en="US → Gulf → Africa" data-ar="أمريكا ← الخليج ← أفريقيا">US → Gulf → Africa</span>
+          <span data-en="Launching 2026" data-ar="إطلاق 2026">Launching 2026</span>
+        </div>
+        <a class="eco-link" style="color:var(--g1);" href="https://wa.me/12026446646?text=I%27m%20interested%20in%20the%20Automotive%20Intelligence%20Grid" target="_blank" rel="noopener" data-en="Join the Waitlist →" data-ar="← انضم لقائمة الانتظار">Join the Waitlist →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- ── WHO WE SERVE ── -->
 <section class="serve-section section" id="who-we-serve">
