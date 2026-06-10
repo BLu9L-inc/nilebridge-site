@@ -1110,6 +1110,31 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
 .aigj-step .js-d{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.4px;color:var(--w50);line-height:1.7;}
 .aigj-step.on .js-d{color:var(--b2);}
 </style>
+<style id="b9-system">
+.eco-hub{display:flex;flex-direction:column;align-items:center;margin-bottom:0;}
+.eco-hub-node{display:flex;align-items:center;gap:14px;background:var(--glass);border:1px solid var(--bline);border-radius:14px;padding:16px 26px;box-shadow:0 0 38px rgba(0,68,238,.18);}
+.eco-hub-node i{width:11px;height:11px;border-radius:50%;background:var(--b1);box-shadow:0 0 16px var(--b1);animation:pdot 2.4s infinite;flex-shrink:0;}
+.eco-hub-node b{font-family:'Playfair Display',serif;font-size:17px;font-weight:800;color:var(--w);display:block;}
+.eco-hub-node span{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.8px;text-transform:uppercase;color:var(--w50);display:block;margin-top:2px;}
+.eco-hub-stem{width:1px;height:44px;background:linear-gradient(180deg,var(--b1),var(--bline));position:relative;}
+.eco-hub-stem::after{content:"";position:absolute;left:-2px;width:5px;height:5px;border-radius:50%;background:var(--b1);box-shadow:0 0 10px var(--b1);animation:b9down 1.6s linear infinite;}
+@media(min-width:921px){
+  .eco-grid{padding-top:34px;}
+  .eco-grid::before{top:0;}
+  .eco-grid::after{top:-2px;}
+  .eco-card{position:relative;}
+  .eco-grid .eco-card::before{content:"";position:absolute;top:-34px;left:50%;width:1px;height:34px;background:var(--bline);transform:none;transition:none;}
+}
+.aig-io{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1040px;margin:0 auto 28px;}
+@media(max-width:980px){.aig-io{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.aig-io{grid-template-columns:1fr;}}
+.aio{background:var(--glass);border:1px solid var(--line);border-radius:12px;padding:18px 17px;display:flex;flex-direction:column;gap:6px;}
+.aio-gold{border-color:rgba(221,160,32,.32);}
+.aio .aio-k{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--b2);}
+.aio-gold .aio-k{color:var(--g1);}
+.aio .aio-t{font-family:'Playfair Display',serif;font-size:14.5px;font-weight:700;color:var(--w);}
+.aio .aio-d{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.4px;color:var(--w50);line-height:1.7;}
+</style>
 </head>
 <body>
 
@@ -1177,7 +1202,7 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
         <span class="kicker-text" data-en="Multi-Vertical Intelligence Holding · US · UAE · Egypt · Africa" data-ar="شركة قابضة متعددة القطاعات · أمريكا · الإمارات · مصر · أفريقيا">Multi-Vertical Intelligence Holding · US · UAE · Egypt · Africa</span>
       </div>
       <h1 class="hero-h1" data-en="Engineered Intelligence Across <em>Education, Advisory &amp; Automotive.</em>" data-ar="ذكاء هندسي عبر <em>التعليم والاستشارات والسيارات.</em>">Engineered Intelligence Across <em>Education, Advisory &amp; Automotive.</em></h1>
-      <p class="hero-sub" data-en="blu9L operates across three continents — exclusive Egypt franchise of Neuronso’s <strong>IRAS® platform, live in 22 UAE schools</strong>, a licensed UAE advisory practice, and the Automotive Intelligence Grid launching 2026." data-ar="تعمل بلو9إل عبر ثلاث قارات — الامتياز الحصري في مصر لمنصة <strong>إيراس® من نيورونسو، النشطة في 22 مدرسة إماراتية</strong>، وممارسة استشارية مرخّصة في الإمارات، وشبكة ذكاء السيارات تنطلق 2026.">blu9L operates across three continents — exclusive Egypt franchise of Neuronso’s <strong>IRAS® platform, live in 22 UAE schools</strong>, a licensed UAE advisory practice, and the Automotive Intelligence Grid launching 2026.</p>
+      <p class="hero-sub" data-en="blu9L operates across three continents — exclusive Egypt franchise of Neuronso’s <strong>IRAS® platform, live in 22 UAE schools</strong>, a licensed UAE advisory practice, and the Artificial Intelligence Grid launching 2026." data-ar="تعمل بلو9إل عبر ثلاث قارات — الامتياز الحصري في مصر لمنصة <strong>إيراس® من نيورونسو، النشطة في 22 مدرسة إماراتية</strong>، وممارسة استشارية مرخّصة في الإمارات، وشبكة الذكاء الاصطناعي تنطلق 2026.">blu9L operates across three continents — exclusive Egypt franchise of Neuronso’s <strong>IRAS® platform, live in 22 UAE schools</strong>, a licensed UAE advisory practice, and the Artificial Intelligence Grid launching 2026.</p>
       <!-- Mobile stat chips -->
       <div class="hero-chips">
         <span class="hchip">IRAS® · Live</span>
@@ -1270,7 +1295,12 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
       <div class="kicker" style="justify-content:center;" data-en="The blu9L Ecosystem" data-ar="منظومة بلو9إل">The blu9L Ecosystem</div>
       <h2 class="h2" data-en="One Holding.<br><em>Three Intelligence Verticals.</em>" data-ar="شركة قابضة واحدة.<br><em>ثلاثة قطاعات ذكية.</em>">One Holding.<br><em>Three Intelligence Verticals.</em></h2>
       <div class="h2-rule" style="background:linear-gradient(90deg,transparent,var(--g1),transparent);"></div>
-      <p class="serif-lead" style="margin:0 auto;text-align:center;max-width:600px;" data-en="Education intelligence live in Egypt. Licensed advisory active in the UAE. Automotive intelligence entering the grid." data-ar="ذكاء تعليمي نشط في مصر. استشارات مرخّصة فعّالة في الإمارات. ذكاء السيارات يدخل الشبكة.">Education intelligence live in Egypt. Licensed advisory active in the UAE. Automotive intelligence entering the grid.</p>
+      <p class="serif-lead" style="margin:0 auto;text-align:center;max-width:600px;" data-en="One core. Three platforms. Every vertical runs on the same cross-border infrastructure — and feeds the same intelligence layer." data-ar="نواة واحدة. ثلاث منصات. كل قطاع يعمل على البنية العابرة للحدود نفسها — ويغذي طبقة الذكاء نفسها.">One core. Three platforms. Every vertical runs on the same cross-border infrastructure — and feeds the same intelligence layer.</p>
+    </div>
+
+    <div class="eco-hub reveal">
+      <div class="eco-hub-node"><i></i><div><b data-en="blu9L Core" data-ar="نواة بلو9إل">blu9L Core</b><span data-en="Shared infrastructure · capital · cross-border operations" data-ar="بنية مشتركة · رأس مال · عمليات عابرة للحدود">Shared infrastructure · capital · cross-border operations</span></div></div>
+      <div class="eco-hub-stem"></div>
     </div>
 
     <div class="eco-grid reveal">
@@ -1316,9 +1346,9 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
           <span class="eco-status st-soon"><span class="eco-dot"></span><span data-en="Coming Soon" data-ar="قريباً">Coming Soon</span></span>
         </div>
         <div class="eco-icon">🚘</div>
-        <h3 data-en="Automotive Intelligence Grid" data-ar="شبكة ذكاء السيارات">Automotive Intelligence Grid</h3>
+        <h3 data-en="Artificial Intelligence Grid" data-ar="شبكة الذكاء الاصطناعي">Artificial Intelligence Grid</h3>
         <div class="eco-sub" data-en="Cross-Border Vehicle Intelligence" data-ar="ذكاء المركبات عبر الحدود">Cross-Border Vehicle Intelligence</div>
-        <p data-en="A data-driven grid connecting US vehicle sourcing with Gulf and African demand — pricing intelligence, logistics visibility, and dealer-network analytics in one platform." data-ar="شبكة قائمة على البيانات تربط توريد المركبات الأمريكية بالطلب الخليجي والأفريقي — ذكاء التسعير ورؤية الخدمات اللوجستية وتحليلات شبكات الوكلاء في منصة واحدة.">A data-driven grid connecting US vehicle sourcing with Gulf and African demand — pricing intelligence, logistics visibility, and dealer-network analytics in one platform.</p>
+        <p data-en="Intelligence infrastructure that transforms operational events into reusable organizational knowledge — first domain: US-to-Gulf-and-Africa vehicle trade." data-ar="بنية تحتية للذكاء تحوّل الأحداث التشغيلية إلى معرفة مؤسسية قابلة لإعادة الاستخدام — أول المجالات: تجارة المركبات من أمريكا إلى الخليج وأفريقيا.">A data-driven grid connecting US vehicle sourcing with Gulf and African demand — pricing intelligence, logistics visibility, and dealer-network analytics in one platform.</p>
         <div class="eco-meta">
           <span data-en="US → Gulf → Africa" data-ar="أمريكا ← الخليج ← أفريقيا">US → Gulf → Africa</span>
           <span data-en="Launching 2026" data-ar="إطلاق 2026">Launching 2026</span>
@@ -1840,8 +1870,15 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
       <div class="kicker" style="justify-content:center;" data-en="DIV-03 · Architecture Preview" data-ar="القطاع 03 · معاينة البنية">DIV-03 · Architecture Preview</div>
       <h2 class="h2" data-en="Not Software.<br><em>An Intelligence Ecosystem.</em>" data-ar="ليست برمجيات.<br><em>منظومة ذكاء.</em>">Not Software.<br><em>An Intelligence Ecosystem.</em></h2>
       <div class="h2-rule" style="background:linear-gradient(90deg,transparent,var(--g1),transparent);"></div>
-      <p class="serif-lead" style="margin:0 auto 16px;text-align:center;max-width:560px;" data-en="Every event becomes knowledge. Knowledge creates learning. Learning generates intelligence. Intelligence changes outcomes — and outcomes create new events. The grid compounds." data-ar="كل حدث يصبح معرفة. المعرفة تولّد تعلّماً. التعلّم يولّد ذكاءً. الذكاء يغيّر النتائج — والنتائج تخلق أحداثاً جديدة. الشبكة تتعاظم.">Every event becomes knowledge. Knowledge creates learning. Learning generates intelligence. Intelligence changes outcomes — and outcomes create new events. The grid compounds.</p>
+      <p class="serif-lead" style="margin:0 auto 16px;text-align:center;max-width:560px;" data-en="An intelligence infrastructure layer designed to transform operational events into reusable organizational knowledge. First deployment domain: cross-border automotive trade." data-ar="طبقة بنية تحتية للذكاء مصممة لتحويل الأحداث التشغيلية إلى معرفة مؤسسية قابلة لإعادة الاستخدام. أول مجالات النشر: تجارة السيارات عبر الحدود.">An intelligence infrastructure layer designed to transform operational events into reusable organizational knowledge. First deployment domain: cross-border automotive trade.</p>
       <span style="display:inline-flex;align-items:center;gap:7px;font-family:'JetBrains Mono',monospace;font-size:8.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border-radius:999px;border:1px solid rgba(221,160,32,.3);background:rgba(221,160,32,.06);color:var(--g1);margin-bottom:48px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--g1);"></span><span data-en="Currently Under Development · Target 2026" data-ar="قيد التطوير حالياً · المستهدف 2026">Currently Under Development · Target 2026</span></span>
+    </div>
+
+    <div class="aig-io reveal">
+      <div class="aio"><span class="aio-k" data-en="What Enters" data-ar="ما يدخل">What Enters</span><span class="aio-t" data-en="Operational Events" data-ar="أحداث تشغيلية">Operational Events</span><span class="aio-d" data-en="Listings · transactions · logistics signals · market pricing" data-ar="قوائم · معاملات · إشارات لوجستية · تسعير السوق">Listings · transactions · logistics signals · market pricing</span></div>
+      <div class="aio"><span class="aio-k" data-en="What Happens" data-ar="ما يحدث">What Happens</span><span class="aio-t" data-en="Knowledge Formation" data-ar="تكوين المعرفة">Knowledge Formation</span><span class="aio-d" data-en="Events resolved into a knowledge graph · models learn from realized outcomes" data-ar="تتحول الأحداث إلى رسم معرفي · تتعلم النماذج من النتائج المحققة">Events resolved into a knowledge graph · models learn from realized outcomes</span></div>
+      <div class="aio"><span class="aio-k" data-en="What Exits" data-ar="ما يخرج">What Exits</span><span class="aio-t" data-en="Decision Intelligence" data-ar="ذكاء القرار">Decision Intelligence</span><span class="aio-d" data-en="Priced, confidence-scored recommendations with reasoning traces" data-ar="توصيات مسعّرة بدرجات ثقة ومسارات استدلال">Priced, confidence-scored recommendations with reasoning traces</span></div>
+      <div class="aio aio-gold"><span class="aio-k" data-en="Why It Compounds" data-ar="لماذا تتعاظم">Why It Compounds</span><span class="aio-t" data-en="Closed Learning Loop" data-ar="حلقة تعلّم مغلقة">Closed Learning Loop</span><span class="aio-d" data-en="Every outcome retrains the system — value grows with every event that enters" data-ar="كل نتيجة تعيد تدريب النظام — تنمو القيمة مع كل حدث يدخل">Every outcome retrains the system — value grows with every event that enters</span></div>
     </div>
 
     <!-- 3D INTELLIGENCE ECOSYSTEM -->
@@ -1875,7 +1912,7 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
       <div class="kicker" style="justify-content:center;" data-en="Engineering Standards" data-ar="معايير الهندسة">Engineering Standards</div>
       <h2 class="h2" data-en="Built for<br><em>Enterprise Scale.</em>" data-ar="مبني<br><em>لنطاق المؤسسات.</em>">Built for<br><em>Enterprise Scale.</em></h2>
       <div class="h2-rule" style="background:linear-gradient(90deg,transparent,var(--g1),transparent);"></div>
-      <p class="serif-lead" style="margin:0 auto;text-align:center;max-width:540px;" data-en="The standards the Automotive Intelligence Grid is engineered against — and the bar we hold every platform partner to." data-ar="المعايير التي تُهندَس عليها شبكة ذكاء السيارات — والمستوى الذي نُلزم به كل شريك منصة.">The standards the Automotive Intelligence Grid is engineered against — and the bar we hold every platform partner to.</p>
+      <p class="serif-lead" style="margin:0 auto;text-align:center;max-width:540px;" data-en="The standards the Artificial Intelligence Grid is engineered against — and the bar we hold every platform partner to." data-ar="المعايير التي تُهندَس عليها شبكة الذكاء الاصطناعي — والمستوى الذي نُلزم به كل شريك منصة.">The standards the Artificial Intelligence Grid is engineered against — and the bar we hold every platform partner to.</p>
     </div>
     <div class="ent-grid reveal">
       <div class="ent-card"><span class="en-k">01 · Compute</span><h3 data-en="Cloud-Native by Design" data-ar="سحابي المنشأ بالتصميم">Cloud-Native by Design</h3><p data-en="Stateless services, containerized workloads, horizontal scaling. No legacy monoliths to migrate." data-ar="خدمات عديمة الحالة، أحمال حاويات، توسّع أفقي. لا أنظمة قديمة للترحيل.">Stateless services, containerized workloads, horizontal scaling. No legacy monoliths to migrate.</p></div>
@@ -1946,7 +1983,7 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
       <div class="kicker" style="justify-content:center;" data-en="Leadership Team" data-ar="فريق القيادة">Leadership Team</div>
       <h2 class="h2" data-en="The Team Behind<br><em>blu9L Holdings.</em>" data-ar="الفريق الذي يقود<br><em>بلو9إل هولدينجز.</em>">The Team Behind<br><em>blu9L Holdings.</em></h2>
       <div class="h2-rule" style="margin:0 auto;"></div>
-      <p style="font-size:16px;color:var(--w70);max-width:620px;margin:20px auto 0;line-height:1.75;" data-en="blu9L is led by executives with deep experience across business administration, strategic planning, organisational development, and multi-sector operations spanning the United States, UAE, and Egypt." data-ar="تُدار بلو9إل بواسطة تنفيذيين يمتلكون خبرة عميقة في إدارة الأعمال والتخطيط الاستراتيجي والتطوير المؤسسي والعمليات متعددة القطاعات في الولايات المتحدة والإمارات ومصر.">blu9L is led by executives with deep experience across business administration, strategic planning, organisational development, and multi-sector operations spanning the United States, UAE, and Egypt.</p>
+      <p style="font-size:16px;color:var(--w70);max-width:620px;margin:20px auto 0;line-height:1.75;" data-en="blu9L is led by executives focused on AI platform commercialization, enterprise partnerships, UAE operations, and Egypt market development — the capabilities the platform is built on." data-ar="تُدار بلو9إل بواسطة تنفيذيين يركّزون على التسويق التجاري لمنصات الذكاء الاصطناعي والشراكات المؤسسية وعمليات الإمارات وتنمية السوق المصري — وهي القدرات التي بُنيت عليها المنصة.">blu9L is led by executives with deep experience across business administration, strategic planning, organisational development, and multi-sector operations spanning the United States, UAE, and Egypt.</p>
     </div>
 
     <div class="leadership-grid">
@@ -1997,7 +2034,7 @@ footer{padding:48px 48px 28px;border-top:1px solid var(--line);}
             <div class="leader-role co" data-en="CEO &amp; Co-Founder · Egypt Operations" data-ar="الرئيس التنفيذي والمؤسس المشارك · عمليات مصر">CEO &amp; Co-Founder · Egypt Operations</div>
           </div>
         </div>
-        <p class="leader-bio" data-en="Strategic advisor and expert in corporate governance, institutional excellence, organizational development, and strategic transformation — with extensive experience leading development initiatives and institutional capability-building across government and private organizations. She has held senior executive and leadership positions, shaping corporate strategies, strengthening governance systems, leading change, and elevating institutional performance to international best-practice standards, alongside deep experience in digital transformation, business development, and strategic partnerships." data-ar="مستشار استراتيجي وخبيرة في الحوكمة المؤسسية والتميز المؤسسي والتطوير التنظيمي والتحول الاستراتيجي، تمتلك خبرة واسعة في قيادة مبادرات التطوير وبناء القدرات المؤسسية داخل المؤسسات الحكومية والخاصة. شغلت مناصب قيادية وتنفيذية رفيعة، وأسهمت في تطوير الاستراتيجيات المؤسسية وتعزيز نظم الحوكمة وإدارة التغيير وتحسين الأداء المؤسسي بما يدعم الاستدامة والتميز التشغيلي وفق أفضل الممارسات الدولية، إلى جانب خبرتها في التحول الرقمي وتطوير الأعمال وبناء الشراكات الاستراتيجية.">Strategic advisor and expert in corporate governance, institutional excellence, organizational development, and strategic transformation — with extensive experience leading development initiatives and institutional capability-building across government and private organizations. She has held senior executive and leadership positions, shaping corporate strategies, strengthening governance systems, leading change, and elevating institutional performance to international best-practice standards, alongside deep experience in digital transformation, business development, and strategic partnerships.</p>
+        <p class="leader-bio" data-en="Strategic advisor in corporate governance, organizational development, and strategic transformation, with senior executive experience across government and private institutions — including digital transformation and strategic partnerships. At blu9L, she leads Egypt market development, institutional relationships, and on-ground IRAS® deployment." data-ar="مستشار استراتيجي في الحوكمة المؤسسية والتطوير التنظيمي والتحول الاستراتيجي، بخبرة تنفيذية رفيعة في المؤسسات الحكومية والخاصة تشمل التحول الرقمي والشراكات الاستراتيجية. تقود في بلو9إل تنمية السوق المصري والعلاقات المؤسسية ونشر إيراس® ميدانياً.">Strategic advisor in corporate governance, organizational development, and strategic transformation, with senior executive experience across government and private institutions — including digital transformation and strategic partnerships. At blu9L, she leads Egypt market development, institutional relationships, and on-ground IRAS® deployment.</p>
         <div class="leader-credentials">
           <div class="leader-cred"><div class="leader-cred-dot co"></div><span data-en="Certified Assessor — Egypt Government Excellence Award" data-ar="مقيّم معتمد — جائزة مصر للتميز الحكومي">Certified Assessor — Egypt Government Excellence Award</span></div>
           <div class="leader-cred"><div class="leader-cred-dot co"></div><span data-en="Certified Director (CDCP)" data-ar="مدير معتمد (CDCP)">Certified Director (CDCP)</span></div>
