@@ -8,7 +8,7 @@
 <link rel="canonical" href="https://blu9l.com/">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="BLu9L | Reality Intelligence Infrastructure™">
-<meta property="og:description" content="Intelligence infrastructure for automotive dealers. System live. Full pilot with real dealers. August 2026.">
+<meta property="og:description" content="BLu9L builds Reality Intelligence Infrastructure™ — the operating system that turns real-world operations into compounding machine intelligence. The Automotive Intelligence Grid is the first system in production. Built on AWS.">
 <meta property="og:url" content="https://blu9l.com">
 <meta property="og:image" content="https://blu9l.com/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -18,12 +18,12 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="BLu9L | Reality Intelligence Infrastructure™">
-<meta name="twitter:description" content="Intelligence infrastructure for automotive dealers. System live. Full pilot with real dealers. August 2026. Built on AWS.">
+<meta name="twitter:description" content="The operating system for reality intelligence. BLu9L builds the infrastructure; the Automotive Intelligence Grid is the first system in production. Built on AWS.">
 <meta name="twitter:image" content="https://blu9l.com/og-image.png">
 
 <!-- Additional SEO -->
-<meta name="keywords" content="automotive intelligence, dealer intelligence platform, automotive AI, dealership data, AIG, automotive intelligence grid, dealer decision intelligence, automotive infrastructure, car dealer software, dealership AI">
-<meta name="author" content="BLu9L Holdings">
+<meta name="keywords" content="reality intelligence infrastructure, intelligence operating system, enterprise AI infrastructure, decision intelligence platform, automotive intelligence grid, AIG, BLu9L, knowledge graph infrastructure, enterprise decision systems, AWS AI infrastructure, machine intelligence platform, operational intelligence">
+<meta name="author" content="BLu9L">
 <meta name="theme-color" content="#050505">
 <link rel="apple-touch-icon" href="https://blu9l.com/apple-touch-icon.png">
 
@@ -394,27 +394,14 @@ nav.scrolled{
 .io-d{font-size:12px;color:var(--gray);line-height:1.65;}
 
 /* Canvas */
-#aig-stage{
-  position:relative;height:500px;
-  border:1px solid rgba(31,140,255,.12);border-radius:20px;overflow:hidden;
-  background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(31,140,255,.06),var(--dark));
-  margin-bottom:14px;
-  box-shadow:var(--glow-blue), 0 24px 80px rgba(0,0,0,.6);
-}
-#aig-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;}
-#aig-labels span{
-  position:absolute;transform:translate(-50%,-50%);
-  font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;
-  color:var(--w50);background:rgba(9,12,18,.85);
-  border:1px solid rgba(255,255,255,.08);border-radius:999px;
-  padding:4px 11px;white-space:nowrap;pointer-events:none;
-  transition:all .3s;
-}
-#aig-labels span.hot{color:var(--w);border-color:var(--g1);box-shadow:0 0 14px rgba(246,195,67,.3);}
-#aig-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none;}
-#aig-core b{display:block;font-family:'Fraunces',serif;font-size:24px;font-weight:900;color:var(--w);text-shadow:0 0 30px rgba(31,140,255,.9),0 0 60px rgba(31,140,255,.4);}
-#aig-core span{font-family:'JetBrains Mono',monospace;font-size:7.5px;letter-spacing:3px;text-transform:uppercase;color:rgba(77,184,255,.65);}
-.aig-hint{text-align:center;font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--w25);margin-bottom:52px;}
+
+
+
+
+
+
+
+
 
 /* Journey */
 .journey-track{height:1px;background:var(--line);margin:0 4px 16px;overflow:hidden;border-radius:1px;}
@@ -625,6 +612,91 @@ footer::before{content:'';position:absolute;bottom:0;left:50%;transform:translat
 @keyframes gradShift{0%,100%{background-position:0% 50%;}50%{background-position:100% 50%;}}
 
 
+
+
+/* ─────────── MATURITY STRIP ─────────── */
+.maturity-strip{margin-top:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;}
+.maturity-item{background:var(--card);padding:20px 22px;display:flex;flex-direction:column;gap:8px;transition:background .3s;}
+.maturity-item:hover{background:var(--card2);}
+.mat-status{color:var(--live);font-size:9px;}
+.mat-amber{color:var(--g1);}
+.mat-label{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--w50);}
+.mat-val{font-family:'Fraunces',serif;font-size:16px;font-weight:700;color:#fff;}
+@media(max-width:768px){.maturity-strip{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.maturity-strip{grid-template-columns:1fr;}}
+
+
+/* ─────────── AIG LIVE DASHBOARD ─────────── */
+#aig-dash{
+  border:1px solid rgba(31,140,255,.14);border-radius:20px;overflow:hidden;
+  background:linear-gradient(180deg,rgba(13,17,24,.9),rgba(9,12,18,.95));
+  box-shadow:var(--glow-blue),0 24px 80px rgba(0,0,0,.5);margin-bottom:14px;
+}
+.dash-head{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.015);}
+.dash-title{display:flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--w70);}
+.dash-dot{width:7px;height:7px;border-radius:50%;background:var(--live);box-shadow:0 0 10px var(--live);animation:dpulse 2s infinite;}
+@keyframes dpulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+.dash-ts{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--b3);letter-spacing:1px;}
+
+.dash-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);}
+.dash-tile{background:var(--card);padding:22px 20px;display:flex;flex-direction:column;gap:7px;transition:background .3s;}
+.dash-tile:hover{background:var(--card2);}
+.dt-k{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--w50);}
+.dt-v{font-family:'Fraunces',serif;font-size:30px;font-weight:900;color:#fff;letter-spacing:-0.01em;line-height:1;}
+.gold-tile .dt-v{color:var(--g1);}
+.dt-trend{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.5px;}
+.dt-trend.up{color:var(--live);}
+.dt-trend.down{color:var(--b3);}
+.dt-spark{display:flex;align-items:flex-end;gap:3px;height:18px;}
+.dt-spark i{width:4px;background:var(--b1);border-radius:1px;animation:spark 1.4s ease-in-out infinite;}
+.dt-spark i:nth-child(1){height:40%;animation-delay:0s;}
+.dt-spark i:nth-child(2){height:65%;animation-delay:.1s;}
+.dt-spark i:nth-child(3){height:50%;animation-delay:.2s;}
+.dt-spark i:nth-child(4){height:80%;animation-delay:.3s;}
+.dt-spark i:nth-child(5){height:60%;animation-delay:.4s;}
+.dt-spark i:nth-child(6){height:90%;animation-delay:.5s;}
+.dt-spark i:nth-child(7){height:70%;animation-delay:.6s;}
+@keyframes spark{0%,100%{opacity:.4;transform:scaleY(.7);}50%{opacity:1;transform:scaleY(1);}}
+
+.dash-feed{border-top:1px solid var(--line);}
+.df-head{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--w50);padding:14px 22px 8px;}
+.df-stream{display:flex;flex-direction:column;}
+.df-row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;padding:13px 22px;border-top:1px solid rgba(255,255,255,.04);font-size:13px;color:var(--gray);transition:background .3s;animation:dfin .5s ease both;}
+.df-row:hover{background:rgba(31,140,255,.04);}
+.df-row b{color:#fff;font-weight:600;}
+.df-tag{font-family:'JetBrains Mono',monospace;font-size:7.5px;letter-spacing:1px;padding:4px 9px;border-radius:100px;min-width:58px;text-align:center;}
+.df-tag.price{background:rgba(31,140,255,.1);border:1px solid var(--bline);color:var(--b3);}
+.df-tag.acq{background:rgba(29,158,117,.1);border:1px solid var(--live-bd);color:var(--live);}
+.df-tag.svc{background:rgba(127,119,221,.1);border:1px solid rgba(127,119,221,.3);color:#9b93e8;}
+.df-tag.risk{background:rgba(246,195,67,.1);border:1px solid var(--gline);color:var(--g1);}
+.df-conf{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--live);font-weight:500;}
+@keyframes dfin{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+@media(max-width:768px){.dash-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.dash-grid{grid-template-columns:1fr 1fr;}.dt-v{font-size:24px;}.df-row{grid-template-columns:auto 1fr;gap:10px;font-size:12px;}.df-conf{display:none;}}
+
+/* ─────────── ECOSYSTEM 3D ─────────── */
+#eco-stage{
+  position:relative;height:540px;
+  border:1px solid rgba(31,140,255,.12);border-radius:20px;overflow:hidden;
+  background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(31,140,255,.06),var(--dark));
+  margin-bottom:14px;
+  box-shadow:var(--glow-blue), 0 24px 80px rgba(0,0,0,.6);
+}
+#eco-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;}
+#eco-labels span{
+  position:absolute;transform:translate(-50%,-50%);
+  font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--w50);background:rgba(9,12,18,.85);
+  border:1px solid rgba(255,255,255,.08);border-radius:999px;
+  padding:4px 11px;white-space:nowrap;pointer-events:none;transition:all .3s;
+}
+#eco-labels span.hot{color:#fff;border-color:var(--g1);box-shadow:0 0 14px rgba(246,195,67,.3);}
+#eco-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none;}
+#eco-core b{display:block;font-family:'Fraunces',serif;font-size:30px;font-weight:900;color:#fff;text-shadow:0 0 30px rgba(31,140,255,.9),0 0 60px rgba(31,140,255,.4);letter-spacing:1px;}
+#eco-core span{font-family:'JetBrains Mono',monospace;font-size:7.5px;letter-spacing:3px;text-transform:uppercase;color:rgba(77,184,255,.65);}
+.eco-hint{text-align:center;font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--w25);margin-bottom:52px;}
+@media(max-width:600px){#eco-stage{height:400px;}#eco-core b{font-size:24px;}#eco-labels span{font-size:7px;padding:3px 8px;}}
+
 /* ─────────── THESIS / RII ─────────── */
 .rii-stages{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;gap:0;align-items:stretch;margin:64px 0;}
 .rii-stage{min-width:0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px 22px;display:flex;flex-direction:column;gap:10px;transition:all .3s;}
@@ -733,7 +805,7 @@ footer::before{content:'';position:absolute;bottom:0;left:50%;transform:translat
   /* journey */
   .journey-steps{grid-template-columns:repeat(3,1fr);}
   /* aig stage */
-  #aig-stage{height:380px;}
+  
   /* pilot */
   .pilot-bottom{padding:28px 24px;}
   /* adv */
@@ -790,10 +862,10 @@ footer::before{content:'';position:absolute;bottom:0;left:50%;transform:translat
   .io-grid{grid-template-columns:1fr;}
   .io-card{padding:22px 18px;}
   /* aig */
-  #aig-stage{height:320px;}
-  #aig-core b{font-size:18px;}
-  #aig-labels span{font-size:7px;padding:3px 8px;}
-  .aig-hint{font-size:7px;letter-spacing:1.5px;}
+  
+  
+  
+  
   /* journey */
   .journey-steps{grid-template-columns:repeat(2,1fr);}
   .j-step{padding:12px 10px;}
@@ -847,7 +919,7 @@ footer::before{content:'';position:absolute;bottom:0;left:50%;transform:translat
   .hero-accent{color:var(--g1);}
 .hero-h1{font-size:clamp(26px,9vw,36px);}
   .section{padding:56px 12px;}
-    #aig-stage{height:280px;}
+    
   footer{padding:28px 12px 18px;}
 }
 
@@ -863,8 +935,8 @@ footer::before{content:'';position:absolute;bottom:0;left:50%;transform:translat
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "BLu9L Holdings",
-  "alternateName": "BLu9L",
+  "name": "BLu9L",
+  "alternateName": "BLu9L Holdings",
   "url": "https://blu9l.com",
   "logo": "https://blu9l.com/og-image.png",
   "description": "BLu9L builds Reality Intelligence Infrastructure — the operating system that turns real-world operations into compounding machine intelligence. The Automotive Intelligence Grid is the first system in production. Built on AWS.",
@@ -893,11 +965,11 @@ footer::before{content:'';position:absolute;bottom:0;left:50%;transform:translat
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Automotive Intelligence Grid",
-  "alternateName": "AIG",
+  "name": "Reality Intelligence Infrastructure",
+  "alternateName": "BLu9L RII",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Cloud / Web",
-  "description": "Intelligence infrastructure for automotive dealers. The AIG captures every operational event inside a dealership, resolves it into a living knowledge graph, and surfaces decision intelligence across every department. Built on AWS.",
+  "description": "Reality Intelligence Infrastructure — the operating system that turns real-world operations into compounding machine intelligence through a closed loop of ingestion, knowledge resolution, decision intelligence, and continuous learning. The Automotive Intelligence Grid is the first production implementation. Built on AWS.",
   "offers": {
     "@type": "Offer",
     "availability": "https://schema.org/PreOrder",
@@ -976,16 +1048,16 @@ footer::before{content:'';position:absolute;bottom:0;left:50%;transform:translat
 <!-- DRAWER -->
 <div class="drawer" id="drawer">
   <ul>
-    <li><a href="#aig" onclick="closeD()">Platform</a></li>
+    <li><a href="#thesis" onclick="closeD()">Platform</a></li>
+    <li><a href="#platform" onclick="closeD()">AIG</a></li>
     <li><a href="#infrastructure" onclick="closeD()">Infrastructure</a></li>
     <li><a href="#pilot" onclick="closeD()">Pilot</a></li>
-    <li><a href="#advisory" onclick="closeD()">Advisory</a></li>
     <li><a href="#faq" onclick="closeD()">FAQ</a></li>
     <li><a href="#founder" onclick="closeD()">Leadership</a></li>
     <li><a href="#contact" onclick="closeD()">Contact</a></li>
   </ul>
   <div class="drawer-btns">
-    <a href="#contact" onclick="closeD()" class="btn btn-primary">Request Access</a>
+    <a href="#contact" onclick="closeD()" class="btn btn-primary">Request Enterprise Access</a>
     <a href="mailto:info@blu9l.com" class="btn btn-ghost">Email Us</a>
   </div>
 </div>
@@ -1010,7 +1082,7 @@ footer::before{content:'';position:absolute;bottom:0;left:50%;transform:translat
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-pill"><div class="live-dot"></div>Pilot Live</div>
-    <a href="#contact" class="btn-nav">Request Access</a>
+    <a href="#contact" class="btn-nav">Request Enterprise Access</a>
     <button class="ham" id="ham" onclick="toggleD()" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
@@ -1087,7 +1159,7 @@ footer::before{content:'';position:absolute;bottom:0;left:50%;transform:translat
     <div class="m-item gold">Launching August 20, 2026</div>
     <div class="m-item m-gold-bold">Founding Dealer Access Open</div>
     <div class="m-item gold">Intelligence Infrastructure</div>
-    <div class="m-item">BLu9L Holdings · US · UAE</div>
+    <div class="m-item">Reality Intelligence Infrastructure™</div>
     <div class="m-item gold">Automotive Intelligence Grid</div>
     <div class="m-item">Built on AWS</div>
     <div class="m-item">AIG · Full Pilot Running</div>
@@ -1096,7 +1168,7 @@ footer::before{content:'';position:absolute;bottom:0;left:50%;transform:translat
     <div class="m-item gold">Launching August 20, 2026</div>
     <div class="m-item m-gold-bold">Founding Dealer Access Open</div>
     <div class="m-item gold">Intelligence Infrastructure</div>
-    <div class="m-item">BLu9L Holdings · US · UAE</div>
+    <div class="m-item">Reality Intelligence Infrastructure™</div>
     <div class="m-item gold">Automotive Intelligence Grid</div>
   </div>
 </div>
@@ -1167,12 +1239,47 @@ footer::before{content:'';position:absolute;bottom:0;left:50%;transform:translat
       <div class="io-card gold-io"><span class="io-k">Why It Compounds</span><span class="io-t">Closed Learning Loop</span><span class="io-d">Every outcome retrains the system — value grows with every event processed</span></div>
     </div>
 
-    <div id="aig-stage" class="reveal r2">
-      <canvas id="aig-canvas"></canvas>
-      <div id="aig-labels"></div>
-      <div id="aig-core"><b>AIG</b><span>Intelligence Core</span></div>
+    <div id="aig-dash" class="reveal r2">
+      <div class="dash-head">
+        <div class="dash-title"><span class="dash-dot"></span>AIG Live Intelligence · Dealership Operations</div>
+        <div class="dash-ts" id="dash-clock">—</div>
+      </div>
+      <div class="dash-grid">
+        <!-- Live metric tiles -->
+        <div class="dash-tile">
+          <div class="dt-k">Avg Days to Turn</div>
+          <div class="dt-v" data-count="8.4" data-suffix="d">8.4d</div>
+          <div class="dt-trend down">▼ 31% vs market</div>
+        </div>
+        <div class="dash-tile">
+          <div class="dt-k">Decision Confidence</div>
+          <div class="dt-v" data-count="94" data-suffix="%">94%</div>
+          <div class="dt-spark"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="dash-tile">
+          <div class="dt-k">Events Processed Today</div>
+          <div class="dt-v" data-count="12480" data-suffix="">12,480</div>
+          <div class="dt-trend up">▲ live</div>
+        </div>
+        <div class="dash-tile gold-tile">
+          <div class="dt-k">Gross Retained / Unit</div>
+          <div class="dt-v" data-count="2400" data-prefix="$">$2,400</div>
+          <div class="dt-trend up">▲ optimized</div>
+        </div>
+      </div>
+
+      <!-- Live recommendation feed -->
+      <div class="dash-feed">
+        <div class="df-head">Intelligence Feed</div>
+        <div class="df-stream" id="df-stream">
+          <div class="df-row"><span class="df-tag price">PRICE</span><span class="df-txt">2021 RAV4 XLE — reprice to <b>$34,950</b>, projected 6-day turn</span><span class="df-conf">96%</span></div>
+          <div class="df-row"><span class="df-tag acq">ACQUIRE</span><span class="df-txt">Auction unit matches demand signal — <b>acquire below $28,400</b></span><span class="df-conf">91%</span></div>
+          <div class="df-row"><span class="df-tag svc">SERVICE</span><span class="df-txt">Customer due for service — <b>retention window open</b></span><span class="df-conf">88%</span></div>
+          <div class="df-row"><span class="df-tag risk">RISK</span><span class="df-txt">3 units aging past 45 days — <b>markdown recommended</b></span><span class="df-conf">93%</span></div>
+        </div>
+      </div>
     </div>
-    <p class="aig-hint">Live ecosystem · move cursor to orbit · blue = events in · gold = intelligence out</p>
+    <p class="aig-hint">Representative live operational view · AIG running in production</p>
 
     <div class="reveal r3" id="journey">
       <div class="journey-track"><div class="journey-fill" id="jfill"></div></div>
@@ -1189,46 +1296,42 @@ footer::before{content:'';position:absolute;bottom:0;left:50%;transform:translat
   </div>
 </section>
 
-<!-- INFRASTRUCTURE / AWS -->
+<!-- ARCHITECTURE / ECOSYSTEM -->
 <section class="section" id="infrastructure" style="background:var(--black);border-top:1px solid var(--line);">
   <div class="container">
     <div class="reveal" style="text-align:center;margin-bottom:48px;">
-      <div class="s-label s-label-center">Enterprise Infrastructure</div>
-      <h2 class="s-h" style="text-align:center;">Built on AWS.</h2>
-      <p class="s-sub s-sub-center" style="margin-top:16px;">The Automotive Intelligence Grid runs on Amazon Web Services — the same cloud infrastructure trusted by the world's largest enterprises. Built for security, scale, and uptime from day one.</p>
+      <div class="s-label s-label-center">The Intelligence Ecosystem</div>
+      <h2 class="s-h" style="text-align:center;">One system. Compounding intelligence.</h2>
+      <p class="s-sub s-sub-center" style="margin-top:16px;">Reality Intelligence Infrastructure is not a pipeline — it is a living ecosystem. Every operational domain feeds a shared intelligence core, and every outcome makes the entire network sharper.</p>
     </div>
 
-    <div class="reveal r1" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-bottom:40px;">
-      <div class="infra-cell" style="background:var(--card);padding:32px 28px;transition:background .3s;">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,153,0,.7);margin-bottom:14px;">Cloud Backbone</div>
-        <div style="font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:var(--w);margin-bottom:8px;">Amazon Web Services</div>
-        <p style="font-size:13px;color:var(--gray);line-height:1.7;">Core compute, storage, and data infrastructure run on AWS — enterprise-grade reliability with global scale and security baked in.</p>
-      </div>
-      <div class="infra-cell" style="background:var(--card);padding:32px 28px;transition:background .3s;">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,153,0,.7);margin-bottom:14px;">Application Layer</div>
-        <div style="font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:var(--w);margin-bottom:8px;">AWS Amplify</div>
-        <p style="font-size:13px;color:var(--gray);line-height:1.7;">The dealer-facing platform is delivered through AWS Amplify — secure, fast, and continuously deployed to every dealership in the network.</p>
-      </div>
-      <div class="infra-cell" style="background:var(--card);padding:32px 28px;transition:background .3s;">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(77,184,255,.7);margin-bottom:14px;">Why It Matters</div>
-        <div style="font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:var(--w);margin-bottom:8px;">Enterprise-Grade</div>
-        <p style="font-size:13px;color:var(--gray);line-height:1.7;">Dealer data stays protected, available, and compliant — on the same infrastructure that powers the world's most demanding workloads.</p>
+    <!-- 3D Ecosystem orbital canvas -->
+    <div id="eco-stage" class="reveal r1">
+      <canvas id="eco-canvas"></canvas>
+      <div id="eco-labels"></div>
+      <div id="eco-core">
+        <b>RII</b>
+        <span>Intelligence Core</span>
       </div>
     </div>
+    <p class="eco-hint">Reality Intelligence Infrastructure™ · a closed, compounding intelligence ecosystem</p>
 
-    <!-- AWS badge bar -->
-    <div class="reveal r2" style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;padding:24px 32px;background:rgba(255,153,0,.04);border:1px solid rgba(255,153,0,.15);border-radius:16px;">
-      <div style="display:flex;align-items:center;gap:12px;">
-        <!-- AWS logo SVG -->
-        <svg width="48" height="29" viewBox="0 0 48 29" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="AWS">
-          <path d="M13.5 11.8c0 .6.07 1.08.18 1.43.13.35.3.73.52 1.14.08.13.11.25.11.36 0 .15-.09.3-.3.45l-.98.65c-.14.09-.28.14-.4.14-.16 0-.31-.08-.47-.22a4.7 4.7 0 0 1-.56-.73 12 12 0 0 1-.48-.92c-1.2 1.42-2.72 2.13-4.54 2.13-1.3 0-2.33-.37-3.08-1.11-.76-.74-1.14-1.73-1.14-2.96 0-1.31.46-2.37 1.4-3.17.93-.8 2.17-1.2 3.74-1.2.52 0 1.05.04 1.61.12.56.08 1.14.2 1.75.34v-1.11c0-1.17-.24-1.99-.72-2.47-.49-.48-1.32-.72-2.5-.72-.54 0-1.09.06-1.66.2-.57.13-1.12.3-1.66.51-.25.11-.43.17-.54.2-.11.03-.19.04-.25.04-.22 0-.33-.16-.33-.49v-.76c0-.25.03-.44.11-.55.08-.11.22-.22.44-.33A9 9 0 0 1 7.7.65 9.6 9.6 0 0 1 10.18.34c1.9 0 3.28.43 4.17 1.29.87.86 1.32 2.17 1.32 3.93v5.17h.01l-.18 1.07Zm-6.27 2.35c.51 0 1.04-.09 1.6-.28.56-.18 1.06-.52 1.48-.98.25-.3.44-.63.53-1 .1-.38.16-.83.16-1.36v-.65a12.6 12.6 0 0 0-1.4-.26 11.5 11.5 0 0 0-1.43-.09c-1.02 0-1.77.2-2.27.61-.5.41-.74 1-.74 1.77 0 .72.18 1.26.56 1.62.36.38.9.56 1.6.56l-.69.06Zm12.4 1.67c-.28 0-.47-.05-.6-.16-.13-.09-.24-.3-.34-.59L14.96 1.62a2.66 2.66 0 0 1-.14-.61c0-.24.12-.38.36-.38h1.53c.3 0 .5.05.61.16.13.09.22.3.32.59l2.65 10.45L22.4 1.38c.08-.3.18-.5.3-.59.13-.11.34-.16.62-.16h1.25c.3 0 .5.05.63.16.13.09.24.3.31.59l2.49 10.58L30.73 1.38c.1-.3.2-.5.32-.59.13-.11.33-.16.61-.16h1.45c.24 0 .38.12.38.38 0 .07-.02.15-.03.24a2.1 2.1 0 0 1-.12.38l-3.4 11.43c-.1.3-.2.5-.34.59-.13.11-.33.16-.6.16h-1.34c-.3 0-.5-.05-.63-.16-.13-.11-.24-.31-.31-.61L24.74 3.62l-2.45 9.6c-.08.3-.18.5-.31.61-.13.11-.34.16-.63.16h-1.34l.01.18Zm19.83.43c-.82 0-1.64-.1-2.43-.28-.79-.19-1.4-.4-1.82-.64-.25-.14-.43-.3-.49-.44a1.1 1.1 0 0 1-.1-.44v-.79c0-.33.13-.49.36-.49.09 0 .18.02.28.05.09.03.23.09.38.16.52.23 1.08.41 1.68.53.61.13 1.2.19 1.81.19.96 0 1.7-.17 2.22-.5.52-.34.79-.82.79-1.44 0-.42-.14-.77-.41-1.06-.28-.28-.79-.54-1.53-.79l-2.2-.68c-1.1-.35-1.92-.86-2.42-1.55a3.6 3.6 0 0 1-.76-2.2c0-.64.14-1.2.41-1.69.28-.49.65-.92 1.11-1.25.46-.34 1-.6 1.62-.77a6.8 6.8 0 0 1 1.97-.27c.35 0 .71.02 1.06.07.36.05.69.11 1.02.18.31.08.6.16.88.26.28.1.49.2.65.3.22.13.38.27.47.41.09.14.14.32.14.55v.73c0 .33-.13.5-.36.5-.13 0-.33-.07-.6-.2a7.2 7.2 0 0 0-3.02-.61c-.87 0-1.55.14-2.02.43-.47.28-.71.72-.71 1.34 0 .42.15.78.46 1.07.3.28.87.57 1.66.83l2.16.68c1.08.35 1.86.83 2.33 1.45.47.61.7 1.32.7 2.1 0 .65-.13 1.24-.4 1.76-.28.52-.65.97-1.13 1.34-.48.38-1.05.66-1.71.86-.7.2-1.42.31-2.2.31l.06.04Z" fill="#FF9900"/>
-        </svg>
-        <span style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gray);">Powered by Amazon Web Services</span>
+    <!-- Foundation bar -->
+    <div class="reveal r2 arch-foundation">
+      <div class="arch-found-label">Running On</div>
+      <div class="arch-found-items">
+        <div class="arch-found-item">
+          <svg width="40" height="24" viewBox="0 0 48 29" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="AWS"><path d="M13.5 11.8c0 .6.07 1.08.18 1.43.13.35.3.73.52 1.14.08.13.11.25.11.36 0 .15-.09.3-.3.45l-.98.65c-.14.09-.28.14-.4.14-.16 0-.31-.08-.47-.22a4.7 4.7 0 0 1-.56-.73 12 12 0 0 1-.48-.92c-1.2 1.42-2.72 2.13-4.54 2.13-1.3 0-2.33-.37-3.08-1.11-.76-.74-1.14-1.73-1.14-2.96 0-1.31.46-2.37 1.4-3.17.93-.8 2.17-1.2 3.74-1.2.52 0 1.05.04 1.61.12.56.08 1.14.2 1.75.34v-1.11c0-1.17-.24-1.99-.72-2.47-.49-.48-1.32-.72-2.5-.72-.54 0-1.09.06-1.66.2-.57.13-1.12.3-1.66.51-.25.11-.43.17-.54.2-.11.03-.19.04-.25.04-.22 0-.33-.16-.33-.49v-.76c0-.25.03-.44.11-.55.08-.11.22-.22.44-.33A9 9 0 0 1 7.7.65 9.6 9.6 0 0 1 10.18.34c1.9 0 3.28.43 4.17 1.29.87.86 1.32 2.17 1.32 3.93v5.17h.01l-.18 1.07Zm-6.27 2.35c.51 0 1.04-.09 1.6-.28.56-.18 1.06-.52 1.48-.98.25-.3.44-.63.53-1 .1-.38.16-.83.16-1.36v-.65a12.6 12.6 0 0 0-1.4-.26 11.5 11.5 0 0 0-1.43-.09c-1.02 0-1.77.2-2.27.61-.5.41-.74 1-.74 1.77 0 .72.18 1.26.56 1.62.36.38.9.56 1.6.56l-.69.06Zm12.4 1.67c-.28 0-.47-.05-.6-.16-.13-.09-.24-.3-.34-.59L14.96 1.62a2.66 2.66 0 0 1-.14-.61c0-.24.12-.38.36-.38h1.53c.3 0 .5.05.61.16.13.09.22.3.32.59l2.65 10.45L22.4 1.38c.08-.3.18-.5.3-.59.13-.11.34-.16.62-.16h1.25c.3 0 .5.05.63.16.13.09.24.3.31.59l2.49 10.58L30.73 1.38c.1-.3.2-.5.32-.59.13-.11.33-.16.61-.16h1.45c.24 0 .38.12.38.38 0 .07-.02.15-.03.24a2.1 2.1 0 0 1-.12.38l-3.4 11.43c-.1.3-.2.5-.34.59-.13.11-.33.16-.6.16h-1.34c-.3 0-.5-.05-.63-.16-.13-.11-.24-.31-.31-.61L24.74 3.62l-2.45 9.6c-.08.3-.18.5-.31.61-.13.11-.34.16-.63.16h-1.34l.01.18Zm19.83.43c-.82 0-1.64-.1-2.43-.28-.79-.19-1.4-.4-1.82-.64-.25-.14-.43-.3-.49-.44a1.1 1.1 0 0 1-.1-.44v-.79c0-.33.13-.49.36-.49.09 0 .18.02.28.05.09.03.23.09.38.16.52.23 1.08.41 1.68.53.61.13 1.2.19 1.81.19.96 0 1.7-.17 2.22-.5.52-.34.79-.82.79-1.44 0-.42-.14-.77-.41-1.06-.28-.28-.79-.54-1.53-.79l-2.2-.68c-1.1-.35-1.92-.86-2.42-1.55a3.6 3.6 0 0 1-.76-2.2c0-.64.14-1.2.41-1.69.28-.49.65-.92 1.11-1.25.46-.34 1-.6 1.62-.77a6.8 6.8 0 0 1 1.97-.27c.35 0 .71.02 1.06.07.36.05.69.11 1.02.18.31.08.6.16.88.26.28.1.49.2.65.3.22.13.38.27.47.41.09.14.14.32.14.55v.73c0 .33-.13.5-.36.5-.13 0-.33-.07-.6-.2a7.2 7.2 0 0 0-3.02-.61c-.87 0-1.55.14-2.02.43-.47.28-.71.72-.71 1.34 0 .42.15.78.46 1.07.3.28.87.57 1.66.83l2.16.68c1.08.35 1.86.83 2.33 1.45.47.61.7 1.32.7 2.1 0 .65-.13 1.24-.4 1.76-.28.52-.65.97-1.13 1.34-.48.38-1.05.66-1.71.86-.7.2-1.42.31-2.2.31l.06.04Z" fill="#FF9900"/></svg>
+          <span>AWS-Native Architecture</span>
+        </div>
+        <div class="arch-found-divider"></div>
+        <div class="arch-found-item"><span class="arch-found-tag">Active</span><span>AWS Architecture Collaboration</span></div>
+        <div class="arch-found-divider"></div>
+        <div class="arch-found-item"><span class="arch-found-tag">Active</span><span>AWS Amplify Delivery</span></div>
       </div>
     </div>
   </div>
 </section>
-
 
 <!-- SECURITY & TRUST -->
 <section class="section" id="security" style="background:var(--dark);border-top:1px solid var(--line);">
@@ -1289,29 +1392,17 @@ footer::before{content:'';position:absolute;bottom:0;left:50%;transform:translat
           <p class="pb-desc">We are selectively onboarding dealers ahead of public launch. If you run a rooftop or a group, reach out now.</p>
         </div>
         <div class="pb-ctas">
-          <a href="#contact" class="btn btn-gold">Request Founding Access</a>
-          <a href="mailto:info@blu9l.com?subject=AIG%20Founding%20Dealer" class="btn btn-ghost">Email Directly</a>
+          <a href="#contact" class="btn btn-primary">Request Enterprise Access</a>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ADVISORY -->
-<section class="section" id="advisory" style="background:var(--dark);border-top:1px solid var(--line);">
-  <div class="container">
-    <div class="reveal adv-layout">
-      <div>
-        <div class="s-label">UAE Advisory · DIV-02</div>
-        <h2 class="s-h" style="font-size:clamp(28px,3.5vw,42px);">Cross-border<br>facilitation.</h2>
-        <p class="s-sub" style="margin-bottom:32px;">A licensed UAE advisory practice — investment advisory, commercial brokerage, and transaction facilitation across the Gulf, US, and Africa corridor.</p>
-        <a href="mailto:info@blu9l.com?subject=Advisory%20Services" class="btn btn-primary">Speak With Our Team →</a>
-      </div>
-      <div class="adv-cards">
-        <div class="adv-card"><span class="adv-num">01</span><div><div class="adv-title">Investment & Enterprise Advisory</div><p class="adv-desc">Entity structuring, free zone setup, and operational governance across UAE and MENA.</p><div class="adv-tags"><span class="adv-tag">Entity Structuring</span><span class="adv-tag">Free Zone Setup</span><span class="adv-tag">Governance</span></div></div></div>
-        <div class="adv-card"><span class="adv-num">02</span><div><div class="adv-title">Commercial Brokerage</div><p class="adv-desc">Licensed intermediary for cross-border transactions — automotive, aviation, real estate, commodities.</p><div class="adv-tags"><span class="adv-tag">Deal Origination</span><span class="adv-tag">Cross-Border</span><span class="adv-tag">Facilitation</span></div></div></div>
-        <div class="adv-card"><span class="adv-num">03</span><div><div class="adv-title">Financial Investment Consultancy</div><p class="adv-desc">Market-entry advisory and investment intelligence for the US–UAE–Africa corridor.</p><div class="adv-tags"><span class="adv-tag">Market Entry</span><span class="adv-tag">Due Diligence</span><span class="adv-tag">Capital Advisory</span></div></div></div>
-      </div>
+    <!-- Operational maturity indicators -->
+    <div class="reveal r2 maturity-strip">
+      <div class="maturity-item"><span class="mat-status">●</span><span class="mat-label">Production Deployments</span><span class="mat-val">Live</span></div>
+      <div class="maturity-item"><span class="mat-status">●</span><span class="mat-label">Live Enterprise Workflows</span><span class="mat-val">Active</span></div>
+      <div class="maturity-item"><span class="mat-status">●</span><span class="mat-label">AWS-Native Infrastructure</span><span class="mat-val">Operational</span></div>
+      <div class="maturity-item"><span class="mat-status mat-amber">●</span><span class="mat-label">Enterprise Security</span><span class="mat-val">SOC 2 Underway</span></div>
     </div>
   </div>
 </section>
@@ -1343,7 +1434,7 @@ footer::before{content:'';position:absolute;bottom:0;left:50%;transform:translat
   <div class="container">
     <div class="reveal" style="text-align:center;margin-bottom:44px;">
       <div class="s-label s-label-center">Leadership</div>
-      <h2 class="s-h" style="text-align:center;">The builder<br><em>behind BLu9L.</em></h2>
+      <h2 class="s-h" style="text-align:center;">Leadership.</h2>
     </div>
     <div class="founder-wrap">
       <div class="founder-card reveal r1">
@@ -1351,7 +1442,7 @@ footer::before{content:'';position:absolute;bottom:0;left:50%;transform:translat
           <div class="f-av">YH</div>
           <div class="f-id">
             <div class="f-name">Yaseen Hassan</div>
-            <div class="f-role">Founder & Chairman · BLu9L Holdings</div>
+            <div class="f-role">Founder & Chairman · BLu9L</div>
           </div>
         </div>
         <p class="f-bio">Founder and visionary behind the BLu9L brand. Over 24 years of automotive industry experience — starting in franchise operations, moving through dealer allocations, and expanding into business development and market growth across the United States and into the Middle East. That career is the exact foundation the Automotive Intelligence Grid is built on: deep operational knowledge of how dealerships actually work, where the intelligence gaps live, and what it takes to turn data into decisions that move metal.</p>
@@ -1451,10 +1542,10 @@ footer::before{content:'';position:absolute;bottom:0;left:50%;transform:translat
         <div>
           <div class="fc-title">Platform</div>
           <ul class="fc-links">
-            <li><a href="#aig">AIG Platform</a></li>
+            <li><a href="#platform">AIG Platform</a></li>
             <li><a href="#infrastructure">Infrastructure</a></li>
             <li><a href="#pilot">Pilot Program</a></li>
-            <li><a href="#advisory">UAE Advisory</a></li>
+            <li><a href="mailto:info@blu9l.com?subject=Advisory%20Services">UAE Advisory</a></li>
           </ul>
         </div>
         <div>
@@ -1464,6 +1555,7 @@ footer::before{content:'';position:absolute;bottom:0;left:50%;transform:translat
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="mailto:sales.force@blu9l.com">Dealer Access</a></li>
+            <li><a href="mailto:info@blu9l.com?subject=Advisory%20Services">UAE Advisory</a></li>
             <li><a href="https://www.linkedin.com/company/blu9l" target="_blank" rel="noopener">LinkedIn</a></li>
           </ul>
         </div>
@@ -1564,65 +1656,157 @@ document.querySelectorAll('.glass-card').forEach(function(card){
   setInterval(function(){var b=wrap.children;for(var i=0;i<b.length;i++){var h=30+Math.random()*65;b[i].style.height=h+'%';}},2400);
 })();
 
-/* ── AIG CANVAS ── */
+
+/* ── ECOSYSTEM 3D ORBITAL ── */
 (function(){
-  var stage=document.getElementById('aig-stage');if(!stage)return;
-  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
-  var cv=document.getElementById('aig-canvas'),labels=document.getElementById('aig-labels');
+  var stage=document.getElementById('eco-stage');if(!stage)return;
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches){
+    // Static fallback — just show core + labels in a ring
+  }
+  var cv=document.getElementById('eco-canvas'),labels=document.getElementById('eco-labels');
   var dpr=Math.min(window.devicePixelRatio||1,2);
   var W,H,cx,cy;
   function resize(){W=stage.clientWidth;H=stage.clientHeight;cv.width=W*dpr;cv.height=H*dpr;cv.style.width=W+'px';cv.style.height=H+'px';cx=W/2;cy=H/2;}
-  resize();addEventListener('resize',function(){resize();ctx.scale(dpr,dpr);},{passive:true});
+  resize();
   var ctx=cv.getContext('2d');ctx.scale(dpr,dpr);
-  var NAMES=['Inventory','Transactions','Pricing','Logistics','Finance','Service','Market','Dealers'];
+  addEventListener('resize',function(){resize();ctx.setTransform(1,0,0,1,0,0);ctx.scale(dpr,dpr);},{passive:true});
+
+  // Domain nodes — the ecosystem (NOT a pipeline)
+  var NAMES=['Inventory','Transactions','Pricing','Logistics','Finance','Service','Market','Operations','Customers','Inventory Risk','Demand','Network'];
+  var N=NAMES.length;
+  // Distribute on a sphere (fibonacci sphere for even 3D distribution)
+  var nodes=[];
+  for(var i=0;i<N;i++){
+    var y=1-(i/(N-1))*2;           // y from 1 to -1
+    var r=Math.sqrt(1-y*y);         // radius at y
+    var theta=Math.PI*(3-Math.sqrt(5))*i; // golden angle
+    nodes.push({
+      x0:Math.cos(theta)*r, y0:y, z0:Math.sin(theta)*r,
+      name:NAMES[i],
+      pulsePhase:Math.random()*Math.PI*2
+    });
+  }
+  // Label elements
   var labelEls=[];
   NAMES.forEach(function(n){var el=document.createElement('span');el.textContent=n;labels.appendChild(el);labelEls.push(el);});
-  var nodes=NAMES.map(function(n,i){return{baseAngle:(i/NAMES.length)*Math.PI*2,speed:.006+.003*(i%3),phase:Math.random()*Math.PI*2,orbitTilt:.18+.08*(i%2)};});
+
+  // Pulses traveling between core and nodes
   var pulses=[];
-  NAMES.forEach(function(_,i){for(var k=0;k<2;k++)pulses.push({node:i,t:Math.random(),speed:.004+Math.random()*.003,gold:k===1});});
-  var stars=[];for(var s=0;s<120;s++)stars.push({x:(Math.random()-.5)*2,y:(Math.random()-.5)*2,r:.4+Math.random()*1,a:.06+Math.random()*.25});
-  var mx=0,my=0,burst=0;
-  stage.addEventListener('pointermove',function(e){var r=stage.getBoundingClientRect();mx=(e.clientX-r.left)/W-.5;my=(e.clientY-r.top)/H-.5;},{passive:true});
-  stage.addEventListener('touchmove',function(e){var r=stage.getBoundingClientRect();mx=(e.touches[0].clientX-r.left)/W-.5;my=(e.touches[0].clientY-r.top)/H-.5;},{passive:true});
-  addEventListener('aigburst',function(){burst=1.0;});
+  for(var p=0;p<N;p++){
+    pulses.push({node:p,t:Math.random(),speed:0.004+Math.random()*0.003,gold:false});
+    if(p%2===0)pulses.push({node:p,t:Math.random(),speed:0.005+Math.random()*0.003,gold:true});
+  }
+
+  // Background stars
+  var stars=[];for(var s=0;s<140;s++)stars.push({x:(Math.random()-.5)*2,y:(Math.random()-.5)*2,r:.4+Math.random()*1,a:.05+Math.random()*.22});
+
+  var mx=0,my=0,autoRot=0;
+  stage.addEventListener('pointermove',function(e){var rb=stage.getBoundingClientRect();mx=(e.clientX-rb.left)/W-.5;my=(e.clientY-rb.top)/H-.5;},{passive:true});
+  stage.addEventListener('touchmove',function(e){var rb=stage.getBoundingClientRect();mx=(e.touches[0].clientX-rb.left)/W-.5;my=(e.touches[0].clientY-rb.top)/H-.5;},{passive:true});
+
   var vis=true;new IntersectionObserver(function(e){vis=e[0].isIntersecting;},{threshold:.05}).observe(stage);
-  function R(){return(W<500?.28:.32)*Math.min(W,H);}
+
+  function radius(){return (W<500?.30:.34)*Math.min(W,H);}
+
+  function rotateY(p,a){var c1=Math.cos(a),s1=Math.sin(a);return{x:p.x*c1+p.z*s1,y:p.y,z:-p.x*s1+p.z*c1};}
+  function rotateX(p,a){var c1=Math.cos(a),s1=Math.sin(a);return{x:p.x,y:p.y*c1-p.z*s1,z:p.y*s1+p.z*c1};}
+
   function glow(x,y,r,col,a){var g=ctx.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,'rgba('+col+','+a+')');g.addColorStop(1,'rgba('+col+',0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();}
-  function npos(nd,t){var a=nd.baseAngle+t*nd.speed,Rv=R(),tR=Rv*(0.55+0.45*Math.cos(nd.orbitTilt));return{x:cx+Math.cos(a)*Rv+mx*22,y:cy+Math.sin(a)*tR*.6+Math.sin(a*1.3+nd.phase)*Rv*.1+my*16};}
-  function bz(p0,c,p1,u){return{x:(1-u)*(1-u)*p0.x+2*(1-u)*u*c.x+u*u*p1.x,y:(1-u)*(1-u)*p0.y+2*(1-u)*u*c.y+u*u*p1.y};}
+
   var t0=null;
   function frame(ts){
-    requestAnimationFrame(frame);if(!vis)return;if(!t0)t0=ts;var t=(ts-t0)*.001;burst*=.95;
-    if(cv.clientWidth!==W||cv.clientHeight!==H){resize();ctx.scale(dpr,dpr);}
+    requestAnimationFrame(frame);if(!vis)return;if(!t0)t0=ts;var t=(ts-t0)*.001;
+    autoRot+=0.0025;
+    if(cv.clientWidth!==W||cv.clientHeight!==H){resize();ctx.setTransform(1,0,0,1,0,0);ctx.scale(dpr,dpr);}
     ctx.clearRect(0,0,W,H);
-    var bg=ctx.createRadialGradient(cx,cy,0,cx,cy,Math.max(W,H)*.65);
-    bg.addColorStop(0,'rgba(31,140,255,0.06)');bg.addColorStop(1,'rgba(9,12,18,0)');
+
+    // bg
+    var bg=ctx.createRadialGradient(cx,cy,0,cx,cy,Math.max(W,H)*.6);
+    bg.addColorStop(0,'rgba(31,140,255,.06)');bg.addColorStop(1,'rgba(9,12,18,0)');
     ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
-    stars.forEach(function(s){ctx.beginPath();ctx.arc(cx+s.x*W*.5,cy+s.y*H*.5,s.r,0,Math.PI*2);ctx.fillStyle='rgba(30,50,100,'+s.a+')';ctx.fill();});
-    var pos=nodes.map(function(nd){return npos(nd,t);});
-    pos.forEach(function(p){ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(p.x,p.y);ctx.strokeStyle='rgba(31,140,255,'+(0.08+burst*.18)+')';ctx.lineWidth=1;ctx.stroke();});
+    stars.forEach(function(st){ctx.beginPath();ctx.arc(cx+st.x*W*.5,cy+st.y*H*.5,st.r,0,Math.PI*2);ctx.fillStyle='rgba(30,50,100,'+st.a+')';ctx.fill();});
+
+    var R=radius();
+    var rotY=autoRot+mx*0.6, rotX=my*0.5;
+
+    // Project all nodes to 3D screen positions with depth
+    var proj=nodes.map(function(nd){
+      var p={x:nd.x0,y:nd.y0,z:nd.z0};
+      p=rotateY(p,rotY);p=rotateX(p,rotX);
+      // perspective: depth z in [-1,1]; scale by depth
+      var persp=1/(1.8-p.z*0.6);
+      return{
+        sx:cx+p.x*R*persp, sy:cy+p.y*R*persp,
+        z:p.z, persp:persp, name:nd.name, pulsePhase:nd.pulsePhase
+      };
+    });
+    // sort by depth (back to front)
+    var order=proj.map(function(_,i){return i;}).sort(function(a,b){return proj[a].z-proj[b].z;});
+
+    // Draw connection lines core→node (depth-faded)
+    order.forEach(function(i){
+      var pr=proj[i];
+      var depthA=(pr.z+1)/2; // 0 back, 1 front
+      ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(pr.sx,pr.sy);
+      ctx.strokeStyle='rgba(31,140,255,'+(0.04+depthA*0.12)+')';ctx.lineWidth=0.6*pr.persp;ctx.stroke();
+    });
+
+    // Draw pulses traveling along lines
     pulses.forEach(function(pu){
-      pu.t+=pu.speed*(1+burst*(pu.gold?2.5:.4));if(pu.t>1)pu.t-=1;
-      var p=pos[pu.node],ctrl={x:(cx+p.x)*.5,y:(cy+p.y)*.5-H*.05};
-      var u=pu.gold?pu.t:1-pu.t,bp=bz({x:cx,y:cy},ctrl,p,u);
-      var alpha=Math.sin(pu.t*Math.PI)*(pu.gold?.88:.5)+burst*(pu.gold?.3:0);
-      var col=pu.gold?'246,195,67':'31,140,255';
-      glow(bp.x,bp.y,(pu.gold?6:4)*2.5,col,alpha*.4);
-      ctx.beginPath();ctx.arc(bp.x,bp.y,pu.gold?5.5:3.5,0,Math.PI*2);ctx.fillStyle='rgba('+col+','+alpha+')';ctx.fill();
+      pu.t+=pu.speed;if(pu.t>1)pu.t-=1;
+      var pr=proj[pu.node];
+      var depthA=(pr.z+1)/2;
+      var u=pu.gold?pu.t:1-pu.t;
+      var px=cx+(pr.sx-cx)*u, py=cy+(pr.sy-cy)*u;
+      var col=pu.gold?'246,195,67':'77,184,255';
+      var alpha=Math.sin(pu.t*Math.PI)*(pu.gold?.8:.5)*(0.4+depthA*0.6);
+      glow(px,py,(pu.gold?5:3.5)*pr.persp*1.6,col,alpha*.45);
+      ctx.beginPath();ctx.arc(px,py,(pu.gold?4:2.8)*pr.persp,0,Math.PI*2);ctx.fillStyle='rgba('+col+','+alpha+')';ctx.fill();
     });
-    pos.forEach(function(p,i){
-      glow(p.x,p.y,30,'31,140,255',0.1+burst*.08);
-      ctx.beginPath();ctx.arc(p.x,p.y,5,0,Math.PI*2);ctx.fillStyle='rgba(77,184,255,.92)';ctx.fill();
-      ctx.beginPath();ctx.arc(p.x,p.y,10,0,Math.PI*2);ctx.strokeStyle='rgba(31,140,255,.22)';ctx.lineWidth=1;ctx.stroke();
-      labelEls[i].style.left=p.x+'px';labelEls[i].style.top=(p.y-28)+'px';labelEls[i].classList.toggle('hot',burst>.3);labelEls[i].style.opacity='1';
+
+    // Draw nodes back-to-front
+    order.forEach(function(i){
+      var pr=proj[i];
+      var depthA=(pr.z+1)/2; // 0 back, 1 front
+      var sz=(3+depthA*3)*pr.persp;
+      glow(pr.sx,pr.sy,26*pr.persp*(0.4+depthA*0.6),'31,140,255',0.06+depthA*0.1);
+      ctx.beginPath();ctx.arc(pr.sx,pr.sy,sz,0,Math.PI*2);
+      ctx.fillStyle='rgba(130,180,255,'+(0.35+depthA*0.6)+')';ctx.fill();
+      ctx.beginPath();ctx.arc(pr.sx,pr.sy,sz+3*pr.persp,0,Math.PI*2);
+      ctx.strokeStyle='rgba(77,184,255,'+(0.1+depthA*0.2)+')';ctx.lineWidth=0.8;ctx.stroke();
+      // label — only show for front-facing nodes, fade by depth
+      var le=labelEls[i];
+      if(pr.z>-0.25){
+        le.style.opacity=String(0.25+depthA*0.75);
+        le.style.left=pr.sx+'px';le.style.top=(pr.sy-18*pr.persp)+'px';
+        le.style.fontSize=(7+depthA*1.5)+'px';
+        le.classList.toggle('hot',depthA>0.85);
+      }else{
+        le.style.opacity='0';
+      }
     });
-    var cs=54+Math.sin(t*2)*5+burst*20;
-    glow(cx,cy,cs*2.5,'10,102,255',0.07+burst*.05);
-    glow(cx,cy,cs,'31,140,255',0.16+burst*.08);
-    ctx.beginPath();ctx.arc(cx,cy,7.5+burst*2.5,0,Math.PI*2);ctx.fillStyle='rgba(77,184,255,.95)';ctx.fill();
-    ctx.beginPath();ctx.arc(cx,cy,15+burst*3,0,Math.PI*2);ctx.strokeStyle='rgba(31,140,255,.28)';ctx.lineWidth=1.5;ctx.stroke();
+
+    // Core
+    var cs=56+Math.sin(t*2)*5;
+    glow(cx,cy,cs*2.6,'10,102,255',0.08);
+    glow(cx,cy,cs,'31,140,255',0.18);
+    ctx.beginPath();ctx.arc(cx,cy,8,0,Math.PI*2);ctx.fillStyle='rgba(77,184,255,.95)';ctx.fill();
+    ctx.beginPath();ctx.arc(cx,cy,16,0,Math.PI*2);ctx.strokeStyle='rgba(31,140,255,.3)';ctx.lineWidth=1.5;ctx.stroke();
   }
   requestAnimationFrame(frame);
+})();
+
+/* ── AIG DASHBOARD CLOCK ── */
+(function(){
+  var clk=document.getElementById('dash-clock');if(!clk)return;
+  function tick(){
+    var d=new Date();
+    var h=String(d.getHours()).padStart(2,'0');
+    var m=String(d.getMinutes()).padStart(2,'0');
+    var s=String(d.getSeconds()).padStart(2,'0');
+    clk.textContent=h+':'+m+':'+s+' · LIVE';
+  }
+  tick();setInterval(tick,1000);
 })();
 
 /* ── JOURNEY ── */
