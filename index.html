@@ -3,17 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BLu9L Holdings | Automotive Intelligence Grid — Live Pilot · August 2026</title>
-<meta name="description" content="BLu9L Holdings builds the Automotive Intelligence Grid — intelligence infrastructure for automotive dealers. Full pilot running with real dealers. Public launch August 2026.">
+<title>BLu9L | Reality Intelligence Infrastructure™ — The Operating System for Reality Intelligence</title>
+<meta name="description" content="BLu9L builds Reality Intelligence Infrastructure™ — the operating system that turns real-world operations into compounding machine intelligence. The Automotive Intelligence Grid is the first system in production. Built on AWS.">
 <link rel="canonical" href="https://blu9l.com/">
 <meta name="robots" content="index, follow">
-<meta property="og:title" content="BLu9L Holdings | Automotive Intelligence Grid">
+<meta property="og:title" content="BLu9L | Reality Intelligence Infrastructure™">
 <meta property="og:description" content="Intelligence infrastructure for automotive dealers. System live. Full pilot with real dealers. August 2026.">
 <meta property="og:url" content="https://blu9l.com">
+<meta property="og:image" content="https://blu9l.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="BLu9L | Reality Intelligence Infrastructure™">
+<meta name="twitter:description" content="Intelligence infrastructure for automotive dealers. System live. Full pilot with real dealers. August 2026. Built on AWS.">
+<meta name="twitter:image" content="https://blu9l.com/og-image.png">
+
+<!-- Additional SEO -->
+<meta name="keywords" content="automotive intelligence, dealer intelligence platform, automotive AI, dealership data, AIG, automotive intelligence grid, dealer decision intelligence, automotive infrastructure, car dealer software, dealership AI">
+<meta name="author" content="BLu9L Holdings">
+<meta name="theme-color" content="#050505">
+<link rel="apple-touch-icon" href="https://blu9l.com/apple-touch-icon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,400;1,9..144,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
 /* ═══════════════════════════════════════
@@ -61,7 +77,7 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{
-  font-family:'DM Sans',sans-serif;
+  font-family:'Inter',sans-serif;
   background:var(--black);
   color:var(--w);
   line-height:1.6;
@@ -69,7 +85,7 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 a{text-decoration:none;color:inherit;}
-h1,h2,h3,h4,h5,h6{font-family:'Fraunces',serif;}
+h1,h2,h3,h4,h5,h6{font-family:'Fraunces',serif;letter-spacing:-0.01em;}
 ::-webkit-scrollbar{width:2px;}
 ::-webkit-scrollbar-thumb{background:var(--b2);}
 ::selection{background:var(--b2);color:#fff;}
@@ -178,6 +194,7 @@ nav.scrolled{
   opacity:0;animation:rise .8s .1s forwards;
 }
 .hero-eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--b3);animation:livepulse 2s infinite;}
+.hero-accent{color:var(--g1);}
 .hero-h1{
   font-family:'Fraunces',serif;
   font-size:clamp(38px,4.5vw,64px);
@@ -188,12 +205,15 @@ nav.scrolled{
 .hero-h1 .blue{color:var(--w);}
 .hero-h1 .gold{color:var(--w);}
 .hero-sub{
-  font-size:clamp(15px,1.5vw,18px);color:var(--gray);line-height:1.7;
-  max-width:480px;margin-bottom:44px;font-weight:300;
+  font-size:clamp(16px,1.5vw,19px);color:var(--gray);line-height:1.7;
+  max-width:540px;margin-bottom:44px;font-weight:400;
   opacity:0;animation:rise .9s .35s forwards;
 }
+.hero-sub strong{color:#fff;font-weight:600;}
+
+
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px;opacity:0;animation:rise .9s .48s forwards;}
-.hero-status{opacity:0;animation:rise .9s .58s forwards;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.hero-status{opacity:0;animation:rise .9s .58s forwards;display:flex;flex-direction:column;align-items:flex-start;gap:16px;}
 .status-badge{
   display:inline-flex;align-items:center;gap:9px;
   background:var(--live-bg);border:1px solid var(--live-bd);
@@ -202,6 +222,27 @@ nav.scrolled{
 .sdot{width:8px;height:8px;border-radius:50%;background:var(--live);box-shadow:0 0 10px var(--live);animation:livepulse 2s infinite;}
 .slabel{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--live);font-weight:500;}
 .launch-txt{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--g2);}
+/* Countdown */
+.countdown{
+  display:flex;flex-direction:column;gap:10px;
+  background:linear-gradient(135deg,rgba(246,195,67,.06),rgba(31,140,255,.04));
+  border:1px solid rgba(246,195,67,.2);
+  border-radius:14px;padding:16px 20px;
+  width:100%;max-width:340px;margin-top:4px;
+}
+.cd-label{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--g1);font-weight:500;}
+.cd-units{display:flex;align-items:center;gap:8px;}
+.cd-unit{display:flex;flex-direction:column;align-items:center;gap:3px;flex:1;}
+.cd-num{
+  font-family:'Fraunces',serif;font-size:30px;font-weight:900;line-height:1;
+  color:#fff;
+  font-variant-numeric:tabular-nums;
+  min-width:42px;text-align:center;
+}
+.cd-tag{font-family:'JetBrains Mono',monospace;font-size:6.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--w50);}
+.cd-sep{font-family:'Fraunces',serif;font-size:24px;font-weight:300;color:var(--g2);margin-bottom:12px;}
+.cd-date{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--g2);text-align:center;border-top:1px solid rgba(246,195,67,.12);padding-top:8px;}
+.cd-live-msg{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:#fff;text-align:center;padding:8px 0;}
 
 /* Hero right — dashboard mockup */
 .hero-right{opacity:0;animation:fadeLeft .9s .6s forwards;position:relative;}
@@ -282,9 +323,12 @@ nav.scrolled{
 ═══════════════════════════════════════ */
 .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:13px 0;overflow:hidden;background:rgba(5,5,5,.8);}
 .marquee-track{display:flex;animation:scroll 36s linear infinite;width:max-content;}
-.m-item{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--w25);padding:0 44px;white-space:nowrap;}
+.m-item{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--w50);font-weight:500;padding:0 44px;white-space:nowrap;}
 .m-item::after{content:'·';margin-left:44px;color:var(--b1);}
-.m-item.gold::after{color:var(--g1);}
+.m-item.gold{color:#F6C343;}
+.m-item.gold::after{color:#F6C343;}
+.m-item.m-gold-bold{color:#F6C343 !important;font-weight:700 !important;}
+.m-item.m-gold-bold::after{color:#F6C343 !important;}
 @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
 /* ═══════════════════════════════════════
@@ -513,7 +557,7 @@ nav.scrolled{
 .form-row label{display:block;font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--w25);margin-bottom:8px;}
 .form-row input,.form-row select,.form-row textarea{
   width:100%;background:rgba(5,5,5,.6);border:1px solid rgba(255,255,255,.08);
-  border-radius:10px;color:var(--w);font-family:'DM Sans',sans-serif;font-size:13.5px;
+  border-radius:10px;color:var(--w);font-family:'Inter',sans-serif;font-size:13.5px;
   padding:13px 16px;outline:none;transition:all .22s;resize:none;
 }
 .form-row input:focus,.form-row select:focus,.form-row textarea:focus{border-color:var(--b1);box-shadow:0 0 0 3px rgba(31,140,255,.1);}
@@ -580,6 +624,43 @@ footer::before{content:'';position:absolute;bottom:0;left:50%;transform:translat
 @keyframes fadeLeft{from{opacity:0;transform:translateX(28px);}to{opacity:1;transform:none;}}
 @keyframes gradShift{0%,100%{background-position:0% 50%;}50%{background-position:100% 50%;}}
 
+
+/* ─────────── THESIS / RII ─────────── */
+.rii-stages{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;gap:0;align-items:stretch;margin:64px 0;}
+.rii-stage{min-width:0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px 22px;display:flex;flex-direction:column;gap:10px;transition:all .3s;}
+.rii-stage:hover{border-color:var(--bline);transform:translateY(-4px);box-shadow:var(--glow-blue);}
+.rii-stage-gold:hover{border-color:var(--gline);box-shadow:var(--glow-gold);}
+.rii-num{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--b3);}
+.rii-stage-gold .rii-num{color:var(--g1);}
+.rii-stage-name{font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:#fff;letter-spacing:-0.01em;}
+.rii-stage-desc{font-size:12.5px;color:var(--gray);line-height:1.6;}
+.rii-arrow{display:flex;align-items:center;justify-content:center;color:var(--w25);font-size:18px;padding:0 6px;}
+@media(max-width:900px){.rii-stages{grid-template-columns:1fr 1fr;gap:12px;}.rii-arrow{display:none;}}
+
+/* Category hierarchy */
+.rii-hierarchy{display:flex;flex-direction:column;align-items:center;gap:0;margin-top:72px;}
+.rii-tier{max-width:100%;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;padding:14px 28px;border-radius:12px;transition:all .3s;}
+.rii-tier-label{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--w25);}
+.rii-tier-name{font-family:'Fraunces',serif;font-weight:600;color:#fff;letter-spacing:-0.01em;word-break:break-word;line-height:1.2;}
+.rii-tier-1 .rii-tier-name{font-size:28px;}
+.rii-tier-2 .rii-tier-name{font-size:22px;color:var(--g1);}
+.rii-tier-3 .rii-tier-name{font-size:18px;color:var(--b3);}
+.rii-tier-4 .rii-tier-name{font-size:15px;color:var(--gray);}
+.rii-tier-line{width:1px;height:28px;background:linear-gradient(var(--b1),transparent);}
+
+/* ─────────── TRUST GRID ─────────── */
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.trust-card{min-width:0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px 24px;display:flex;flex-direction:column;gap:12px;transition:all .3s;position:relative;}
+.trust-card:hover{border-color:var(--bline);transform:translateY(-4px);box-shadow:var(--glow-blue);}
+.trust-icon{color:var(--b3);font-size:14px;}
+.trust-title{font-family:'Fraunces',serif;font-size:16px;font-weight:600;color:#fff;letter-spacing:-0.01em;}
+.trust-desc{font-size:12.5px;color:var(--gray);line-height:1.65;flex:1;}
+.trust-status{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:100px;align-self:flex-start;}
+.trust-status-progress{background:rgba(246,195,67,.08);border:1px solid var(--gline);color:var(--g1);}
+.trust-status-filed{background:rgba(31,140,255,.08);border:1px solid var(--bline);color:var(--b3);}
+.trust-status-live{background:var(--live-bg);border:1px solid var(--live-bd);color:var(--live);}
+@media(max-width:900px){.trust-grid{grid-template-columns:1fr 1fr;}}
+
 /* ═══════════════════════════════════════
    RESPONSIVE
 ═══════════════════════════════════════ */
@@ -597,7 +678,8 @@ footer::before{content:'';position:absolute;bottom:0;left:50%;transform:translat
   .hero{padding:104px 28px 80px;}
   .hero-inner{grid-template-columns:1fr;gap:0;}
   .hero-right{display:none;}
-  .hero-h1{font-size:clamp(36px,6vw,54px);}
+  .hero-accent{color:var(--g1);}
+.hero-h1{font-size:clamp(36px,6vw,54px);}
   .hero-sub{max-width:100%;}
   .section{padding:96px 28px;}
   .io-grid{grid-template-columns:1fr 1fr;}
@@ -622,6 +704,14 @@ footer::before{content:'';position:absolute;bottom:0;left:50%;transform:translat
 /* ── TABLET ≤768px ── */
 @media(max-width:768px){
   #infrastructure .reveal[style*="repeat(3,1fr)"]{grid-template-columns:1fr!important;}
+  /* New sections */
+  .rii-stages{grid-template-columns:1fr 1fr;gap:12px;}
+  .rii-arrow{display:none;}
+  .rii-tier-1 .rii-tier-name{font-size:24px;}
+  .rii-tier-2 .rii-tier-name{font-size:19px;}
+  .rii-tier-3 .rii-tier-name{font-size:16px;}
+  .trust-grid{grid-template-columns:1fr 1fr;}
+  #thesis .s-h{font-size:clamp(26px,5vw,40px);}
   nav{
     top:8px;width:calc(100% - 24px);padding:0 16px;
     height:56px;border-radius:14px;
@@ -629,7 +719,8 @@ footer::before{content:'';position:absolute;bottom:0;left:50%;transform:translat
   .nav-links,.nav-pill,.btn-nav{display:none;}
   .ham{display:flex;}
   .hero{padding:88px 20px 72px;}
-  .hero-h1{font-size:clamp(34px,8vw,50px);letter-spacing:-1px;line-height:1.04;}
+  .hero-accent{color:var(--g1);}
+.hero-h1{font-size:clamp(34px,8vw,50px);letter-spacing:-1px;line-height:1.04;}
   .hero-eyebrow{font-size:8px;letter-spacing:2px;padding:6px 14px;}
   .hero-sub{font-size:16px;margin-bottom:36px;}
   .hero-ctas{gap:10px;margin-bottom:40px;}
@@ -663,9 +754,25 @@ footer::before{content:'';position:absolute;bottom:0;left:50%;transform:translat
 /* ── MOBILE ≤480px ── */
 @media(max-width:480px){
   nav{top:6px;width:calc(100% - 16px);padding:0 14px;height:52px;border-radius:12px;}
+  .countdown{max-width:100%;padding:14px 16px;}
+  /* New sections — single column */
+  .rii-stages{grid-template-columns:1fr;gap:10px;}
+  .rii-stage{padding:22px 18px;}
+  .rii-stage-name{font-size:18px;}
+  .rii-hierarchy{margin-top:48px;}
+  .rii-tier{padding:12px 16px;}
+  .rii-tier-1 .rii-tier-name{font-size:22px;}
+  .rii-tier-2 .rii-tier-name{font-size:17px;}
+  .rii-tier-3 .rii-tier-name{font-size:15px;}
+  .rii-tier-4 .rii-tier-name{font-size:13px;}
+  .trust-grid{grid-template-columns:1fr;}
+  .trust-card{padding:24px 20px;}
+  .cd-num{font-size:26px;min-width:36px;}
+  .cd-sep{font-size:20px;}
   .logo-wrap svg{width:30px;height:30px;}
   .hero{padding:80px 16px 64px;}
-  .hero-h1{font-size:clamp(30px,9.5vw,42px);letter-spacing:-.5px;line-height:1.05;}
+  .hero-accent{color:var(--g1);}
+.hero-h1{font-size:clamp(30px,9.5vw,42px);letter-spacing:-.5px;line-height:1.05;}
   .hero-eyebrow{font-size:7.5px;padding:5px 12px;flex-wrap:wrap;}
   .hero-sub{font-size:15px;line-height:1.65;}
   .hero-ctas{flex-direction:column;}
@@ -733,8 +840,12 @@ footer::before{content:'';position:absolute;bottom:0;left:50%;transform:translat
 /* ── SMALL MOBILE ≤360px ── */
 @media(max-width:360px){
   nav{top:4px;width:calc(100% - 12px);padding:0 12px;}
+  .rii-stage{padding:18px 14px;}
+  .trust-card{padding:20px 16px;}
+  .rii-tier-1 .rii-tier-name{font-size:20px;}
   .hero{padding:76px 12px 56px;}
-  .hero-h1{font-size:clamp(26px,9vw,36px);}
+  .hero-accent{color:var(--g1);}
+.hero-h1{font-size:clamp(26px,9vw,36px);}
   .section{padding:56px 12px;}
     #aig-stage{height:280px;}
   footer{padding:28px 12px 18px;}
@@ -746,6 +857,117 @@ footer::before{content:'';position:absolute;bottom:0;left:50%;transform:translat
   .dash-badge{animation:none;}
 }
 </style>
+
+<!-- Structured Data: Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "BLu9L Holdings",
+  "alternateName": "BLu9L",
+  "url": "https://blu9l.com",
+  "logo": "https://blu9l.com/og-image.png",
+  "description": "BLu9L builds Reality Intelligence Infrastructure — the operating system that turns real-world operations into compounding machine intelligence. The Automotive Intelligence Grid is the first system in production. Built on AWS.",
+  "foundingDate": "2025",
+  "founder": {
+    "@type": "Person",
+    "name": "Yaseen Hassan",
+    "jobTitle": "Founder & Chairman"
+  },
+  "email": "info@blu9l.com",
+  "telephone": "+1-202-664-6646",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Sterling",
+    "addressRegion": "VA",
+    "addressCountry": "US"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/blu9l"
+  ]
+}
+</script>
+
+<!-- Structured Data: Product / SoftwareApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Automotive Intelligence Grid",
+  "alternateName": "AIG",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Cloud / Web",
+  "description": "Intelligence infrastructure for automotive dealers. The AIG captures every operational event inside a dealership, resolves it into a living knowledge graph, and surfaces decision intelligence across every department. Built on AWS.",
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/PreOrder",
+    "priceCurrency": "USD",
+    "category": "Founding Dealer Program"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "BLu9L Holdings"
+  }
+}
+</script>
+
+<!-- Structured Data: FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What exactly is the Automotive Intelligence Grid?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Intelligence infrastructure for dealers — not a CRM or DMS add-on. The AIG captures every operational event, resolves it into a living knowledge graph, and surfaces decision intelligence across every department. Every outcome retrains the system."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the system actually live right now?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Fully operational with a full pilot running with real dealership partners today — real inventory, real transactions, real outcomes feeding back in. August 2026 is the public launch date."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes AIG different from existing dealer tools?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Existing tools capture data. AIG converts data into organizational knowledge — a closed learning loop where every sale, every miss, and every market movement retrains the system. It gets sharper the more events it processes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the Founding Dealer program work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dealers who join before August 2026 lock in founding-tier positioning and pricing. Capacity is intentionally limited. Founding dealers get earliest access, input into development, and terms not available post-launch."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who is BLu9L Holdings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BLu9L builds Reality Intelligence Infrastructure™ — the operating system that turns real-world operations into compounding machine intelligence. Founded and led by Yaseen Hassan, the Automotive Intelligence Grid is its first production implementation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I get access?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the contact form, email info@blu9l.com, or reach sales.force@blu9l.com for dealer-specific enquiries. We respond to every genuine enquiry within one business day."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -781,11 +1003,10 @@ footer::before{content:'';position:absolute;bottom:0;left:50%;transform:translat
   </div>
   <div class="nav-r">
     <ul class="nav-links">
-      <li><a href="#aig">Platform</a></li>
-      <li><a href="#infrastructure">Infrastructure</a></li>
-      <li><a href="#pilot">Pilot</a></li>
-      <li><a href="#advisory">Advisory</a></li>
-      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#thesis">Platform</a></li>
+      <li><a href="#platform">AIG</a></li>
+      <li><a href="#infrastructure">Architecture</a></li>
+      <li><a href="#security">Security</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-pill"><div class="live-dot"></div>Pilot Live</div>
@@ -802,18 +1023,30 @@ footer::before{content:'';position:absolute;bottom:0;left:50%;transform:translat
 
   <div class="hero-inner">
     <div class="hero-left">
-      <div class="hero-eyebrow"><div class="hero-eyebrow-dot"></div>BLu9L Holdings · US · UAE</div>
+      <div class="hero-eyebrow"><div class="hero-eyebrow-dot"></div>Reality Intelligence Infrastructure™</div>
       <h1 class="hero-h1">
-        Transforming Reality<br>Into Continuously<br>Compounding<br>Intelligence.
+        The operating system<br>for <span class="hero-accent">reality intelligence.</span>
       </h1>
-      <p class="hero-sub">BLu9L is the intelligence operating system powering the future of Automotive Intelligence, Enterprise Decision Systems, and cross-border AI infrastructure.</p>
+      <p class="hero-sub">BLu9L builds the infrastructure that turns real-world operations into compounding machine intelligence. The <strong>Automotive Intelligence Grid</strong> is the first system running on it — <strong>live, in production, with real dealers.</strong></p>
       <div class="hero-ctas">
-        <a href="#contact" class="btn btn-primary">Request Access →</a>
-        <a href="#aig" class="btn btn-ghost">See the Platform</a>
+        <a href="#contact" class="btn btn-primary">Request Enterprise Access →</a>
+        <a href="#platform" class="btn btn-ghost">View the Architecture</a>
       </div>
       <div class="hero-status">
         <div class="status-badge"><div class="sdot"></div><span class="slabel">Full Pilot · Real Dealers · Live</span></div>
-        <span class="launch-txt">August 2026 Launch</span>
+        <div class="countdown" id="countdown">
+          <span class="cd-label">Launching In</span>
+          <div class="cd-units">
+            <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-tag">Days</span></div>
+            <span class="cd-sep">:</span>
+            <div class="cd-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-tag">Hrs</span></div>
+            <span class="cd-sep">:</span>
+            <div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-tag">Min</span></div>
+            <span class="cd-sep">:</span>
+            <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-tag">Sec</span></div>
+          </div>
+          <span class="cd-date">August 20, 2026</span>
+        </div>
       </div>
     </div>
 
@@ -851,8 +1084,8 @@ footer::before{content:'';position:absolute;bottom:0;left:50%;transform:translat
     <div class="m-item">AIG · Full Pilot Running</div>
     <div class="m-item gold">Real Dealers · Real Data</div>
     <div class="m-item">System Operational</div>
-    <div class="m-item gold">August 2026 Launch</div>
-    <div class="m-item">Founding Dealer Access Open</div>
+    <div class="m-item gold">Launching August 20, 2026</div>
+    <div class="m-item m-gold-bold">Founding Dealer Access Open</div>
     <div class="m-item gold">Intelligence Infrastructure</div>
     <div class="m-item">BLu9L Holdings · US · UAE</div>
     <div class="m-item gold">Automotive Intelligence Grid</div>
@@ -860,21 +1093,71 @@ footer::before{content:'';position:absolute;bottom:0;left:50%;transform:translat
     <div class="m-item">AIG · Full Pilot Running</div>
     <div class="m-item gold">Real Dealers · Real Data</div>
     <div class="m-item">System Operational</div>
-    <div class="m-item gold">August 2026 Launch</div>
-    <div class="m-item">Founding Dealer Access Open</div>
+    <div class="m-item gold">Launching August 20, 2026</div>
+    <div class="m-item m-gold-bold">Founding Dealer Access Open</div>
     <div class="m-item gold">Intelligence Infrastructure</div>
     <div class="m-item">BLu9L Holdings · US · UAE</div>
     <div class="m-item gold">Automotive Intelligence Grid</div>
   </div>
 </div>
 
+
+<!-- THE THESIS -->
+<section class="section" id="thesis" style="background:var(--dark);border-top:1px solid var(--line);">
+  <div class="container">
+    <div class="reveal" style="max-width:820px;margin:0 auto;text-align:center;">
+      <div class="s-label s-label-center">The Thesis</div>
+      <h2 class="s-h" style="text-align:center;font-family:'Fraunces',serif;font-weight:300;letter-spacing:-0.01em;">Every enterprise runs on reality it cannot see.</h2>
+      <p class="s-sub s-sub-center" style="margin-top:20px;font-size:clamp(16px,1.6vw,19px);">Operations generate millions of events that vanish the moment they happen. Reality Intelligence Infrastructure captures that reality, resolves it into structured knowledge, and returns decisions — continuously, at machine speed.</p>
+    </div>
+
+    <!-- The RII primitive: 4 stages -->
+    <div class="reveal r1 rii-stages">
+      <div class="rii-stage">
+        <div class="rii-num">01</div>
+        <div class="rii-stage-name">Ingest</div>
+        <div class="rii-stage-desc">Capture every operational event across systems, in real time — the raw signal of reality.</div>
+      </div>
+      <div class="rii-arrow">→</div>
+      <div class="rii-stage">
+        <div class="rii-num">02</div>
+        <div class="rii-stage-name">Resolve</div>
+        <div class="rii-stage-desc">Structure events into a living knowledge graph — entities, relationships, and context.</div>
+      </div>
+      <div class="rii-arrow">→</div>
+      <div class="rii-stage">
+        <div class="rii-num">03</div>
+        <div class="rii-stage-name">Decide</div>
+        <div class="rii-stage-desc">Surface confidence-scored decisions with full reasoning traces, where the work happens.</div>
+      </div>
+      <div class="rii-arrow">→</div>
+      <div class="rii-stage rii-stage-gold">
+        <div class="rii-num">04</div>
+        <div class="rii-stage-name">Learn</div>
+        <div class="rii-stage-desc">Every outcome retrains the system. Intelligence compounds with every event processed.</div>
+      </div>
+    </div>
+
+    <!-- Category hierarchy -->
+    <div class="reveal r2 rii-hierarchy">
+      <div class="rii-tier rii-tier-1"><span class="rii-tier-label">Company</span><span class="rii-tier-name">BLu9L</span></div>
+      <div class="rii-tier-line"></div>
+      <div class="rii-tier rii-tier-2"><span class="rii-tier-label">Infrastructure</span><span class="rii-tier-name">Reality Intelligence Infrastructure™</span></div>
+      <div class="rii-tier-line"></div>
+      <div class="rii-tier rii-tier-3"><span class="rii-tier-label">First Implementation</span><span class="rii-tier-name">Automotive Intelligence Grid</span></div>
+      <div class="rii-tier-line"></div>
+      <div class="rii-tier rii-tier-4"><span class="rii-tier-label">Roadmap</span><span class="rii-tier-name">Future Vertical Platforms</span></div>
+    </div>
+  </div>
+</section>
+
 <!-- AIG -->
-<section class="section" id="aig" style="background:var(--dark);border-top:1px solid var(--line);">
+<section class="section" id="platform" style="background:var(--black);border-top:1px solid var(--line);">
   <div class="container">
     <div class="reveal" style="text-align:center;margin-bottom:16px;">
-      <div class="s-label s-label-center">Automotive Intelligence Grid</div>
-      <h2 class="s-h" style="text-align:center;">Not software.<br>An intelligence ecosystem.</h2>
-      <p class="s-sub s-sub-center" style="margin-top:16px;">The AIG captures every operational event inside a dealership, resolves it into a living knowledge graph, and surfaces decision intelligence across every department. Every outcome retrains the system — compounding in value the longer it runs.</p>
+      <div class="s-label s-label-center">Automotive Intelligence Grid · First Implementation</div>
+      <h2 class="s-h" style="text-align:center;">The first system built on RII.</h2>
+      <p class="s-sub s-sub-center" style="margin-top:16px;">AIG runs the Reality Intelligence primitive inside automotive retail — ingesting every operational event in a dealership, resolving it into a knowledge graph, and returning decisions to every department. Live in production today.</p>
     </div>
 
     <div class="io-grid reveal r1">
@@ -946,13 +1229,52 @@ footer::before{content:'';position:absolute;bottom:0;left:50%;transform:translat
   </div>
 </section>
 
+
+<!-- SECURITY & TRUST -->
+<section class="section" id="security" style="background:var(--dark);border-top:1px solid var(--line);">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:48px;">
+      <div class="s-label s-label-center">Enterprise Posture</div>
+      <h2 class="s-h" style="text-align:center;">Built for enterprise trust.</h2>
+      <p class="s-sub s-sub-center" style="margin-top:16px;">Reality Intelligence Infrastructure handles operational data at the core of a business. It is engineered for the security, governance, and reliability that enterprise deployment demands.</p>
+    </div>
+
+    <div class="reveal r1 trust-grid">
+      <div class="trust-card">
+        <div class="trust-icon">◆</div>
+        <div class="trust-title">SOC 2 Audit Underway</div>
+        <div class="trust-desc">A formal SOC 2 examination is in progress, establishing independently verified controls for security, availability, and confidentiality.</div>
+        <div class="trust-status trust-status-progress">In Progress</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon">◆</div>
+        <div class="trust-title">Provisional Patent Filed</div>
+        <div class="trust-desc">The Reality Intelligence Infrastructure methodology is protected by a provisional patent application covering the core architecture.</div>
+        <div class="trust-status trust-status-filed">Filed</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon">◆</div>
+        <div class="trust-title">AWS Cloud Security</div>
+        <div class="trust-desc">Infrastructure runs on Amazon Web Services, inheriting enterprise-grade encryption, isolation, and compliance controls by default.</div>
+        <div class="trust-status trust-status-live">Active</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon">◆</div>
+        <div class="trust-title">Data Governance</div>
+        <div class="trust-desc">Dealer data is isolated, access-controlled, and never commingled. Every decision carries a full reasoning trace for auditability.</div>
+        <div class="trust-status trust-status-live">By Design</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PILOT -->
 <section class="section" id="pilot" style="background:var(--black);border-top:1px solid var(--line);">
   <div class="container">
     <div class="reveal" style="margin-bottom:44px;">
-      <div class="s-label">Pilot Program · August 2026</div>
-      <h2 class="s-h">The pilot is<br><em>running now.</em></h2>
-      <p class="s-sub">The system is operational. Real dealer data is flowing through it today. August is when we open access broadly.</p>
+      <div class="s-label">Production Validation</div>
+      <h2 class="s-h">Live. In production.<br>Not a prototype.</h2>
+      <p class="s-sub">AIG is operational today inside real dealerships — real inventory, real transactions, real outcomes feeding back into the system. Public availability opens August 20, 2026.</p>
     </div>
     <div class="pilot-box reveal r1">
       <div class="pilot-top">
@@ -1158,6 +1480,36 @@ footer::before{content:'';position:absolute;bottom:0;left:50%;transform:translat
 <script>
 /* ── PROGRESS ── */
 (function(){var p=document.getElementById('prog');addEventListener('scroll',function(){var h=document.documentElement;p.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});})();
+/* ── COUNTDOWN TO LAUNCH ── */
+(function(){
+  var target = new Date('2026-08-20T00:00:00').getTime();
+  var elDays = document.getElementById('cd-days'),
+      elHours = document.getElementById('cd-hours'),
+      elMins = document.getElementById('cd-mins'),
+      elSecs = document.getElementById('cd-secs'),
+      box = document.getElementById('countdown');
+  if(!elDays) return;
+  function pad(n){return n<10?'0'+n:''+n;}
+  function tick(){
+    var now = Date.now(), diff = target - now;
+    if(diff <= 0){
+      box.innerHTML = '<span class="cd-label">Status</span><div class="cd-live-msg">● Now Live</div><span class="cd-date">Launched August 20, 2026</span>';
+      clearInterval(timer);
+      return;
+    }
+    var d = Math.floor(diff/86400000),
+        h = Math.floor((diff%86400000)/3600000),
+        m = Math.floor((diff%3600000)/60000),
+        s = Math.floor((diff%60000)/1000);
+    elDays.textContent = d;
+    elHours.textContent = pad(h);
+    elMins.textContent = pad(m);
+    elSecs.textContent = pad(s);
+  }
+  tick();
+  var timer = setInterval(tick, 1000);
+})();
+
 
 /* ── NAV ── */
 var nav=document.getElementById('nav');
