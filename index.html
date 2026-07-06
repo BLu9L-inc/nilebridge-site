@@ -40,6 +40,7 @@
   --black:    #08090A;
   --surface:  #0D0E10;
   --surface2: #101216;
+  --surface-glass: radial-gradient(140% 140% at 18% 0%, #14161A 0%, #0D0E10 55%, #0A0B0C 100%);
   --ink:      #EDEEF0;
   --ink-dim:  #C4C7CC;
   --dim:      #8A8F98;
@@ -217,9 +218,33 @@ nav.scrolled .nav-links,nav.menu-open .nav-links{opacity:1;}
 ═══════════════════════════════════════ */
 .instrument-svg{display:block;width:100%;height:100%;overflow:visible;}
 .inst-rim-track{fill:none;stroke:var(--line2);stroke-width:1;}
+.inst-rim-halo{fill:none;stroke:var(--blue);stroke-width:6;opacity:.10;filter:blur(2px);transition:stroke-dashoffset .5s var(--ease-premium);}
 .inst-rim-lit{fill:none;stroke:var(--blue);stroke-width:1.4;filter:drop-shadow(0 0 5px rgba(61,127,255,.45));transition:stroke-dashoffset .5s var(--ease-premium);}
 .inst-hub-ring{fill:none;stroke:var(--line2);stroke-width:1;}
-.inst-hub-fill{fill:var(--black);}
+.inst-hub-fill{transition:fill 1s;}
+
+/* ── network / scale-out mode (Dealer → Network → Automotive Intelligence Grid) ──
+   Triggered once, quietly, when the reader reaches the scale-out chapter.
+   The main loop settles to a smaller scale; two simplified sibling loops
+   fade in at reduced presence, connected by thin static lines — one
+   architecture, shown replicated. No spectacle: a single cross-fade/scale
+   transition, not a sequence of flourishes. */
+.inst-main-group{transform-box:view-box;transform-origin:200px 200px;transition:transform 1.2s var(--ease-premium);}
+.network-on .inst-main-group{transform:scale(.62);}
+.inst-labels-wrap{position:absolute;inset:0;transform-origin:50% 50%;transition:transform 1.2s var(--ease-premium);}
+.network-on .inst-labels-wrap{transform:scale(.62);}
+.inst-sibling{opacity:0;transform:scale(.7);transform-box:fill-box;transform-origin:center;transition:opacity 1.1s var(--ease-premium),transform 1.1s var(--ease-premium);}
+.network-on .inst-sibling{opacity:.5;transform:scale(1);}
+.network-on .inst-sibling.s2{transition-delay:.18s;}
+.inst-network-line{stroke:var(--line2);stroke-width:1;opacity:0;transition:opacity 1s var(--ease-premium) .1s;}
+.network-on .inst-network-line{opacity:.7;}
+.inst-network-label{position:absolute;font-family:var(--mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim2);
+  opacity:0;transform:translate(-50%,-50%);transition:opacity .9s var(--ease-premium);pointer-events:none;white-space:nowrap;}
+.network-on .inst-network-label{opacity:1;}
+.network-on .inst-network-label.nl-dealer{transition-delay:.2s;}
+.network-on .inst-network-label.nl-network{transition-delay:.55s;color:var(--dim2);}
+.inst-network-label.nl-grid{left:50%;bottom:11%;top:auto;transform:translate(-50%,0);white-space:normal;text-align:center;max-width:80%;}
+.network-on .inst-network-label.nl-grid{transition-delay:.95s;color:var(--ink);font-size:10.5px;letter-spacing:2px;}
 .inst-spoke{stroke:var(--line2);stroke-width:1;transition:stroke .5s;}
 .inst-spoke.on{stroke:var(--blue-line);}
 .inst-tick{stroke:var(--dim2);stroke-width:2;stroke-linecap:round;transform-box:fill-box;transform-origin:center;transition:stroke .45s var(--ease-premium);}
@@ -268,7 +293,7 @@ nav.scrolled .nav-links,nav.menu-open .nav-links{opacity:1;}
 
 /* trust / capability / team blocks — reused component language */
 .flow-row{display:flex;align-items:stretch;gap:0;max-width:480px;flex-wrap:wrap;margin-top:8px;}
-.flow-item{flex:1;min-width:130px;text-align:left;padding:18px 20px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--surface);}
+.flow-item{flex:1;min-width:130px;text-align:left;padding:18px 20px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--surface-glass);}
 .flow-k{font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--dim2);margin-bottom:10px;}
 .flow-v{font-family:var(--serif);font-size:15.5px;color:var(--ink);}
 .flow-v.accent{color:var(--blue);}
@@ -276,7 +301,7 @@ nav.scrolled .nav-links,nav.menu-open .nav-links{opacity:1;}
 @media(max-width:600px){.flow-row{flex-direction:column;}.flow-arrow{transform:rotate(90deg);padding:6px 0;align-self:center;}}
 
 .trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;max-width:480px;margin-top:22px;}
-.trust-card{background:var(--surface);padding:20px 20px;}
+.trust-card{background:var(--surface-glass);padding:20px 20px;}
 .trust-title{font-family:var(--serif);font-size:14px;color:var(--ink);margin-bottom:8px;}
 .trust-desc{font-size:11.5px;color:var(--dim);line-height:1.6;margin-bottom:12px;}
 .trust-status{display:inline-block;font-family:var(--mono);font-size:8px;letter-spacing:1.2px;text-transform:uppercase;padding:4px 9px;border-radius:var(--radius-pill);}
@@ -287,8 +312,26 @@ nav.scrolled .nav-links,nav.menu-open .nav-links{opacity:1;}
 /* ═══════════════════════════════════════
    POST-DIAGRAM SECTIONS (normal document flow)
 ═══════════════════════════════════════ */
+
+/* Built for Production — real screenshots, framed like device chrome */
+.prod-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:1080px;}
+.prod-shot{border:1px solid var(--line2);border-radius:var(--radius-lg);overflow:hidden;background:var(--surface-glass);}
+.prod-chrome{display:flex;gap:6px;padding:12px 16px;border-bottom:1px solid var(--line);}
+.prod-chrome span{width:8px;height:8px;border-radius:50%;background:var(--line2);}
+.prod-frame{aspect-ratio:16/10;position:relative;background:#060708;display:flex;align-items:center;justify-content:center;}
+.prod-frame img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;}
+.prod-frame img:not([src]),.prod-frame img[src=""]{display:none;}
+.prod-frame[data-pending]::before{
+  content:attr(data-pending);font-family:var(--mono);font-size:11px;color:var(--dim2);letter-spacing:.04em;
+  text-align:center;padding:0 30px;
+}
+.prod-frame:has(img[src]:not([src=""]))::before{content:none;}
+.prod-cap{padding:18px 22px 22px;font-size:12.5px;color:var(--dim);line-height:1.65;}
+.prod-cap b{color:var(--ink);font-weight:500;}
+@media(max-width:760px){.prod-grid{grid-template-columns:1fr;}}
+
 .mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;max-width:1000px;}
-.mod-card{background:var(--surface);padding:30px 26px;transition:background .25s;}
+.mod-card{background:var(--surface-glass);padding:30px 26px;transition:background .25s;}
 .mod-card:hover{background:var(--surface2);}
 .mod-card:last-child{grid-column:span 2;}
 .mod-name{font-family:var(--serif);font-size:17px;color:var(--ink);margin-bottom:10px;}
@@ -304,7 +347,7 @@ nav.scrolled .nav-links,nav.menu-open .nav-links{opacity:1;}
 @media(max-width:600px){.def-row{grid-template-columns:1fr;gap:6px;}}
 
 .team-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:960px;}
-.founder-card{border:1px solid var(--line2);border-radius:var(--radius-lg);padding:36px;background:var(--surface);}
+.founder-card{border:1px solid var(--line2);border-radius:var(--radius-lg);padding:36px;background:var(--surface-glass);}
 .f-top{display:flex;align-items:flex-start;gap:18px;margin-bottom:22px;}
 .f-av{width:52px;height:52px;border-radius:50%;flex-shrink:0;background:var(--blue-btn);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:17px;}
 .f-name{font-family:var(--serif);font-size:19px;color:var(--ink);margin-bottom:4px;}
@@ -345,7 +388,7 @@ nav.scrolled .nav-links,nav.menu-open .nav-links{opacity:1;}
 .ci:hover{border-color:var(--line2);color:var(--ink);}
 .ci a{color:inherit;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .ci-label{font-family:var(--mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim2);flex-shrink:0;min-width:82px;}
-.cf{border:1px solid var(--line2);border-radius:var(--radius-lg);padding:36px;background:var(--surface);}
+.cf{border:1px solid var(--line2);border-radius:var(--radius-lg);padding:36px;background:var(--surface-glass);}
 .cf-title{font-family:var(--serif);font-size:18px;color:var(--ink);margin-bottom:24px;}
 .form-row{margin-bottom:16px;}
 .form-row label{display:block;font-family:var(--mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim2);margin-bottom:8px;}
@@ -395,6 +438,7 @@ footer{border-top:1px solid var(--line);padding:64px 40px 32px;}
   .chapter{min-height:auto;padding:52px 0;}
   .chapter:first-child{padding-top:52px;}
   .inst-readout{display:none;}
+  .inst-network-label.nl-grid{bottom:2%;font-size:9px;}
 }
 @media(max-width:560px){
   .section{padding:64px 24px;}
@@ -548,63 +592,39 @@ footer{border-top:1px solid var(--line);padding:64px 40px 32px;}
       <div class="ch-content">
 
         <div class="chapter" data-stage="0">
-          <div class="ch-eyebrow"><span class="idx">STAGE 01 / 09</span> — Why It Exists</div>
+          <div class="ch-eyebrow"><span class="idx">01 / 07</span> — Why It Exists</div>
           <h2 class="ch-h">Every dealership already produces the truth of its business.</h2>
           <p class="ch-sub">It happens in the DMS, the CRM, the service bay, the phone call — and then it disappears. Nothing compounds. BLu9L exists to stop that loss, starting with reality itself.</p>
         </div>
 
-        <div class="chapter" data-stage="1">
-          <div class="ch-eyebrow"><span class="idx">STAGE 02 / 09</span> — Events</div>
-          <h2 class="ch-h">What actually happens gets captured before it vanishes.</h2>
-          <p class="ch-sub">A trade-in, a missed follow-up, a price change — raw signals are captured as structured events in real time, not reconstructed later from memory.</p>
-        </div>
-
         <div class="chapter" data-stage="2">
-          <div class="ch-eyebrow"><span class="idx">STAGE 03 / 09</span> — Evidence</div>
-          <h2 class="ch-h">Events are resolved into verifiable fact.</h2>
-          <p class="ch-sub">Every event is corroborated against related signals until it becomes evidence — durable, attributable, and traceable back to its source.</p>
-        </div>
-
-        <div class="chapter" data-stage="3">
-          <div class="ch-eyebrow"><span class="idx">STAGE 04 / 09</span> — Truth</div>
-          <h2 class="ch-h">Evidence accumulates into a living model of the business.</h2>
-          <p class="ch-sub">Not a report frozen in time — a continuously updated representation of what is actually true inside the dealership, right now.</p>
+          <div class="ch-eyebrow"><span class="idx">02 / 07</span> — Capture &amp; Verify</div>
+          <h2 class="ch-h">What happens gets captured — then verified into fact.</h2>
+          <p class="ch-sub">A trade-in, a missed follow-up, a price change — raw signals are captured as structured events in real time, not reconstructed later from memory. Each event is then corroborated against related signals until it becomes evidence: durable, attributable, and traceable back to its source.</p>
         </div>
 
         <div class="chapter" data-stage="4">
-          <div class="ch-eyebrow"><span class="idx">STAGE 05 / 09</span> — Decision</div>
-          <h2 class="ch-h">Truth becomes a decision, scored by confidence.</h2>
-          <p class="ch-sub">Every recommendation carries a confidence score and a full reasoning trace back to the evidence that produced it. Nothing is a black box.</p>
-        </div>
-
-        <div class="chapter" data-stage="5">
-          <div class="ch-eyebrow"><span class="idx">STAGE 06 / 09</span> — Outcome</div>
-          <h2 class="ch-h">Decisions are acted on — and the result is measured.</h2>
-          <p class="ch-sub">What happened after the decision was made becomes the next event in the loop. The system watches its own consequences.</p>
-        </div>
-
-        <div class="chapter" data-stage="6">
-          <div class="ch-eyebrow"><span class="idx">STAGE 07 / 09</span> — Learning</div>
-          <h2 class="ch-h">Every outcome retrains the system that produced it.</h2>
-          <p class="ch-sub">The system does not just log what happened — it adjusts, so the next decision starts from a sharper baseline than the last.</p>
+          <div class="ch-eyebrow"><span class="idx">03 / 07</span> — Model &amp; Decide</div>
+          <h2 class="ch-h">That evidence becomes a living model of the business — and a decision, scored by confidence.</h2>
+          <p class="ch-sub">Evidence accumulates into a continuously updated representation of what is actually true inside the dealership, right now. From it, a decision emerges — one that carries a confidence score and a full reasoning trace back to the evidence that produced it. Nothing is a black box.</p>
         </div>
 
         <div class="chapter" data-stage="7">
-          <div class="ch-eyebrow"><span class="idx">STAGE 08 / 09</span> — Calibration</div>
-          <h2 class="ch-h">Confidence itself gets recalibrated, cycle over cycle.</h2>
-          <p class="ch-sub">A decision the system was once unsure about becomes one it can make with precision — because it has seen the outcome before.</p>
+          <div class="ch-eyebrow"><span class="idx">04 / 07</span> — Act, Learn, Recalibrate</div>
+          <h2 class="ch-h">The decision gets acted on. The system learns from what happened, and recalibrates itself.</h2>
+          <p class="ch-sub">What happened after the decision becomes the next event in the loop — the system watches its own consequences, adjusts, and starts the next decision from a sharper baseline. A recommendation it was once unsure about becomes one it can make with precision, because it has seen the outcome before.</p>
         </div>
 
         <div class="chapter" data-stage="8">
-          <div class="ch-eyebrow"><span class="idx">STAGE 09 / 09</span> — Better Decisions</div>
+          <div class="ch-eyebrow"><span class="idx">05 / 07</span> — Compounds</div>
           <h2 class="ch-h serif-moment">The loop closes. This is what compounding intelligence actually means.</h2>
           <p class="ch-sub">Reality became events, became evidence, became truth, became a decision, became an outcome the system learned from — and calibrated itself to do better next time. Then reality happened again.</p>
         </div>
 
-        <div class="chapter" data-stage="8">
-          <div class="ch-eyebrow">Why This Is Different</div>
-          <h2 class="ch-h">Not another app. Infrastructure.</h2>
-          <p class="ch-sub">BLu9L doesn't replace your DMS or your CRM. It sits above every system you already run, and returns decisions back into the workflows your team already uses.</p>
+        <div class="chapter" data-stage="8" data-network="1">
+          <div class="ch-eyebrow"><span class="idx">06 / 07</span> — Beyond One Dealership</div>
+          <h2 class="ch-h">One loop, replicated. This is how it becomes a network.</h2>
+          <p class="ch-sub">BLu9L doesn't replace your DMS or your CRM — it sits above every system you already run, and returns decisions back into the workflows your team already uses. The same closed loop that runs inside one dealership runs inside every dealership on the network, without any dealer's data ever being exposed to another. That is how a single architecture becomes the Automotive Intelligence Grid.</p>
           <div class="flow-row">
             <div class="flow-item"><div class="flow-k">Today</div><div class="flow-v">Existing Systems</div></div>
             <div class="flow-arrow">→</div>
@@ -615,7 +635,7 @@ footer{border-top:1px solid var(--line);padding:64px 40px 32px;}
         </div>
 
         <div class="chapter" data-stage="8">
-          <div class="ch-eyebrow">Why It Can Be Trusted</div>
+          <div class="ch-eyebrow"><span class="idx">07 / 07</span> — Why It Can Be Trusted</div>
           <h2 class="ch-h">Engineered like infrastructure should be.</h2>
           <p class="ch-sub">Operational data sits at the core of a business. This is built under the security, governance, and reliability discipline that demands.</p>
           <div class="trust-grid">
@@ -649,6 +669,50 @@ footer{border-top:1px solid var(--line);padding:64px 40px 32px;}
     </div>
   </div>
 </div>
+
+<!-- BUILT FOR PRODUCTION — real screenshots of the running platform.
+     Each .prod-shot img[data-real] is a placeholder pending capture from the
+     local dev instance (see project notes); replace src with the real PNG
+     when available. No illustrative/mockup imagery is used here by design. -->
+<section class="section" id="production" style="border-top:1px solid var(--line);">
+  <div class="container">
+    <div class="reveal s-head">
+      <div class="s-eyebrow">Built for Production</div>
+      <h2 class="s-h">This isn't a concept. It's running.</h2>
+      <p class="s-sub">What you just read is the architecture. What follows is the actual software — captured directly from the running platform, not illustrated.</p>
+    </div>
+    <div class="prod-grid reveal r1">
+      <div class="prod-shot">
+        <div class="prod-chrome"><span></span><span></span><span></span></div>
+        <div class="prod-frame" data-pending="Dashboard capture pending">
+          <img data-real src="" alt="BLu9L Dashboard / Mission Control — role-based command center" loading="lazy">
+        </div>
+        <div class="prod-cap"><b>Dashboard — Mission Control.</b> The role-based command center each user sees on login: tasks, priorities, and status specific to their role.</div>
+      </div>
+      <div class="prod-shot">
+        <div class="prod-chrome"><span></span><span></span><span></span></div>
+        <div class="prod-frame" data-pending="Truth Dashboard capture pending">
+          <img data-real src="" alt="BLu9L Truth Dashboard — evidence and event certification status" loading="lazy">
+        </div>
+        <div class="prod-cap"><b>Truth Dashboard.</b> Event certification and reconciliation status — the Evidence layer of the Reality Intelligence Infrastructure, made visible.</div>
+      </div>
+      <div class="prod-shot">
+        <div class="prod-chrome"><span></span><span></span><span></span></div>
+        <div class="prod-frame" data-pending="Recommendation Center capture pending">
+          <img data-real src="" alt="BLu9L Recommendation Center — confidence-scored decisions with reasoning trace" loading="lazy">
+        </div>
+        <div class="prod-cap"><b>Recommendation Center.</b> Decisions the system produces, each carrying a confidence score and a reasoning trace back to its evidence.</div>
+      </div>
+      <div class="prod-shot">
+        <div class="prod-chrome"><span></span><span></span><span></span></div>
+        <div class="prod-frame" data-pending="Vehicle Intelligence capture pending">
+          <img data-real src="" alt="BLu9L Vehicle Intelligence — living vehicle inventory record" loading="lazy">
+        </div>
+        <div class="prod-cap"><b>Vehicle Intelligence.</b> The living record described in Vehicle Intelligence — condition, history, and market position, continuously updated.</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- PLATFORM CAPABILITY DOMAINS -->
 <section class="section" id="platform" style="border-top:1px solid var(--line);">
@@ -896,8 +960,10 @@ setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(func
    been read. Construction happens only in response to scroll — no
    idle looped animation on the instrument itself.
 ═══════════════════════════════════════════════════════════════════ */
+var instrumentInstanceCount = 0;
 function buildInstrument(mountEl, opts){
   opts = opts || {};
+  var uid = 'inst'+(instrumentInstanceCount++);
   var stages = [
     ['01','Reality'],['02','Events'],['03','Evidence'],['04','Truth'],['05','Decision'],
     ['06','Outcome'],['07','Learning'],['08','Calibration'],['09','Compounds']
@@ -917,11 +983,32 @@ function buildInstrument(mountEl, opts){
 
   function angleFor(i){ return (-90 + i*(360/n)) * Math.PI/180; }
 
-  // rim: static track + lit overlay (dasharray trick, drawn clockwise from top)
+  // depth: a radial gradient gives the hub a dimensional core instead of a flat disc
+  var defs = document.createElementNS(svgNS,'defs');
+  var grad = document.createElementNS(svgNS,'radialGradient');
+  grad.setAttribute('id',uid+'-hubgrad');
+  grad.setAttribute('cx','35%'); grad.setAttribute('cy','32%'); grad.setAttribute('r','75%');
+  grad.innerHTML = '<stop offset="0%" stop-color="#171b21"/><stop offset="65%" stop-color="#0d0f12"/><stop offset="100%" stop-color="#08090A"/>';
+  defs.appendChild(grad);
+  svg.appendChild(defs);
+
+  var mainGroup = document.createElementNS(svgNS,'g');
+  mainGroup.setAttribute('class','inst-main-group');
+  svg.appendChild(mainGroup);
+
+  // rim: static track + soft depth halo + crisp lit overlay (dasharray trick, drawn clockwise from top)
   var rimTrack = document.createElementNS(svgNS,'circle');
   rimTrack.setAttribute('class','inst-rim-track');
   rimTrack.setAttribute('cx',cx); rimTrack.setAttribute('cy',cy); rimTrack.setAttribute('r',rimR);
-  svg.appendChild(rimTrack);
+  mainGroup.appendChild(rimTrack);
+
+  var rimHalo = document.createElementNS(svgNS,'circle');
+  rimHalo.setAttribute('class','inst-rim-halo');
+  rimHalo.setAttribute('cx',cx); rimHalo.setAttribute('cy',cy); rimHalo.setAttribute('r',rimR);
+  rimHalo.setAttribute('transform','rotate(-90 '+cx+' '+cy+')');
+  rimHalo.setAttribute('stroke-dasharray', circumference);
+  rimHalo.setAttribute('stroke-dashoffset', circumference);
+  mainGroup.appendChild(rimHalo);
 
   var rimLit = document.createElementNS(svgNS,'circle');
   rimLit.setAttribute('class','inst-rim-lit');
@@ -929,20 +1016,22 @@ function buildInstrument(mountEl, opts){
   rimLit.setAttribute('transform','rotate(-90 '+cx+' '+cy+')');
   rimLit.setAttribute('stroke-dasharray', circumference);
   rimLit.setAttribute('stroke-dashoffset', circumference);
-  svg.appendChild(rimLit);
+  mainGroup.appendChild(rimLit);
 
   var hubRing = document.createElementNS(svgNS,'circle');
   hubRing.setAttribute('class','inst-hub-ring');
   hubRing.setAttribute('cx',cx); hubRing.setAttribute('cy',cy); hubRing.setAttribute('r',hubR+5);
-  svg.appendChild(hubRing);
+  mainGroup.appendChild(hubRing);
   var hubFill = document.createElementNS(svgNS,'circle');
   hubFill.setAttribute('class','inst-hub-fill');
+  hubFill.setAttribute('fill','url(#'+uid+'-hubgrad)');
   hubFill.setAttribute('cx',cx); hubFill.setAttribute('cy',cy); hubFill.setAttribute('r',hubR);
-  svg.appendChild(hubFill);
+  mainGroup.appendChild(hubFill);
 
   var showLabels = opts.showLabels !== false;
   var spokes=[], ticks=[], dots=[], labelEls=[], xs=[], ys=[];
   var labelsWrap = document.createElement('div');
+  labelsWrap.className = 'inst-labels-wrap';
   if(showLabels) mountEl.appendChild(labelsWrap);
 
   for(var i=0;i<n;i++){
@@ -959,7 +1048,7 @@ function buildInstrument(mountEl, opts){
     spoke.setAttribute('x2',tx); spoke.setAttribute('y2',ty);
     spoke.setAttribute('stroke-dasharray', Math.hypot(tx-hx,ty-hy));
     spoke.setAttribute('stroke-dashoffset', Math.hypot(tx-hx,ty-hy));
-    svg.appendChild(spoke);
+    mainGroup.appendChild(spoke);
     spokes.push(spoke);
 
     var tick = document.createElementNS(svgNS,'line');
@@ -968,13 +1057,13 @@ function buildInstrument(mountEl, opts){
     var tox = cx+(tickOuterR+6)*cosA, toy = cy+(tickOuterR+6)*sinA;
     tick.setAttribute('x1',tix); tick.setAttribute('y1',tiy);
     tick.setAttribute('x2',tox); tick.setAttribute('y2',toy);
-    svg.appendChild(tick);
+    mainGroup.appendChild(tick);
     ticks.push(tick);
 
     var dot = document.createElementNS(svgNS,'circle');
     dot.setAttribute('class','inst-node-dot');
     dot.setAttribute('cx',ox); dot.setAttribute('cy',oy); dot.setAttribute('r',4.5);
-    svg.appendChild(dot);
+    mainGroup.appendChild(dot);
     dots.push(dot);
 
     if(showLabels){
@@ -986,19 +1075,76 @@ function buildInstrument(mountEl, opts){
     }
   }
 
+  // network / scale-out layer — two simplified sibling loops + connecting
+  // lines + three labels (Dealer / Network / Automotive Intelligence Grid),
+  // all inert until showNetwork() is called once.
+  var networkWrap = null;
+  if(opts.enableNetwork){
+    var siblingSpecs = [
+      {x:78, y:78, r:38, label:null},
+      {x:322, y:96, r:30, label:null}
+    ];
+    siblingSpecs.forEach(function(s, si){
+      var line = document.createElementNS(svgNS,'line');
+      line.setAttribute('class','inst-network-line');
+      line.setAttribute('x1',cx); line.setAttribute('y1',cy);
+      line.setAttribute('x2',s.x); line.setAttribute('y2',s.y);
+      svg.appendChild(line);
+
+      var g = document.createElementNS(svgNS,'g');
+      g.setAttribute('class','inst-sibling s'+(si+1));
+      var ring = document.createElementNS(svgNS,'circle');
+      ring.setAttribute('fill','none'); ring.setAttribute('stroke','var(--blue-line)'); ring.setAttribute('stroke-width','1');
+      ring.setAttribute('cx',s.x); ring.setAttribute('cy',s.y); ring.setAttribute('r',s.r);
+      g.appendChild(ring);
+      var dotsN = 4;
+      for(var di=0; di<dotsN; di++){
+        var da = (di*(360/dotsN))*Math.PI/180;
+        var ddot = document.createElementNS(svgNS,'circle');
+        ddot.setAttribute('fill','var(--blue)');
+        ddot.setAttribute('cx', s.x+s.r*Math.cos(da));
+        ddot.setAttribute('cy', s.y+s.r*Math.sin(da));
+        ddot.setAttribute('r', 2.2);
+        g.appendChild(ddot);
+      }
+      var chub = document.createElementNS(svgNS,'circle');
+      chub.setAttribute('fill','#0d0f12'); chub.setAttribute('stroke','var(--line2)'); chub.setAttribute('stroke-width','1');
+      chub.setAttribute('cx',s.x); chub.setAttribute('cy',s.y); chub.setAttribute('r',s.r*.34);
+      g.appendChild(chub);
+      svg.appendChild(g);
+    });
+
+    networkWrap = document.createElement('div');
+    networkWrap.innerHTML =
+      '<div class="inst-network-label nl-dealer">Dealer</div>'+
+      '<div class="inst-network-label nl-network">Network</div>'+
+      '<div class="inst-network-label nl-grid">Automotive Intelligence Grid</div>';
+    mountEl.appendChild(networkWrap);
+  }
+
   function positionLabels(){
-    if(!showLabels) return;
-    var rect = svg.getBoundingClientRect();
-    if(!rect.width) return;
-    var scale = rect.width/400;
-    for(var i=0;i<n;i++){
-      var dx=(xs[i]-cx), dy=(ys[i]-cy);
-      var len=Math.hypot(dx,dy)||1;
-      var lx = cx + (dx/len)*labelR, ly = cy + (dy/len)*labelR;
-      lbl_setPos(labelEls[i], lx*scale, ly*scale);
+    if(showLabels){
+      var rect = svg.getBoundingClientRect();
+      if(!rect.width) return;
+      var scale = rect.width/400;
+      for(var i=0;i<n;i++){
+        var dx=(xs[i]-cx), dy=(ys[i]-cy);
+        var len=Math.hypot(dx,dy)||1;
+        var lx = cx + (dx/len)*labelR, ly = cy + (dy/len)*labelR;
+        lbl_setPos(labelEls[i], lx*scale, ly*scale);
+      }
+    }
+    if(networkWrap){
+      var r2 = svg.getBoundingClientRect();
+      if(!r2.width) return;
+      var sc = r2.width/400;
+      var dealerLbl = networkWrap.querySelector('.nl-dealer');
+      var networkLbl = networkWrap.querySelector('.nl-network');
+      lbl_setPos(dealerLbl, 200*sc, 305*sc);
+      lbl_setPos(networkLbl, 78*sc, 132*sc);
     }
   }
-  function lbl_setPos(el,x,y){ el.style.left=x+'px'; el.style.top=y+'px'; }
+  function lbl_setPos(el,x,y){ if(!el)return; el.style.left=x+'px'; el.style.top=y+'px'; }
   positionLabels();
   window.addEventListener('resize', positionLabels, {passive:true});
 
@@ -1009,6 +1155,7 @@ function buildInstrument(mountEl, opts){
     var wasClosed = built >= n;
     built = count;
     rimLit.setAttribute('stroke-dashoffset', circumference - segLen*built);
+    rimHalo.setAttribute('stroke-dashoffset', circumference - segLen*built);
     for(var i=0;i<n;i++){
       var on = i < built;
       spokes[i].classList.toggle('on', on);
@@ -1024,7 +1171,15 @@ function buildInstrument(mountEl, opts){
     if(opts.onChange) opts.onChange(built);
   }
 
-  return { setBuilt: setBuilt, get built(){ return built; }, positionLabels: positionLabels };
+  var networkOn = false;
+  function showNetwork(){
+    if(networkOn || !opts.enableNetwork) return;
+    networkOn = true;
+    mountEl.classList.add('network-on');
+    positionLabels();
+  }
+
+  return { setBuilt: setBuilt, get built(){ return built; }, positionLabels: positionLabels, showNetwork: showNetwork };
 }
 
 /* ── HERO INSTRUMENT: dormant, one-time power-on, no chapter state ── */
@@ -1041,6 +1196,7 @@ function buildInstrument(mountEl, opts){
   var el = document.getElementById('pinned-instrument'); if(!el) return;
   var countEl = document.getElementById('inst-count');
   var inst = buildInstrument(el, {
+    enableNetwork: true,
     onChange: function(n){ if(countEl) countEl.textContent = n; },
     onClose: function(mount){ mount.classList.add('closed'); }
   });
@@ -1053,6 +1209,7 @@ function buildInstrument(mountEl, opts){
         var stage = parseInt(e.target.dataset.stage,10);
         maxSeen = Math.max(maxSeen, stage+1);
         inst.setBuilt(maxSeen);
+        if(e.target.dataset.network) inst.showNetwork();
       }
     });
   }, {threshold:.55});
