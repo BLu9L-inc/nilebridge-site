@@ -1718,7 +1718,7 @@ document.querySelectorAll('.glass-card').forEach(function(card){
   function resize(){W=stage.clientWidth;H=stage.clientHeight;cv.width=W*dpr;cv.height=H*dpr;cv.style.width=W+'px';cv.style.height=H+'px';cx=W/2;cy=H/2;}
   resize();
   var ctx=cv.getContext('2d');ctx.scale(dpr,dpr);
-  addEventListener('resize',function(){resize();ctx.setTransform(1,0,0,1,0,0);ctx.scale(dpr,dpr);},{passive:true});
+  addEventListener('resize',function(){resize();ctx.setTransform(1,0,0,1,0,0);ctx.scale(dpr,dpr);if(reduced&&vis)frame(performance.now());},{passive:true});
 
   // Domain nodes — the ecosystem (NOT a pipeline)
   var NAMES=['Inventory','Transactions','Pricing','Logistics','Finance','Service','Market','Operations','Customers','Inventory Risk','Demand','Network'];
@@ -1753,7 +1753,10 @@ document.querySelectorAll('.glass-card').forEach(function(card){
   stage.addEventListener('pointermove',function(e){var rb=stage.getBoundingClientRect();mx=(e.clientX-rb.left)/W-.5;my=(e.clientY-rb.top)/H-.5;},{passive:true});
   stage.addEventListener('touchmove',function(e){var rb=stage.getBoundingClientRect();mx=(e.touches[0].clientX-rb.left)/W-.5;my=(e.touches[0].clientY-rb.top)/H-.5;},{passive:true});
 
-  var vis=true;new IntersectionObserver(function(e){vis=e[0].isIntersecting;},{threshold:.05}).observe(stage);
+  var vis=true;new IntersectionObserver(function(e){
+    vis=e[0].isIntersecting;
+    if(reduced&&vis)frame(performance.now()); // static mode: render on demand when it scrolls into view, not on a timing race
+  },{threshold:.05}).observe(stage);
 
   function radius(){return (W<500?.30:.34)*Math.min(W,H);}
 
@@ -1845,7 +1848,7 @@ document.querySelectorAll('.glass-card').forEach(function(card){
     ctx.beginPath();ctx.arc(cx,cy,11,0,Math.PI*2);ctx.shadowColor='rgba(77,184,255,1)';ctx.shadowBlur=24;ctx.fill();ctx.shadowBlur=0;
     ctx.beginPath();ctx.arc(cx,cy,20,0,Math.PI*2);ctx.strokeStyle='rgba(77,184,255,.5)';ctx.lineWidth=1.5;ctx.stroke();
   }
-  requestAnimationFrame(frame);
+  if(reduced){frame(performance.now());}else{requestAnimationFrame(frame);}
 })();
 
 /* ── AIG DASHBOARD CLOCK ── */
