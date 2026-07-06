@@ -149,10 +149,20 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .btn-ghost:hover{border-color:var(--dim);color:var(--ink);}
 .btn-sm{padding:9px 18px;font-size:13px;}
 
-/* Reveal-on-scroll — quiet: 10px lift, not 28px */
-.reveal{opacity:0;transform:translateY(10px);transition:opacity .7s var(--ease-premium),transform .7s var(--ease-premium);}
-.reveal.in{opacity:1;transform:none;}
+/* Reveal-on-scroll — content is visible by default (these rules are a no-op)
+   until JS confirms it's actually running and adds .js-ready to <html>. Only
+   then is content gated behind the animation, and only ever for elements the
+   IntersectionObserver (or the safety-net timeout in the script below) has
+   confirmed it will reveal. No JS, slow JS, or a missed observer callback all
+   fall back to fully visible content — animation enhances, it never gates. */
+.reveal{opacity:1;transform:none;}
+.js-ready .reveal{opacity:0;transform:translateY(10px);transition:opacity .7s var(--ease-premium),transform .7s var(--ease-premium);}
+.js-ready .reveal.in{opacity:1;transform:none;}
 .r1{transition-delay:.08s;}.r2{transition-delay:.16s;}.r3{transition-delay:.24s;}.r4{transition-delay:.32s;}
+
+@media (prefers-reduced-motion: reduce){
+  .reveal,.js-ready .reveal{opacity:1 !important;transform:none !important;}
+}
 
 /* ═══════════════════════════════════════
    NAV — thin, flat, single hairline
@@ -304,6 +314,7 @@ nav{
    TRUST / SECURITY CARDS
 ═══════════════════════════════════════ */
 .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;}
+.production-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;}
 .trust-card{background:var(--surface);padding:28px 24px;transition:background .25s;}
 .trust-card:hover{background:var(--surface2);}
 .trust-title{font-family:var(--serif);font-size:16px;color:var(--ink);margin-bottom:10px;}
@@ -311,8 +322,8 @@ nav{
 .trust-status{display:inline-block;font-family:var(--mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:4px 11px;border-radius:var(--radius-pill);}
 .trust-status.progress{color:var(--gold);border:1px solid rgba(201,162,39,.3);}
 .trust-status.live{color:var(--live);border:1px solid var(--live-bd);}
-@media(max-width:860px){.trust-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:560px){.trust-grid{grid-template-columns:1fr;}}
+@media(max-width:860px){.trust-grid,.production-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.trust-grid,.production-grid{grid-template-columns:1fr;}}
 
 /* ═══════════════════════════════════════
    FOUNDER
@@ -366,15 +377,20 @@ nav{
    CONTACT
 ═══════════════════════════════════════ */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
+.hq-block{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--line);}
+.hq-label{font-family:var(--mono);font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--dim2);margin-bottom:12px;}
+.hq-entity{font-family:var(--serif);font-size:19px;color:var(--ink);margin-bottom:4px;}
+.hq-address{font-size:13.5px;color:var(--dim);}
+.hq-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:32px;}
 .contact-items{display:flex;flex-direction:column;gap:10px;}
 .ci{
-  display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:12.5px;color:var(--dim);
+  display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:12.5px;color:var(--dim);
   padding:13px 16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);
   transition:all .2s;
 }
 .ci:hover{border-color:var(--line2);color:var(--ink);}
 .ci a{color:inherit;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-.ci-icon{font-size:14px;flex-shrink:0;}
+.ci-label{font-family:var(--mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim2);flex-shrink:0;min-width:82px;}
 .cf{border:1px solid var(--line2);border-radius:var(--radius-lg);padding:36px;background:var(--surface);}
 .cf-title{font-family:var(--serif);font-size:18px;color:var(--ink);margin-bottom:24px;}
 .form-row{margin-bottom:16px;}
@@ -519,7 +535,7 @@ footer{border-top:1px solid var(--line);padding:64px 40px 32px;}
       "name": "How do I get access?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Use the contact form, email info@blu9l.com, or reach sales.force@blu9l.com for dealer-specific enquiries. We respond to every genuine enquiry within one business day."
+        "text": "Use the contact form, email info@blu9l.com, or reach partners@blu9l.com for dealer-specific enquiries. We respond to every genuine enquiry within one business day."
       }
     }
   ]
@@ -548,7 +564,7 @@ footer{border-top:1px solid var(--line);padding:64px 40px 32px;}
   <div class="nav-inner">
     <div class="logo-wrap">
       <a href="#" style="display:flex;align-items:center;">
-        <img src="assets/logo.png" alt="BLu9L Holdings" width="90" height="30" loading="eager" decoding="async" fetchpriority="high" class="logo-img">
+        <img src="assets/logo-white.svg" alt="BLu9L" width="119" height="30" loading="eager" decoding="async" fetchpriority="high" class="logo-img">
       </a>
     </div>
     <div class="nav-r">
@@ -720,6 +736,43 @@ footer{border-top:1px solid var(--line);padding:64px 40px 32px;}
   </div>
 </section>
 
+<!-- BUILT FOR PRODUCTION -->
+<section class="section" id="built" style="border-top:1px solid var(--line);">
+  <div class="container">
+    <div class="reveal s-head" style="text-align:center;">
+      <div class="s-eyebrow center">Architecture</div>
+      <h2 class="s-h center">Built for production.</h2>
+      <p class="s-sub center" style="max-width:600px;">The principles the Automotive Intelligence Grid is actually built on — not a feature list, an architecture.</p>
+    </div>
+    <div class="reveal r1 production-grid">
+      <div class="trust-card">
+        <div class="trust-title">Pilot Dealership Deployments</div>
+        <div class="trust-desc">Live in real dealerships today — real inventory, real transactions, real outcomes feeding back into the system.</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-title">Multi-Tenant Architecture</div>
+        <div class="trust-desc">Built from the ground up to serve multiple dealer groups on a single, isolated, secure platform.</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-title">Evidence-Based Intelligence</div>
+        <div class="trust-desc">Every decision carries a full reasoning trace back to the operational events that produced it.</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-title">AWS Infrastructure</div>
+        <div class="trust-desc">Runs on Amazon Web Services, inheriting enterprise-grade encryption, isolation, and compliance controls by default.</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-title">Federated Data Architecture</div>
+        <div class="trust-desc">Cross-dealer patterns surface without any one dealer's data ever being exposed to another.</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-title">Production Security Principles</div>
+        <div class="trust-desc">Governed by the same access-control, auditability, and data-isolation discipline enterprise deployments require.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ENTERPRISE SECURITY -->
 <section class="section" id="security" style="border-top:1px solid var(--line);">
   <div class="container">
@@ -824,7 +877,7 @@ footer{border-top:1px solid var(--line);padding:64px 40px 32px;}
       <div>
         <div class="faq-item"><div class="faq-q"><span class="faq-qm">Q</span>How does the Founding Dealer program work?</div><div class="faq-a">Dealers who join before August 2026 lock in founding-tier positioning and pricing. Capacity is intentionally limited. Founding dealers get earliest access, input into development, and terms not available post-launch.</div></div>
         <div class="faq-item"><div class="faq-q"><span class="faq-qm">Q</span>Who is BLu9L Holdings?</div><div class="faq-a">BLu9L is the Intelligence Infrastructure Company — structured as a cross-border holding company operating across the US and UAE. Founded and led by Yaseen Hassan, BLu9L builds Reality Intelligence Infrastructure™, with the Automotive Intelligence Grid as its first production implementation.</div></div>
-        <div class="faq-item"><div class="faq-q"><span class="faq-qm">Q</span>How do I get access?</div><div class="faq-a">Use the contact form below, email info@blu9l.com, or reach sales.force@blu9l.com for dealer-specific enquiries. We respond to every genuine enquiry within one business day.</div></div>
+        <div class="faq-item"><div class="faq-q"><span class="faq-qm">Q</span>How do I get access?</div><div class="faq-a">Use the contact form below, email info@blu9l.com, or reach partners@blu9l.com for dealer-specific enquiries. We respond to every genuine enquiry within one business day.</div></div>
       </div>
     </div>
   </div>
@@ -843,18 +896,26 @@ footer{border-top:1px solid var(--line);padding:64px 40px 32px;}
 <section class="section" id="contact" style="border-top:1px solid var(--line);">
   <div class="container">
     <div class="reveal s-head" style="text-align:center;">
-      <div class="s-eyebrow center">Get in Touch</div>
+      <div class="s-eyebrow center">Corporate Headquarters</div>
       <h2 class="s-h center">Connect with our team.</h2>
     </div>
     <div class="contact-grid reveal r1">
       <div>
-        <p class="s-sub" style="margin-bottom:32px;">Dealer access, investment inquiry, advisory services, or strategic partnership — we respond within one business day.</p>
+        <div class="hq-block">
+          <div class="hq-label">Corporate Headquarters</div>
+          <div class="hq-entity">BLu9L Holdings LLC</div>
+          <div class="hq-address">Sterling, Virginia, USA</div>
+        </div>
+        <p class="s-sub" style="margin-bottom:28px;">Dealer access, investment inquiry, advisory services, or strategic partnership — we respond within one business day.</p>
+        <div class="hq-ctas">
+          <a href="#cform" class="btn btn-primary">Request Demo</a>
+          <a href="mailto:info@blu9l.com?subject=Meeting%20Request" class="btn btn-ghost">Schedule Meeting</a>
+        </div>
         <div class="contact-items">
-          <div class="ci"><span class="ci-icon">✉</span><a href="mailto:info@blu9l.com">info@blu9l.com</a></div>
-          <div class="ci"><span class="ci-icon">✉</span><a href="mailto:sales.force@blu9l.com">sales.force@blu9l.com</a></div>
-          <div class="ci"><span class="ci-icon">📞</span><a href="tel:+12026646646">+1 (202) 664-6646</a></div>
-          <div class="ci"><span class="ci-icon">💬</span><a href="https://wa.me/12026646646" target="_blank" rel="noopener">WhatsApp · +1 (202) 664-6646</a></div>
-          <div class="ci"><span class="ci-icon">🇺🇸</span><span>Sterling, Virginia, USA</span></div>
+          <div class="ci"><span class="ci-label">Email</span><a href="mailto:info@blu9l.com">info@blu9l.com</a></div>
+          <div class="ci"><span class="ci-label">Partnerships</span><a href="mailto:partners@blu9l.com">partners@blu9l.com</a></div>
+          <div class="ci"><span class="ci-label">Careers</span><a href="mailto:careers@blu9l.com">careers@blu9l.com</a></div>
+          <div class="ci"><span class="ci-label">Phone</span><a href="tel:+12026646646">+1 (202) 664-6646</a></div>
         </div>
       </div>
       <div class="cf">
@@ -890,16 +951,15 @@ footer{border-top:1px solid var(--line);padding:64px 40px 32px;}
   <div class="footer-inner">
     <div class="footer-top">
       <div>
-        <img src="assets/logo.png" alt="BLu9L Holdings" width="90" height="30" loading="lazy" decoding="async" style="height:30px;width:auto;display:block;">
+        <img src="assets/logo-gold.svg" alt="BLu9L" width="119" height="30" loading="lazy" decoding="async" style="height:30px;width:auto;display:block;">
         <p class="fl-desc">The Intelligence Infrastructure Company. Building the Automotive Intelligence Grid. US · UAE.</p>
         <div class="fl-contact">
-          <a href="mailto:info@blu9l.com" class="fl-link">✉ info@blu9l.com</a>
-          <a href="mailto:sales.force@blu9l.com" class="fl-link">✉ sales.force@blu9l.com</a>
-          <a href="tel:+12026646646" class="fl-link">📞 +1 (202) 664-6646</a>
-          <a href="https://wa.me/12026646646" target="_blank" rel="noopener" class="fl-link">💬 WhatsApp</a>
+          <a href="mailto:info@blu9l.com" class="fl-link">info@blu9l.com</a>
+          <a href="mailto:partners@blu9l.com" class="fl-link">partners@blu9l.com</a>
+          <a href="tel:+12026646646" class="fl-link">+1 (202) 664-6646</a>
         </div>
         <div class="fl-entities">
-          <div class="fl-ent">Blue9L Holdings LLC · Virginia, USA</div>
+          <div class="fl-ent">BLu9L Holdings LLC · Virginia, USA</div>
           <div class="fl-ent">AutoNet LLC · Virginia, USA</div>
           <div class="fl-ent">BLu9L International F.Z.E · UAE</div>
         </div>
@@ -912,6 +972,7 @@ footer{border-top:1px solid var(--line);padding:64px 40px 32px;}
             <li><a href="#loop">The Loop</a></li>
             <li><a href="#capabilities">Capabilities</a></li>
             <li><a href="#proof">Pilot Program</a></li>
+            <li><a href="#built">Architecture</a></li>
           </ul>
         </div>
         <div>
@@ -920,7 +981,7 @@ footer{border-top:1px solid var(--line);padding:64px 40px 32px;}
             <li><a href="#founder">Leadership</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="mailto:sales.force@blu9l.com">Dealer Access</a></li>
+            <li><a href="mailto:partners@blu9l.com">Dealer Access</a></li>
             <li><a href="https://www.linkedin.com/company/blu9l" target="_blank" rel="noopener">LinkedIn</a></li>
           </ul>
         </div>
@@ -946,8 +1007,17 @@ function closeD(){document.getElementById('drawer').classList.remove('open');doc
 document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}});});
 
 /* ── REVEAL ── */
+/* Only gate content behind the entrance animation once we know JS is actually
+   running (see the matching .js-ready CSS). Then back it with a safety-net:
+   if IntersectionObserver ever fails to fire for an element (edge-case
+   layout, a slow/janky device, anything), force it visible after 2.5s rather
+   than leave it invisible forever. */
+document.documentElement.classList.add('js-ready');
 var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});},{threshold:.06,rootMargin:'0px 0px -28px 0px'});
 document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+setTimeout(function(){
+  document.querySelectorAll('.reveal:not(.in)').forEach(function(el){el.classList.add('in');});
+},2500);
 
 /* ── INTELLIGENCE LOOP — vector graph, eased traveling pulse, reduced-motion safe ── */
 (function(){
