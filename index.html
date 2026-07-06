@@ -290,10 +290,16 @@ nav{
 /* ═══════════════════════════════════════
    FOUNDER
 ═══════════════════════════════════════ */
+.team-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:32px;
+  max-width:1000px;margin:0 auto;align-items:start;
+}
 .founder-card{
-  max-width:760px;margin:0 auto;
   border:1px solid var(--line2);border-radius:var(--radius-lg);padding:48px;
   background:var(--surface);
+}
+@media(max-width:860px){
+  .team-grid{grid-template-columns:1fr;gap:24px;}
 }
 .f-top{display:flex;align-items:flex-start;gap:22px;margin-bottom:28px;}
 .f-av{
@@ -711,25 +717,49 @@ footer{border-top:1px solid var(--line);padding:64px 40px 32px;}
       <div class="s-eyebrow center">Leadership</div>
       <h2 class="s-h center">Leadership.</h2>
     </div>
-    <div class="reveal r1 founder-card">
-      <div class="f-top">
-        <div class="f-av">YH</div>
-        <div>
-          <div class="f-name">Yaseen Hassan</div>
-          <div class="f-role">Founder &amp; Chairman · BLu9L</div>
+    <div class="team-grid">
+      <div class="reveal r1 founder-card">
+        <div class="f-top">
+          <div class="f-av">YH</div>
+          <div>
+            <div class="f-name">Yaseen Hassan</div>
+            <div class="f-role">Founder &amp; Chairman · BLu9L</div>
+          </div>
+        </div>
+        <p class="f-bio">Founder and visionary behind the BLu9L brand. Over 24 years of automotive industry experience — starting in franchise operations, moving through dealer allocations, and expanding into business development and market growth across the United States and into the Middle East. That career is the exact foundation the Automotive Intelligence Grid is built on: deep operational knowledge of how dealerships actually work, where the intelligence gaps live, and what it takes to turn data into decisions that move metal.</p>
+        <div class="f-creds">
+          <div class="f-cred"><div class="f-dot"></div><span>Founder &amp; Chairman, BLu9L Holdings — US &amp; UAE</span></div>
+          <div class="f-cred"><div class="f-dot"></div><span>24+ years automotive — franchise operations through dealer allocations</span></div>
+          <div class="f-cred"><div class="f-dot"></div><span>Business &amp; market expansion across the United States and Middle East</span></div>
+          <div class="f-cred"><div class="f-dot"></div><span>Architect of the Automotive Intelligence Grid — system live, full pilot running</span></div>
+          <div class="f-cred"><div class="f-dot"></div><span>Cross-border structure: BLu9L International FZE (UAE) + US entities</span></div>
+        </div>
+        <div class="f-links">
+          <a href="https://www.linkedin.com/in/yaseen-hassan" target="_blank" rel="noopener" class="f-link">LinkedIn</a>
+          <a href="mailto:info@blu9l.com?subject=Meeting%20Request" class="f-link">Request a Meeting</a>
         </div>
       </div>
-      <p class="f-bio">Founder and visionary behind the BLu9L brand. Over 24 years of automotive industry experience — starting in franchise operations, moving through dealer allocations, and expanding into business development and market growth across the United States and into the Middle East. That career is the exact foundation the Automotive Intelligence Grid is built on: deep operational knowledge of how dealerships actually work, where the intelligence gaps live, and what it takes to turn data into decisions that move metal.</p>
-      <div class="f-creds">
-        <div class="f-cred"><div class="f-dot"></div><span>Founder &amp; Chairman, BLu9L Holdings — US &amp; UAE</span></div>
-        <div class="f-cred"><div class="f-dot"></div><span>24+ years automotive — franchise operations through dealer allocations</span></div>
-        <div class="f-cred"><div class="f-dot"></div><span>Business &amp; market expansion across the United States and Middle East</span></div>
-        <div class="f-cred"><div class="f-dot"></div><span>Architect of the Automotive Intelligence Grid — system live, full pilot running</span></div>
-        <div class="f-cred"><div class="f-dot"></div><span>Cross-border structure: BLu9L International FZE (UAE) + US entities</span></div>
-      </div>
-      <div class="f-links">
-        <a href="https://www.linkedin.com/in/yaseen-hassan" target="_blank" rel="noopener" class="f-link">LinkedIn</a>
-        <a href="mailto:info@blu9l.com?subject=Meeting%20Request" class="f-link">Request a Meeting</a>
+      <div class="reveal r2 founder-card">
+        <div class="f-top">
+          <div class="f-av">TG</div>
+          <div>
+            <div class="f-name">Tawassul Gohar</div>
+            <div class="f-role">Principal Lead Architect · BLu9L</div>
+          </div>
+        </div>
+        <p class="f-bio">Tawassul Gohar serves as Principal Lead Architect at BLu9L, leading platform architecture and technical execution for the Automotive Intelligence Grid (AIG). A Toptal Verified Expert in Engineering with more than 12 years of experience, he has designed and delivered enterprise software, AI-driven applications, retrieval-augmented systems, and scalable platform architectures across multiple industries. His background spans full-stack engineering, generative AI, intelligent automation, and large-scale software design, including work on DeepScan AI, a computer vision-based deepfake detection platform. Holding a Master's degree in Computer Science, Tawassul brings a systems-first approach to building secure, scalable, and production-ready infrastructure that supports BLu9L's long-term vision of transforming operational reality into continuously compounding intelligence.</p>
+        <div class="f-creds">
+          <div class="f-cred"><div class="f-dot"></div><span>Principal Lead Architect, BLu9L — Automotive Intelligence Grid</span></div>
+          <div class="f-cred"><div class="f-dot"></div><span>Platform Architecture</span></div>
+          <div class="f-cred"><div class="f-dot"></div><span>Enterprise Software</span></div>
+          <div class="f-cred"><div class="f-dot"></div><span>AI Systems</span></div>
+          <div class="f-cred"><div class="f-dot"></div><span>Infrastructure Engineering</span></div>
+          <div class="f-cred"><div class="f-dot"></div><span>Scalability</span></div>
+          <div class="f-cred"><div class="f-dot"></div><span>Technical Leadership</span></div>
+        </div>
+        <div class="f-links">
+          <a href="mailto:tawassul@blu9l.com" class="f-link">Email</a>
+        </div>
       </div>
     </div>
   </div>
