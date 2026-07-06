@@ -955,32 +955,78 @@ document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
   var nodeEls=svg.querySelectorAll('.loop-node-svg');
   var labelEls=document.querySelectorAll('#loop-labels .loop-label');
   var pulse=document.getElementById('loop-pulse');
+  var line=svg.querySelector('.loop-line');
   var n=nodeEls.length;if(!n)return;
-  var xs=[];nodeEls.forEach(function(g){xs.push(parseFloat(g.getAttribute('data-x')));});
+  var xs=[];
+
+  // viewBox width is kept equal to the SVG's actual rendered pixel width, so the
+  // 1:1 scale never distorts circles into ellipses (the previous fixed 1400-unit
+  // viewBox squashed nodes horizontally on any container narrower than 1400px —
+  // most visibly on mobile, where it turned circles into thin vertical slits).
+  function layout(){
+    var W=svg.clientWidth;if(!W)return;
+    svg.setAttribute('viewBox','0 0 '+W+' 34');
+    var margin=W*0.0714,span=W-margin*2;
+    xs=[];
+    nodeEls.forEach(function(g,i){
+      var x=margin+(span/(n-1))*i;
+      xs.push(x);
+      g.querySelectorAll('circle').forEach(function(c){c.setAttribute('cx',x);});
+    });
+    if(line){line.setAttribute('x1',xs[0]);line.setAttribute('x2',xs[n-1]);}
+    if(pulse)pulse.setAttribute('cx',xs[idxSafe()]);
+  }
+  function idxSafe(){return typeof idx==='number'?idx:0;}
 
   function setActive(i){
     nodeEls.forEach(function(g,k){g.classList.toggle('on',k===i);});
     labelEls.forEach(function(l,k){l.classList.toggle('on',k===i);});
   }
 
+  var idx=0;
+  layout();
+  addEventListener('resize',layout,{passive:true});
+
   if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
 
   function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;}
 
   var DWELL=900,TRAVEL=650;
-  var idx=0,phase='dwell',phaseStart=null;
+  var phase='dwell',phaseStart=null;
+
+  // Pause the rAF work while the diagram is off-screen — no point animating
+  // an eased pulse nobody can see.
+  var visible=true;
+  new IntersectionObserver(function(e){
+    var wasVisible=visible;
+    visible=e[0].isIntersecting;
+    if(visible&&!wasVisible)phaseStart=null; // avoid a big elapsed-time jump on return
+  },{threshold:.05}).observe(svg);
 
   function frame(ts){
     requestAnimationFrame(frame);
+    if(!visible)return;
     if(phaseStart===null)phaseStart=ts;
     var elapsed=ts-phaseStart;
     if(phase==='dwell'){
       if(elapsed>=DWELL){phase='travel';phaseStart=ts;}
     }else{
-      var t=Math.min(elapsed/TRAVEL,1),te=ease(t);
       var next=(idx+1)%n;
-      var x=xs[idx]+(xs[next]-xs[idx])*te;
-      if(pulse)pulse.setAttribute('cx',x);
+      var isWrap=(next===0);
+      var t=Math.min(elapsed/TRAVEL,1);
+      if(pulse){
+        if(isWrap){
+          // Loop closing (last node -> first): fade out, snap, fade in —
+          // interpolating cx across the full line width read as a fast
+          // "rewind" rather than the loop completing gracefully.
+          if(t<0.5){pulse.setAttribute('cx',xs[idx]);pulse.style.opacity=String(1-t/0.5);}
+          else{pulse.setAttribute('cx',xs[0]);pulse.style.opacity=String((t-0.5)/0.5);}
+        }else{
+          var te=ease(t);
+          pulse.setAttribute('cx',xs[idx]+(xs[next]-xs[idx])*te);
+          pulse.style.opacity='1';
+        }
+      }
       if(t>=1){idx=next;setActive(idx);phase='dwell';phaseStart=ts;}
     }
   }
@@ -993,13 +1039,7 @@ document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
   var reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
   var ctx=cv.getContext('2d');
   var dpr=Math.min(window.devicePixelRatio||1,1.75);
-  var W,H;
-  function resize(){
-    W=window.innerWidth;H=window.innerHeight;
-    cv.width=W*dpr;cv.height=H*dpr;
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-  }
-  resize();
+  var W,H,layers;
 
   // Subtle day/night breathing — local hour-of-day, small nudge from OS color-scheme.
   // Deliberately narrow range (0.82–1.0): felt, not noticed.
@@ -1011,8 +1051,12 @@ document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
   }
   var ambient=ambientFactor();
 
-  // Three depth layers: far (many, dim, static-ish) / mid / near (few, brighter)
-  function makeLayer(count,rMin,rMax,aMin,aMax,twinkleAmp,twinkleSpeed){
+  // Three depth layers: far (many, dim, static-ish) / mid / near (few, brighter).
+  // Counts scale with viewport area (reference: 1440x900) so mobile doesn't
+  // inherit the same star count as desktop and end up ~3x denser per pixel.
+  function makeLayer(baseCount,rMin,rMax,aMin,aMax,twinkleAmp,twinkleSpeed){
+    var scale=(W*H)/(1440*900);
+    var count=Math.max(12,Math.round(baseCount*scale));
     var stars=[];
     for(var i=0;i<count;i++){
       stars.push({
@@ -1025,11 +1069,26 @@ document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
     }
     return stars;
   }
-  var layers=[
-    makeLayer(140,.4,.9,.15,.35,.15,.00035),
-    makeLayer(55,.7,1.3,.3,.55,.2,.0005),
-    makeLayer(18,1,1.8,.5,.85,.25,.0006)
-  ];
+  function buildLayers(){
+    layers=[
+      makeLayer(140,.4,.9,.15,.35,.15,.00035),
+      makeLayer(55,.7,1.3,.3,.55,.2,.0005),
+      makeLayer(18,1,1.8,.5,.85,.25,.0006)
+    ];
+  }
+
+  var resizeTimer=null;
+  function resize(){
+    W=window.innerWidth;H=window.innerHeight;
+    cv.width=W*dpr;cv.height=H*dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    buildLayers();
+  }
+  resize();
+  function onResize(){
+    clearTimeout(resizeTimer);
+    resizeTimer=setTimeout(resize,150); // debounced — regenerating on every pixel of a drag-resize is wasted work
+  }
 
   function drawStars(t){
     ctx.clearRect(0,0,W,H);
@@ -1052,8 +1111,8 @@ document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
   }
   function spawnShootingStar(){
     var fromLeft=Math.random()>.5;
-    var startX=fromLeft?Math.random()*W*.3:W-Math.random()*W*.3;
-    var startY=Math.random()*H*.4;
+    var startX=fromLeft?Math.random()*W*.25:W-Math.random()*W*.25;
+    var startY=Math.random()*H*.22; // upper sky band only — stays clear of the headline column
     var angle=fromLeft?(Math.PI*.22+Math.random()*.15):(Math.PI*.78-Math.random()*.15);
     var dist=Math.min(W,H)*(.18+Math.random()*.14);
     shootingStars.push({
@@ -1097,7 +1156,7 @@ document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
     }
     requestAnimationFrame(frame);
   }
-  addEventListener('resize',resize,{passive:true});
+  addEventListener('resize',onResize,{passive:true});
 })();
 
 /* ── CONTACT FORM ── */
