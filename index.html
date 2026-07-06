@@ -8,20 +8,18 @@
 <link rel="canonical" href="https://blu9l.com/">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="BLu9L | Intelligence Infrastructure Company">
-<meta property="og:description" content="BLu9L transforms operational reality into continuously compounding intelligence. The Automotive Intelligence Grid is our first production implementation — live, with real dealers.">
+<meta property="og:description" content="BLu9L transforms operational reality into continuously compounding intelligence. The Automotive Intelligence Grid is our first production implementation.">
 <meta property="og:url" content="https://blu9l.com">
 <meta property="og:image" content="https://blu9l.com/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_US">
 
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="BLu9L | Intelligence Infrastructure Company">
 <meta name="twitter:description" content="BLu9L transforms operational reality into continuously compounding intelligence. The Automotive Intelligence Grid is our first production implementation.">
 <meta name="twitter:image" content="https://blu9l.com/og-image.jpg">
 
-<!-- Additional SEO -->
 <meta name="keywords" content="intelligence infrastructure company, reality intelligence infrastructure, enterprise decision infrastructure, automotive intelligence grid, AIG, BLu9L, knowledge graph infrastructure, enterprise decision systems, AWS AI infrastructure, operational intelligence">
 <meta name="author" content="BLu9L">
 <meta name="theme-color" content="#08090A">
@@ -36,10 +34,7 @@
 
 <style>
 /* ═══════════════════════════════════════
-   TOKENS — flat premium infrastructure system.
-   One accent (blue). Gold reserved for exactly two
-   sparing moments (founding-tier label, footer tag).
-   No neon glow, no multi-stop gradients on UI chrome.
+   TOKENS
 ═══════════════════════════════════════ */
 :root{
   --black:    #08090A;
@@ -48,11 +43,11 @@
   --ink:      #EDEEF0;
   --ink-dim:  #C4C7CC;
   --dim:      #8A8F98;
-  --dim2:     #7A808A; /* WCAG AA: 5.0:1 on --black, was #5B6169 at 3.2:1 */
+  --dim2:     #7A808A;
   --line:     rgba(237,238,240,.09);
   --line2:    rgba(237,238,240,.16);
   --blue:     #3D7FFF;
-  --blue-btn: #2A66E0; /* darker than --blue specifically for white-on-blue buttons: 5.15:1, was 3.7:1 */
+  --blue-btn: #2A66E0;
   --blue-soft:rgba(61,127,255,.10);
   --blue-line:rgba(61,127,255,.30);
   --live:     #34D399;
@@ -60,9 +55,9 @@
   --live-bd:  rgba(52,211,153,.22);
   --gold:     #C9A227;
 
-  --radius-sm:   8px;
-  --radius-md:   14px;
-  --radius-lg:   20px;
+  --radius-sm:   10px;
+  --radius-md:   16px;
+  --radius-lg:   24px;
   --radius-pill: 100px;
 
   --ease-premium: cubic-bezier(.16,1,.3,1);
@@ -109,10 +104,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   }
 }
 
-/* Progress */
 #prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--blue);z-index:9999;pointer-events:none;transition:width .1s;}
 
-/* Deep-space ambient background — sits behind all content, never intercepts input */
 #starfield{
   position:fixed;inset:0;width:100vw;height:100vh;z-index:-1;pointer-events:none;display:block;
   background:
@@ -126,6 +119,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
    LAYOUT PRIMITIVES
 ═══════════════════════════════════════ */
 .container{max-width:1180px;margin:0 auto;padding:0 40px;}
+.narrow{max-width:800px;}
 .section{padding:clamp(88px,11vw,168px) 40px;scroll-margin-top:70px;}
 .s-eyebrow{
   font-family:var(--mono);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;
@@ -148,38 +142,32 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .btn-ghost{background:transparent;color:var(--ink-dim);border:1px solid var(--line2);}
 .btn-ghost:hover{border-color:var(--dim);color:var(--ink);}
 .btn-sm{padding:9px 18px;font-size:13px;}
+.btn-lg{padding:17px 32px;font-size:15.5px;}
 
-/* Reveal-on-scroll — content is visible by default (these rules are a no-op)
-   until JS confirms it's actually running and adds .js-ready to <html>. Only
-   then is content gated behind the animation, and only ever for elements the
-   IntersectionObserver (or the safety-net timeout in the script below) has
-   confirmed it will reveal. No JS, slow JS, or a missed observer callback all
-   fall back to fully visible content — animation enhances, it never gates. */
 .reveal{opacity:1;transform:none;}
 .js-ready .reveal{opacity:0;transform:translateY(10px);transition:opacity .7s var(--ease-premium),transform .7s var(--ease-premium);}
 .js-ready .reveal.in{opacity:1;transform:none;}
 .r1{transition-delay:.08s;}.r2{transition-delay:.16s;}.r3{transition-delay:.24s;}.r4{transition-delay:.32s;}
-
 @media (prefers-reduced-motion: reduce){
   .reveal,.js-ready .reveal{opacity:1 !important;transform:none !important;}
 }
 
 /* ═══════════════════════════════════════
-   NAV — thin, flat, single hairline
+   NAV — hidden until scroll confirms intent, then a thin bar
 ═══════════════════════════════════════ */
 nav{
-  position:sticky;top:0;z-index:500;width:100%;
-  background:rgba(8,9,10,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line);
+  position:fixed;top:0;left:0;right:0;z-index:500;width:100%;
+  background:rgba(8,9,10,0);border-bottom:1px solid transparent;
+  transition:background .4s var(--ease-premium),border-color .4s var(--ease-premium);
 }
-.nav-inner{
-  max-width:1180px;margin:0 auto;padding:0 40px;height:64px;
-  display:flex;align-items:center;justify-content:space-between;
-}
-.logo-wrap{display:flex;align-items:center;flex-shrink:0;}
-.logo-img{height:30px;width:auto;display:block;}
+nav.scrolled{background:rgba(8,9,10,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom-color:var(--line);}
+.nav-inner{max-width:1180px;margin:0 auto;padding:0 40px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.logo-wrap{display:flex;align-items:center;flex-shrink:0;opacity:0;transition:opacity .5s var(--ease-premium) .3s;}
+nav.scrolled .logo-wrap,nav.menu-open .logo-wrap{opacity:1;}
+.logo-img{height:26px;width:auto;display:block;}
 .nav-r{display:flex;align-items:center;gap:28px;}
-.nav-links{display:flex;gap:26px;list-style:none;}
+.nav-links{display:flex;gap:26px;list-style:none;opacity:0;transition:opacity .5s var(--ease-premium) .3s;}
+nav.scrolled .nav-links,nav.menu-open .nav-links{opacity:1;}
 .nav-links a{font-size:13.5px;color:var(--dim);transition:color .2s;}
 .nav-links a:hover{color:var(--ink);}
 .ham{display:none;flex-direction:column;gap:5px;width:34px;height:34px;background:transparent;border:1px solid var(--line2);border-radius:var(--radius-sm);cursor:pointer;padding:9px;flex-shrink:0;}
@@ -188,7 +176,6 @@ nav{
 .ham.open span:nth-child(2){opacity:0;}
 .ham.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px);}
 
-/* Drawer */
 .drawer{position:fixed;inset:0;z-index:490;background:rgba(8,9,10,.98);display:flex;flex-direction:column;justify-content:center;align-items:center;opacity:0;pointer-events:none;transition:opacity .25s;}
 .drawer.open{opacity:1;pointer-events:all;}
 .drawer ul{list-style:none;text-align:center;margin-bottom:36px;width:100%;}
@@ -199,166 +186,138 @@ nav{
 .drawer-btns a{width:100%;text-align:center;padding:14px;}
 
 /* ═══════════════════════════════════════
-   HERO — Concept B (asymmetric split) blended
-   with Concept A's restraint: larger display type,
-   fewer competing elements, more air around everything.
+   HERO — cinematic, one statement, minimal
 ═══════════════════════════════════════ */
-.hero{padding:clamp(72px,10vw,132px) 40px clamp(88px,11vw,140px);}
-.hero-inner{
-  max-width:1180px;margin:0 auto;
-  display:grid;grid-template-columns:1.3fr 1fr;gap:72px;align-items:center;
-}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:140px 40px 100px;position:relative;}
+.hero-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:3.5px;text-transform:uppercase;color:var(--dim);margin-bottom:48px;opacity:0;animation:rise 1s .1s var(--ease-premium) forwards;}
 .hero-h1{
-  font-size:clamp(42px,6vw,86px);font-weight:400;line-height:1.05;letter-spacing:-.02em;
-  color:var(--ink);margin-bottom:30px;text-wrap:balance;
-  opacity:0;animation:rise .8s .1s var(--ease-premium) forwards;
+  font-weight:300;font-size:clamp(44px,8.5vw,124px);line-height:1.02;letter-spacing:-.015em;
+  max-width:1180px;margin-bottom:40px;color:var(--ink);text-wrap:balance;
+  opacity:0;animation:rise 1.1s .22s var(--ease-premium) forwards;
 }
-.hero-sub{
-  font-size:clamp(15.5px,1.3vw,17.5px);color:var(--dim);line-height:1.75;
-  max-width:500px;margin-bottom:40px;
-  opacity:0;animation:rise .8s .2s var(--ease-premium) forwards;
+.hero-sub{font-size:clamp(16px,1.35vw,18.5px);color:var(--dim);line-height:1.8;max-width:540px;margin-bottom:52px;
+  opacity:0;animation:rise 1s .4s var(--ease-premium) forwards;
 }
 .hero-sub strong{color:var(--ink);font-weight:500;}
-.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;
-  opacity:0;animation:rise .8s .3s var(--ease-premium) forwards;
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;
+  opacity:0;animation:rise 1s .55s var(--ease-premium) forwards;
 }
-@keyframes rise{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
-
-/* Right panel — quiet production-status card, not a dashboard */
-.status-panel{
-  opacity:0;animation:rise .8s .4s var(--ease-premium) forwards;
-  border:1px solid var(--line2);border-radius:var(--radius-lg);
-  padding:32px;background:var(--surface);
+.hero-hint{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:9.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--dim2);
+  opacity:0;animation:rise 1s .8s var(--ease-premium) forwards;display:flex;flex-direction:column;align-items:center;gap:10px;
 }
-.sp-label{font-family:var(--mono);font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--dim2);margin-bottom:24px;}
-.sp-row{display:flex;justify-content:space-between;align-items:baseline;padding:15px 0;border-top:1px solid var(--line);}
-.sp-row:first-of-type{border-top:none;}
-.sp-k{font-size:13.5px;color:var(--dim);}
-.sp-v{font-family:var(--mono);font-size:13.5px;color:var(--ink);}
-.sp-v.live{color:var(--live);display:flex;align-items:center;gap:7px;}
-.sp-dot{width:6px;height:6px;border-radius:50%;background:var(--live);}
-.sp-note{margin-top:22px;padding-top:20px;border-top:1px solid var(--line);font-size:12.5px;color:var(--dim2);line-height:1.6;}
+.hero-hint::after{content:'';width:1px;height:26px;background:linear-gradient(180deg,var(--dim2),transparent);}
+@keyframes rise{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:none;}}
 
 /* ═══════════════════════════════════════
-   INFRASTRUCTURE LAYER
+   SPINE — the continuous narrative connector
 ═══════════════════════════════════════ */
-#infrastructure{border-top:1px solid var(--line);background:var(--surface);}
-.infra-body{max-width:640px;margin-bottom:64px;}
-.flow-row{display:flex;align-items:stretch;justify-content:space-between;gap:0;max-width:1000px;margin:0 auto;}
-.flow-item{flex:1;text-align:center;padding:0 24px;}
-.flow-k{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--dim2);margin-bottom:12px;}
-.flow-v{font-family:var(--serif);font-size:22px;color:var(--ink);}
+.spine-wrap{max-width:1180px;margin:0 auto;}
+.spine-body{display:grid;grid-template-columns:56px 1fr;}
+.spine-rail{position:relative;}
+.spine-line{position:absolute;left:27px;top:0;bottom:0;width:1.5px;background:linear-gradient(180deg,transparent,var(--line2) 4%,var(--line2) 96%,transparent);}
+.spine-node{position:relative;left:20px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--black);border:1.5px solid var(--line2);transition:all .5s var(--ease-premium);}
+.spine-node.on{border-color:var(--blue);box-shadow:0 0 0 4px var(--blue-soft);}
+.spine-node.on::after{content:'';position:absolute;inset:3px;border-radius:50%;background:var(--blue);}
+
+.beat{padding:96px 44px 96px 0;border-top:1px solid var(--line);}
+.beat:first-child{border-top:none;}
+.beat-eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--dim2);margin-bottom:20px;}
+.beat-h{font-size:clamp(28px,3.2vw,44px);line-height:1.12;letter-spacing:-.015em;color:var(--ink);margin-bottom:20px;max-width:720px;text-wrap:balance;}
+.beat-sub{font-size:15.5px;color:var(--dim);line-height:1.75;max-width:560px;margin-bottom:48px;}
+
+/* Infrastructure flow */
+.flow-row{display:flex;align-items:stretch;gap:0;max-width:960px;flex-wrap:wrap;}
+.flow-item{flex:1;min-width:160px;text-align:left;padding:24px 28px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--surface);}
+.flow-k{font-family:var(--mono);font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--dim2);margin-bottom:12px;}
+.flow-v{font-family:var(--serif);font-size:19px;color:var(--ink);}
 .flow-v.accent{color:var(--blue);}
-.flow-arrow{display:flex;align-items:center;color:var(--dim2);font-size:18px;padding:0 4px;}
+.flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--dim2);font-size:16px;padding:0 14px;flex-shrink:0;}
+@media(max-width:700px){.flow-row{flex-direction:column;}.flow-arrow{transform:rotate(90deg);padding:8px 0;align-self:center;}}
+
+/* Capability modules */
+.mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;max-width:1000px;}
+.mod-card{background:var(--surface);padding:30px 26px;transition:background .25s;}
+.mod-card:hover{background:var(--surface2);}
+.mod-card:last-child{grid-column:span 2;}
+.mod-name{font-family:var(--serif);font-size:17px;color:var(--ink);margin-bottom:10px;}
+.mod-desc{font-size:12.5px;color:var(--dim);line-height:1.6;}
+@media(max-width:860px){.mod-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.mod-grid{grid-template-columns:1fr;}.mod-card:last-child{grid-column:span 1;}}
+
+/* Security / trust */
+.trust-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;max-width:900px;margin-bottom:44px;}
+.trust-card{background:var(--surface);padding:26px 24px;transition:background .25s;}
+.trust-card:hover{background:var(--surface2);}
+.trust-title{font-family:var(--serif);font-size:15.5px;color:var(--ink);margin-bottom:9px;}
+.trust-desc{font-size:12px;color:var(--dim);line-height:1.6;margin-bottom:14px;}
+.trust-status{display:inline-block;font-family:var(--mono);font-size:8.5px;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:var(--radius-pill);}
+.trust-status.progress{color:var(--gold);border:1px solid rgba(201,162,39,.3);}
+.trust-status.live{color:var(--live);border:1px solid var(--live-bd);}
+@media(max-width:700px){.trust-grid{grid-template-columns:1fr;}}
+
+.def-list{border-top:1px solid var(--line);max-width:800px;}
+.def-row{display:grid;grid-template-columns:140px 1fr;gap:28px;padding:20px 0;border-bottom:1px solid var(--line);}
+.def-term{font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue);padding-top:3px;}
+.def-def{font-size:13.5px;color:var(--dim);line-height:1.7;}
+.def-def b{color:var(--ink);font-weight:500;}
+@media(max-width:600px){.def-row{grid-template-columns:1fr;gap:6px;}}
+
+/* Founder / team */
+.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:960px;}
+.founder-card{border:1px solid var(--line2);border-radius:var(--radius-lg);padding:36px;background:var(--surface);}
+.f-top{display:flex;align-items:flex-start;gap:18px;margin-bottom:22px;}
+.f-av{width:52px;height:52px;border-radius:50%;flex-shrink:0;background:var(--blue-btn);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:17px;}
+.f-name{font-family:var(--serif);font-size:19px;color:var(--ink);margin-bottom:4px;}
+.f-role{font-family:var(--mono);font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim2);}
+.f-bio{font-size:13px;color:var(--dim);line-height:1.75;margin-bottom:20px;}
+.f-creds{display:flex;flex-direction:column;gap:7px;margin-bottom:20px;}
+.f-cred{display:flex;align-items:flex-start;gap:10px;font-size:11.5px;color:var(--dim2);line-height:1.5;}
+.f-dot{width:4px;height:4px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:6px;}
+.f-links{display:flex;gap:10px;flex-wrap:wrap;}
+.f-link{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:var(--radius-sm);font-size:11.5px;font-weight:500;border:1px solid var(--line2);color:var(--ink-dim);transition:all .2s;}
+.f-link:hover{border-color:var(--dim);color:var(--ink);}
+@media(max-width:700px){.team-grid{grid-template-columns:1fr;}}
 
 /* ═══════════════════════════════════════
-   THE INTELLIGENCE LOOP
+   THE REALITY LOOP — signature circular diagram
 ═══════════════════════════════════════ */
-.loop-viz{margin-bottom:20px;}
-.loop-svg{display:block;width:100%;height:34px;overflow:visible;}
-.loop-line{stroke:var(--line2);stroke-width:1;vector-effect:non-scaling-stroke;}
+.loop-stage{padding:20px 0 8px;}
+.loop-viz{position:relative;width:100%;}
+.loop-svg{display:block;width:100%;height:420px;overflow:visible;}
+.loop-path{fill:none;stroke:var(--line2);stroke-width:1.2;vector-effect:non-scaling-stroke;}
 .loop-ring{fill:none;stroke:var(--dim2);stroke-width:1.4;vector-effect:non-scaling-stroke;transition:stroke .5s var(--ease-premium);}
-.loop-ring-outer{fill:none;stroke:transparent;stroke-width:1;vector-effect:non-scaling-stroke;transition:stroke .5s var(--ease-premium),opacity .5s var(--ease-premium);opacity:0;}
+.loop-ring-outer{fill:none;stroke:transparent;stroke-width:1;vector-effect:non-scaling-stroke;transition:stroke .5s var(--ease-premium),opacity .5s;opacity:0;}
 .loop-dot{fill:var(--black);transition:fill .5s var(--ease-premium);}
 .loop-node-svg.on .loop-ring{stroke:var(--blue);}
 .loop-node-svg.on .loop-ring-outer{stroke:var(--blue-line);opacity:1;}
 .loop-node-svg.on .loop-dot{fill:var(--blue);}
 .loop-pulse{fill:var(--blue);}
-.loop-labels{display:grid;grid-template-columns:repeat(7,1fr);margin-bottom:56px;}
-.loop-label{text-align:center;padding:0 6px;}
-.loop-n{font-family:var(--mono);font-size:9.5px;color:var(--dim2);margin-bottom:8px;transition:color .4s;}
-.loop-t{font-size:14px;color:var(--ink);font-weight:500;transition:color .4s;}
-.loop-label.on .loop-n{color:var(--blue);}
-.loop-desc-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:16px;}
-.loop-desc{font-size:12px;color:var(--dim);line-height:1.6;padding:0 6px;text-align:center;}
-.loop-desc-name{display:none;color:var(--ink);font-weight:500;}
-
-/* ═══════════════════════════════════════
-   CAPABILITY CARDS — flat, hairline, no glow
-═══════════════════════════════════════ */
-.cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;}
-.cap-card{background:var(--surface);padding:34px 28px;transition:background .25s;}
-.cap-card:last-child{grid-column:span 2;}
-.cap-card:hover{background:var(--surface2);}
-.cap-name{font-family:var(--serif);font-size:18px;color:var(--ink);margin-bottom:10px;}
-.cap-desc{font-size:13.5px;color:var(--dim);line-height:1.65;}
-@media(max-width:860px){.cap-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:560px){.cap-grid{grid-template-columns:1fr;}}
-
-/* ═══════════════════════════════════════
-   WHY BLU9L — editorial definition list (Concept C)
-═══════════════════════════════════════ */
-.def-list{border-top:1px solid var(--line);max-width:900px;margin:0 auto;}
-.def-row{display:grid;grid-template-columns:200px 1fr;gap:40px;padding:28px 0;border-bottom:1px solid var(--line);}
-.def-term{font-family:var(--mono);font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue);padding-top:3px;}
-.def-def{font-size:15.5px;color:var(--dim);line-height:1.75;}
-.def-def b{color:var(--ink);font-weight:500;}
-@media(max-width:700px){.def-row{grid-template-columns:1fr;gap:8px;}}
-
-/* ═══════════════════════════════════════
-   PRODUCTION STATUS — compact single bar
-═══════════════════════════════════════ */
-.proof-bar{
-  border:1px solid var(--line2);border-radius:var(--radius-lg);
-  padding:44px 48px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;
-  background:var(--surface);
+.loop-label{position:absolute;transform:translate(-50%,-50%);text-align:center;width:120px;pointer-events:none;}
+.loop-label .n{font-family:var(--mono);font-size:9px;color:var(--dim2);margin-bottom:4px;transition:color .4s;}
+.loop-label .t{font-size:12.5px;font-weight:500;color:var(--ink-dim);transition:color .4s;line-height:1.25;}
+.loop-label.on .n{color:var(--blue);}
+.loop-label.on .t{color:var(--ink);}
+.loop-core{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;}
+.loop-core-k{font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--dim2);margin-bottom:6px;}
+.loop-core-v{font-family:var(--serif);font-size:22px;color:var(--ink);}
+@media(max-width:760px){
+  .loop-svg{height:520px;}
+  .loop-label{width:90px;}
+  .loop-label .t{font-size:11px;}
 }
-.proof-stats{display:flex;gap:48px;flex-wrap:wrap;}
-.proof-stat-k{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim2);margin-bottom:8px;}
-.proof-stat-v{font-family:var(--serif);font-size:22px;color:var(--ink);}
-.proof-stat-v.live{color:var(--live);}
-.proof-cta{flex-shrink:0;}
-.founding-tag{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
 
 /* ═══════════════════════════════════════
-   TRUST / SECURITY CARDS
+   CTA / FAQ / CONTACT / FOOTER
 ═══════════════════════════════════════ */
-.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;}
-.production-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;}
-.trust-card{background:var(--surface);padding:28px 24px;transition:background .25s;}
-.trust-card:hover{background:var(--surface2);}
-.trust-title{font-family:var(--serif);font-size:16px;color:var(--ink);margin-bottom:10px;}
-.trust-desc{font-size:12.5px;color:var(--dim);line-height:1.65;margin-bottom:16px;}
-.trust-status{display:inline-block;font-family:var(--mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:4px 11px;border-radius:var(--radius-pill);}
-.trust-status.progress{color:var(--gold);border:1px solid rgba(201,162,39,.3);}
-.trust-status.live{color:var(--live);border:1px solid var(--live-bd);}
-@media(max-width:860px){.trust-grid,.production-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:560px){.trust-grid,.production-grid{grid-template-columns:1fr;}}
+.cta-band{border-top:1px solid var(--line);text-align:center;position:relative;overflow:hidden;}
+.cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:900px;height:500px;background:radial-gradient(ellipse,var(--blue-soft),transparent 70%);pointer-events:none;}
+.cta-h{font-family:var(--serif);font-weight:300;font-size:clamp(30px,4.4vw,58px);line-height:1.15;max-width:820px;margin:0 auto 40px;position:relative;text-wrap:balance;}
+.cta-proof{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:56px;position:relative;}
+.cta-proof-item{text-align:center;}
+.cta-proof-k{font-family:var(--mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim2);margin-bottom:8px;}
+.cta-proof-v{font-family:var(--serif);font-size:18px;color:var(--ink);}
+.cta-proof-v.live{color:var(--live);}
 
-/* ═══════════════════════════════════════
-   FOUNDER
-═══════════════════════════════════════ */
-.team-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:32px;
-  max-width:1000px;margin:0 auto;align-items:start;
-}
-.founder-card{
-  border:1px solid var(--line2);border-radius:var(--radius-lg);padding:48px;
-  background:var(--surface);
-}
-@media(max-width:860px){
-  .team-grid{grid-template-columns:1fr;gap:24px;}
-}
-.f-top{display:flex;align-items:flex-start;gap:22px;margin-bottom:28px;}
-.f-av{
-  width:60px;height:60px;border-radius:50%;flex-shrink:0;
-  background:var(--blue-btn);color:#fff;
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--serif);font-size:19px;
-}
-.f-name{font-family:var(--serif);font-size:23px;color:var(--ink);margin-bottom:5px;}
-.f-role{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim2);}
-.f-bio{font-size:14.5px;color:var(--dim);line-height:1.8;margin-bottom:26px;}
-.f-creds{display:flex;flex-direction:column;gap:9px;margin-bottom:26px;}
-.f-cred{display:flex;align-items:flex-start;gap:11px;font-size:12.5px;color:var(--dim2);line-height:1.5;}
-.f-dot{width:4px;height:4px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:6px;}
-.f-links{display:flex;gap:12px;flex-wrap:wrap;}
-.f-link{display:inline-flex;align-items:center;gap:7px;padding:9px 16px;border-radius:var(--radius-sm);font-size:12.5px;font-weight:500;border:1px solid var(--line2);color:var(--ink-dim);transition:all .2s;}
-.f-link:hover{border-color:var(--dim);color:var(--ink);}
-
-/* ═══════════════════════════════════════
-   FAQ
-═══════════════════════════════════════ */
 .faq-list{display:grid;grid-template-columns:1fr 1fr;gap:0 56px;}
 .faq-item{padding:24px 0;border-bottom:1px solid var(--line);}
 .faq-q{font-family:var(--serif);font-size:15.5px;color:var(--ink);margin-bottom:10px;display:flex;gap:12px;line-height:1.3;}
@@ -366,16 +325,6 @@ nav{
 .faq-a{font-size:13.5px;color:var(--dim);line-height:1.75;padding-left:22px;}
 @media(max-width:800px){.faq-list{grid-template-columns:1fr;}}
 
-/* ═══════════════════════════════════════
-   CLOSING CTA
-═══════════════════════════════════════ */
-.cta-band{border-top:1px solid var(--line);text-align:center;position:relative;overflow:hidden;}
-.cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:900px;height:500px;background:radial-gradient(ellipse,var(--blue-soft),transparent 70%);pointer-events:none;}
-.cta-h{font-size:clamp(30px,4vw,54px);line-height:1.15;max-width:820px;margin:0 auto 36px;position:relative;text-wrap:balance;}
-
-/* ═══════════════════════════════════════
-   CONTACT
-═══════════════════════════════════════ */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
 .hq-block{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--line);}
 .hq-label{font-family:var(--mono);font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--dim2);margin-bottom:12px;}
@@ -383,11 +332,7 @@ nav{
 .hq-address{font-size:13.5px;color:var(--dim);}
 .hq-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:32px;}
 .contact-items{display:flex;flex-direction:column;gap:10px;}
-.ci{
-  display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:12.5px;color:var(--dim);
-  padding:13px 16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);
-  transition:all .2s;
-}
+.ci{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:12.5px;color:var(--dim);padding:13px 16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);transition:all .2s;}
 .ci:hover{border-color:var(--line2);color:var(--ink);}
 .ci a{color:inherit;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .ci-label{font-family:var(--mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim2);flex-shrink:0;min-width:82px;}
@@ -395,28 +340,18 @@ nav{
 .cf-title{font-family:var(--serif);font-size:18px;color:var(--ink);margin-bottom:24px;}
 .form-row{margin-bottom:16px;}
 .form-row label{display:block;font-family:var(--mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim2);margin-bottom:8px;}
-.form-row input,.form-row select,.form-row textarea{
-  width:100%;background:var(--black);border:1px solid var(--line2);
-  border-radius:var(--radius-sm);color:var(--ink);font-family:var(--sans);font-size:13.5px;
-  padding:13px 16px;outline:none;transition:all .2s;resize:none;
-}
+.form-row input,.form-row select,.form-row textarea{width:100%;background:var(--black);border:1px solid var(--line2);border-radius:var(--radius-sm);color:var(--ink);font-family:var(--sans);font-size:13.5px;padding:13px 16px;outline:none;transition:all .2s;resize:none;}
 .form-row input:focus,.form-row select:focus,.form-row textarea:focus{border-color:var(--blue);}
 .form-row input::placeholder,.form-row textarea::placeholder{color:var(--dim2);}
 .form-row textarea{min-height:88px;}
 .form-row select{appearance:none;cursor:pointer;}
 .form-row select option{background:var(--surface);}
-.form-submit{
-  width:100%;padding:14px;background:var(--blue-btn);color:#fff;border:none;border-radius:var(--radius-sm);
-  font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;margin-top:4px;
-}
-.form-submit:hover{background:#5590ff;}
+.form-submit{width:100%;padding:14px;background:var(--blue-btn);color:#fff;border:none;border-radius:var(--radius-sm);font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;margin-top:4px;}
+.form-submit:hover{background:var(--blue);}
 .form-submit:disabled{opacity:.6;cursor:not-allowed;}
 .form-note{font-family:var(--mono);font-size:9px;color:var(--dim2);margin-top:10px;text-align:center;}
 @media(max-width:860px){.contact-grid{grid-template-columns:1fr;gap:48px;}}
 
-/* ═══════════════════════════════════════
-   FOOTER
-═══════════════════════════════════════ */
 footer{border-top:1px solid var(--line);padding:64px 40px 32px;}
 .footer-inner{max-width:1180px;margin:0 auto;}
 .footer-top{display:flex;align-items:flex-start;justify-content:space-between;gap:48px;margin-bottom:48px;flex-wrap:wrap;}
@@ -440,32 +375,22 @@ footer{border-top:1px solid var(--line);padding:64px 40px 32px;}
 @media(max-width:768px){.footer-top{flex-direction:column;gap:36px;}.footer-bottom{flex-direction:column;align-items:flex-start;gap:10px;}}
 
 /* ═══════════════════════════════════════
-   RESPONSIVE — global
+   RESPONSIVE — spine/global
 ═══════════════════════════════════════ */
 @media(max-width:900px){
-  .hero-inner{grid-template-columns:1fr;gap:48px;}
   .nav-links{display:none;}
   .ham{display:flex;}
-  .flow-row{flex-direction:column;gap:24px;}
-  .flow-arrow{transform:rotate(90deg);}
-  .loop-labels .loop-t{font-size:12px;}
-  .loop-desc-grid{grid-template-columns:repeat(2,1fr);gap:20px;}
-  .cap-grid{grid-template-columns:1fr 1fr;}
-  .proof-bar{flex-direction:column;align-items:flex-start;}
+  .spine-body{grid-template-columns:1fr;}
+  .spine-rail{display:none;}
+  .beat{padding:64px 0;}
 }
 @media(max-width:560px){
   .section{padding:64px 24px;}
-  .hero{padding:48px 24px 64px;}
+  .hero{padding:120px 24px 80px;}
   .container{padding:0 20px;}
-  .loop-labels{display:none;}
-  .loop-desc-name{display:inline;}
-  .loop-desc{text-align:left;}
-  .loop-desc-grid{grid-template-columns:1fr;}
-  .proof-stats{gap:28px;}
 }
 </style>
 
-<!-- Structured data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -551,7 +476,7 @@ footer{border-top:1px solid var(--line);padding:64px 40px 32px;}
   <ul>
     <li><a href="#infrastructure" onclick="closeD()">Infrastructure</a></li>
     <li><a href="#loop" onclick="closeD()">The Loop</a></li>
-    <li><a href="#capabilities" onclick="closeD()">Platform</a></li>
+    <li><a href="#platform" onclick="closeD()">Platform</a></li>
     <li><a href="#security" onclick="closeD()">Security</a></li>
     <li><a href="#contact" onclick="closeD()">Contact</a></li>
   </ul>
@@ -564,14 +489,14 @@ footer{border-top:1px solid var(--line);padding:64px 40px 32px;}
   <div class="nav-inner">
     <div class="logo-wrap">
       <a href="#" style="display:flex;align-items:center;">
-        <img src="assets/logo-white.svg" alt="BLu9L" width="119" height="30" loading="eager" decoding="async" fetchpriority="high" class="logo-img">
+        <img src="assets/logo-white.svg" alt="BLu9L" width="103" height="26" loading="eager" decoding="async" fetchpriority="high" class="logo-img">
       </a>
     </div>
     <div class="nav-r">
       <ul class="nav-links">
         <li><a href="#infrastructure">Infrastructure</a></li>
         <li><a href="#loop">Loop</a></li>
-        <li><a href="#capabilities">Platform</a></li>
+        <li><a href="#platform">Platform</a></li>
         <li><a href="#security">Security</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -582,281 +507,177 @@ footer{border-top:1px solid var(--line);padding:64px 40px 32px;}
 </nav>
 
 <main>
+
 <!-- HERO -->
 <section class="hero" id="home">
-  <div class="hero-inner">
-    <div>
-      <div class="s-eyebrow">Intelligence Infrastructure Company</div>
-      <h1 class="hero-h1">Transform operational reality into intelligence.</h1>
-      <p class="hero-sub">BLu9L is the <strong>Intelligence Infrastructure Company.</strong> The <strong>Automotive Intelligence Grid</strong> is our first production implementation — live, in production, with real dealers.</p>
-      <div class="hero-ctas">
-        <a href="#contact" class="btn btn-primary">Request Enterprise Access</a>
-        <a href="#infrastructure" class="btn btn-ghost">View the Architecture</a>
-      </div>
-    </div>
-    <div class="status-panel">
-      <div class="sp-label">Production Status</div>
-      <div class="sp-row"><span class="sp-k">System</span><span class="sp-v live"><span class="sp-dot"></span>Live</span></div>
-      <div class="sp-row"><span class="sp-k">Pilot</span><span class="sp-v">Real dealers</span></div>
-      <div class="sp-row"><span class="sp-k">Public launch</span><span class="sp-v">Aug 20, 2026</span></div>
-      <div class="sp-note">Founding dealers who join before launch lock in first-mover terms.</div>
-    </div>
+  <div class="hero-eyebrow">Intelligence Infrastructure Company</div>
+  <h1 class="hero-h1">Transform operational reality into intelligence.</h1>
+  <p class="hero-sub">BLu9L is the Intelligence Infrastructure Company. The <strong>Automotive Intelligence Grid</strong> is our first production implementation.</p>
+  <div class="hero-ctas">
+    <a href="#contact" class="btn btn-primary btn-lg">Request Enterprise Access</a>
+    <a href="#infrastructure" class="btn btn-ghost btn-lg">View the Architecture</a>
   </div>
+  <div class="hero-hint">Scroll</div>
 </section>
 
-<!-- INFRASTRUCTURE LAYER -->
-<section class="section" id="infrastructure">
-  <div class="container">
-    <div class="reveal s-head" style="text-align:center;">
-      <div class="s-eyebrow center neutral">Infrastructure, Not Another Application</div>
-      <h2 class="s-h center" style="max-width:780px;margin-left:auto;margin-right:auto;">BLu9L doesn't replace your systems. It sits above them.</h2>
-      <p class="s-sub center" style="max-width:640px;">Your DMS, your CRM, your existing dealership systems already generate the reality of your business — every transaction, every interaction, every event. BLu9L doesn't ask you to rip them out. It sits above them: capturing what they already produce, resolving it into structured intelligence, and returning decisions back into the workflows your team already runs.</p>
-    </div>
-    <div class="reveal r1 flow-row">
-      <div class="flow-item"><div class="flow-k">Today</div><div class="flow-v">Existing Systems</div></div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-item"><div class="flow-k">Sits Above</div><div class="flow-v accent">BLu9L</div></div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-item"><div class="flow-k">Result</div><div class="flow-v">Decisions, In Workflow</div></div>
-    </div>
-  </div>
-</section>
+<!-- THE NARRATIVE SPINE -->
+<div class="container">
+  <div class="spine-wrap">
+    <div class="spine-body">
+      <div class="spine-rail" id="spine-rail">
+        <div class="spine-line"></div>
+        <div class="spine-node" id="spine-infrastructure" style="top:60px;"></div>
+        <div class="spine-node" id="spine-loop" style="top:600px;"></div>
+        <div class="spine-node" id="spine-platform" style="top:1200px;"></div>
+        <div class="spine-node" id="spine-security" style="top:1800px;"></div>
+        <div class="spine-node" id="spine-founder" style="top:2400px;"></div>
+      </div>
+      <div>
 
-<!-- THE INTELLIGENCE LOOP -->
-<section class="section" id="loop" style="border-top:1px solid var(--line);">
-  <div class="container">
-    <div class="reveal s-head">
-      <div class="s-eyebrow">Reality Intelligence Infrastructure™ · The Loop</div>
-      <h2 class="s-h">One loop. Compounding intelligence.</h2>
-      <p class="s-sub">Every cycle through the loop makes the next decision sharper — this is Reality Intelligence Infrastructure™, BLu9L's core architecture.</p>
-    </div>
-    <div class="reveal r1 loop-viz">
-      <svg class="loop-svg" id="loop-svg" viewBox="0 0 1400 34" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-        <line class="loop-line" x1="100" y1="17" x2="1300" y2="17"/>
-        <g class="loop-node-svg on" data-x="100"><circle class="loop-ring-outer" cx="100" cy="17" r="9.5"/><circle class="loop-ring" cx="100" cy="17" r="6.5"/><circle class="loop-dot" cx="100" cy="17" r="3"/></g>
-        <g class="loop-node-svg" data-x="300"><circle class="loop-ring-outer" cx="300" cy="17" r="9.5"/><circle class="loop-ring" cx="300" cy="17" r="6.5"/><circle class="loop-dot" cx="300" cy="17" r="3"/></g>
-        <g class="loop-node-svg" data-x="500"><circle class="loop-ring-outer" cx="500" cy="17" r="9.5"/><circle class="loop-ring" cx="500" cy="17" r="6.5"/><circle class="loop-dot" cx="500" cy="17" r="3"/></g>
-        <g class="loop-node-svg" data-x="700"><circle class="loop-ring-outer" cx="700" cy="17" r="9.5"/><circle class="loop-ring" cx="700" cy="17" r="6.5"/><circle class="loop-dot" cx="700" cy="17" r="3"/></g>
-        <g class="loop-node-svg" data-x="900"><circle class="loop-ring-outer" cx="900" cy="17" r="9.5"/><circle class="loop-ring" cx="900" cy="17" r="6.5"/><circle class="loop-dot" cx="900" cy="17" r="3"/></g>
-        <g class="loop-node-svg" data-x="1100"><circle class="loop-ring-outer" cx="1100" cy="17" r="9.5"/><circle class="loop-ring" cx="1100" cy="17" r="6.5"/><circle class="loop-dot" cx="1100" cy="17" r="3"/></g>
-        <g class="loop-node-svg" data-x="1300"><circle class="loop-ring-outer" cx="1300" cy="17" r="9.5"/><circle class="loop-ring" cx="1300" cy="17" r="6.5"/><circle class="loop-dot" cx="1300" cy="17" r="3"/></g>
-        <circle class="loop-pulse" id="loop-pulse" cx="100" cy="17" r="3.2"/>
-      </svg>
-    </div>
-    <div class="reveal r1 loop-labels" id="loop-labels">
-      <div class="loop-label on"><div class="loop-n">01</div><div class="loop-t">Reality</div></div>
-      <div class="loop-label"><div class="loop-n">02</div><div class="loop-t">Events</div></div>
-      <div class="loop-label"><div class="loop-n">03</div><div class="loop-t">Evidence</div></div>
-      <div class="loop-label"><div class="loop-n">04</div><div class="loop-t">Intelligence</div></div>
-      <div class="loop-label"><div class="loop-n">05</div><div class="loop-t">Decisions</div></div>
-      <div class="loop-label"><div class="loop-n">06</div><div class="loop-t">Outcomes</div></div>
-      <div class="loop-label"><div class="loop-n">07</div><div class="loop-t">Learning</div></div>
-    </div>
-    <div class="reveal r2 loop-desc-grid">
-      <div class="loop-desc"><span class="loop-desc-name">Reality —</span> What actually happens inside the business.</div>
-      <div class="loop-desc"><span class="loop-desc-name">Events —</span> Raw signals captured in real time, before they vanish.</div>
-      <div class="loop-desc"><span class="loop-desc-name">Evidence —</span> Events resolved into structured, verifiable facts.</div>
-      <div class="loop-desc"><span class="loop-desc-name">Intelligence —</span> Facts organized into a living model of the business.</div>
-      <div class="loop-desc"><span class="loop-desc-name">Decisions —</span> Confidence-scored recommendations, where the work happens.</div>
-      <div class="loop-desc"><span class="loop-desc-name">Outcomes —</span> What happened after a decision was acted on.</div>
-      <div class="loop-desc"><span class="loop-desc-name">Learning —</span> Outcomes feed back in. The loop compounds.</div>
-    </div>
-  </div>
-</section>
-
-<!-- PLATFORM CAPABILITIES -->
-<section class="section" id="capabilities" style="border-top:1px solid var(--line);">
-  <div class="container">
-    <div class="reveal s-head" style="text-align:center;">
-      <div class="s-eyebrow center">Automotive Intelligence Grid · Capability Domains</div>
-      <h2 class="s-h center">Five domains. One intelligence layer.</h2>
-      <p class="s-sub center" style="max-width:600px;">The Automotive Intelligence Grid organizes dealership reality into five compounding capability domains.</p>
-    </div>
-    <div class="reveal r1 cap-grid">
-      <div class="cap-card">
-        <div class="cap-name">Vehicle Intelligence</div>
-        <div class="cap-desc">A living record of every vehicle — condition, history, and market position — updated continuously.</div>
-      </div>
-      <div class="cap-card">
-        <div class="cap-name">Operational Intelligence</div>
-        <div class="cap-desc">Real-time visibility into how the dealership actually runs, department by department.</div>
-      </div>
-      <div class="cap-card">
-        <div class="cap-name">Financial Intelligence</div>
-        <div class="cap-desc">Margin, turn, and cash-flow signals surfaced as decisions, not just reports.</div>
-      </div>
-      <div class="cap-card">
-        <div class="cap-name">Capital Intelligence</div>
-        <div class="cap-desc">Inventory and capital allocation guided by live market and demand signals.</div>
-      </div>
-      <div class="cap-card">
-        <div class="cap-name">Network Intelligence</div>
-        <div class="cap-desc">Patterns that only emerge across dealers and markets — surfaced without ever exposing one dealer's data to another.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHY BLU9L — editorial definition list -->
-<section class="section" id="why" style="border-top:1px solid var(--line);">
-  <div class="container">
-    <div class="reveal s-head" style="text-align:center;">
-      <div class="s-eyebrow center">Why BLu9L</div>
-      <h2 class="s-h center">Software records. Infrastructure decides.</h2>
-    </div>
-    <div class="reveal r1 def-list">
-      <div class="def-row"><div class="def-term">Data</div><div class="def-def">Traditional software <b>stores transactions.</b> BLu9L <b>understands operations.</b></div></div>
-      <div class="def-row"><div class="def-term">Time</div><div class="def-def">Traditional software <b>reports on the past.</b> BLu9L <b>decides in real time.</b></div></div>
-      <div class="def-row"><div class="def-term">Structure</div><div class="def-def">Traditional software runs <b>one system per department.</b> BLu9L runs <b>one intelligence layer across every department.</b></div></div>
-      <div class="def-row"><div class="def-term">Learning</div><div class="def-def">Traditional software leaves <b>data sitting still.</b> <b>Every outcome retrains BLu9L.</b></div></div>
-      <div class="def-row"><div class="def-term">Approach</div><div class="def-def">Traditional software <b>replaces what you have.</b> BLu9L <b>sits above what you have.</b></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- PRODUCTION STATUS -->
-<section class="section" id="proof" style="border-top:1px solid var(--line);">
-  <div class="container">
-    <div class="reveal s-head">
-      <div class="s-eyebrow neutral">Production Validation</div>
-      <h2 class="s-h">Live. In production. Not a prototype.</h2>
-      <p class="s-sub">AIG is operational today inside real dealerships — real inventory, real transactions, real outcomes feeding back into the system. Public availability opens August 20, 2026.</p>
-    </div>
-    <div class="reveal r1 proof-bar">
-      <div class="proof-stats">
-        <div><div class="proof-stat-k">System Status</div><div class="proof-stat-v live">Operational</div></div>
-        <div><div class="proof-stat-k">Pilot Type</div><div class="proof-stat-v">Real Dealers</div></div>
-        <div><div class="proof-stat-k">Public Launch</div><div class="proof-stat-v">August 2026</div></div>
-      </div>
-      <div class="proof-cta">
-        <div class="founding-tag">Founding Dealer Access · Limited</div>
-        <a href="#contact" class="btn btn-primary">Request Enterprise Access</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BUILT FOR PRODUCTION -->
-<section class="section" id="built" style="border-top:1px solid var(--line);">
-  <div class="container">
-    <div class="reveal s-head" style="text-align:center;">
-      <div class="s-eyebrow center">Architecture</div>
-      <h2 class="s-h center">Built for production.</h2>
-      <p class="s-sub center" style="max-width:600px;">The principles the Automotive Intelligence Grid is actually built on — not a feature list, an architecture.</p>
-    </div>
-    <div class="reveal r1 production-grid">
-      <div class="trust-card">
-        <div class="trust-title">Pilot Dealership Deployments</div>
-        <div class="trust-desc">Deployed and operating inside real dealer partners — every outcome retrains the system that produced it.</div>
-      </div>
-      <div class="trust-card">
-        <div class="trust-title">Multi-Tenant Architecture</div>
-        <div class="trust-desc">Built from the ground up to serve multiple dealer groups on a single, isolated, secure platform.</div>
-      </div>
-      <div class="trust-card">
-        <div class="trust-title">Evidence-Based Intelligence</div>
-        <div class="trust-desc">Every decision carries a full reasoning trace back to the operational events that produced it.</div>
-      </div>
-      <div class="trust-card">
-        <div class="trust-title">AWS Infrastructure</div>
-        <div class="trust-desc">Built on Amazon Web Services — encryption in transit and at rest, tenant isolation, and audited access controls.</div>
-      </div>
-      <div class="trust-card">
-        <div class="trust-title">Federated Data Architecture</div>
-        <div class="trust-desc">Cross-dealer patterns surface without any one dealer's data ever being exposed to another.</div>
-      </div>
-      <div class="trust-card">
-        <div class="trust-title">Production Security Principles</div>
-        <div class="trust-desc">Governed by the same access-control, auditability, and data-isolation discipline enterprise deployments require.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ENTERPRISE SECURITY -->
-<section class="section" id="security" style="border-top:1px solid var(--line);">
-  <div class="container">
-    <div class="reveal s-head" style="text-align:center;">
-      <div class="s-eyebrow center">Enterprise Posture</div>
-      <h2 class="s-h center">Built for enterprise trust.</h2>
-      <p class="s-sub center" style="max-width:600px;">Reality Intelligence Infrastructure handles operational data at the core of a business. It is engineered for the security, governance, and reliability that enterprise deployment demands.</p>
-    </div>
-    <div class="reveal r1 trust-grid">
-      <div class="trust-card">
-        <div class="trust-title">SOC 2 Audit Underway</div>
-        <div class="trust-desc">A formal SOC 2 examination is in progress, establishing independently verified controls for security, availability, and confidentiality.</div>
-        <div class="trust-status progress">In Progress</div>
-      </div>
-      <div class="trust-card">
-        <div class="trust-title">Provisional Patent Filed</div>
-        <div class="trust-desc">The Reality Intelligence Infrastructure methodology is protected by a provisional patent application covering the core architecture.</div>
-        <div class="trust-status progress">Filed</div>
-      </div>
-      <div class="trust-card">
-        <div class="trust-title">AWS Cloud Security</div>
-        <div class="trust-desc">Infrastructure runs on Amazon Web Services, with encryption, network isolation, and access controls built into every layer of the deployment.</div>
-        <div class="trust-status live">Active</div>
-      </div>
-      <div class="trust-card">
-        <div class="trust-title">Data Governance</div>
-        <div class="trust-desc">Dealer data is isolated, access-controlled, and never commingled. Every decision carries a full reasoning trace for auditability.</div>
-        <div class="trust-status live">By Design</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- LEADERSHIP -->
-<section class="section" id="founder" style="border-top:1px solid var(--line);">
-  <div class="container">
-    <div class="reveal s-head" style="text-align:center;">
-      <div class="s-eyebrow center">Leadership</div>
-      <h2 class="s-h center">Leadership.</h2>
-    </div>
-    <div class="team-grid">
-      <div class="reveal r1 founder-card">
-        <div class="f-top">
-          <div class="f-av">YH</div>
-          <div>
-            <div class="f-name">Yaseen Hassan</div>
-            <div class="f-role">Founder &amp; Chairman · BLu9L</div>
+        <!-- ARCHITECTURE / INFRASTRUCTURE -->
+        <section class="beat reveal" id="infrastructure">
+          <div class="beat-eyebrow">Infrastructure, Not Another Application</div>
+          <h2 class="beat-h">BLu9L doesn't replace your systems. It sits above them.</h2>
+          <p class="beat-sub">Your DMS, your CRM, your existing dealership systems already generate the reality of your business. BLu9L doesn't ask you to rip them out — it sits above them, capturing what they already produce and returning decisions back into the workflows your team already runs.</p>
+          <div class="flow-row">
+            <div class="flow-item"><div class="flow-k">Today</div><div class="flow-v">Existing Systems</div></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-item"><div class="flow-k">Sits Above</div><div class="flow-v accent">BLu9L Intelligence Layer</div></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-item"><div class="flow-k">Reaches</div><div class="flow-v">Dealers · OEMs · Lenders · Networks</div></div>
           </div>
-        </div>
-        <p class="f-bio">Founder of BLu9L. Over 24 years of automotive industry experience — starting in franchise operations, moving through dealer allocations, and expanding into business development and market growth across the United States and into the Middle East. That career is the exact foundation the Automotive Intelligence Grid is built on: deep operational knowledge of how dealerships actually work, where the intelligence gaps live, and what it takes to turn data into decisions that move metal.</p>
-        <div class="f-creds">
-          <div class="f-cred"><div class="f-dot"></div><span>Founder &amp; Chairman, BLu9L Holdings — US &amp; UAE</span></div>
-          <div class="f-cred"><div class="f-dot"></div><span>24+ years automotive — franchise operations through dealer allocations</span></div>
-          <div class="f-cred"><div class="f-dot"></div><span>Business &amp; market expansion across the United States and Middle East</span></div>
-          <div class="f-cred"><div class="f-dot"></div><span>Architect of the Automotive Intelligence Grid — system live, full pilot running</span></div>
-          <div class="f-cred"><div class="f-dot"></div><span>Cross-border structure: BLu9L International F.Z.E (UAE) + US entities</span></div>
-        </div>
-        <div class="f-links">
-          <a href="https://www.linkedin.com/in/yaseen-hassan" target="_blank" rel="noopener" class="f-link">LinkedIn</a>
-          <a href="mailto:info@blu9l.com?subject=Meeting%20Request" class="f-link">Request a Meeting</a>
-        </div>
-      </div>
-      <div class="reveal r2 founder-card">
-        <div class="f-top">
-          <div class="f-av">TG</div>
-          <div>
-            <div class="f-name">Tawassul Gohar</div>
-            <div class="f-role">Principal Lead Architect · BLu9L</div>
+        </section>
+
+        <!-- THE REALITY LOOP -->
+        <section class="beat reveal loop-stage" id="loop">
+          <div class="beat-eyebrow">Reality Intelligence Infrastructure™ · The Loop</div>
+          <h2 class="beat-h">One loop. Compounding intelligence.</h2>
+          <p class="beat-sub">Every cycle through the loop makes the next decision sharper. This is Reality Intelligence Infrastructure™ — BLu9L's core architecture, and the signature of everything it builds.</p>
+          <div class="loop-viz" id="loop-viz">
+            <svg class="loop-svg" id="loop-svg" viewBox="0 0 1000 420" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+              <ellipse class="loop-path" id="loop-path-el" cx="500" cy="210" rx="420" ry="170"/>
+              <g id="loop-nodes"></g>
+              <circle class="loop-pulse" id="loop-pulse" r="5"/>
+            </svg>
+            <div class="loop-core">
+              <div class="loop-core-k">Reality Intelligence</div>
+              <div class="loop-core-v">Infrastructure™</div>
+            </div>
+            <div id="loop-labels"></div>
           </div>
-        </div>
-        <p class="f-bio">Tawassul Gohar serves as Principal Lead Architect at BLu9L, leading platform architecture and technical execution for the Automotive Intelligence Grid (AIG). With more than 12 years of experience, he has designed and delivered enterprise software, AI-driven applications, retrieval-augmented systems, and scalable platform architectures across multiple industries. His background spans full-stack engineering, generative AI, intelligent automation, and large-scale software design, including work on DeepScan AI, a computer vision-based deepfake detection platform. Holding a Master's degree in Computer Science, Tawassul brings a systems-first approach to building secure, scalable, and production-ready infrastructure that supports BLu9L's long-term vision of transforming operational reality into continuously compounding intelligence.</p>
-        <div class="f-creds">
-          <div class="f-cred"><div class="f-dot"></div><span>Principal Lead Architect, BLu9L — Automotive Intelligence Grid</span></div>
-          <div class="f-cred"><div class="f-dot"></div><span>Platform Architecture</span></div>
-          <div class="f-cred"><div class="f-dot"></div><span>Enterprise Software</span></div>
-          <div class="f-cred"><div class="f-dot"></div><span>AI Systems</span></div>
-          <div class="f-cred"><div class="f-dot"></div><span>Infrastructure Engineering</span></div>
-          <div class="f-cred"><div class="f-dot"></div><span>Scalability</span></div>
-          <div class="f-cred"><div class="f-dot"></div><span>Technical Leadership</span></div>
-        </div>
-        <div class="f-links">
-          <a href="mailto:tawassul@blu9l.com" class="f-link">Email</a>
-        </div>
+        </section>
+
+        <!-- PLATFORM -->
+        <section class="beat reveal" id="platform">
+          <div class="beat-eyebrow">Automotive Intelligence Grid · Capability Domains</div>
+          <h2 class="beat-h">Five domains. One intelligence layer.</h2>
+          <p class="beat-sub">The Automotive Intelligence Grid organizes dealership reality into five compounding capability domains — architectural modules, not feature cards.</p>
+          <div class="mod-grid">
+            <div class="mod-card"><div class="mod-name">Vehicle Intelligence</div><div class="mod-desc">A living record of every vehicle — condition, history, market position — updated continuously.</div></div>
+            <div class="mod-card"><div class="mod-name">Operational Intelligence</div><div class="mod-desc">Real-time visibility into how the dealership actually runs, department by department.</div></div>
+            <div class="mod-card"><div class="mod-name">Financial Intelligence</div><div class="mod-desc">Margin, turn, and cash-flow signals surfaced as decisions, not just reports.</div></div>
+            <div class="mod-card"><div class="mod-name">Capital Intelligence</div><div class="mod-desc">Inventory and capital allocation guided by live market and demand signals.</div></div>
+            <div class="mod-card"><div class="mod-name">Network Intelligence</div><div class="mod-desc">Patterns that only emerge across dealers and markets — without ever exposing one dealer's data to another.</div></div>
+          </div>
+        </section>
+
+        <!-- SECURITY -->
+        <section class="beat reveal" id="security">
+          <div class="beat-eyebrow">Enterprise Posture</div>
+          <h2 class="beat-h">Built for enterprise trust — and built for production.</h2>
+          <p class="beat-sub">Reality Intelligence Infrastructure handles operational data at the core of a business. It is engineered for the security, governance, and reliability enterprise deployment demands, and for the architecture principles the Automotive Intelligence Grid is actually built on.</p>
+          <div class="trust-grid">
+            <div class="trust-card">
+              <div class="trust-title">SOC 2 Audit Underway</div>
+              <div class="trust-desc">A formal SOC 2 examination is in progress, establishing independently verified controls for security, availability, and confidentiality.</div>
+              <div class="trust-status progress">In Progress</div>
+            </div>
+            <div class="trust-card">
+              <div class="trust-title">Provisional Patent Filed</div>
+              <div class="trust-desc">The Reality Intelligence Infrastructure methodology is protected by a provisional patent application covering the core architecture.</div>
+              <div class="trust-status progress">Filed</div>
+            </div>
+            <div class="trust-card">
+              <div class="trust-title">AWS Cloud Security</div>
+              <div class="trust-desc">Infrastructure runs on Amazon Web Services, with encryption, network isolation, and access controls built into every layer of the deployment.</div>
+              <div class="trust-status live">Active</div>
+            </div>
+            <div class="trust-card">
+              <div class="trust-title">Data Governance</div>
+              <div class="trust-desc">Dealer data is isolated, access-controlled, and never commingled. Every decision carries a full reasoning trace for auditability.</div>
+              <div class="trust-status live">By Design</div>
+            </div>
+          </div>
+          <div class="def-list">
+            <div class="def-row"><div class="def-term">Data</div><div class="def-def">Traditional software <b>stores transactions.</b> BLu9L <b>understands operations.</b></div></div>
+            <div class="def-row"><div class="def-term">Time</div><div class="def-def">Traditional software <b>reports on the past.</b> BLu9L <b>decides in real time.</b></div></div>
+            <div class="def-row"><div class="def-term">Structure</div><div class="def-def">Traditional software runs <b>one system per department.</b> BLu9L runs <b>one intelligence layer across every department.</b></div></div>
+            <div class="def-row"><div class="def-term">Learning</div><div class="def-def">Traditional software leaves <b>data sitting still.</b> <b>Every outcome retrains BLu9L.</b></div></div>
+            <div class="def-row"><div class="def-term">Approach</div><div class="def-def">Traditional software <b>replaces what you have.</b> BLu9L <b>sits above what you have.</b></div></div>
+          </div>
+        </section>
+
+        <!-- TEAM -->
+        <section class="beat reveal" id="founder" style="border-bottom:1px solid var(--line);">
+          <div class="beat-eyebrow">Leadership</div>
+          <h2 class="beat-h">The team building it.</h2>
+          <div class="team-grid">
+            <div class="founder-card">
+              <div class="f-top">
+                <div class="f-av">YH</div>
+                <div>
+                  <div class="f-name">Yaseen Hassan</div>
+                  <div class="f-role">Founder &amp; Chairman · BLu9L</div>
+                </div>
+              </div>
+              <p class="f-bio">Founder of BLu9L. Over 24 years of automotive industry experience — starting in franchise operations, moving through dealer allocations, and expanding into business development and market growth across the United States and into the Middle East. That career is the exact foundation the Automotive Intelligence Grid is built on.</p>
+              <div class="f-creds">
+                <div class="f-cred"><div class="f-dot"></div><span>Founder &amp; Chairman, BLu9L Holdings — US &amp; UAE</span></div>
+                <div class="f-cred"><div class="f-dot"></div><span>24+ years automotive — franchise operations through dealer allocations</span></div>
+                <div class="f-cred"><div class="f-dot"></div><span>Architect of the Automotive Intelligence Grid — system live, full pilot running</span></div>
+                <div class="f-cred"><div class="f-dot"></div><span>Cross-border structure: BLu9L International F.Z.E (UAE) + US entities</span></div>
+              </div>
+              <div class="f-links">
+                <a href="https://www.linkedin.com/in/yaseen-hassan" target="_blank" rel="noopener" class="f-link">LinkedIn</a>
+                <a href="mailto:info@blu9l.com?subject=Meeting%20Request" class="f-link">Request a Meeting</a>
+              </div>
+            </div>
+            <div class="founder-card">
+              <div class="f-top">
+                <div class="f-av">TG</div>
+                <div>
+                  <div class="f-name">Tawassul Gohar</div>
+                  <div class="f-role">Principal Lead Architect · BLu9L</div>
+                </div>
+              </div>
+              <p class="f-bio">Tawassul Gohar leads platform architecture and technical execution for the Automotive Intelligence Grid. With more than 12 years of experience, he has designed and delivered enterprise software, AI-driven applications, retrieval-augmented systems, and scalable platform architectures across multiple industries, including work on DeepScan AI, a computer vision-based deepfake detection platform. Holds a Master's degree in Computer Science.</p>
+              <div class="f-creds">
+                <div class="f-cred"><div class="f-dot"></div><span>Principal Lead Architect, BLu9L — Automotive Intelligence Grid</span></div>
+                <div class="f-cred"><div class="f-dot"></div><span>Platform Architecture · Enterprise Software · AI Systems</span></div>
+                <div class="f-cred"><div class="f-dot"></div><span>Infrastructure Engineering · Scalability · Technical Leadership</span></div>
+              </div>
+              <div class="f-links">
+                <a href="mailto:tawassul@blu9l.com" class="f-link">Email</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- CLOSING CTA -->
+<section class="section cta-band" id="cta">
+  <div class="cta-glow"></div>
+  <div class="container reveal">
+    <h2 class="cta-h">The future of automotive isn't more software.<br>It's intelligence.</h2>
+    <a href="#contact" class="btn btn-primary btn-lg">Request Enterprise Access</a>
+    <div class="cta-proof">
+      <div class="cta-proof-item"><div class="cta-proof-k">System Status</div><div class="cta-proof-v live">Operational</div></div>
+      <div class="cta-proof-item"><div class="cta-proof-k">Pilot</div><div class="cta-proof-v">Real Dealers</div></div>
+      <div class="cta-proof-item"><div class="cta-proof-k">Public Launch</div><div class="cta-proof-v">Aug 20, 2026</div></div>
     </div>
   </div>
 </section>
@@ -880,15 +701,6 @@ footer{border-top:1px solid var(--line);padding:64px 40px 32px;}
         <div class="faq-item"><div class="faq-q"><span class="faq-qm">Q</span>How do I get access?</div><div class="faq-a">Use the contact form below, email info@blu9l.com, or reach partners@blu9l.com for dealer-specific inquiries. We respond to every inquiry within one business day.</div></div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- CLOSING CTA -->
-<section class="section cta-band" id="cta">
-  <div class="cta-glow"></div>
-  <div class="container reveal">
-    <h2 class="cta-h">The future of automotive isn't more software.<br>It's intelligence.</h2>
-    <a href="#contact" class="btn btn-primary">Request Enterprise Access</a>
   </div>
 </section>
 
@@ -944,6 +756,7 @@ footer{border-top:1px solid var(--line);padding:64px 40px 32px;}
     </div>
   </div>
 </section>
+
 </main>
 
 <!-- FOOTER -->
@@ -970,9 +783,8 @@ footer{border-top:1px solid var(--line);padding:64px 40px 32px;}
           <ul class="fc-links">
             <li><a href="#infrastructure">Infrastructure</a></li>
             <li><a href="#loop">The Loop</a></li>
-            <li><a href="#capabilities">Capabilities</a></li>
-            <li><a href="#proof">Pilot Program</a></li>
-            <li><a href="#built">Architecture</a></li>
+            <li><a href="#platform">Platform</a></li>
+            <li><a href="#security">Security</a></li>
           </ul>
         </div>
         <div>
@@ -999,79 +811,141 @@ footer{border-top:1px solid var(--line);padding:64px 40px 32px;}
 /* ── PROGRESS ── */
 (function(){var p=document.getElementById('prog');addEventListener('scroll',function(){var h=document.documentElement;p.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});})();
 
+/* ── NAV — fades in once scroll confirms intent ── */
+(function(){
+  var nav=document.getElementById('nav');
+  function update(){nav.classList.toggle('scrolled',scrollY>window.innerHeight*.55);}
+  update();
+  addEventListener('scroll',update,{passive:true});
+})();
+
 /* ── DRAWER ── */
-function toggleD(){var d=document.getElementById('drawer'),h=document.getElementById('ham');d.classList.toggle('open');h.classList.toggle('open');document.body.style.overflow=d.classList.contains('open')?'hidden':'';}
-function closeD(){document.getElementById('drawer').classList.remove('open');document.getElementById('ham').classList.remove('open');document.body.style.overflow='';}
+function toggleD(){var d=document.getElementById('drawer'),h=document.getElementById('ham'),n=document.getElementById('nav');d.classList.toggle('open');h.classList.toggle('open');n.classList.toggle('menu-open');document.body.style.overflow=d.classList.contains('open')?'hidden':'';}
+function closeD(){document.getElementById('drawer').classList.remove('open');document.getElementById('ham').classList.remove('open');document.getElementById('nav').classList.remove('menu-open');document.body.style.overflow='';}
 
 /* ── SMOOTH SCROLL ── */
-document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}});});
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'start'});}});});
 
 /* ── REVEAL ── */
-/* Only gate content behind the entrance animation once we know JS is actually
-   running (see the matching .js-ready CSS). Then back it with a safety-net:
-   if IntersectionObserver ever fails to fire for an element (edge-case
-   layout, a slow/janky device, anything), force it visible after 2.5s rather
-   than leave it invisible forever. */
 document.documentElement.classList.add('js-ready');
 var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});},{threshold:.06,rootMargin:'0px 0px -28px 0px'});
 document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
-setTimeout(function(){
-  document.querySelectorAll('.reveal:not(.in)').forEach(function(el){el.classList.add('in');});
-},2500);
+setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(function(el){el.classList.add('in');});},2500);
 
-/* ── INTELLIGENCE LOOP — vector graph, eased traveling pulse, reduced-motion safe ── */
+/* ── SPINE — active node tracks which narrative beat is in view ── */
+(function(){
+  var rail=document.getElementById('spine-rail');if(!rail)return;
+  var beats=[['infrastructure','spine-infrastructure'],['loop','spine-loop'],['platform','spine-platform'],['security','spine-security'],['founder','spine-founder']];
+  function layout(){
+    beats.forEach(function(pair){
+      var sec=document.getElementById(pair[0]),node=document.getElementById(pair[1]);
+      if(!sec||!node)return;
+      var railTop=rail.getBoundingClientRect().top+window.scrollY;
+      var secTop=sec.getBoundingClientRect().top+window.scrollY;
+      node.style.top=(secTop-railTop+6)+'px';
+    });
+  }
+  layout();
+  addEventListener('resize',layout,{passive:true});
+  var sobs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      var pair=beats.find(function(p){return document.getElementById(p[0])===e.target;});
+      if(!pair)return;
+      document.getElementById(pair[1]).classList.toggle('on',e.isIntersecting);
+    });
+  },{threshold:.3,rootMargin:'-15% 0px -15% 0px'});
+  beats.forEach(function(pair){var el=document.getElementById(pair[0]);if(el)sobs.observe(el);});
+})();
+
+/* ── THE REALITY LOOP — signature circular vector graph ──
+   viewBox always matches the SVG's real rendered pixel size (read via
+   clientWidth/clientHeight), so there's a 1:1 unit-to-pixel mapping and
+   no preserveAspectRatio letterboxing mismatch between the SVG's own
+   scaling and the label layer's positioning math — that mismatch is
+   exactly what let labels overflow the viewport at narrow widths. */
 (function(){
   var svg=document.getElementById('loop-svg');if(!svg)return;
-  var nodeEls=svg.querySelectorAll('.loop-node-svg');
-  var labelEls=document.querySelectorAll('#loop-labels .loop-label');
+  var pathEl=document.getElementById('loop-path-el');
+  var nodesG=document.getElementById('loop-nodes');
   var pulse=document.getElementById('loop-pulse');
-  var line=svg.querySelector('.loop-line');
-  var n=nodeEls.length;if(!n)return;
-  var xs=[];
+  var labelsWrap=document.getElementById('loop-labels');
+  var coreEl=svg.parentElement.querySelector('.loop-core');
+  var stages=[
+    ['01','Reality'],['02','Events'],['03','Evidence'],['04','Truth'],
+    ['05','Decision'],['06','Outcome'],['07','Learning'],['08','Calibration'],['09','Better Decisions']
+  ];
+  var n=stages.length;
+  var cx,cy,rx,ry;
+  var nodeEls=[],labelEls=[],xs=[],ys=[];
 
-  // viewBox width is kept equal to the SVG's actual rendered pixel width, so the
-  // 1:1 scale never distorts circles into ellipses (the previous fixed 1400-unit
-  // viewBox squashed nodes horizontally on any container narrower than 1400px —
-  // most visibly on mobile, where it turned circles into thin vertical slits).
+  function angleFor(i){return (-90+i*(360/n))*Math.PI/180;}
+
   function layout(){
-    var W=svg.clientWidth;if(!W)return;
-    svg.setAttribute('viewBox','0 0 '+W+' 34');
-    var margin=W*0.0714,span=W-margin*2;
-    xs=[];
-    nodeEls.forEach(function(g,i){
-      var x=margin+(span/(n-1))*i;
-      xs.push(x);
-      g.querySelectorAll('circle').forEach(function(c){c.setAttribute('cx',x);});
-    });
-    if(line){line.setAttribute('x1',xs[0]);line.setAttribute('x2',xs[n-1]);}
-    if(pulse)pulse.setAttribute('cx',xs[idxSafe()]);
+    var W=svg.clientWidth,H=svg.clientHeight;if(!W||!H)return;
+    svg.setAttribute('viewBox','0 0 '+W+' '+H);
+    cx=W/2;cy=H/2;
+    var labelPadW=W<560?70:100, labelPadH=44;
+    rx=W/2-labelPadW; ry=H/2-labelPadH;
+    pathEl.setAttribute('cx',cx);pathEl.setAttribute('cy',cy);
+    pathEl.setAttribute('rx',rx);pathEl.setAttribute('ry',ry);
+
+    nodesG.innerHTML='';labelsWrap.innerHTML='';nodeEls=[];labelEls=[];xs=[];ys=[];
+    var nodeR=W<560?6:8.5, ringR=W<560?9:13, dotR=W<560?3:4;
+    for(var i=0;i<n;i++){
+      var a=angleFor(i);
+      var x=cx+rx*Math.cos(a),y=cy+ry*Math.sin(a);
+      xs.push(x);ys.push(y);
+      var g=document.createElementNS('http://www.w3.org/2000/svg','g');
+      g.setAttribute('class','loop-node-svg'+(i===0?' on':''));
+      g.innerHTML='<circle class="loop-ring-outer" cx="'+x+'" cy="'+y+'" r="'+ringR+'"/><circle class="loop-ring" cx="'+x+'" cy="'+y+'" r="'+nodeR+'"/><circle class="loop-dot" cx="'+x+'" cy="'+y+'" r="'+dotR+'"/>';
+      nodesG.appendChild(g);
+      nodeEls.push(g);
+      var lbl=document.createElement('div');
+      lbl.className='loop-label'+(i===0?' on':'');
+      lbl.innerHTML='<div class="n">'+stages[i][0]+'</div><div class="t">'+stages[i][1]+'</div>';
+      labelsWrap.appendChild(lbl);
+      labelEls.push(lbl);
+    }
+    positionLabels();
+    if(pulse){var pr=svg.querySelector('.loop-node-svg.on circle.loop-ring');}
   }
-  function idxSafe(){return typeof idx==='number'?idx:0;}
+
+  function positionLabels(){
+    for(var i=0;i<n;i++){
+      var dx=(xs[i]-cx), dy=(ys[i]-cy);
+      var pad=1.0; // xs/ys already sit at the true node radius; push labels just outside it
+      var lx=cx+dx*pad, ly=cy+dy*pad;
+      var extra=22; // small fixed offset outward, in real px, so text clears the ring
+      var len=Math.sqrt(dx*dx+dy*dy)||1;
+      lx+=(dx/len)*extra; ly+=(dy/len)*extra;
+      labelEls[i].style.left=lx+'px';
+      labelEls[i].style.top=ly+'px';
+    }
+  }
+
+  var resizeTimer=null;
+  function onResize(){clearTimeout(resizeTimer);resizeTimer=setTimeout(layout,150);}
+  layout();
+  window.addEventListener('resize',onResize,{passive:true});
 
   function setActive(i){
     nodeEls.forEach(function(g,k){g.classList.toggle('on',k===i);});
     labelEls.forEach(function(l,k){l.classList.toggle('on',k===i);});
   }
 
-  var idx=0;
-  layout();
-  addEventListener('resize',layout,{passive:true});
-
-  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(reduced){
+    if(pulse){pulse.setAttribute('cx',xs[0]);pulse.setAttribute('cy',ys[0]);}
+    return;
+  }
 
   function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;}
 
-  var DWELL=900,TRAVEL=650;
-  var phase='dwell',phaseStart=null;
+  var DWELL=850,TRAVEL=600;
+  var idx=0,phase='dwell',phaseStart=null;
 
-  // Pause the rAF work while the diagram is off-screen — no point animating
-  // an eased pulse nobody can see.
   var visible=true;
-  new IntersectionObserver(function(e){
-    var wasVisible=visible;
-    visible=e[0].isIntersecting;
-    if(visible&&!wasVisible)phaseStart=null; // avoid a big elapsed-time jump on return
-  },{threshold:.05}).observe(svg);
+  new IntersectionObserver(function(e){visible=e[0].isIntersecting;},{threshold:.05}).observe(svg);
 
   function frame(ts){
     requestAnimationFrame(frame);
@@ -1081,29 +955,19 @@ setTimeout(function(){
     if(phase==='dwell'){
       if(elapsed>=DWELL){phase='travel';phaseStart=ts;}
     }else{
-      var next=(idx+1)%n;
-      var isWrap=(next===0);
-      var t=Math.min(elapsed/TRAVEL,1);
-      if(pulse){
-        if(isWrap){
-          // Loop closing (last node -> first): fade out, snap, fade in —
-          // interpolating cx across the full line width read as a fast
-          // "rewind" rather than the loop completing gracefully.
-          if(t<0.5){pulse.setAttribute('cx',xs[idx]);pulse.style.opacity=String(1-t/0.5);}
-          else{pulse.setAttribute('cx',xs[0]);pulse.style.opacity=String((t-0.5)/0.5);}
-        }else{
-          var te=ease(t);
-          pulse.setAttribute('cx',xs[idx]+(xs[next]-xs[idx])*te);
-          pulse.style.opacity='1';
-        }
-      }
-      if(t>=1){idx=next;setActive(idx);phase='dwell';phaseStart=ts;}
+      var t=Math.min(elapsed/TRAVEL,1),te=ease(t);
+      var a0=angleFor(idx), a1=angleFor(idx)+ (2*Math.PI/n);
+      var a=a0+(a1-a0)*te;
+      var x=cx+rx*Math.cos(a), y=cy+ry*Math.sin(a);
+      if(pulse){pulse.setAttribute('cx',x);pulse.setAttribute('cy',y);}
+      if(t>=1){idx=(idx+1)%n;setActive(idx);phase='dwell';phaseStart=ts;}
     }
   }
+  if(pulse){pulse.setAttribute('cx',xs[0]);pulse.setAttribute('cy',ys[0]);}
   requestAnimationFrame(frame);
 })();
 
-/* ── DEEP-SPACE AMBIENT BACKGROUND — environment, not decoration ── */
+/* ── DEEP-SPACE AMBIENT BACKGROUND ── */
 (function(){
   var cv=document.getElementById('starfield');if(!cv)return;
   var reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
@@ -1111,19 +975,14 @@ setTimeout(function(){
   var dpr=Math.min(window.devicePixelRatio||1,1.75);
   var W,H,layers;
 
-  // Subtle day/night breathing — local hour-of-day, small nudge from OS color-scheme.
-  // Deliberately narrow range (0.82–1.0): felt, not noticed.
   function ambientFactor(){
     var hr=new Date().getHours()+new Date().getMinutes()/60;
-    var night=0.91+0.09*Math.cos((hr/24)*Math.PI*2); // peak(1.0) at midnight, trough(0.82) at noon
+    var night=0.91+0.09*Math.cos((hr/24)*Math.PI*2);
     if(matchMedia('(prefers-color-scheme: light)').matches)night*=0.94;
     return night;
   }
   var ambient=ambientFactor();
 
-  // Three depth layers: far (many, dim, static-ish) / mid / near (few, brighter).
-  // Counts scale with viewport area (reference: 1440x900) so mobile doesn't
-  // inherit the same star count as desktop and end up ~3x denser per pixel.
   function makeLayer(baseCount,rMin,rMax,aMin,aMax,twinkleAmp,twinkleSpeed){
     var scale=(W*H)/(1440*900);
     var count=Math.max(12,Math.round(baseCount*scale));
@@ -1155,10 +1014,7 @@ setTimeout(function(){
     buildLayers();
   }
   resize();
-  function onResize(){
-    clearTimeout(resizeTimer);
-    resizeTimer=setTimeout(resize,150); // debounced — regenerating on every pixel of a drag-resize is wasted work
-  }
+  function onResize(){clearTimeout(resizeTimer);resizeTimer=setTimeout(resize,150);}
 
   function drawStars(t){
     ctx.clearRect(0,0,W,H);
@@ -1173,23 +1029,15 @@ setTimeout(function(){
     });
   }
 
-  // Rare, short-lived shooting stars — no loop, no constant streaks
   var shootingStars=[];
-  function scheduleNext(){
-    var delay=20000+Math.random()*20000; // 20–40s
-    setTimeout(spawnShootingStar,delay);
-  }
+  function scheduleNext(){var delay=20000+Math.random()*20000;setTimeout(spawnShootingStar,delay);}
   function spawnShootingStar(){
     var fromLeft=Math.random()>.5;
     var startX=fromLeft?Math.random()*W*.25:W-Math.random()*W*.25;
-    var startY=Math.random()*H*.22; // upper sky band only — stays clear of the headline column
+    var startY=Math.random()*H*.22;
     var angle=fromLeft?(Math.PI*.22+Math.random()*.15):(Math.PI*.78-Math.random()*.15);
     var dist=Math.min(W,H)*(.18+Math.random()*.14);
-    shootingStars.push({
-      x0:startX,y0:startY,
-      dx:Math.cos(angle)*dist,dy:Math.sin(angle)*dist,
-      start:performance.now(),dur:800+Math.random()*400
-    });
+    shootingStars.push({x0:startX,y0:startY,dx:Math.cos(angle)*dist,dy:Math.sin(angle)*dist,start:performance.now(),dur:800+Math.random()*400});
     scheduleNext();
   }
   if(!reduced)scheduleNext();
@@ -1199,17 +1047,17 @@ setTimeout(function(){
       var s=shootingStars[i];
       var t=(now-s.start)/s.dur;
       if(t>=1){shootingStars.splice(i,1);continue;}
-      var ease=t<.15?(t/.15):1-Math.pow((t-.15)/.85,1.6); // quick fade-in, slow graceful fade-out
+      var ea=t<.15?(t/.15):1-Math.pow((t-.15)/.85,1.6);
       var hx=s.x0+s.dx*t,hy=s.y0+s.dy*t;
       var tailLen=.22;
       var tx=s.x0+s.dx*Math.max(0,t-tailLen),ty=s.y0+s.dy*Math.max(0,t-tailLen);
       var grad=ctx.createLinearGradient(tx,ty,hx,hy);
       grad.addColorStop(0,'rgba(226,232,245,0)');
-      grad.addColorStop(1,'rgba(226,232,245,'+(.75*ease)+')');
+      grad.addColorStop(1,'rgba(226,232,245,'+(.75*ea)+')');
       ctx.strokeStyle=grad;ctx.lineWidth=1.1;ctx.lineCap='round';
       ctx.beginPath();ctx.moveTo(tx,ty);ctx.lineTo(hx,hy);ctx.stroke();
       ctx.beginPath();ctx.arc(hx,hy,1.1,0,Math.PI*2);
-      ctx.fillStyle='rgba(240,244,255,'+(.9*ease)+')';ctx.fill();
+      ctx.fillStyle='rgba(240,244,255,'+(.9*ea)+')';ctx.fill();
     }
   }
 
@@ -1218,12 +1066,7 @@ setTimeout(function(){
   }else{
     var paused=false;
     document.addEventListener('visibilitychange',function(){paused=document.hidden;});
-    function frame(ts){
-      requestAnimationFrame(frame);
-      if(paused)return;
-      drawStars(ts);
-      drawShootingStars(ts);
-    }
+    function frame(ts){requestAnimationFrame(frame);if(paused)return;drawStars(ts);drawShootingStars(ts);}
     requestAnimationFrame(frame);
   }
   addEventListener('resize',onResize,{passive:true});
