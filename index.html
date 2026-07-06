@@ -65,10 +65,17 @@
   --grad-blue:  linear-gradient(135deg,#1F8CFF,#0A66FF);
   --grad-gold:  linear-gradient(135deg,#F6C343,#D9A11E,#B8860B);
   --grad-bg:    linear-gradient(180deg,#050505 0%,#07090F 50%,#050505 100%);
-  --grad-cta:   linear-gradient(90deg,#1F8CFF,#0A66FF,#F6C343,#D9A11E);
   --glow-blue:  0 0 40px rgba(31,140,255,.18);
   --glow-gold:  0 0 40px rgba(246,195,67,.14);
   --glow-card:  0 8px 40px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.06);
+
+  /* radius scale — disciplined 3-tier system */
+  --radius-sm:  10px;  /* buttons, inputs, badges, small chips */
+  --radius-md:  16px;  /* cards, tiles, panels */
+  --radius-lg:  24px;  /* hero dashboard, founder card, contact form, major containers */
+
+  /* motion */
+  --ease-premium: cubic-bezier(.16,1,.3,1);
 }
 
 /* ═══════════════════════════════════════
@@ -89,6 +96,21 @@ h1,h2,h3,h4,h5,h6{font-family:'Fraunces',serif;letter-spacing:-0.01em;}
 ::-webkit-scrollbar{width:2px;}
 ::-webkit-scrollbar-thumb{background:var(--b2);}
 ::selection{background:var(--b2);color:#fff;}
+
+/* Keyboard focus — visible on all interactive elements, invisible on mouse click */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{
+  outline:2px solid var(--b3);outline-offset:2px;border-radius:4px;
+}
+
+/* Reduced motion — collapse all animation/transition to near-instant */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+    scroll-behavior:auto !important;
+  }
+}
 
 /* Progress */
 #prog{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--b1),var(--g1));z-index:9999;pointer-events:none;transition:width .1s;}
@@ -1690,9 +1712,7 @@ document.querySelectorAll('.glass-card').forEach(function(card){
 /* ── ECOSYSTEM 3D ORBITAL ── */
 (function(){
   var stage=document.getElementById('eco-stage');if(!stage)return;
-  if(matchMedia('(prefers-reduced-motion:reduce)').matches){
-    // Static fallback — just show core + labels in a ring
-  }
+  var reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
   var cv=document.getElementById('eco-canvas'),labels=document.getElementById('eco-labels');
   var dpr=Math.min(window.devicePixelRatio||1,2);
   var W,H,cx,cy;
@@ -1745,8 +1765,8 @@ document.querySelectorAll('.glass-card').forEach(function(card){
 
   var t0=null;
   function frame(ts){
-    requestAnimationFrame(frame);if(!vis)return;if(!t0)t0=ts;var t=(ts-t0)*.001;
-    autoRot+=0.0025;
+    if(!reduced)requestAnimationFrame(frame);if(!vis)return;if(!t0)t0=ts;var t=(ts-t0)*.001;
+    if(!reduced)autoRot+=0.0025;
     if(cv.clientWidth!==W||cv.clientHeight!==H){resize();ctx.setTransform(1,0,0,1,0,0);ctx.scale(dpr,dpr);}
     ctx.clearRect(0,0,W,H);
 
