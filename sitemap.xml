@@ -23,14 +23,21 @@
 
   <!-- Section anchors (for rich crawling) -->
   <url>
-    <loc>https://blu9l.com/#platform</loc>
+    <loc>https://blu9l.com/#infrastructure</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://blu9l.com/#pilot</loc>
+    <loc>https://blu9l.com/#capabilities</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://blu9l.com/#proof</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
