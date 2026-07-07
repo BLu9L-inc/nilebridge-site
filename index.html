@@ -148,7 +148,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .reveal{opacity:1;transform:none;filter:none;}
 .js-ready .reveal{opacity:0;transform:translateY(8px) scale(.986);filter:blur(5px);
   transition:opacity .85s var(--ease-premium),transform .85s var(--ease-premium),filter .7s var(--ease-premium);}
-.js-ready .reveal.in{opacity:1;transform:none;filter:blur(0);}
+.js-ready .reveal.in{opacity:1;transform:none;filter:none;}
 .r1{transition-delay:.08s;}.r2{transition-delay:.16s;}.r3{transition-delay:.24s;}.r4{transition-delay:.32s;}
 @media (prefers-reduced-motion: reduce){
   .reveal,.js-ready .reveal{opacity:1 !important;transform:none !important;filter:none !important;}
@@ -230,7 +230,7 @@ nav.scrolled .nav-links,nav.menu-open .nav-links{opacity:1;}
 .inst-rim-halo{fill:none;stroke:var(--blue);stroke-width:6;opacity:.10;filter:blur(2px);transition:stroke-dashoffset .5s var(--ease-premium);}
 .inst-rim-lit{fill:none;stroke:var(--blue);stroke-width:1.4;filter:drop-shadow(0 0 5px rgba(61,127,255,.45));transition:stroke-dashoffset .5s var(--ease-premium);}
 .inst-signal{fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round;opacity:.9;animation:signalTravel 8s linear infinite;}
-@keyframes signalTravel{to{stroke-dashoffset:-943px;}}
+@keyframes signalTravel{to{stroke-dashoffset:-1;}}
 .inst-hub-ring{fill:none;stroke:var(--line2);stroke-width:1;}
 .inst-hub-fill{transition:fill 1s;}
 .inst-hub-glow{opacity:.4;transform-box:fill-box;transform-origin:center;pointer-events:none;animation:hubBreathe 5.4s ease-in-out infinite;}
@@ -941,7 +941,7 @@ function buildInstrument(mountEl, opts){
   defs.appendChild(grad);
   var glowGrad = document.createElementNS(svgNS,'radialGradient');
   glowGrad.setAttribute('id',uid+'-hubglow');
-  glowGrad.innerHTML = '<stop offset="0%" stop-color="'+'#3D7FFF'+'" stop-opacity=".55"/><stop offset="100%" stop-color="'+'#3D7FFF'+'" stop-opacity="0"/>';
+  glowGrad.innerHTML = '<stop offset="0%" stop-color="var(--blue)" stop-opacity=".55"/><stop offset="100%" stop-color="var(--blue)" stop-opacity="0"/>';
   defs.appendChild(glowGrad);
   svg.appendChild(defs);
 
@@ -973,7 +973,8 @@ function buildInstrument(mountEl, opts){
 
   // signal: a continuous low-frequency pulse, clipped to whatever arc is
   // already confirmed — the loop reads as circulating, not finished.
-  // pathLength=1 makes the dash math resolution-independent of rimR.
+  // pathLength=1 makes the dash math a fixed fraction of the path,
+  // independent of rimR — the CSS keyframe never needs a real px value.
   var signalClip = document.createElementNS(svgNS,'clipPath');
   signalClip.setAttribute('id',uid+'-signalclip');
   var signalClipPath = document.createElementNS(svgNS,'path');
@@ -982,10 +983,11 @@ function buildInstrument(mountEl, opts){
   var signal = document.createElementNS(svgNS,'circle');
   signal.setAttribute('class','inst-signal');
   signal.setAttribute('cx',cx); signal.setAttribute('cy',cy); signal.setAttribute('r',rimR);
+  signal.setAttribute('pathLength','1');
   // a single short dash + one long gap == one traveling pulse per lap;
   // no transform on this element, so the clip-path below (computed in
   // the same untransformed space as the node angles) lines up exactly.
-  signal.setAttribute('stroke-dasharray', '9 '+(circumference-9));
+  signal.setAttribute('stroke-dasharray', '.01 .99');
   signal.setAttribute('clip-path','url(#'+uid+'-signalclip)');
   mainGroup.appendChild(signal);
 
