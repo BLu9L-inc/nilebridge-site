@@ -288,7 +288,7 @@ nav.scrolled .nav-links,nav.menu-open .nav-links{opacity:1;}
 .chapters-grid{display:grid;grid-template-columns:46% 54%;align-items:start;}
 .inst-stage{position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;padding:0 20px;}
 .inst-readout{position:absolute;bottom:40px;left:40px;right:40px;font-family:var(--mono);font-size:10px;color:var(--dim2);
-  letter-spacing:.04em;border-top:1px solid var(--line);padding-top:12px;display:flex;justify-content:space-between;}
+  letter-spacing:.04em;padding-top:20px;display:flex;justify-content:space-between;}
 .inst-readout .k{color:var(--blue);}
 
 .ch-content{padding:0 56px;}
@@ -426,7 +426,8 @@ footer{border-top:1px solid var(--line);padding:64px 40px 32px;}
   .nav-links{display:none;}
   .ham{display:flex;}
   .chapters-grid{grid-template-columns:1fr;}
-  .inst-stage{position:sticky;top:64px;height:38vh;min-height:260px;z-index:10;background:var(--black);border-bottom:1px solid var(--line);}
+  .inst-stage{position:sticky;top:64px;height:38vh;min-height:260px;z-index:10;
+    background:radial-gradient(ellipse 90% 95% at 50% 50%, var(--black) 0%, var(--black) 68%, transparent 100%);}
   .ch-content{padding:0 24px;}
   .chapter{min-height:auto;padding:52px 0;}
   .chapter:first-child{padding-top:52px;}
@@ -1078,25 +1079,29 @@ function buildInstrument(mountEl, opts){
   }
 
   function positionLabels(){
+    // the mount isn't guaranteed to be square (flex/grid sizing can give
+    // it a taller-than-wide box) — the SVG itself stays a true circle via
+    // preserveAspectRatio's letterboxing, but that letterbox offset has
+    // to be applied here too, or labels drift toward center on the axis
+    // that got padded. Scale off the smaller dimension, offset the rest.
+    var rect = svg.getBoundingClientRect();
+    if(!rect.width || !rect.height) return;
+    var visible = Math.min(rect.width, rect.height);
+    var scale = visible/400;
+    var offX = (rect.width-visible)/2, offY = (rect.height-visible)/2;
     if(showLabels){
-      var rect = svg.getBoundingClientRect();
-      if(!rect.width) return;
-      var scale = rect.width/400;
       for(var i=0;i<n;i++){
         var dx=(xs[i]-cx), dy=(ys[i]-cy);
         var len=Math.hypot(dx,dy)||1;
         var lx = cx + (dx/len)*labelR, ly = cy + (dy/len)*labelR;
-        lbl_setPos(labelEls[i], lx*scale, ly*scale);
+        lbl_setPos(labelEls[i], offX+lx*scale, offY+ly*scale);
       }
     }
     if(networkWrap){
-      var r2 = svg.getBoundingClientRect();
-      if(!r2.width) return;
-      var sc = r2.width/400;
       var dealerLbl = networkWrap.querySelector('.nl-dealer');
       var networkLbl = networkWrap.querySelector('.nl-network');
-      lbl_setPos(dealerLbl, 200*sc, 305*sc);
-      lbl_setPos(networkLbl, 78*sc, 132*sc);
+      lbl_setPos(dealerLbl, offX+200*scale, offY+305*scale);
+      lbl_setPos(networkLbl, offX+78*scale, offY+132*scale);
     }
   }
   function lbl_setPos(el,x,y){ if(!el)return; el.style.left=x+'px'; el.style.top=y+'px'; }
@@ -1117,10 +1122,10 @@ function buildInstrument(mountEl, opts){
   }
 
   var built = 0;
+  var everClosed = false;
   function setBuilt(count){
     count = Math.max(0, Math.min(n, count));
     if(count === built) return;
-    var wasClosed = built >= n;
     built = count;
     rimLit.setAttribute('stroke-dashoffset', circumference - segLen*built);
     rimHalo.setAttribute('stroke-dashoffset', circumference - segLen*built);
@@ -1138,7 +1143,7 @@ function buildInstrument(mountEl, opts){
       labelEls[i].classList.toggle('settled', on && !isActive);
       labelEls[i].classList.toggle('active', isActive);
     }
-    if(built >= n && !wasClosed && opts.onClose) opts.onClose(mountEl);
+    if(built >= n && !everClosed){ everClosed = true; if(opts.onClose) opts.onClose(mountEl); }
     if(opts.onChange) opts.onChange(built);
   }
 
@@ -1149,8 +1154,14 @@ function buildInstrument(mountEl, opts){
     mountEl.classList.add('network-on');
     positionLabels();
   }
+  function hideNetwork(){
+    if(!networkOn) return;
+    networkOn = false;
+    mountEl.classList.remove('network-on');
+    positionLabels();
+  }
 
-  return { setBuilt: setBuilt, get built(){ return built; }, positionLabels: positionLabels, showNetwork: showNetwork };
+  return { setBuilt: setBuilt, get built(){ return built; }, positionLabels: positionLabels, showNetwork: showNetwork, hideNetwork: hideNetwork };
 }
 
 /* ── HERO INSTRUMENT: dormant, one-time power-on, no chapter state ── */
@@ -1162,7 +1173,16 @@ function buildInstrument(mountEl, opts){
   setTimeout(function(){ /* soft hub presence only — no stages, no rim */ }, 300);
 })();
 
-/* ── PINNED INSTRUMENT: driven by chapters, monotonic/accretive ── */
+/* ── PINNED INSTRUMENT: driven by chapters, reversible with scroll ──
+   Built state tracks whichever chapter is currently in focus — no
+   accumulation. Scrolling back up rewinds to that chapter's stage
+   target; the existing grouped chapter→stage mapping (some chapters
+   jump several stages at once for narrative pacing) is unchanged.
+   The network reveal is symmetric with this: shown from the network
+   chapter onward, hidden again above it. The one-time closure
+   flourish is gated on a persistent flag inside buildInstrument, so
+   it never replays even though built can now drop below n and climb
+   back to n again. */
 (function(){
   var el = document.getElementById('pinned-instrument'); if(!el) return;
   var countEl = document.getElementById('inst-count');
@@ -1172,15 +1192,16 @@ function buildInstrument(mountEl, opts){
     onClose: function(mount){ mount.classList.add('closed'); }
   });
 
-  var maxSeen = 0;
-  var chapters = document.querySelectorAll('.chapter[data-stage]');
+  var chapters = Array.from(document.querySelectorAll('.chapter[data-stage]'));
+  var networkIndex = chapters.findIndex(function(c){ return c.dataset.network; });
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
-      if(e.isIntersecting){
-        var stage = parseInt(e.target.dataset.stage,10);
-        maxSeen = Math.max(maxSeen, stage+1);
-        inst.setBuilt(maxSeen);
-        if(e.target.dataset.network) inst.showNetwork();
+      if(!e.isIntersecting) return;
+      var idx = chapters.indexOf(e.target);
+      var stage = parseInt(e.target.dataset.stage,10);
+      inst.setBuilt(stage+1);
+      if(networkIndex >= 0){
+        if(idx >= networkIndex) inst.showNetwork(); else inst.hideNetwork();
       }
     });
   }, {threshold:.55});
